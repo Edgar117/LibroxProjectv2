@@ -1,0 +1,344 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="Librox2.Master.Master" %>
+
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+        	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+<link href="../css/flexslider.css" rel="stylesheet" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+<link href="../css/style.css" rel="stylesheet" />
+<link href="../css/fontawesome-all.css" rel="stylesheet" />
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet"/>
+	<!-- //web-fonts -->
+    <link href="../css/LoginStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Header-->
+<header>
+	<div class="container agile-banner_nav">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">	
+			<a class="navbar-brand" href="index.html">Librox <span class="display">Libros a tu alcance</span></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+            <%--Nav Normal Frond--%>
+			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent" runat="server">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="../GUI/Index.aspx">Inicio <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../GUI/Acerca.aspx">Acerca de</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../GUI/Servicios.aspx">Servicios</a>
+					</li>
+                    	<li class="nav-item">
+						<a class="nav-link" id="test" runat="server" href="../GUI/Servicios.aspx">Test</a>
+					</li>
+					<li class="dropdown nav-item">
+						<a href="#" class="dropdown-toggle nav-link" runat="server" id="pages" data-toggle="dropdown">Pages
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu agile_short_dropdown">
+							<li>
+								<a href="index.html">Testimonios</a>
+							</li>
+							<li>
+								<a href="typography.html">Typography</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../GUI/Libros.aspx">Libros</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../GUI/Contacto.aspx">Contactanos</a>
+					</li>
+				</ul>
+			</div>
+            <%--Nav cuando el usuario se haya logeado--%>
+            <div class="collapse navbar-collapse justify-content-center" id="testloco" runat="server">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="../GUI/Index.aspx">Inicio <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../GUI/Acerca.aspx">Acerca de</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../GUI/Servicios.aspx">Servicios</a>
+					</li>
+                    	<li class="nav-item">
+						<a class="nav-link" id="A1" runat="server" href="../GUI/Servicios.aspx">Test</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../GUI/Libros.aspx">Libros</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../GUI/Contacto.aspx">Contactanos</a>
+					</li>
+				</ul>
+			</div>
+            <%--<div class="">
+                		    <ul class="nav navbar-nav navbar-right">
+                 <li><p class="navbar-text">Already have an account?</p></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+			<ul id="login-dp" class="dropdown-menu">
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+								Login via
+								<div class="social-buttons">
+									<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+								</div>
+                                or
+								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
+											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+										</div>
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputPassword2">Password</label>
+											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+										</div>
+										<div class="form-group">
+											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+										</div>
+										<div class="checkbox">
+											 <label>
+											 <input type="checkbox"> keep me logged-in
+											 </label>
+										</div>
+								 </form>
+							</div>
+							<div class="bottom text-center">
+								New here ? <a href="#"><b>Join Us</b></a>
+							</div>
+					 </div>
+				</li>
+			</ul>
+        </li>
+    </ul>
+            </div>--%>
+		</nav>
+	</div>
+</header>
+<!--Header-->
+
+    <form id="form1" runat="server">
+    <div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <!-- footer -->	
+<footer>
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<h3 class="text-uppercase mb-3">Dirección</h3>
+				<address>
+					<p><strong>Yucatán:</strong></p>
+					<p class="mb-3">Calle ... x.. y .. col.. Merída,Yucatán.</p>
+					<p><strong>Telefono</strong> : +999999999</p>
+					<p><strong>Correo</strong> : <a href="mailto:soportelibrox@gmail.com">soportelibrox@gmail.com</a></p>
+				</address>
+			</div>
+			<div class="col-lg-2 col-md-6 mt-lg-0 mt-sm-0 mt-4 p-md-0">
+				<h3 class="text-uppercase mb-3">Pagínas</h3>
+				<div class="links">
+					<a class="pt-2 text-capitalize" href="#"><i class="fas fa-angle-right"></i> Navegación</a>
+					<a class="pt-2 text-capitalize" href="#"><i class="fas fa-angle-right"></i> Documentación</a>
+					<a class="pt-2 text-capitalize" href="#"><i class="fas fa-angle-right"></i> Negocio</a>
+					<a class="pt-2 text-capitalize" href="#"><i class="fas fa-angle-right"></i> Soporte Tecníco</a>
+					<a class="pt-2 text-capitalize" href="#"><i class="fas fa-angle-right"></i> 24/7 Soporte</a>
+					<a class="pt-2 text-capitalize" href="#"><i class="fas fa-angle-right"></i> Retroalimentación</a>
+				</div>	
+			</div>
+			<div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
+				<h3 class="text-uppercase mb-3"> Post Recientes</h3>
+				<div class="posts">
+					<p class="pt-2">Como seducir a la noche.
+					<span class="font-italic">31st march, 2018.</span></p>
+					<p class="py-2 my-2 middle">lorem ipsum dolor sit amet
+					<span class="font-italic">31st march, 2018.</span></p>
+					<p class="pt-2">lorem ipsum dolor sit amet
+					<span class="font-italic">31st march, 2018.</span></p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+				<h3 class="text-uppercase mb-3">Newsletter</h3>
+				<p class="mb-4 pt-2">Subscribe to Our Newsletter to get Important News, Amazing Offers & More</p>
+				<form action="#" method="post">
+					<input type="email" name="Email" placeholder="Enter your email..." required="">
+					<button class="btn1"><i class="far fa-envelope"></i></button>
+					<div class="clearfix"> </div>
+				</form>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- footer -->
+
+
+<!-- copyright -->
+<div class="copyright py-4">
+	<div class="container">
+		<div class="copyrightgrids row">
+			<div class="col-lg-6 col-12">
+				<p>© 2018 Librox. Todos los derechos reservados | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
+			</div>
+			<div class="col-lg-6 col-12">
+				<ul class="social text-right mt-lg-0 mt-3">
+					<li><p class="mx-2 text-capitalize">follow us on : </p></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-twitter"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-google-plus-g"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fas fa-rss"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-vk"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-vimeo-v"></span></a></li>
+					<li class="mx-2"><a href="#"><span class="fab fa-yahoo"></span></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //copyright -->
+
+<!-- Vertically centered Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-uppercase text-center" id="exampleModalLongTitle"> Career Corp</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<img src="images/banner.jpg" class="img-fluid mb-3" alt="Modal Image" />
+        Vivamus eget est in odio tempor interdum. Mauris maximus fermentum arcu, ac finibus ante. Sed mattis risus at ipsum elementum, ut auctor turpis cursus. Sed sed odio pharetra, aliquet velit cursus, vehicula enim. Mauris porta aliquet magna, eget laoreet ligula.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //Vertically centered Modal -->
+
+<!-- js-scripts -->		
+
+	<!-- js -->
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.js"></script><!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<!-- //js -->	
+	
+	<!-- odometer-script -->
+	<script src="js/odometer.js"></script>
+	<script>
+		window.odometerOptions = {
+			format: '(ddd).dd'
+		};
+	</script>
+	<script>
+		setTimeout(function () {
+			jQuery('#w3l_stats1').html(25);
+		}, 1500);
+	</script>
+	<script>
+		setTimeout(function () {
+			jQuery('#w3l_stats2').html(330);
+		}, 1500);
+	</script>
+	<script>
+		setTimeout(function () {
+			jQuery('#w3l_stats3').html(542);
+		}, 1500);
+	</script>
+	<script>
+		setTimeout(function () {
+			jQuery('#w3l_stats4').html(222);
+		}, 1500);
+	</script>
+	<!-- //odometer-script -->
+
+	<!-- start-smoth-scrolling -->
+    <script src="../js/SmoothScroll.min.js"></script>
+    <script src="../js/move-top.js"></script>
+    <script src="../js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+	
+	<!-- FlexSlider-JavaScript -->
+    <script src="../js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			SyntaxHighlighter.all();
+				});
+				$(window).load(function(){
+				$('.flexslider').flexslider({
+					animation: "slide",
+					start: function(slider){
+						$('body').removeClass('loading');
+					}
+			});
+		});
+	</script>
+
+	<!-- //FlexSlider-JavaScript -->
+<!-- //js-scripts -->
+</body>
+</html>
