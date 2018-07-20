@@ -7,45 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Librox2 {
+namespace Librox2.GUI {
     
     
-    public partial class Login {
+    public partial class IndexBack {
         
         /// <summary>
-        /// form1 control.
+        /// Project control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Project;
         
         /// <summary>
-        /// txtusuario control.
+        /// freespace control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtusuario;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl freespace;
         
         /// <summary>
-        /// txtpassword control.
+        /// Visit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Visit;
         
         /// <summary>
-        /// btnEntrar control.
+        /// empty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEntrar;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl empty;
     }
 }

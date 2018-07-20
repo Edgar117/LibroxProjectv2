@@ -49,7 +49,7 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Username is required">
-						<input class="input100" type="text" name="username" >
+                        <asp:TextBox class="input100" ID="txtusuario" runat="server"></asp:TextBox>
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -63,19 +63,17 @@
 						</a>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" >
+					 <asp:TextBox class="input100" ID="txtpassword" runat="server"></asp:TextBox>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
-							Sign In
-						</button>
+                        <asp:Button class="login100-form-btn" ID="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" />
 					</div>
 
 					<div class="w-full text-center p-t-55">
 						<span class="txt2">
-							Not a member?
+							No eres un miembro?
 						</span>
 
 						<a href="#" class="txt2 bo1">

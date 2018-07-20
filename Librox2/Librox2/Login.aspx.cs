@@ -8,11 +8,14 @@ using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using static Librox2.Propety;
-
+using Librox2.BO;
+using Librox2.DAO;
 namespace Librox2
 {
     public partial class Login : System.Web.UI.Page
     {
+        UsuarioBO ObUsuario = new UsuarioBO();
+        Usuarios OB = new Usuarios();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Request.QueryString["access_token"])) return; //ERROR! No token returned from Facebook!!
@@ -25,23 +28,17 @@ namespace Librox2
             FacebookUser oUser = js.Deserialize<FacebookUser>(json);
             if (oUser != null)
             {
-                Response.Write("Welcome, " + oUser.name);
-                Response.Write("<br />id, " + oUser.id);
-                Response.Write("<br />email, " + oUser.email);
-                Response.Write("<br />first_name, " + oUser.first_name);
-                Response.Write("<br />last_name, " + oUser.last_name);
-                Response.Write("<br />gender, " + oUser.gender);
-                Response.Write("<br />link, " + oUser.link);
-                Response.Write("<br />updated_time, " + oUser.updated_time);
-                Response.Write("<br />birthday, " + oUser.birthday);
-                Response.Write("<br />locale, " + oUser.locale);
-                Response.Write("<br />picture, " + oUser.picture);
-                if (oUser.location != null)
+                int Validar = OB.SaveUserFB(oUser);
+                if (Validar == 0)
                 {
-                    Response.Write("<br />locationid, " + oUser.location.id);
-                    Response.Write("<br />location_name, " + oUser.location.name);
+                    Response.Redirect("/GUI/Index.aspx");
+                }
+                else
+                {
+
                 }
             }
+
         }
         private static string GetFacebookUserJSON(string access_token)
         {
@@ -55,6 +52,36 @@ namespace Librox2
             reader.Close();
 
             return s;
+        }
+
+        protected void btnEntrar_Click(object sender, EventArgs e)
+        {
+            if (txtusuario.Text.Length == 0 || txtpassword.Text.Length == 0)
+            {
+                Response.Write("<script>alert('" + "El Usuario o la Contraseña no Existen" + "');</script>");
+            }
+            else
+            {
+                ObUsuario.Usuario = txtusuario.Text;
+                ObUsuario.Contraseña = txtpassword.Text;
+                String[] substrings = OB.validarusuario(ObUsuario).Split('|');
+                if (ObUsuario.Contraseña == substrings[0].ToString() && substrings[1].ToString()=="1")
+                {
+                    Session["Usuario"] = ObUsuario.Usuario;
+                    Session["Contraseña"] = ObUsuario.Contraseña;
+                    //Session["Imagen"] = ObUsuario.ConsultaImagenParamedico(on);
+                    Response.Redirect("/GUI/IndexBack.aspx");
+                    //Response.Write("<script>alert('" + "Bienvendo a nuestro Sistema" + "');</script>");
+                }
+                else
+                {
+                    if (ObUsuario.Contraseña == substrings[0].ToString() && substrings[1].ToString() == "0")
+                    {
+                        Response.Redirect("/GUI/Index.aspx");
+                    }
+                   // Response.Write("<script>alert('" + "El Usuario o la Contraseña no existen" + "');</script>");
+                }
+            }
         }
     }
 }

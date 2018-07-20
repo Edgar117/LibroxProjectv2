@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using static Librox2.Propety;
-
+using Librox2.BO;
 namespace Librox2.DAO
 {
     public class Usuarios
@@ -12,6 +12,7 @@ namespace Librox2.DAO
         SqlCommand cmd = new SqlCommand();
         Conexion con = new Conexion();
         SqlCommand cmdauera = new SqlCommand();
+        string SQL="";
         public int SaveUserFB(object obj)
         {
             FacebookUser nom = (FacebookUser)obj;
@@ -26,6 +27,24 @@ namespace Librox2.DAO
                 return 0;
             }
             return 1;
+        }
+        public string validarusuario(UsuarioBO ObjUsuario)
+        {
+
+            string contra = "";
+            
+            SQL = "Select Contraseña,Tipousuario from Usuarios where Usuario = '" + ObjUsuario.Usuario + "'";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            cmd.Parameters.AddWithValue("@Usuario", contra);
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                contra = leer["Contraseña"].ToString()+"|"+leer["Tipousuario"].ToString();
+            }
+            con.CerrarConexion();
+            return contra;
+
         }
     }
 }

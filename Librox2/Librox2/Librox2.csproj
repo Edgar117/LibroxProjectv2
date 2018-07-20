@@ -66,12 +66,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\AdminLTE.min.css" />
     <Content Include="css\LoginStyle.css" />
+    <Content Include="css\_all-skins.min.css" />
     <Content Include="GUI\Acerca.aspx" />
     <Content Include="GUI\Callback.aspx" />
     <Content Include="GUI\Contacto.aspx" />
+    <Content Include="GUI\IndexBack.aspx" />
     <Content Include="GUI\Libros.aspx" />
     <Content Include="GUI\Servicios.aspx" />
+    <Content Include="js\adminlte.min.js" />
+    <Content Include="js\bootstrap.min.css" />
     <Content Include="Login.aspx" />
     <Content Include="Login\animate.css" />
     <Content Include="Login\bootstrap.min.css" />
@@ -87,6 +92,7 @@
     <Content Include="Login\js\main.js" />
     <Content Include="packages.config" />
     <Content Include="Master\Master.Master" />
+    <Content Include="Master\MasterBack.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,7 +155,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\UsuarioBO.cs" />
     <Compile Include="DAO\Conexion.cs" />
+    <Compile Include="DAO\Security.cs" />
     <Compile Include="DAO\Usuarios.cs" />
     <Compile Include="GUI\Acerca.aspx.cs">
       <DependentUpon>Acerca.aspx</DependentUpon>
@@ -179,6 +187,13 @@
     <Compile Include="GUI\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\IndexBack.aspx.cs">
+      <DependentUpon>IndexBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\IndexBack.aspx.designer.cs">
+      <DependentUpon>IndexBack.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Libros.aspx.cs">
       <DependentUpon>Libros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,11 +222,17 @@
     <Compile Include="Master\Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
+    <Compile Include="Master\MasterBack.Master.cs">
+      <DependentUpon>MasterBack.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\MasterBack.Master.designer.cs">
+      <DependentUpon>MasterBack.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAO\Propety.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BO\" />
     <Folder Include="SERVICES\" />
     <Folder Include="TempFiles\" />
     <Folder Include="webfonts\" />

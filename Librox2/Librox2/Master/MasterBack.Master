@@ -1,0 +1,215 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterBack.master.cs" Inherits="Librox2.Master.MasterBack" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="../css/_all-skins.min.css" rel="stylesheet" />
+    <link href="../css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="../js/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="Welcome.aspx" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>D</b>B</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>DB Test Page</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+            <img src="Img/default-user.png" class="img-circle" alt="User Image"/>
+        </div>
+        <div class="pull-left info">
+          <p runat="server" id="nom">...</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN CONFIGURATION</li>
+       <li><a href="ConfigureSite.aspx"><i class="fa fa-dashboard"></i> <span>Configure site</span></a></li>
+        <li class="header">Test Databases</li>
+              <li class="treeview">
+          <a href="#">
+            <i class="fa fa-database"></i>
+            <span>DataBases Test</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">3</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="Configure_Test.aspx"><i class="fa fa-database"></i>Empty Test</a></li>
+            <li><a href="Configure_Scripts.aspx"><i class="fa fa-database"></i>Test Scripts</a></li>
+            <li><a href="Configure_Scripts_ftp.aspx"><i class="fa fa-database"></i>Test Scripts with FTP</a></li>
+          </ul>
+        </li>
+          <li class="header">Documentation Database</li>
+                  <li class="treeview">
+          <a href="#">
+            <i class="fa fa-file-o"></i>
+            <span>Documentation</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">3</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-file-word-o"></i>Word</a></li>
+            <li><a href="#"><i class="fa fa-file-excel-o"></i>Excel</a></li>
+            <li><a href="#"><i class="fa fa-file-pdf-o"></i>PDF</a></li>
+          </ul>
+        </li>
+           <li class="header">Create Task Scheduler</li>
+           <li><a href="Task_Scheduler.aspx"><i class="fa fa-windows"></i> <span>Generate Tasks </span></a></li>
+           <li class="header">Logout</li>
+           <li><a href="Index.aspx"><i class="fa fa-power-off"></i> <span>Logout</span></a></li>
+    
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+          <script src="scripts/select2.full.min.js"></script>
+  </aside>
+     <%--SWEET ALERT--%>
+    <%--SWEET ALERT TEST SUCCESS--%>
+     <script type="text/javascript">
+        function successalert() {
+            swal({
+                title: "Test Scripts",
+                text: "Test completed successfully!",
+                icon: "success",
+            });
+        }
+    </script>
+    <%--SWEET ALERT TEST SUCCESS--%>
+     <script type="text/javascript">
+         function successalertConfig() {
+             swal({
+                 title: "Configuration",
+                 text: "Successfully generated configuration!",
+                 icon: "success",
+             });
+         }
+    </script>
+    <%--SWEET ALERT TEST FAIL--%>
+     <script type="text/javascript">
+         function error() {
+            swal({
+                title: "Test Scripts",
+                text: "Test completed with errors!",
+                icon: "error",
+            });
+        }
+    </script>
+    <%--SWEET ALERT TASK --%>
+    <script type="text/javascript">
+        function Task() {
+            swal({
+                title: 'Creating the task please wait!',
+                html: 'I will close in <strong></strong> seconds.',
+                timer: 2000,
+                onOpen: () => {
+                    swal.showLoading()
+                    timerInterval = setInterval(() => {
+                        swal.getContent().querySelector('strong')
+                          .textContent = swal.getTimerLeft()
+                    }, 100)
+                },
+                onClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                if (
+                    // Read more about handling dismissals
+                  result.dismiss === swal.DismissReason.timer
+                ) {
+                    console.log('I was closed by the timer')
+                }
+            });
+        }
+    </script>
+    <%--SWEET ALERT VALID --%>
+      <script type="text/javascript">
+          function Validtxt() {
+              swal({
+                title: "ERROR",
+                text: "Missing data to complete!",
+                icon: "error",
+            });
+        }
+    </script>
+    <%--SWEET ALERT ERROR TRY--%>
+          <script type="text/javascript">
+          function TRY() {
+              swal({
+                title: "ERROR",
+                text: "Internal failure, this error can be caused by an invalid FTP address!",
+                icon: "error",
+            });
+        }
+    </script>
+    <%--SWEET ALERT INFO--%>
+     <script type="text/javascript">
+         function Info() {
+             swal({
+                 tye:"info",
+                  title: "Empty Test",
+                  text: "test started, if the test fails a message is displayed on the corresponding channel!",
+                icon: "info",
+            });
+        }
+    </script>
+        <script type="text/javascript">
+         function Info2() {
+             swal({
+                 tye:"info",
+                  title: "SCRIPTS Test",
+                  text: "test started, if the test fails a message is displayed on the corresponding channel!",
+                icon: "info",
+            });
+        }
+    </script>
+    <script src="../js/adminlte.min.js"></script>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
