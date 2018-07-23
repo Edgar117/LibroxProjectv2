@@ -35,7 +35,7 @@
 					</span>                     
                          <div id="fb-root"></div>
 					<a href="#" onclick="loginByFacebook();" class="btn-face m-b-20">
-						<i class="fa fa-facebook"></i>
+						<i class="fa fa-facebook-official"></i>
 						Facebook
 					</a>
 					<a href="#" class="btn-google m-b-20">
@@ -63,7 +63,7 @@
 						</a>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-					 <asp:TextBox class="input100" ID="txtpassword" runat="server"></asp:TextBox>
+					 <asp:TextBox class="input100" ID="txtpassword" runat="server" TextMode="Password"></asp:TextBox>
 						<span class="focus-input100"></span>
 					</div>
 

@@ -7,12 +7,12 @@
 
     <section class="content-header">
       <h1>
-        Welcome
-        <small>DB Web Site</small>
+        Bienvenido
+        <small>Sitio de configuración</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Welcome</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li class="active">Bienvenido</li>
       </ol>
     </section>
 
@@ -23,10 +23,10 @@
           <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-aqua-active">
-              <h3 class="widget-user-username">DB Solutions</h3>
+              <h3 class="widget-user-username">Admin</h3>
             </div>
             <div class="widget-user-image">
-              <img class="img-circle" src="Img/default-user.png" alt="User Avatar"/>
+              <img class="img-circle" src="../images/ImagenDefualt.png" alt="User Avatar"/>
             </div>
             <div class="box-footer">
                 <br />
@@ -80,7 +80,7 @@
             <span class="info-box-icon bg-yellow"><i class="fa fa-terminal"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Total Empty Test</span>
+              <span class="info-box-text">Total...</span>
               <span id="empty" runat="server" class="info-box-number"></span>
             </div>
             <!-- /.info-box-content -->

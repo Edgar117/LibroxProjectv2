@@ -11,7 +11,8 @@ namespace Librox2.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            nom.InnerText = Session["Usuario"].ToString();
+            logo.Src =Session["Imagen"].ToString();
         }
     }
 }

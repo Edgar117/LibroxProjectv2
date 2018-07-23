@@ -75,6 +75,8 @@
     <Content Include="GUI\IndexBack.aspx" />
     <Content Include="GUI\Libros.aspx" />
     <Content Include="GUI\Servicios.aspx" />
+    <Content Include="ImagenDefualt.png" />
+    <Content Include="images\ImagenDefualt.png" />
     <Content Include="js\adminlte.min.js" />
     <Content Include="js\bootstrap.min.css" />
     <Content Include="Login.aspx" />
