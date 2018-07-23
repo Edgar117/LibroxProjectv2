@@ -53,32 +53,20 @@
 					<li class="nav-item">
 						<a class="nav-link" href="../GUI/Servicios.aspx">Servicios</a>
 					</li>
-                    	<li class="nav-item">
-						<a class="nav-link" id="test" runat="server" href="../GUI/Servicios.aspx">Test</a>
-					</li>
-					<li class="dropdown nav-item">
-						<a href="#" class="dropdown-toggle nav-link" runat="server" id="pages" data-toggle="dropdown">Pages
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu agile_short_dropdown">
-							<li>
-								<a href="index.html">Testimonios</a>
-							</li>
-							<li>
-								<a href="typography.html">Typography</a>
-							</li>
-						</ul>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../GUI/Libros.aspx">Libros</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../GUI/Contacto.aspx">Contactanos</a>
 					</li>
+                    <li class="nav-item">
+						<a class="nav-link" href="../Login.aspx">Iniciar Sesión</a>
+					</li>
+         
 				</ul>
 			</div>
             <%--Nav cuando el usuario se haya logeado--%>
-            <div class="collapse navbar-collapse justify-content-center" id="testloco" runat="server">
+           <%-- <div class="collapse navbar-collapse justify-content-center" id="testloco" runat="server">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="../GUI/Index.aspx">Inicio <span class="sr-only">(current)</span></a>
@@ -99,7 +87,7 @@
 						<a class="nav-link" href="../GUI/Contacto.aspx">Contactanos</a>
 					</li>
 				</ul>
-			</div>
+			</div>--%>
             <%--<div class="">
                 		    <ul class="nav navbar-nav navbar-right">
                  <li><p class="navbar-text">Already have an account?</p></li>

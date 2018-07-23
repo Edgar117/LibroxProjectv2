@@ -11,13 +11,13 @@ namespace Librox2.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (true)
-            {
-                pages.Visible = false;
-                test.Visible = false;
-                navbarSupportedContent.Visible = false;
-                testloco.Visible = true;
-            }
+            //if (true)
+            //{
+            //    pages.Visible = false;
+            //    test.Visible = false;
+            //    navbarSupportedContent.Visible = false;
+            //    testloco.Visible = true;
+            //}
         }
     }
 }

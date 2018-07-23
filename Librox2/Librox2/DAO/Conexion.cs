@@ -13,7 +13,7 @@ namespace Librox2.DAO
 
         public SqlConnection EstablecerConexion()
         {
-            string cs = "Data Source =NGC32; Initial Catalog = Librox; User Id =sa; Password=ngcgab;";
+            string cs = "Data Source=SQL5013.site4now.net;Initial Catalog=DB_A3EBA7_Librox;User Id=DB_A3EBA7_Librox_admin;Password=Edgar117;";
             con = new SqlConnection(cs);
             return con;
         }

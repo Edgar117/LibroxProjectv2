@@ -65,6 +65,7 @@ namespace Librox2
                 ObUsuario.Usuario = txtusuario.Text;
                 ObUsuario.Contraseña = txtpassword.Text;
                 String[] substrings = OB.validarusuario(ObUsuario).Split('|');
+                //Usuario Administrador
                 if (ObUsuario.Contraseña == substrings[0].ToString() && substrings[1].ToString()=="1")
                 {
                     Session["Usuario"] = ObUsuario.Usuario;
@@ -75,8 +76,11 @@ namespace Librox2
                 }
                 else
                 {
+                    //Usuario NOrmal 
                     if (ObUsuario.Contraseña == substrings[0].ToString() && substrings[1].ToString() == "0")
                     {
+                        Session["Usuario"] = ObUsuario.Usuario;
+                        Session["Panel"] = "Logeado";
                         Response.Redirect("/GUI/Index.aspx");
                     }
                    // Response.Write("<script>alert('" + "El Usuario o la Contraseña no existen" + "');</script>");
