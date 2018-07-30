@@ -71,9 +71,11 @@
     <Content Include="css\_all-skins.min.css" />
     <Content Include="GUI\Acerca.aspx" />
     <Content Include="GUI\Callback.aspx" />
+    <Content Include="GUI\Categorias.aspx" />
     <Content Include="GUI\Contacto.aspx" />
     <Content Include="GUI\IndexBack.aspx" />
     <Content Include="GUI\Libros.aspx" />
+    <Content Include="GUI\RegistrarUsuario.aspx" />
     <Content Include="GUI\Servicios.aspx" />
     <Content Include="ImagenDefualt.png" />
     <Content Include="images\ImagenDefualt.png" />
@@ -175,6 +177,13 @@
     <Compile Include="GUI\Callback.aspx.designer.cs">
       <DependentUpon>Callback.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Categorias.aspx.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Categorias.aspx.designer.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,6 +211,13 @@
     </Compile>
     <Compile Include="GUI\Libros.aspx.designer.cs">
       <DependentUpon>Libros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RegistrarUsuario.aspx.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\RegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Servicios.aspx.cs">
       <DependentUpon>Servicios.aspx</DependentUpon>

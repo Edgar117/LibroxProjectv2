@@ -11,8 +11,17 @@ namespace Librox2.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            nom.InnerText = Session["Usuario"].ToString();
-            logo.Src =Session["Imagen"].ToString();
+            try
+            {
+                nom.InnerText = Session["Usuario"].ToString();
+                logo.Src = Session["Imagen"].ToString();
+            }
+            catch (Exception)
+            {
+
+                Response.Redirect("/Login.aspx");
+            }
+            
         }
     }
 }

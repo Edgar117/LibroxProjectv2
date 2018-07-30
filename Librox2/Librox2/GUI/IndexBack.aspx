@@ -34,10 +34,10 @@
               <div class="row">
                           <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-desktop"></i></span>
+            <span class="info-box-icon bg-aqua"><i class="fa fa-book"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Projects</span>
+              <span class="info-box-text">Libros Registrados</span>
               <span id="Project" runat="server" class="info-box-number"><small>4</small></span>
             </div>
             <!-- /.info-box-content -->
@@ -50,7 +50,7 @@
             <span class="info-box-icon bg-red"><i class="fa fa-database"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Free Space</span>
+              <span class="info-box-text">Espacio Dispinible</span>
               <span id="freespace" runat="server" class="info-box-number"></span>
             </div>
             <!-- /.info-box-content -->
@@ -67,7 +67,7 @@
             <span class="info-box-icon bg-green"><i class="fa fa-user-circle"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Total Visits</span>
+              <span class="info-box-text">Usuarios</span>
               <span id="Visit" runat="server" class="info-box-number"></span>
             </div>
             <!-- /.info-box-content -->

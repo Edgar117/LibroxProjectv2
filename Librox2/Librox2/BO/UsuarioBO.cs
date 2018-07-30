@@ -11,5 +11,7 @@ namespace Librox2.BO
         public string Correo { get; set; }
         public string Contraseña { get; set; }
         public string Cumpleaños { get; set; }
+        public string Nombre { get; set; }
+        public int TipoUsuario { get; set; }
     }
 }

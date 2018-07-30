@@ -68,7 +68,7 @@
         <li class="header">Categorias</li>
               <li class="treeview">
           <a href="#">
-            <i class="fa fa-database"></i>
+            <i class="fa fa-bookmark-o"></i>
             <span>Crear Categorias</span>
             <span class="pull-right-container">
               <span class="label label-primary pull-right">3</span>
