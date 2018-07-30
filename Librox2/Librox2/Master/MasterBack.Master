@@ -63,8 +63,21 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">Menú de configuración</li>
-       <li><a href="ConfigureSite.aspx"><i class="fa fa-dashboard"></i> <span>Configurar sitio</span></a></li>
+        <li class="header">Menu Administrativo</li>
+              <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user-circle-o"></i>
+            <span>Modulos Admin</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">3</span>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="Configure_Test.aspx"><i class="fa fa-mail-forward"></i>Mensajes</a></li>
+            <li><a href="Configure_Scripts.aspx"><i class="fa fa-database"></i>Test Scripts</a></li>
+            <li><a href="Configure_Scripts_ftp.aspx"><i class="fa fa-database"></i>Test Scripts with FTP</a></li>
+          </ul>
+        </li>
         <li class="header">Categorias</li>
               <li class="treeview">
           <a href="#">

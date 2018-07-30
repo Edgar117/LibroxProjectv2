@@ -7,12 +7,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       TEST SCRIPTS WITH FTP 
+      Registro de Categorias
         </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">DataBases Test</a></li>
-          <li><a href="#">Test Scripts with FTP</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+        <li><a href="#">Registrar Categorias</a></li>
       </ol>
     </section>
     <!-- Main content -->
@@ -21,7 +20,7 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header">
-              <h3 class="box-title">site to configure the database tests with scripts</h3>
+              <h3 class="box-title">Registro de Categorias para libros</h3>
             </div>
             <div class="box-body">
                 <div class="col-md-4">
