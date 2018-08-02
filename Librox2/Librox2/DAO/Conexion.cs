@@ -41,7 +41,7 @@ namespace Librox2.DAO
             return 1;
 
         }
-        //Metodo Generar para Tablas
+        //Metodo General para Tablas
         public DataTable TablaGeneral(string sql)
         {
             SqlDataAdapter TablaX = new SqlDataAdapter(sql, EstablecerConexion());

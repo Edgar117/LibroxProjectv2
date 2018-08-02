@@ -70,6 +70,7 @@
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
     <Content Include="GUI\Acerca.aspx" />
+    <Content Include="GUI\Bienvenido.aspx" />
     <Content Include="GUI\Callback.aspx" />
     <Content Include="GUI\Categorias.aspx" />
     <Content Include="GUI\Contacto.aspx" />
@@ -159,7 +160,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\CategoriasBO.cs" />
     <Compile Include="BO\UsuarioBO.cs" />
+    <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\Conexion.cs" />
     <Compile Include="DAO\Security.cs" />
     <Compile Include="DAO\Usuarios.cs" />
@@ -169,6 +172,13 @@
     </Compile>
     <Compile Include="GUI\Acerca.aspx.designer.cs">
       <DependentUpon>Acerca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Bienvenido.aspx.cs">
+      <DependentUpon>Bienvenido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Bienvenido.aspx.designer.cs">
+      <DependentUpon>Bienvenido.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Callback.aspx.cs">
       <DependentUpon>Callback.aspx</DependentUpon>

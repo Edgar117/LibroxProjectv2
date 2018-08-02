@@ -66,19 +66,19 @@
 				</ul>
 			</div>
             <%--Nav cuando el usuario se haya logeado--%>
-           <%-- <div class="collapse navbar-collapse justify-content-center" id="testloco" runat="server">
+            <div class="collapse navbar-collapse justify-content-center" id="testloco" runat="server">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="../GUI/Index.aspx">Inicio <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../GUI/Acerca.aspx">Acerca de</a>
+						<a class="nav-link" href="../GUI/Acerca.aspx">Mis Libros</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="../GUI/Servicios.aspx">Servicios</a>
+						<a class="nav-link" href="../GUI/Servicios.aspx"> Subir Libro</a>
 					</li>
                     	<li class="nav-item">
-						<a class="nav-link" id="A1" runat="server" href="../GUI/Servicios.aspx">Test</a>
+						<a class="nav-link" id="A1" runat="server" href="../GUI/Servicios.aspx">Perfil</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="../GUI/Libros.aspx">Libros</a>
@@ -87,7 +87,7 @@
 						<a class="nav-link" href="../GUI/Contacto.aspx">Contactanos</a>
 					</li>
 				</ul>
-			</div>--%>
+			</div>
             <%--<div class="">
                 		    <ul class="nav navbar-nav navbar-right">
                  <li><p class="navbar-text">Already have an account?</p></li>

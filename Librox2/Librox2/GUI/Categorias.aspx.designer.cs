@@ -22,40 +22,13 @@ namespace Librox2.GUI {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// txtSVNRep control.
+        /// txtCategorias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSVNRep;
-        
-        /// <summary>
-        /// txtMatterMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMatterMessage;
-        
-        /// <summary>
-        /// DPGeneraSc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DPGeneraSc;
-        
-        /// <summary>
-        /// txtftp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtftp;
+        protected global::System.Web.UI.WebControls.TextBox txtCategorias;
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -67,21 +40,30 @@ namespace Librox2.GUI {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// ltsMergeSystem control.
+        /// DPGeneraSc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ltsMergeSystem;
+        protected global::System.Web.UI.WebControls.DropDownList DPGeneraSc;
         
         /// <summary>
-        /// ltsMergeData control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ltsMergeData;
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

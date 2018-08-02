@@ -14,6 +14,7 @@ namespace Librox2
 {
     public partial class Login : System.Web.UI.Page
     {
+        Security OBSecurity = new Security();
         UsuarioBO ObUsuario = new UsuarioBO();
         Usuarios OB = new Usuarios();
         protected void Page_Load(object sender, EventArgs e)
@@ -56,6 +57,7 @@ namespace Librox2
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
+            
             if (txtusuario.Text.Length == 0 || txtpassword.Text.Length == 0)
             {
                 Response.Write("<script>alert('" + "El Usuario o la Contraseña no Existen" + "');</script>");
@@ -77,8 +79,8 @@ namespace Librox2
                 }
                 else
                 {
-                    //Usuario NOrmal 
-                    if (ObUsuario.Contraseña == substrings[0].ToString() && substrings[1].ToString() == "0")
+                    //Usuario Normal 
+                    if (ObUsuario.Contraseña ==OBSecurity.desencrypt(substrings[0].ToString()) && substrings[1].ToString() == "0")
                     {
                         Session["Usuario"] = ObUsuario.Usuario;
                         Session["Panel"] = "Logeado";
