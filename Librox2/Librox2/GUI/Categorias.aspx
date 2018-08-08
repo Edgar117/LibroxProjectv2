@@ -59,7 +59,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-mail-forward"></i>
                   </div>               
-                    <asp:Button ID="Button1" CssClass="form-control" OnClick="Button1_Click" runat="server" Text="Registrar" />
+                    <asp:Button ID="btnRegisterCategoria" CssClass="form-control" OnClick="Button1_Click" runat="server" Text="Registrar" />
                 </div>
               </div>
                 </div>
