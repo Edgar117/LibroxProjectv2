@@ -34,9 +34,13 @@ namespace Librox2.GUI
             {
                 CategoriaStatus = 1;
             }
-            else
+            if (DPGeneraSc.Text == "NO")
             {
                 CategoriaStatus = 0;
+            }
+            if (DPGeneraSc.Text == "Proximamente")
+            {
+                CategoriaStatus = 2;
             }
             OBCategorias.Status = CategoriaStatus;
             if (OBCategoriasDao.SaveCategoria(OBCategorias)==1)
@@ -51,18 +55,20 @@ namespace Librox2.GUI
             this.txtCategorias.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text);
             switch (this.GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text)
             {
-                case "SI":
-                    DPGeneraSc.Text = "Prueba";
+                case "Activo":
+                    DPGeneraSc.Text = "SI";
                     break;
-                
+                case "No Activo":
+                    DPGeneraSc.Text = "NO";
+                    break;
+                case "Proximamente":
+                    DPGeneraSc.Text = "Proximamente";
+                    break;
+
                 default:
                     break;
             }
-            this.DPGeneraSc.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text);
-            //this.txtsexo.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[3].Text);
-            //this.txtedad.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[4].Text);
-            //this.lblambulancia.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[9].Text);
-            string test = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text);
+            this.DPGeneraSc.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text);            
         }
     }
 }

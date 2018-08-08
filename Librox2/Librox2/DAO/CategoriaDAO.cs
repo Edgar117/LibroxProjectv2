@@ -31,7 +31,7 @@ namespace Librox2.DAO
         }
         public DataTable ConsultarCategorias()
         {
-            SQL = "SELECT NombreCategoria, 'Status' =CASE WHEN Status  = 1 THEN 'Activo' ELSE 'No Activo' END FROM Categorias";
+            SQL = "SELECT NombreCategoria, 'Status' =CASE WHEN Status  = 1 THEN 'Activo' WHEN Status=2 THEN 'Proximamente' ELSE 'No Activo' END FROM Categorias";
            return con.TablaGeneral(SQL);
         }
     }

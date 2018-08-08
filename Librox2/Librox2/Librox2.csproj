@@ -74,8 +74,11 @@
     <Content Include="GUI\Callback.aspx" />
     <Content Include="GUI\Categorias.aspx" />
     <Content Include="GUI\Contacto.aspx" />
+    <Content Include="GUI\index.html" />
     <Content Include="GUI\IndexBack.aspx" />
+    <Content Include="GUI\IndexMaybe.aspx" />
     <Content Include="GUI\Libros.aspx" />
+    <Content Include="GUI\PerfilBack.aspx" />
     <Content Include="GUI\RegistrarUsuario.aspx" />
     <Content Include="GUI\Servicios.aspx" />
     <Content Include="ImagenDefualt.png" />
@@ -95,9 +98,212 @@
     <Content Include="Login\images\icons\map-marker.png" />
     <Content Include="Login\images\icons\symbol-01.png" />
     <Content Include="Login\js\main.js" />
+    <Content Include="Maybe\assets\css\bootstrap.min.css" />
+    <Content Include="Maybe\assets\css\now-ui-kit.css" />
+    <Content Include="Maybe\assets\css\now-ui-kit.min.css" />
+    <Content Include="Maybe\assets\demo\demo.css" />
+    <Content Include="Maybe\assets\img\apple-icon.png" />
+    <Content Include="Maybe\assets\img\avatar.jpg" />
+    <Content Include="Maybe\assets\img\bg1.jpg" />
+    <Content Include="Maybe\assets\img\bg11.jpg" />
+    <Content Include="Maybe\assets\img\bg3.jpg" />
+    <Content Include="Maybe\assets\img\bg4.jpg" />
+    <Content Include="Maybe\assets\img\bg5.jpg" />
+    <Content Include="Maybe\assets\img\bg6.jpg" />
+    <Content Include="Maybe\assets\img\bg7.jpg" />
+    <Content Include="Maybe\assets\img\bg8.jpg" />
+    <Content Include="Maybe\assets\img\blurred-image-1.jpg" />
+    <Content Include="Maybe\assets\img\creative-tim-white-slim2.png" />
+    <Content Include="Maybe\assets\img\default-avatar.png" />
+    <Content Include="Maybe\assets\img\eva.jpg" />
+    <Content Include="Maybe\assets\img\favicon.png" />
+    <Content Include="Maybe\assets\img\flags\AD.png" />
+    <Content Include="Maybe\assets\img\flags\AE.png" />
+    <Content Include="Maybe\assets\img\flags\AG.png" />
+    <Content Include="Maybe\assets\img\flags\AM.png" />
+    <Content Include="Maybe\assets\img\flags\AR.png" />
+    <Content Include="Maybe\assets\img\flags\AT.png" />
+    <Content Include="Maybe\assets\img\flags\AU.png" />
+    <Content Include="Maybe\assets\img\flags\BE.png" />
+    <Content Include="Maybe\assets\img\flags\BF.png" />
+    <Content Include="Maybe\assets\img\flags\BG.png" />
+    <Content Include="Maybe\assets\img\flags\BO.png" />
+    <Content Include="Maybe\assets\img\flags\BR.png" />
+    <Content Include="Maybe\assets\img\flags\CA.png" />
+    <Content Include="Maybe\assets\img\flags\CD.png" />
+    <Content Include="Maybe\assets\img\flags\CG.png" />
+    <Content Include="Maybe\assets\img\flags\CH.png" />
+    <Content Include="Maybe\assets\img\flags\CL.png" />
+    <Content Include="Maybe\assets\img\flags\CM.png" />
+    <Content Include="Maybe\assets\img\flags\CN.png" />
+    <Content Include="Maybe\assets\img\flags\CO.png" />
+    <Content Include="Maybe\assets\img\flags\CZ.png" />
+    <Content Include="Maybe\assets\img\flags\DE.png" />
+    <Content Include="Maybe\assets\img\flags\DJ.png" />
+    <Content Include="Maybe\assets\img\flags\DK.png" />
+    <Content Include="Maybe\assets\img\flags\DZ.png" />
+    <Content Include="Maybe\assets\img\flags\EE.png" />
+    <Content Include="Maybe\assets\img\flags\EG.png" />
+    <Content Include="Maybe\assets\img\flags\ES.png" />
+    <Content Include="Maybe\assets\img\flags\FI.png" />
+    <Content Include="Maybe\assets\img\flags\FR.png" />
+    <Content Include="Maybe\assets\img\flags\GA.png" />
+    <Content Include="Maybe\assets\img\flags\GB.png" />
+    <Content Include="Maybe\assets\img\flags\GM.png" />
+    <Content Include="Maybe\assets\img\flags\GT.png" />
+    <Content Include="Maybe\assets\img\flags\HN.png" />
+    <Content Include="Maybe\assets\img\flags\HT.png" />
+    <Content Include="Maybe\assets\img\flags\HU.png" />
+    <Content Include="Maybe\assets\img\flags\ID.png" />
+    <Content Include="Maybe\assets\img\flags\IE.png" />
+    <Content Include="Maybe\assets\img\flags\IL.png" />
+    <Content Include="Maybe\assets\img\flags\IN.png" />
+    <Content Include="Maybe\assets\img\flags\IQ.png" />
+    <Content Include="Maybe\assets\img\flags\IR.png" />
+    <Content Include="Maybe\assets\img\flags\IT.png" />
+    <Content Include="Maybe\assets\img\flags\JM.png" />
+    <Content Include="Maybe\assets\img\flags\JO.png" />
+    <Content Include="Maybe\assets\img\flags\JP.png" />
+    <Content Include="Maybe\assets\img\flags\KG.png" />
+    <Content Include="Maybe\assets\img\flags\KN.png" />
+    <Content Include="Maybe\assets\img\flags\KP.png" />
+    <Content Include="Maybe\assets\img\flags\KR.png" />
+    <Content Include="Maybe\assets\img\flags\KW.png" />
+    <Content Include="Maybe\assets\img\flags\KZ.png" />
+    <Content Include="Maybe\assets\img\flags\LA.png" />
+    <Content Include="Maybe\assets\img\flags\LB.png" />
+    <Content Include="Maybe\assets\img\flags\LC.png" />
+    <Content Include="Maybe\assets\img\flags\LS.png" />
+    <Content Include="Maybe\assets\img\flags\LU.png" />
+    <Content Include="Maybe\assets\img\flags\LV.png" />
+    <Content Include="Maybe\assets\img\flags\MG.png" />
+    <Content Include="Maybe\assets\img\flags\MK.png" />
+    <Content Include="Maybe\assets\img\flags\ML.png" />
+    <Content Include="Maybe\assets\img\flags\MM.png" />
+    <Content Include="Maybe\assets\img\flags\MT.png" />
+    <Content Include="Maybe\assets\img\flags\MX.png" />
+    <Content Include="Maybe\assets\img\flags\NA.png" />
+    <Content Include="Maybe\assets\img\flags\NE.png" />
+    <Content Include="Maybe\assets\img\flags\NG.png" />
+    <Content Include="Maybe\assets\img\flags\NI.png" />
+    <Content Include="Maybe\assets\img\flags\NL.png" />
+    <Content Include="Maybe\assets\img\flags\NO.png" />
+    <Content Include="Maybe\assets\img\flags\OM.png" />
+    <Content Include="Maybe\assets\img\flags\PA.png" />
+    <Content Include="Maybe\assets\img\flags\PE.png" />
+    <Content Include="Maybe\assets\img\flags\PG.png" />
+    <Content Include="Maybe\assets\img\flags\PK.png" />
+    <Content Include="Maybe\assets\img\flags\PL.png" />
+    <Content Include="Maybe\assets\img\flags\PT.png" />
+    <Content Include="Maybe\assets\img\flags\PY.png" />
+    <Content Include="Maybe\assets\img\flags\QA.png" />
+    <Content Include="Maybe\assets\img\flags\RO.png" />
+    <Content Include="Maybe\assets\img\flags\RU.png" />
+    <Content Include="Maybe\assets\img\flags\RW.png" />
+    <Content Include="Maybe\assets\img\flags\SA.png" />
+    <Content Include="Maybe\assets\img\flags\SE.png" />
+    <Content Include="Maybe\assets\img\flags\SG.png" />
+    <Content Include="Maybe\assets\img\flags\SL.png" />
+    <Content Include="Maybe\assets\img\flags\SN.png" />
+    <Content Include="Maybe\assets\img\flags\SO.png" />
+    <Content Include="Maybe\assets\img\flags\SV.png" />
+    <Content Include="Maybe\assets\img\flags\TD.png" />
+    <Content Include="Maybe\assets\img\flags\TJ.png" />
+    <Content Include="Maybe\assets\img\flags\TL.png" />
+    <Content Include="Maybe\assets\img\flags\TR.png" />
+    <Content Include="Maybe\assets\img\flags\TZ.png" />
+    <Content Include="Maybe\assets\img\flags\UA.png" />
+    <Content Include="Maybe\assets\img\flags\US.png" />
+    <Content Include="Maybe\assets\img\flags\VE.png" />
+    <Content Include="Maybe\assets\img\flags\VN.png" />
+    <Content Include="Maybe\assets\img\flags\YE.png" />
+    <Content Include="Maybe\assets\img\header.jpg" />
+    <Content Include="Maybe\assets\img\hero-image-1.png" />
+    <Content Include="Maybe\assets\img\hero-image-2.png" />
+    <Content Include="Maybe\assets\img\hero-image-3.png" />
+    <Content Include="Maybe\assets\img\invision-white-slim.png" />
+    <Content Include="Maybe\assets\img\julie.jpg" />
+    <Content Include="Maybe\assets\img\landing.jpg" />
+    <Content Include="Maybe\assets\img\login.jpg" />
+    <Content Include="Maybe\assets\img\logo-square.jpg" />
+    <Content Include="Maybe\assets\img\logo.png" />
+    <Content Include="Maybe\assets\img\now-logo.png" />
+    <Content Include="Maybe\assets\img\nucleo-logo.svg" />
+    <Content Include="Maybe\assets\img\profile.jpg" />
+    <Content Include="Maybe\assets\img\ryan.jpg" />
+    <Content Include="Maybe\assets\js\core\bootstrap.min.js" />
+    <Content Include="Maybe\assets\js\core\jquery.min.js" />
+    <Content Include="Maybe\assets\js\core\popper.min.js" />
+    <Content Include="Maybe\assets\js\now-ui-kit.js" />
+    <Content Include="Maybe\assets\js\now-ui-kit.min.js" />
+    <Content Include="Maybe\assets\js\plugins\bootstrap-datepicker.js" />
+    <Content Include="Maybe\assets\js\plugins\bootstrap-switch.js" />
+    <Content Include="Maybe\assets\js\plugins\nouislider.min.js" />
+    <Content Include="Maybe\docs\documentation.html" />
+    <Content Include="Maybe\examples\landing-page.html" />
+    <Content Include="Maybe\examples\login-page.html" />
+    <Content Include="Maybe\examples\profile-page.html" />
+    <Content Include="Maybe\gulpfile.js" />
+    <Content Include="Maybe\index.html" />
+    <Content Include="Maybe\nucleo-icons.html" />
     <Content Include="packages.config" />
     <Content Include="Master\Master.Master" />
     <Content Include="Master\MasterBack.Master" />
+    <Content Include="Master\MasterPro.Master" />
+    <Content Include="Maybe\assets\css\bootstrap.min.css.map" />
+    <Content Include="Maybe\assets\css\now-ui-kit.css.map" />
+    <Content Include="Maybe\assets\fonts\nucleo-license.md" />
+    <Content Include="Maybe\assets\fonts\nucleo-outline.eot" />
+    <Content Include="Maybe\assets\fonts\nucleo-outline.ttf" />
+    <Content Include="Maybe\assets\fonts\nucleo-outline.woff" />
+    <Content Include="Maybe\assets\fonts\nucleo-outline.woff2" />
+    <Content Include="Maybe\assets\js\now-ui-kit.js.map" />
+    <Content Include="Maybe\assets\scss\now-ui-kit.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\cards\_card-plain.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\cards\_card-signup.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_badges.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_buttons.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_cards.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_datepicker.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_dropdown.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_inputs.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_modals.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_navbar.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_pages.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_popovers.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_transparency.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\mixins\_vendor-prefixes.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\plugins\_plugin-bootstrap-switch.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\plugins\_plugin-datepicker.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\plugins\_plugin-nouislider.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_alerts.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_badges.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_buttons.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_cards.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_carousel.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_checkboxes-radio.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_dropdown.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_example-pages.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_footers.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_images.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_inputs.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_misc.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_mixins.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_modals.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_navbar.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_nucleo-outline.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_pagination.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_pills.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_popups.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_progress.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_responsive.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_sections.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_tabs.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_typography.scss" />
+    <Content Include="Maybe\assets\scss\now-ui-kit\_variables.scss" />
+    <Content Include="Maybe\CHANGELOG.md" />
+    <Content Include="Maybe\package.json" />
+    <Content Include="Maybe\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -215,12 +421,26 @@
     <Compile Include="GUI\IndexBack.aspx.designer.cs">
       <DependentUpon>IndexBack.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\IndexMaybe.aspx.cs">
+      <DependentUpon>IndexMaybe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\IndexMaybe.aspx.designer.cs">
+      <DependentUpon>IndexMaybe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Libros.aspx.cs">
       <DependentUpon>Libros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Libros.aspx.designer.cs">
       <DependentUpon>Libros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PerfilBack.aspx.cs">
+      <DependentUpon>PerfilBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\PerfilBack.aspx.designer.cs">
+      <DependentUpon>PerfilBack.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
@@ -256,6 +476,13 @@
     </Compile>
     <Compile Include="Master\MasterBack.Master.designer.cs">
       <DependentUpon>MasterBack.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MasterPro.Master.cs">
+      <DependentUpon>MasterPro.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\MasterPro.Master.designer.cs">
+      <DependentUpon>MasterPro.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAO\Propety.cs" />

@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPro.master.cs" Inherits="Librox2.Master.MasterPro" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>
+        Librox
+    </title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- CSS Files -->
+    <link href="../Maybe/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Maybe/assets/css/now-ui-kit.css" rel="stylesheet" />
+    <link href="../Maybe/assets/demo/demo.css" rel="stylesheet" />
+</head>
+<body class="index-page sidebar-collapse">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+          Librox
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar top-bar"></span>
+          <span class="navbar-toggler-bar middle-bar"></span>
+          <span class="navbar-toggler-bar bottom-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../GUI/Index.aspx">
+              <i class="now-ui-icons gestures_tap-01"></i>
+              <p>Inicio</p>
+            </a>
+          </li>
+              <%--test de menu nuevo--%>
+            <li class="nav-item">
+               <a class="nav-link" href="../GUI/Index.aspx">
+              <i class="now-ui-icons business_bulb-63"></i>
+              <p>Acerca de </p>
+            </a>
+                </li>
+            <%--Libros--%>
+              <li class="nav-item">
+               <a class="nav-link" href="../GUI/Index.aspx">
+              <i class="now-ui-icons education_agenda-bookmark"></i>
+              <p>Libros </p>
+            </a>
+                </li>
+            <%--contactanos--%>
+              <li class="nav-item">
+               <a class="nav-link" href="../GUI/Index.aspx">
+              <i class="now-ui-icons ui-1_email-85"></i>
+              <p>Contactanos</p>
+            </a>
+                </li>
+              <%--test de menu nuevo--%>
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="Regalanos un Like" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+              <i class="fab fa-facebook-square"></i>
+              <p class="d-lg-none d-xl-none">Facebook</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      <!--   Core JS Files   -->
+    <script src="../Maybe/assets/js/core/jquery.min.js"></script>
+    <script src="../Maybe/assets/js/core/popper.min.js"></script>
+    <script src="../Maybe/assets/js/core/bootstrap.min.js"></script>
+  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="../Maybe/assets/js/plugins/bootstrap-switch.js"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../Maybe/assets/js/plugins/nouislider.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+    <script src="../Maybe/assets/js/now-ui-kit.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // the body of this function is in assets/js/now-ui-kit.js
+      nowuiKit.initSliders();
+    });
+
+    function scrollToDownload() {
+
+      if ($('.section-download').length != 0) {
+        $("html, body").animate({
+          scrollTop: $('.section-download').offset().top
+        }, 1000);
+      }
+    }
+  </script>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
