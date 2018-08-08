@@ -14,6 +14,8 @@
         <li><a href="#">Registrar Categorias</a></li>
       </ol>
     </section>
+          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
     <!-- Main content -->
     <section class="content">
        <div class="row">
@@ -33,8 +35,7 @@
                    <asp:TextBox ID="txtCategorias" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
               </div>
-                </div><asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
+                </div>
           <div class="col-md-4">
                  <div class="form-group">
                 <label>Categoria Visible:</label>
@@ -68,7 +69,7 @@
             
 
                       <div class="col-md-12">
-                          <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server"></asp:GridView>   
+                          <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"></asp:GridView>   
                       </div>
                  </ContentTemplate>
     </asp:UpdatePanel>

@@ -119,12 +119,12 @@
           <script src="scripts/select2.full.min.js"></script>
   </aside>
      <%--SWEET ALERT--%>
-    <%--SWEET ALERT TEST SUCCESS--%>
+    <%--SWEET ALERT  SUCCESS--%>
      <script type="text/javascript">
         function successalert() {
             swal({
-                title: "Test Scripts",
-                text: "Test completed successfully!",
+                title: "Registro Completo",
+                text: "Se registro el cambio correctamente!",
                 icon: "success",
             });
         }

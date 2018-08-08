@@ -14,11 +14,11 @@ namespace Librox2.DAO
         Conexion con = new Conexion();
         SqlCommand cmdauera = new SqlCommand();
         string SQL = "";
-        public int SaveUserRegister(object obj)
+        public int SaveCategoria(object obj)
         {
             CategoriasBO nom = (CategoriasBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "INSERT INTO Categorias (NombreCategoria,status) VALUES( '" + nom.NombreCategoria + "',nom.Status)";
+            string sql = "INSERT INTO Categorias (NombreCategoria,status) VALUES( '" + nom.NombreCategoria + "','"+nom.Status+"')";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
@@ -31,7 +31,7 @@ namespace Librox2.DAO
         }
         public DataTable ConsultarCategorias()
         {
-            SQL = "SELECT * FROM Categorias";
+            SQL = "SELECT NombreCategoria, 'Status' =CASE WHEN Status  = 1 THEN 'Activo' ELSE 'No Activo' END FROM Categorias";
            return con.TablaGeneral(SQL);
         }
     }
