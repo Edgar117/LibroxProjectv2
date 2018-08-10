@@ -55,10 +55,10 @@
                 </div>
                       <div class="col-md-4">
                  <div class="form-group">
-                <label>Mattermost Message:</label>
+                <label>Guardar:</label>
                 <div class="input-group">
                   <div class="input-group-addon">
-                    <i class="fa fa-mail-forward"></i>
+                    <i class="fa  fa-save"></i>
                   </div>               
                     <asp:Button ID="btnRegisterCategoria" CssClass="form-control" OnClick="Button1_Click" runat="server" Text="Registrar" />
                 </div>
@@ -69,14 +69,22 @@
             
 
                       <div class="col-md-12">
-                          <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"></asp:GridView>   
+                          <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GridView1_RowCommand">
+                               <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                               <Columns>
+                                    <asp:ButtonField CommandName="btnseleccionar" ControlStyle-CssClass="btn btn-success"  Text="Seleccionar"/>
+                                    <asp:ButtonField CommandName="btneliminar" ControlStyle-CssClass="btn btn-danger"  Text="Eliminar"/>
+                                    <asp:ButtonField CommandName="btnactualizar" ControlStyle-CssClass="btn btn-info"  Text="Actualizar"/>                                  
+                       </Columns>
+                          </asp:GridView>   
                       </div>
-                 </ContentTemplate>
-    </asp:UpdatePanel>
               </div>
-            
                 </div>
             </div>
         </section>
           </div>
+            </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

@@ -52,23 +52,60 @@ namespace Librox2.GUI
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.txtCategorias.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[1].Text);
-            switch (this.GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text)
-            {
-                case "Activo":
-                    DPGeneraSc.Text = "SI";
+                      
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string Accion = Convert.ToString(e.CommandName);
+            switch (Accion)
+            {  
+                case "btneliminar":
+                    //int index = Convert.ToInt32(e.CommandArgument);
+                    //GridViewRow row = GridView1.Rows[index];
+                    //lblid.Text = Server.HtmlDecode(row.Cells[1].Text);
+                    //if (lblid.Text == "")
+                    //{
+
+                    //}
+                    //else
+                    //{
+                    //    datos.Clave = int.Parse(lblid.Text);
+                    //    if (ctr.BajaAsignatura(datos) == 1)
+                    //    {
+                    //        string script = "<script language=\"javascript\">DatosCom2();</script>";
+                    //        ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "DatosCom2", script, false);
+                    //        mostrar();
+                    //    }
+                    //}
                     break;
-                case "No Activo":
-                    DPGeneraSc.Text = "NO";
+                case "btnactualizar":
                     break;
-                case "Proximamente":
-                    DPGeneraSc.Text = "Proximamente";
+                case "btnseleccionar":
+                    int index = Convert.ToInt32(e.CommandArgument);
+                    GridViewRow row = GridView1.Rows[index];
+                      txtCategorias.Text = Server.HtmlDecode(row.Cells[3].Text);
+                    switch (Server.HtmlDecode(row.Cells[4].Text))
+                    {
+                        case "Activo":
+                            DPGeneraSc.Text = "SI";
+                            break;
+                        case "No Activo":
+                            DPGeneraSc.Text = "NO";
+                            break;
+                        case "Proximamente":
+                            DPGeneraSc.Text = "Proximamente";
+                            break;
+
+                        default:
+                            break;
+                    }
+                    //this.DPGeneraSc.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[4].Text);
                     break;
 
                 default:
                     break;
             }
-            this.DPGeneraSc.Text = Convert.ToString(this.GridView1.Rows[GridView1.SelectedIndex].Cells[2].Text);            
         }
     }
 }
