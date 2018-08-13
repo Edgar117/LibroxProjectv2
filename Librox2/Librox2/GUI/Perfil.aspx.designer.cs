@@ -7,63 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Librox2.Master {
+namespace Librox2.GUI {
     
     
-    public partial class MasterPro {
+    public partial class Perfil {
         
         /// <summary>
-        /// head control.
+        /// Fondo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Fondo;
         
         /// <summary>
-        /// CSSBody control.
+        /// ImagenUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CSSBody;
+        protected global::System.Web.UI.HtmlControls.HtmlImage ImagenUsuario;
         
         /// <summary>
-        /// PanelNormal control.
+        /// NameUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PanelNormal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NameUser;
         
         /// <summary>
-        /// panelLogeado control.
+        /// Categoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panelLogeado;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Categoria;
         
         /// <summary>
-        /// form1 control.
+        /// Libros control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Libros;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// about control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl about;
     }
 }

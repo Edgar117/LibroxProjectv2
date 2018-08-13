@@ -78,11 +78,13 @@
     <Content Include="GUI\IndexBack.aspx" />
     <Content Include="GUI\IndexMaybe.aspx" />
     <Content Include="GUI\Libros.aspx" />
+    <Content Include="GUI\Perfil.aspx" />
     <Content Include="GUI\PerfilBack.aspx" />
     <Content Include="GUI\RegistrarUsuario.aspx" />
     <Content Include="GUI\Servicios.aspx" />
     <Content Include="ImagenDefualt.png" />
     <Content Include="images\ImagenDefualt.png" />
+    <Content Include="images\Users\DaniFoto.jpg" />
     <Content Include="js\adminlte.min.js" />
     <Content Include="js\bootstrap.min.css" />
     <Content Include="Login.aspx" />
@@ -434,6 +436,13 @@
     </Compile>
     <Compile Include="GUI\Libros.aspx.designer.cs">
       <DependentUpon>Libros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\PerfilBack.aspx.cs">
       <DependentUpon>PerfilBack.aspx</DependentUpon>

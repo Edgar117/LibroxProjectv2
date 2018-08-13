@@ -48,14 +48,14 @@ namespace Librox2.DAO
 
             string contra = "";
             
-            SQL = "Select Contraseña,Tipousuario,ImagenUsuario from Usuarios where Usuario = '" + ObjUsuario.Usuario + "'";
+            SQL = "Select Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria from Usuarios  where Usuario = '" + ObjUsuario.Usuario + "'";
             SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
             con.AbrirConexion();
             cmd.Parameters.AddWithValue("@Usuario", contra);
             SqlDataReader leer = cmd.ExecuteReader();
             if (leer.Read())
             {
-                contra = leer["Contraseña"].ToString()+"|"+leer["Tipousuario"].ToString()+"|" + leer["ImagenUsuario"].ToString();
+                contra = leer["Contraseña"].ToString()+"|"+leer["Tipousuario"].ToString()+"|" + leer["ImagenUsuario"].ToString()+"|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString();
             }
             con.CerrarConexion();
             return contra;

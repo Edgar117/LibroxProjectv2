@@ -19,6 +19,7 @@ namespace Librox2
         Usuarios OB = new Usuarios();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Panel"] = "";
             if (string.IsNullOrEmpty(Request.QueryString["access_token"])) return; //ERROR! No token returned from Facebook!!
 
             //let's send an http-request to facebook using the token            
@@ -84,7 +85,9 @@ namespace Librox2
                     {
                         Session["Usuario"] = ObUsuario.Usuario;
                         Session["Panel"] = "Logeado";
-                        Response.Redirect("/GUI/Index.aspx");
+                        Session["ALL"] = substrings;
+                        Response.Redirect("/GUI/IndexMaybe.aspx");
+                        
                     }
                    // Response.Write("<script>alert('" + "El Usuario o la Contraseña no existen" + "');</script>");
                 }
