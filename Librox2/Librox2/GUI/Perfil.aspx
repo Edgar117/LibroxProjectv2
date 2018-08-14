@@ -2,6 +2,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script type="text/javascript">  
+
+            function showimagepreview(input) {
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+
+                        $('#imagend2').attr('src', e.target.result);
+                        document.getElementsById("imagend2")[0].setAttribute("src", e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+                </script> 
   <!-- End Navbar -->
   <div class="wrapper">
     <div class="page-header clear-filter" filter-color="orange">
@@ -85,25 +103,28 @@
               <div class="col-md-10 ml-auto mr-auto">
                 <div class="row collections">
                   <div class="col-md-6">
-                    <img src="../assets/img/bg6.jpg" class="img-raised">
-                    <img src="../assets/img/bg11.jpg" alt="" class="img-raised">
+                      <asp:Label ID="lblcambiarfoto" runat="server" Text="Cambiar Foto (Actual)"></asp:Label>
+                    <img runat="server" id="Imagen" width="400" height="400" src="" alt="" class="img-raised">
+                    <asp:FileUpload ID="FileUpload1"  runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)"/>
                   </div>
                   <div class="col-md-6">
-                     
+                     <asp:Label ID="Label1" runat="server" Text="Cambiar Foto (Nueva)"></asp:Label><br />
+                     <img id="imagend2" class="img-raised" alt="" width="400" height="400" src="" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="tab-pane" id="messages" role="tabpanel">
               <div class="col-md-10 ml-auto mr-auto">
+                   <img src="../Maybe/assets/img/bg7.jpg" width="1000" height="250" alt="" class="img-raised">
                 <div class="row collections">
                   <div class="col-md-6">
-                    <img src="../assets/img/bg3.jpg" alt="" class="img-raised">
-                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                  
+                       <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
                   </div>
                   <div class="col-md-6">
-                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
-                    <img src="../assets/img/bg6.jpg" class="img-raised">
+                   
+                      <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
                   </div>
                 </div>
               </div>
