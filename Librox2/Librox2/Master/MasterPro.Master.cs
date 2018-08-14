@@ -11,16 +11,26 @@ namespace Librox2.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Panel"].ToString() == "Logeado")
+            try
             {
-                panelLogeado.Visible = true;
-                PanelNormal.Visible = false;
+                if (Session["Panel"].ToString() == "Logeado")
+                {
+                    panelLogeado.Visible = true;
+                    PanelNormal.Visible = false;
+                }
+                else
+                {
+                    panelLogeado.Visible = false;
+                    PanelNormal.Visible = true;
+                }
             }
-            else
+            catch (Exception)
             {
+
                 panelLogeado.Visible = false;
                 PanelNormal.Visible = true;
             }
+           
             //Aqui hay que agrgar la logica para que cuando se entre a la pagina de perfil se ponga la correcta
             String activepage = Request.RawUrl;
             switch (activepage)

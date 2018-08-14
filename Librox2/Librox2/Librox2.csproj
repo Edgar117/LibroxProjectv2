@@ -81,10 +81,12 @@
     <Content Include="GUI\Perfil.aspx" />
     <Content Include="GUI\PerfilBack.aspx" />
     <Content Include="GUI\RegistrarUsuario.aspx" />
+    <Content Include="GUI\RegistroUsuario.aspx" />
     <Content Include="GUI\Servicios.aspx" />
     <Content Include="ImagenDefualt.png" />
     <Content Include="images\ImagenDefualt.png" />
     <Content Include="images\Users\DaniFoto.jpg" />
+    <Content Include="images\Users\ImagenDefualt.png" />
     <Content Include="js\adminlte.min.js" />
     <Content Include="js\bootstrap.min.css" />
     <Content Include="Login.aspx" />
@@ -457,6 +459,13 @@
     </Compile>
     <Compile Include="GUI\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RegistroUsuario.aspx.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\RegistroUsuario.aspx.designer.cs">
+      <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Servicios.aspx.cs">
       <DependentUpon>Servicios.aspx</DependentUpon>

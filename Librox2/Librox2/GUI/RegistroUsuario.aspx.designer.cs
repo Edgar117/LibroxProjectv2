@@ -7,63 +7,63 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Librox2.Master {
+namespace Librox2.GUI {
     
     
-    public partial class MasterPro {
+    public partial class RegistroUsuario {
         
         /// <summary>
-        /// Control head.
+        /// Control txtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNombre;
         
         /// <summary>
-        /// Control CSSBody.
+        /// Control txtusuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CSSBody;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtusuario;
         
         /// <summary>
-        /// Control PanelNormal.
+        /// Control txtemail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PanelNormal;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtemail;
         
         /// <summary>
-        /// Control panelLogeado.
+        /// Control txtcontraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panelLogeado;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtcontraseña;
         
         /// <summary>
-        /// Control form1.
+        /// Control txtdescription.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtdescription;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control btnRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btnRegistro;
     }
 }

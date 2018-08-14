@@ -8,7 +8,8 @@ using Librox2.DAO;
 using Librox2.BO;
 namespace Librox2.GUI
 {
-    public partial class RegistrarUsuario : System.Web.UI.Page
+ 
+    public partial class RegistroUsuario : System.Web.UI.Page
     {
         UsuarioBO ObUsuario = new UsuarioBO();
         Security OBSecurity = new Security();
@@ -20,20 +21,30 @@ namespace Librox2.GUI
         private void GetData()
         {
             string contraseña = "";
-            contraseña = OBSecurity.encrypt(txtContraseña.Value);
+            contraseña = OBSecurity.encrypt(txtcontraseña.Value);
             ObUsuario.Contraseña = contraseña;
-            ObUsuario.Cumpleaños = txtcumpleaños.Value;
+            ObUsuario.Cumpleaños = "";
             ObUsuario.Correo = txtemail.Value;
-            ObUsuario.Nombre = txtnombre.Value;
+            ObUsuario.Nombre = txtNombre.Value;
             ObUsuario.Usuario = txtusuario.Value;
             int TU = 0;
-            TU= ObUsuario.TipoUsuario;
+            TU = ObUsuario.TipoUsuario;
+            ObUsuario.DescriptionUser = txtdescription.Value;
 
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
+        protected void btnRegistro_Click(object sender, EventArgs e)
         {
-           
+            GetData();
+            if (Register.SaveUserRegister(ObUsuario) == 1)
+            {
+                Response.Redirect("../Login.aspx");
+            }
+            else
+            {
+                //Algo salio mal :(
+            }
+
         }
     }
 }

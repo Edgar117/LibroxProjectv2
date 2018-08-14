@@ -13,5 +13,7 @@ namespace Librox2.BO
         public string Cumpleaños { get; set; }
         public string Nombre { get; set; }
         public int TipoUsuario { get; set; }
+        public string DescriptionUser { get; set; }
+        public string Categoria { get; set; }
     }
 }

@@ -32,7 +32,7 @@ namespace Librox2.DAO
         {
             UsuarioBO nom = (UsuarioBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "INSERT INTO USUARIOS (Nombre,Usuario,Correo,Cumpleaños,Contraseña,TipoUsuario) VALUES( '"+nom.Nombre+ "','" + nom.Usuario + "','" + nom.Correo + "','" + nom.Cumpleaños + "','"+nom.Contraseña+"','" + nom.TipoUsuario + "')";
+            string sql = "INSERT INTO USUARIOS (Nombre,Usuario,Correo,Cumpleaños,Contraseña,TipoUsuario,DescriptionUser) VALUES( '" + nom.Nombre+ "','" + nom.Usuario + "','" + nom.Correo + "','" + nom.Cumpleaños + "','"+nom.Contraseña+"','" + nom.TipoUsuario + "','" + nom.DescriptionUser + "')";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

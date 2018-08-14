@@ -16,11 +16,11 @@
         <div class="content">
           <div class="social-description">
             <h2>26</h2>
-            <p>Comments</p>
+            <p>Comenarios</p>
           </div>
           <div class="social-description">
             <h2>26</h2>
-            <p>Comments</p>
+            <p>Reseñas</p>
           </div>
           <div class="social-description">
             <h2 id="Libros" runat="server">...</h2>
@@ -32,7 +32,7 @@
     <div class="section">
       <div class="container">
         <div class="button-container">
-          <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+          <a href="#button" class="btn btn-primary btn-round btn-lg">Sigueme</a>
           <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
             <i class="fab fa-twitter"></i>
           </a>
@@ -44,7 +44,7 @@
         <h5 id="about" runat="server" class="description"></h5>
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
-            <h4 class="title text-center">My Portfolio</h4>
+            <h4 class="title text-center">Mis Libros</h4>
             <div class="nav-align-center">
               <ul class="nav nav-pills nav-pills-primary nav-pills-just-icons" role="tablist">
                 <li class="nav-item">
@@ -71,12 +71,12 @@
               <div class="col-md-10 ml-auto mr-auto">
                 <div class="row collections">
                   <div class="col-md-6">
-                    <img src="../assets/img/bg1.jpg" alt="" class="img-raised">
-                    <img src="../assets/img/bg3.jpg" alt="" class="img-raised">
+                    <img src="../Maybe/assets/img/bg1.jpg" alt="" class="img-raised">
+                    <img src="../Maybe/assets/img/bg3.jpg" alt="" class="img-raised">
                   </div>
                   <div class="col-md-6">
-                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
-                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                    <img src="../Maybe/assets/img/bg8.jpg" alt="" class="img-raised">
+                    <img src="../Maybe/assets/img/bg7.jpg" alt="" class="img-raised">
                   </div>
                 </div>
               </div>
@@ -89,8 +89,7 @@
                     <img src="../assets/img/bg11.jpg" alt="" class="img-raised">
                   </div>
                   <div class="col-md-6">
-                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
-                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                     
                   </div>
                 </div>
               </div>
