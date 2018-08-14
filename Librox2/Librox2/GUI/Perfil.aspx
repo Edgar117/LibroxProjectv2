@@ -116,15 +116,29 @@
             </div>
             <div class="tab-pane" id="messages" role="tabpanel">
               <div class="col-md-10 ml-auto mr-auto">
+                  <asp:Label ID="Label2" runat="server" Text="Actualiza tus Datos"></asp:Label>
                    <img src="../Maybe/assets/img/bg7.jpg" width="1000" height="250" alt="" class="img-raised">
                 <div class="row collections">
                   <div class="col-md-6">
                   
-                       <asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
+                      <br />
+                      <br />
+                      <asp:Label ID="Label3" runat="server" Text="Escoje Un Rol"></asp:Label>
+                      <asp:DropDownList ID="dpCategoria" CssClass="form-control" runat="server">
+                          <asp:ListItem>Escritor</asp:ListItem>
+                          <asp:ListItem>Lector</asp:ListItem>
+                          <asp:ListItem>Lector/Escritor</asp:ListItem>
+                      </asp:DropDownList>
                   </div>
                   <div class="col-md-6">
-                   
-                      <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+                     <br />
+                      <br />
+                       <textarea id="txtdescription" runat="server" class="form-control" name="name" rows="4" cols="80" ></textarea>
+                  </div>
+                      <div class="col-md-6">
+                     <br />
+                      <br />
+                           <asp:Button  class="btn btn-primary btn-round btn-block btn-lg" ID="btnRegistro" OnClick="btnRegistro_Click" runat="server" Text="Guardar Cambios" />
                   </div>
                 </div>
               </div>

@@ -43,19 +43,34 @@ namespace Librox2.DAO
             }
             return 1;
         }
+        public int UpdateUser(object obj)
+        {
+            UsuarioBO nom = (UsuarioBO)obj;
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "UPDATE USUARIOS SET DescriptionUser ='"+nom.DescriptionUser+ "', Categoria='"+nom.Categoria+"',ImagenUsuario='"+nom.Imagen+"' WHERE ID="+nom.ID+" ";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
         public string validarusuario(UsuarioBO ObjUsuario)
         {
 
             string contra = "";
             
-            SQL = "Select Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria from Usuarios  where Usuario = '" + ObjUsuario.Usuario + "'";
+            SQL = "Select Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID from Usuarios  where Usuario = '" + ObjUsuario.Usuario + "'";
             SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
             con.AbrirConexion();
             cmd.Parameters.AddWithValue("@Usuario", contra);
             SqlDataReader leer = cmd.ExecuteReader();
             if (leer.Read())
             {
-                contra = leer["Contraseña"].ToString()+"|"+leer["Tipousuario"].ToString()+"|" + leer["ImagenUsuario"].ToString()+"|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString();
+                contra = leer["Contraseña"].ToString()+"|"+leer["Tipousuario"].ToString()+"|" + leer["ImagenUsuario"].ToString()+"|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString()+ "|" + leer["ID"].ToString();
             }
             con.CerrarConexion();
             return contra;

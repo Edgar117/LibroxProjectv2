@@ -15,5 +15,7 @@ namespace Librox2.BO
         public int TipoUsuario { get; set; }
         public string DescriptionUser { get; set; }
         public string Categoria { get; set; }
+        public string Imagen { get; set; }
+        public int ID { get; set; }
     }
 }
