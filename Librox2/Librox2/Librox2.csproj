@@ -70,6 +70,7 @@
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
     <Content Include="GUI\Acerca.aspx" />
+    <Content Include="GUI\AcercaDe.aspx" />
     <Content Include="GUI\Bienvenido.aspx" />
     <Content Include="GUI\Callback.aspx" />
     <Content Include="GUI\Categorias.aspx" />
@@ -382,6 +383,13 @@
     </Compile>
     <Compile Include="GUI\Acerca.aspx.designer.cs">
       <DependentUpon>Acerca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AcercaDe.aspx.cs">
+      <DependentUpon>AcercaDe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\AcercaDe.aspx.designer.cs">
+      <DependentUpon>AcercaDe.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Bienvenido.aspx.cs">
       <DependentUpon>Bienvenido.aspx</DependentUpon>

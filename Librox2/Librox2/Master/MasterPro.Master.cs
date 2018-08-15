@@ -40,6 +40,9 @@ namespace Librox2.Master
                     //ULTest.Attributes.Add("class", "sidebar-menu .active > .treeview-menu");
                     //EMPTY.Attributes.Add("class", "active");
                     break;
+                case "/GUI/AcercaDe.aspx":
+                    CSSBody.Attributes.Add("class","landing-page sidebar-collapse");
+                    break;
                 //case "/DBTestSite/Configure_Scripts.aspx":
                 //    test.Attributes.Add("class", "treeview active menu-open");
                 //    Script.Attributes.Add("class", "active");
