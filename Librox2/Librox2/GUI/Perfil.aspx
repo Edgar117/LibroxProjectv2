@@ -34,7 +34,7 @@
         <div class="content">
           <div class="social-description">
             <h2>26</h2>
-            <p>Comenarios</p>
+            <p>Le siguen</p>
           </div>
           <div class="social-description">
             <h2>26</h2>
@@ -104,12 +104,12 @@
                 <div class="row collections">
                   <div class="col-md-6">
                       <asp:Label ID="lblcambiarfoto" runat="server" Text="Cambiar Foto (Actual)"></asp:Label>
-                    <img runat="server" id="Imagen" width="400" height="400" src="" alt="" class="img-raised">
+                    <img runat="server" id="Imagen" width="250" height="250" src="" alt="" class="img-raised">
                     <asp:FileUpload ID="FileUpload1"  runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)"/>
                   </div>
                   <div class="col-md-6">
                      <asp:Label ID="Label1" runat="server" Text="Cambiar Foto (Nueva)"></asp:Label><br />
-                     <img id="imagend2" class="img-raised" alt="" width="400" height="400" src="" />
+                     <img id="imagend2" class="img-raised" alt="" width="250" height="250" src="" />
                   </div>
                 </div>
               </div>
