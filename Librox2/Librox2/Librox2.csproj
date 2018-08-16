@@ -74,6 +74,7 @@
     <Content Include="GUI\Bienvenido.aspx" />
     <Content Include="GUI\Callback.aspx" />
     <Content Include="GUI\Categorias.aspx" />
+    <Content Include="GUI\Contactanos.aspx" />
     <Content Include="GUI\Contacto.aspx" />
     <Content Include="GUI\index.html" />
     <Content Include="GUI\IndexBack.aspx" />
@@ -118,6 +119,7 @@
     <Content Include="Maybe\assets\img\bg7.jpg" />
     <Content Include="Maybe\assets\img\bg8.jpg" />
     <Content Include="Maybe\assets\img\blurred-image-1.jpg" />
+    <Content Include="Maybe\assets\img\contacto.jpg" />
     <Content Include="Maybe\assets\img\creative-tim-white-slim2.png" />
     <Content Include="Maybe\assets\img\default-avatar.png" />
     <Content Include="Maybe\assets\img\eva.jpg" />
@@ -411,6 +413,13 @@
     </Compile>
     <Compile Include="GUI\Categorias.aspx.designer.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Contactanos.aspx.cs">
+      <DependentUpon>Contactanos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Contactanos.aspx.designer.cs">
+      <DependentUpon>Contactanos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>

@@ -56,16 +56,23 @@
                 </li>
             <%--contactanos--%>
               <li class="nav-item">
-               <a class="nav-link" href="../GUI/Index.aspx">
+               <a class="nav-link" href="../GUI/Contactanos.aspx">
               <i class="now-ui-icons ui-1_email-85"></i>
               <p>Contactanos</p>
             </a>
                 </li>
-                <%--contactanos--%>
+                <%--Registrar--%>
               <li class="nav-item">
                <a class="nav-link" href="../GUI/RegistroUsuario.aspx">
               <i class="now-ui-icons users_single-02"></i>
               <p>Registrarse</p>
+            </a>
+                </li>
+              <%--Iniciar--%>
+              <li class="nav-item">
+               <a class="nav-link" href="../Login.aspx">
+              <i class="now-ui-icons users_circle-08"></i>
+              <p>Iniciar Sesión</p>
             </a>
                 </li>
               <%--test de menu nuevo--%>

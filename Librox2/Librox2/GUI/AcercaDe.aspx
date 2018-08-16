@@ -51,7 +51,7 @@ pensamientos, ideologias y cultura, a traves de sus obras, poemas etc.
             </div>
             <div class="col-md-5">
               <!-- First image on the right side, above the article -->
-              <div class="image-container image-right" style="background-image: url('../Maybe/assets/img/bg1.jpg')"></div>
+              <div class="image-container image-right" style="background-image: url('../Maybe/assets/img/bg4.jpg')"></div>
               <h3>Misión</h3>
               <p><b>Librox</b> es una herramienta, para aquellos que buscan publicar un libro, poemas,
 pensamientos y más, con la finalidad de que la gente los reconozca y puedan ver las
