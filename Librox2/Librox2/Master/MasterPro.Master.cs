@@ -43,6 +43,9 @@ namespace Librox2.Master
                 case "/GUI/AcercaDe.aspx":
                     CSSBody.Attributes.Add("class","landing-page sidebar-collapse");
                     break;
+                case "/GUI/IndexMaybe.aspx":
+                    CSSBody.Attributes.Add("class", "index-page sidebar-collapse");
+                    break;
                 //case "/DBTestSite/Configure_Scripts.aspx":
                 //    test.Attributes.Add("class", "treeview active menu-open");
                 //    Script.Attributes.Add("class", "active");
