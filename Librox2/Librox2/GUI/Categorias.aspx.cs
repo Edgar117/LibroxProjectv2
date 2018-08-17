@@ -49,7 +49,21 @@ namespace Librox2.GUI
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert();", true);
             }
         }
-
+        private void SelectCategoria()
+        {
+            if (DPGeneraSc.Text == "SI")
+            {
+                CategoriaStatus = 1;
+            }
+            if (DPGeneraSc.Text == "NO")
+            {
+                CategoriaStatus = 0;
+            }
+            if (DPGeneraSc.Text == "Proximamente")
+            {
+                CategoriaStatus = 2;
+            }
+        }
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
                       
@@ -61,31 +75,44 @@ namespace Librox2.GUI
             switch (Accion)
             {  
                 case "btneliminar":
-                    //int index = Convert.ToInt32(e.CommandArgument);
-                    //GridViewRow row = GridView1.Rows[index];
-                    //lblid.Text = Server.HtmlDecode(row.Cells[1].Text);
-                    //if (lblid.Text == "")
-                    //{
+                    int indexEliminar = Convert.ToInt32(e.CommandArgument);
+                    GridViewRow rowEliminar = GridView1.Rows[indexEliminar];
+                    string ID = Server.HtmlDecode(rowEliminar.Cells[3].Text);
+                    if (ID=="")
+                    {
 
-                    //}
-                    //else
-                    //{
-                    //    datos.Clave = int.Parse(lblid.Text);
-                    //    if (ctr.BajaAsignatura(datos) == 1)
-                    //    {
-                    //        string script = "<script language=\"javascript\">DatosCom2();</script>";
-                    //        ScriptManager.RegisterStartupScript(this.Page, typeof(Page), "DatosCom2", script, false);
-                    //        mostrar();
-                    //    }
-                    //}
+                    }
+                    else
+                    {
+                        OBCategorias.ID = int.Parse(ID);
+                        if (OBCategoriasDao.DeleteCategorias(OBCategorias) == 1)
+                        {
+                            LoadCategorias();
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error();", true);
+                        }
+                    }
                     break;
                 case "btnactualizar":
+                    int indexUpdate = Convert.ToInt32(e.CommandArgument);
+                    GridViewRow rowUpdate = GridView1.Rows[indexUpdate];
+                    SelectCategoria();
+                    OBCategorias.ID =int.Parse(Server.HtmlDecode(rowUpdate.Cells[3].Text));
+                    OBCategorias.NombreCategoria = txtCategorias.Text;
+                    OBCategorias.Status = CategoriaStatus;
+                    if (OBCategoriasDao.UpdateCategoria(OBCategorias) == 1)
+                    {
+                        LoadCategorias();
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "successalert();", true);
+                    }
+
+
+
                     break;
                 case "btnseleccionar":
                     int index = Convert.ToInt32(e.CommandArgument);
                     GridViewRow row = GridView1.Rows[index];
-                      txtCategorias.Text = Server.HtmlDecode(row.Cells[3].Text);
-                    switch (Server.HtmlDecode(row.Cells[4].Text))
+                      txtCategorias.Text = Server.HtmlDecode(row.Cells[4].Text);
+                    switch (Server.HtmlDecode(row.Cells[5].Text))
                     {
                         case "Activo":
                             DPGeneraSc.Text = "SI";

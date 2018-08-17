@@ -75,7 +75,6 @@ C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\bin\Librox2.dll
 C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\bin\Librox2.pdb
 C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\obj\Debug\Librox2.csprojResolveAssemblyReference.cache
 C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\obj\Debug\Librox2.dll
 C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\obj\Debug\Librox2.pdb
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\csc.exe
@@ -98,3 +97,6 @@ C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\Micros
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.csprojResolveAssemblyReference.cache
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.dll
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.pdb
+C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\obj\Debug\Librox2.csprojAssemblyReference.cache
+C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\obj\Debug\Librox2.csproj.CoreCompileInputs.cache
+C:\Users\EVAZQUEZ\Documents\LibroxProject\Librox2\Librox2\obj\Debug\Librox2.csproj.CopyComplete

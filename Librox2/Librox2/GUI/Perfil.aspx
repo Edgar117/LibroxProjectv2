@@ -23,7 +23,7 @@
   <!-- End Navbar -->
   <div class="wrapper">
     <div class="page-header clear-filter" filter-color="orange">
-      <div class="page-header-image" data-parallax="true" id="Fondo" runat="server" style="background-image:url('../assets/img/bg5.jpg');">
+      <div class="page-header-image" data-parallax="true" id="Fondo" runat="server" style="background-image:url('../Maybe/assets/img/bg5.jpg');">
       </div>
       <div class="container">
         <div class="photo-container">

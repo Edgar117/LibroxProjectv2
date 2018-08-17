@@ -12,8 +12,8 @@
 	<link rel="icon" type="image/png" href="Login/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
     <link href="Login/bootstrap.min.css" rel="stylesheet" />
-<!--===============================================================================================-->
-    <link href="Login/font-awesome.min.css" rel="stylesheet" />
+<!--===============================================================================================--> 
+     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
 <!--===============================================================================================-->
     <link href="Login/icon-font.min.css" rel="stylesheet" />
 <!--===============================================================================================-->
@@ -68,17 +68,16 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-                        <asp:Button class="login100-form-btn" ID="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" />
-					</div>
-
-					<div class="w-full text-center p-t-55">
-						<span class="txt2">
-							No eres un miembro?
-						</span>
-
-						<a href="" class="txt2 bo1">
-							Registrate
-						</a>
+                        <div class="col-md-6">
+                              <asp:Button class="login100-form-btn" ID="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" />
+                           
+                        </div>
+                        <div class="col-md-6">
+                             <a href="GUI/RegistroUsuario.aspx" class="login100-form-btn">
+						Registrarse
+					</a>
+                        </div>
+                       
 					</div>
 				</div>
 			</div>

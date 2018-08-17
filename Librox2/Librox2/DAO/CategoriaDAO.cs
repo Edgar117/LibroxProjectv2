@@ -29,9 +29,39 @@ namespace Librox2.DAO
             }
             return 1;
         }
+        public int UpdateCategoria(object obj)
+        {
+            CategoriasBO nom = (CategoriasBO)obj;
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "UPDATE Categorias SET NombreCategoria='"+nom.NombreCategoria+"',Status="+nom.Status+" WHERE ID="+nom.ID+"";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+        public int DeleteCategorias(object obj)
+        {
+            CategoriasBO nom = (CategoriasBO)obj;
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "DELETE FROM Categorias WHERE ID="+nom.ID+"";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
         public DataTable ConsultarCategorias()
         {
-            SQL = "SELECT NombreCategoria, 'Status' =CASE WHEN Status  = 1 THEN 'Activo' WHEN Status=2 THEN 'Proximamente' ELSE 'No Activo' END FROM Categorias";
+            SQL = "SELECT ID AS 'Identificador', NombreCategoria AS 'Categoria', 'Status' =CASE WHEN Status  = 1 THEN 'Activo' WHEN Status=2 THEN 'Proximamente' ELSE 'No Activo' END FROM Categorias";
            return con.TablaGeneral(SQL);
         }
     }

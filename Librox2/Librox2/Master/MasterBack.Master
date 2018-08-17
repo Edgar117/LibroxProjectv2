@@ -76,8 +76,9 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="Configure_Test.aspx"><i class="fa fa-mail-forward"></i>Mensajes</a></li>
-            <li><a href="Configure_Scripts.aspx"><i class="fa fa-database"></i>Test Scripts</a></li>
-            <li><a href="Configure_Scripts_ftp.aspx"><i class="fa fa-database"></i>Test Scripts with FTP</a></li>
+            <li><a href="../GUI/Categorias.aspx"><i class="fa fa-list"></i>Categorias</a></li>
+            <li><a href="Configure_Scripts_ftp.aspx"><i class="fa fa-user"></i>Administrar Usuarios</a></li>
+                <li><a href="Configure_Scripts_ftp.aspx"><i class="fa fa-book"></i>Administrar Libros</a></li>
           </ul>
         </li>
         <li class="header">Categorias</li>
@@ -145,8 +146,8 @@
      <script type="text/javascript">
          function error() {
             swal({
-                title: "Test Scripts",
-                text: "Test completed with errors!",
+                title: "Campo Eliminado",
+                text: "Eliminación de campo correctamente!",
                 icon: "error",
             });
         }

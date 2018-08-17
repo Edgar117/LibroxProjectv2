@@ -9,5 +9,6 @@ namespace Librox2.BO
     {
         public string NombreCategoria { get; set; }
         public int Status { get; set; }
+        public int ID { get; set; }
     }
 }
