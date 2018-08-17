@@ -49,20 +49,24 @@ namespace Librox2.GUI
             OBUsuario.Categoria = dpCategoria.Text;
             OBUsuario.ID = int.Parse(cart1[5]);
         }
-
+        private void DeletePhoto()
+        {
+            File.Delete(Server.MapPath("~/images/Users/" + cart1[2].ToString()));
+        }
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
             EnviarDatos();
             if (FileUpload1.HasFile) // Si el usuario tiene un archivo
             {
+                    //DeletePhoto();
                     string filename2 = Path.GetFileName(FileUpload1.FileName);
                     FileUpload1.SaveAs(Server.MapPath("~/images/Users/") + filename2); // archivo.jpg
-                OBUsuario.Imagen = filename2;
+                    OBUsuario.Imagen = filename2;
                     if (ActualizarDAO.UpdateUser(OBUsuario) == 1)
                     {
                         Response.Write("<script>alert('" + "La proxima vez que inicies session se observaran los cambios" + "');</script>");
                     }
-                }
+            }
                 else
                 {
                     //string filename = Path.GetFileName(FileUpload1.FileName);

@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,6 +70,7 @@
     <Content Include="css\AdminLTE.min.css" />
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
+    <Content Include="Global.asax" />
     <Content Include="GUI\Acerca.aspx" />
     <Content Include="GUI\AcercaDe.aspx" />
     <Content Include="GUI\Bienvenido.aspx" />
@@ -85,7 +87,6 @@
     <Content Include="GUI\RegistrarUsuario.aspx" />
     <Content Include="GUI\RegistroUsuario.aspx" />
     <Content Include="GUI\Servicios.aspx" />
-    <Content Include="ImagenDefualt.png" />
     <Content Include="images\ImagenDefualt.png" />
     <Content Include="images\Users\DaniFoto.jpg" />
     <Content Include="images\Users\ImagenDefualt.png" />
@@ -379,6 +380,9 @@
     <Compile Include="DAO\Conexion.cs" />
     <Compile Include="DAO\Security.cs" />
     <Compile Include="DAO\Usuarios.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Acerca.aspx.cs">
       <DependentUpon>Acerca.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
