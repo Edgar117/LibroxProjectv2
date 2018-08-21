@@ -77,7 +77,8 @@
           <ul class="treeview-menu">
             <li><a href="Configure_Test.aspx"><i class="fa fa-mail-forward"></i>Mensajes</a></li>
             <li><a href="../GUI/Categorias.aspx"><i class="fa fa-list"></i>Categorias</a></li>
-            <li><a href="Configure_Scripts_ftp.aspx"><i class="fa fa-user"></i>Administrar Usuarios</a></li>
+                <li><a href="../GUI/PreciosLibros.aspx"><i class="fa fa-dollar"></i>Precios Libros</a></li>
+            <li><a href="../GUI/Usuarios.aspx"><i class="fa fa-user"></i>Administrar Usuarios</a></li>
                 <li><a href="Configure_Scripts_ftp.aspx"><i class="fa fa-book"></i>Administrar Libros</a></li>
           </ul>
         </li>

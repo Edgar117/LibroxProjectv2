@@ -14,7 +14,7 @@ namespace Librox2.GUI
     public partial class Perfil : System.Web.UI.Page
     {
         UsuarioBO OBUsuario = new UsuarioBO();
-        Usuarios ActualizarDAO = new Usuarios();
+        UsuariosDAO ActualizarDAO = new UsuariosDAO();
         int ID = 0;
         String[] cart1 = new String[0];
         

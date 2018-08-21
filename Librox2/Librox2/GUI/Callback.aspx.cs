@@ -13,7 +13,7 @@ namespace Librox2.GUI
 {
     public partial class Callback : System.Web.UI.Page
     {
-        Usuarios OB = new Usuarios();
+        UsuariosDAO OB = new UsuariosDAO();
         public const string FaceBookAppKey = "4e077046a35aad9e2155c32e7b11dc68";
         private char[] userInfo;
         protected void Page_Load(object sender, EventArgs e)

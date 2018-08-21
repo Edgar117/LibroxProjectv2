@@ -16,7 +16,7 @@ namespace Librox2
     {
         Security OBSecurity = new Security();
         UsuarioBO ObUsuario = new UsuarioBO();
-        Usuarios OB = new Usuarios();
+        UsuariosDAO OB = new UsuariosDAO();
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["Panel"] = "";

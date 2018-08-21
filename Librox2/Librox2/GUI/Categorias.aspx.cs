@@ -24,7 +24,6 @@ namespace Librox2.GUI
         {
             GridView1.DataSource = OBCategoriasDao.ConsultarCategorias();
             GridView1.DataBind();
-
         }
         protected void Button1_Click(object sender, EventArgs e)
         {

@@ -5,9 +5,11 @@ using System.Linq;
 using System.Web;
 using static Librox2.Propety;
 using Librox2.BO;
+using System.Data;
+
 namespace Librox2.DAO
 {
-    public class Usuarios
+    public class UsuariosDAO
     {
         SqlCommand cmd = new SqlCommand();
         Conexion con = new Conexion();
@@ -42,6 +44,11 @@ namespace Librox2.DAO
                 return 0;
             }
             return 1;
+        }
+        public DataTable ConsultarUsuarios()
+        {
+            SQL = "SELECT ID,Nombre,Usuario,Correo FROM USUARIOS";
+            return con.TablaGeneral(SQL);
         }
         public int UpdateUser(object obj)
         {

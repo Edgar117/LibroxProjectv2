@@ -13,10 +13,9 @@ namespace Librox2.GUI
     {
         UsuarioBO ObUsuario = new UsuarioBO();
         Security OBSecurity = new Security();
-        Usuarios Register = new Usuarios();
+        UsuariosDAO Register = new UsuariosDAO();
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
         private void GetData()
         {
@@ -36,9 +35,9 @@ namespace Librox2.GUI
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
             GetData();
-            if (Register.SaveUserRegister(ObUsuario) == 1)
+            if (Register.SaveUserFB(ObUsuario) == 1)
             {
-                Response.Redirect("../Login.aspx");
+                Response.Redirect("../GUI/IndexMaybe.aspx");
             }
             else
             {
