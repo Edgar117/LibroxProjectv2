@@ -50,7 +50,7 @@
             <span class="info-box-icon bg-red"><i class="fa fa-database"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Espacio Dispinible</span>
+              <span class="info-box-text">Espacio disponible</span>
               <span id="freespace" runat="server" class="info-box-number"></span>
             </div>
             <!-- /.info-box-content -->
