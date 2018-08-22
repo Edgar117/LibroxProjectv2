@@ -35,7 +35,7 @@ namespace Librox2.GUI
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
             GetData();
-            if (Register.SaveUserFB(ObUsuario) == 1)
+            if (Register.SaveUserRegister(ObUsuario) == 1)
             {
                 Response.Redirect("../GUI/IndexMaybe.aspx");
             }

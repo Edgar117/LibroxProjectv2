@@ -36,7 +36,7 @@
                   <i class="now-ui-icons users_circle-08"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Nombre...">
+              <input type="text" id="txtNombre" runat="server" class="form-control" placeholder="Nombre...">
             </div>
             <div class="input-group input-lg">
               <div class="input-group-prepend">
@@ -44,13 +44,13 @@
                   <i class="now-ui-icons ui-1_email-85"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Correo...">
+              <input type="text" id="txtCorreo" runat="server" class="form-control" placeholder="Correo...">
             </div>
             <div class="textarea-container">
-              <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Escribe tu mensaje..."></textarea>
+              <textarea class="form-control" id="txtMensaje" runat="server" name="name" rows="4" cols="80" placeholder="Escribe tu mensaje..."></textarea>
             </div>
             <div class="send-button">
-              <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Enviar Mensaje</a>
+                <asp:Button ID="btnEnviarMensaje" runat="server" CssClass="btn btn-primary btn-round btn-block btn-lg" OnClick="btnEnviarMensaje_Click" Text="Enviar Mensaje" />
             </div>
           </div>
         </div>

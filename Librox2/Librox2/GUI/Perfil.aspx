@@ -11,7 +11,6 @@
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
                     reader.onload = function (e) {
-
                         $('#imagend2').attr('src', e.target.result);
                         document.getElementsById("imagend2")[0].setAttribute("src", e.target.result);
                     }

@@ -78,6 +78,7 @@ namespace Librox2
                     Session["Contraseña"] = ObUsuario.Contraseña;
                     Session["Imagen"] ="~/images/" + substrings[2].ToString()+".png";
                     //Session["Imagen"] = ObUsuario.ConsultaImagenParamedico(on);
+                    Session["ALL"] = substrings;
                     Response.Redirect("/GUI/IndexBack.aspx");
                     //Response.Write("<script>alert('" + "Bienvendo a nuestro Sistema" + "');</script>");
                 }

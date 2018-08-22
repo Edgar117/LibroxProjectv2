@@ -38,8 +38,20 @@ namespace Librox2.Master
             //}
             try
             {
-                nom.InnerText = Session["Usuario"].ToString();
-                logo.Src = Session["Imagen"].ToString();
+                String[] cart1 = new String[0];
+                cart1 = (String[])Session["ALL"];
+                if (cart1[1].ToString()=="1")
+                {
+                    //panelLogeado.Visible = true;
+                    //PanelNormal.Visible = false;
+                    nom.InnerText = Session["Usuario"].ToString();
+                    logo.Src = Session["Imagen"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("/Login.aspx");
+                }
+               
             }
             catch (Exception)
             {

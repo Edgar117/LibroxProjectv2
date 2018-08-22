@@ -71,17 +71,14 @@
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="GUI\Acerca.aspx" />
     <Content Include="GUI\AcercaDe.aspx" />
-    <Content Include="GUI\Bienvenido.aspx" />
     <Content Include="GUI\Callback.aspx" />
     <Content Include="GUI\Categorias.aspx" />
     <Content Include="GUI\Contactanos.aspx" />
-    <Content Include="GUI\Contacto.aspx" />
     <Content Include="GUI\index.html" />
     <Content Include="GUI\IndexBack.aspx" />
     <Content Include="GUI\IndexMaybe.aspx" />
-    <Content Include="GUI\Libros.aspx" />
+    <Content Include="GUI\MensajesBack.aspx" />
     <Content Include="GUI\Perfil.aspx" />
     <Content Include="GUI\PerfilBack.aspx" />
     <Content Include="GUI\PreciosLibros.aspx" />
@@ -257,7 +254,6 @@
     <Content Include="Maybe\index.html" />
     <Content Include="Maybe\nucleo-icons.html" />
     <Content Include="packages.config" />
-    <Content Include="Master\Master.Master" />
     <Content Include="Master\MasterBack.Master" />
     <Content Include="Master\MasterPro.Master" />
     <Content Include="Maybe\assets\css\bootstrap.min.css.map" />
@@ -377,22 +373,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\CategoriasBO.cs" />
+    <Compile Include="BO\Mensajes.cs" />
     <Compile Include="BO\Ranking.cs" />
     <Compile Include="BO\UsuarioBO.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\Conexion.cs" />
+    <Compile Include="DAO\MensajesDAO.cs" />
     <Compile Include="DAO\RankingDAO.cs" />
     <Compile Include="DAO\Security.cs" />
     <Compile Include="DAO\UsuariosDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Acerca.aspx.cs">
-      <DependentUpon>Acerca.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Acerca.aspx.designer.cs">
-      <DependentUpon>Acerca.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\AcercaDe.aspx.cs">
       <DependentUpon>AcercaDe.aspx</DependentUpon>
@@ -400,13 +391,6 @@
     </Compile>
     <Compile Include="GUI\AcercaDe.aspx.designer.cs">
       <DependentUpon>AcercaDe.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Bienvenido.aspx.cs">
-      <DependentUpon>Bienvenido.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Bienvenido.aspx.designer.cs">
-      <DependentUpon>Bienvenido.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Callback.aspx.cs">
       <DependentUpon>Callback.aspx</DependentUpon>
@@ -429,13 +413,6 @@
     <Compile Include="GUI\Contactanos.aspx.designer.cs">
       <DependentUpon>Contactanos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Contacto.aspx.cs">
-      <DependentUpon>Contacto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Contacto.aspx.designer.cs">
-      <DependentUpon>Contacto.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -457,12 +434,12 @@
     <Compile Include="GUI\IndexMaybe.aspx.designer.cs">
       <DependentUpon>IndexMaybe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Libros.aspx.cs">
-      <DependentUpon>Libros.aspx</DependentUpon>
+    <Compile Include="GUI\MensajesBack.aspx.cs">
+      <DependentUpon>MensajesBack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Libros.aspx.designer.cs">
-      <DependentUpon>Libros.aspx</DependentUpon>
+    <Compile Include="GUI\MensajesBack.aspx.designer.cs">
+      <DependentUpon>MensajesBack.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
@@ -519,13 +496,6 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Master\Master.Master.cs">
-      <DependentUpon>Master.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Master\Master.Master.designer.cs">
-      <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Master\MasterBack.Master.cs">
       <DependentUpon>MasterBack.Master</DependentUpon>
