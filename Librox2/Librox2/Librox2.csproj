@@ -78,14 +78,15 @@
     <Content Include="GUI\index.html" />
     <Content Include="GUI\IndexBack.aspx" />
     <Content Include="GUI\IndexMaybe.aspx" />
+    <Content Include="GUI\Libros.aspx" />
     <Content Include="GUI\MensajesBack.aspx" />
     <Content Include="GUI\Perfil.aspx" />
     <Content Include="GUI\PerfilBack.aspx" />
     <Content Include="GUI\PreciosLibros.aspx" />
-    <Content Include="GUI\RegistrarUsuario.aspx" />
     <Content Include="GUI\RegistroUsuario.aspx" />
     <Content Include="GUI\Servicios.aspx" />
     <Content Include="GUI\Usuarios.aspx" />
+    <Content Include="images\BooksImg\g3.jpg" />
     <Content Include="images\ImagenDefualt.png" />
     <Content Include="images\Users\DaniFoto.jpg" />
     <Content Include="images\Users\ImagenDefualt.png" />
@@ -373,11 +374,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\CategoriasBO.cs" />
+    <Compile Include="BO\LibrosBO.cs" />
     <Compile Include="BO\Mensajes.cs" />
     <Compile Include="BO\Ranking.cs" />
     <Compile Include="BO\UsuarioBO.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\Conexion.cs" />
+    <Compile Include="DAO\LibrosDAO.cs" />
     <Compile Include="DAO\MensajesDAO.cs" />
     <Compile Include="DAO\RankingDAO.cs" />
     <Compile Include="DAO\Security.cs" />
@@ -434,6 +437,13 @@
     <Compile Include="GUI\IndexMaybe.aspx.designer.cs">
       <DependentUpon>IndexMaybe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Libros.aspx.cs">
+      <DependentUpon>Libros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Libros.aspx.designer.cs">
+      <DependentUpon>Libros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MensajesBack.aspx.cs">
       <DependentUpon>MensajesBack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -461,13 +471,6 @@
     </Compile>
     <Compile Include="GUI\PreciosLibros.aspx.designer.cs">
       <DependentUpon>PreciosLibros.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\RegistrarUsuario.aspx.cs">
-      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\RegistrarUsuario.aspx.designer.cs">
-      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\RegistroUsuario.aspx.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
