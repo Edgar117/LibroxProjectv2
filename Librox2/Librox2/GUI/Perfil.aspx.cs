@@ -33,6 +33,8 @@ namespace Librox2.GUI
                     Imagen.Src = "/images/Users/" + cart1[2].ToString();
                     ID = int.Parse(cart1[5]);
                     txtdescription.InnerText = cart1[3].ToString().Trim();
+                    lblSeguidres.InnerText = cart1[6].ToString();
+                    Libros.InnerText = cart1[7].ToString();
                 }
                 
             }

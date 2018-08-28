@@ -2,8 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
         <script type="text/javascript">  
 
             function showimagepreview(input) {
@@ -32,8 +30,8 @@
         <p runat="server" id="Categoria" class="category">...</p>
         <div class="content">
           <div class="social-description">
-            <h2>26</h2>
-            <p>Le siguen</p>
+            <h2 id="lblSeguidres" runat="server">0 </h2>
+            <p>Seguidores</p>
           </div>
           <div class="social-description">
             <h2>26</h2>

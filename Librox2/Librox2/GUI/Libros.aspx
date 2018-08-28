@@ -34,25 +34,25 @@
           <div class="col-lg-2 text-center col-md-8 ml-auto mr-auto">
               <%--Nombre--%>
             <div class="input-group input-lg">
-                <h6>Titulo de prueba</h6>
+                <h6><%# Eval("Titulo") %></h6>
             </div>
               <div class="input-group input-lg">
-                  <img alt="" src="../images/test.jpg" />
+                  <img alt="" src="../images/BooksImg/<%# Eval("ImagenPortada") %>" />
             </div>
                     <div class="input-group input-lg">
-                <h6>Sipnosis de prueba</h6>
+                <h6><%# Eval("Sinopsis") %></h6>
             </div>
                     <div class="input-group input-lg">
-                <h6>Autor de prurba</h6>
+                <h6>Escrito por: <%# Eval("Autor") %></h6>
             </div>
                     <div class="input-group input-lg">
-                <h6>Precio $</h6>
+                <h6>Precio $ : <%# Eval("PRECIO") %> </h6>
             </div>
                     <div class="input-group input-lg">
-                <h6>Ranking</h6>
+                <h6><%# Eval("Ranking") %></h6>
             </div>
                     <div class="input-group input-lg">
-                <h6>Categoria</h6>
+                <h6>Categoria: <%# Eval("Categoria") %></h6>
             </div>
             <div class="send-button">
                <%-- <asp:Button  class="btn btn-primary btn-round btn-block btn-lg" ID="btnRegistro" OnClick="btnRegistro_Click" runat="server" Text="Registrar Usuario" />--%>

@@ -68,10 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\AdminLTE.min.css" />
+    <Content Include="css\dropzone.css" />
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
     <Content Include="Global.asax" />
     <Content Include="GUI\AcercaDe.aspx" />
+    <Content Include="GUI\AgregarLibro.aspx" />
     <Content Include="GUI\Callback.aspx" />
     <Content Include="GUI\Categorias.aspx" />
     <Content Include="GUI\Contactanos.aspx" />
@@ -92,6 +94,8 @@
     <Content Include="images\Users\ImagenDefualt.png" />
     <Content Include="js\adminlte.min.js" />
     <Content Include="js\bootstrap.min.css" />
+    <Content Include="js\dropzone.js" />
+    <Content Include="js\dropzone.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Login\animate.css" />
     <Content Include="Login\bootstrap.min.css" />
@@ -394,6 +398,13 @@
     </Compile>
     <Compile Include="GUI\AcercaDe.aspx.designer.cs">
       <DependentUpon>AcercaDe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AgregarLibro.aspx.cs">
+      <DependentUpon>AgregarLibro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\AgregarLibro.aspx.designer.cs">
+      <DependentUpon>AgregarLibro.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Callback.aspx.cs">
       <DependentUpon>Callback.aspx</DependentUpon>

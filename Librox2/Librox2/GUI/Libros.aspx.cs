@@ -12,6 +12,7 @@ namespace Librox2.GUI
     public partial class Libros : System.Web.UI.Page
     {
         LibrosDAO DAOLibros = new LibrosDAO();
+        DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,7 +24,6 @@ namespace Librox2.GUI
         }
         private void LoadLibros()
         {
-            DataTable dt = new DataTable();
             dt=DAOLibros.ConsultarLibros();
         }
     }

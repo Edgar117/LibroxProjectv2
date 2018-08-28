@@ -70,14 +70,14 @@ namespace Librox2.DAO
 
             string contra = "";
             
-            SQL = "Select Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID from Usuarios  where Usuario = '" + ObjUsuario.Usuario + "'";
+            SQL = "Select TOP 1 Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID,(select count(*) from seguidores where ID_Usuario=3) AS 'SEGUIDORES',(select count(*) from LIBROS where ID_Usuario=3)  as 'TotalLibros' from Usuarios US INNER JOIN Seguidores SR ON SR.ID_Usuario = US.ID where Usuario = '"+ObjUsuario.Usuario+"'";
             SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
             con.AbrirConexion();
             cmd.Parameters.AddWithValue("@Usuario", contra);
             SqlDataReader leer = cmd.ExecuteReader();
             if (leer.Read())
             {
-                contra = leer["Contraseña"].ToString()+"|"+leer["Tipousuario"].ToString()+"|" + leer["ImagenUsuario"].ToString()+"|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString()+ "|" + leer["ID"].ToString();
+                contra = leer["Contraseña"].ToString()+"|"+leer["Tipousuario"].ToString()+"|" + leer["ImagenUsuario"].ToString()+"|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString()+ "|" + leer["ID"].ToString()+"|"+ leer["SEGUIDORES"].ToString()+"|"+ leer["TotalLibros"].ToString();
             }
             con.CerrarConexion();
             return contra;
