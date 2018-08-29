@@ -26,13 +26,19 @@
                                     <br />
                                     <asp:Panel ID="pnAviso" runat="server"> <%--Panel que aparece al seleccionar un usuario para enviar aviso, desaparecerá al enviar el correo automáticamente(pendiente)--%>
                                         <div class="row">
-                                        <div class="col-md-6">
-                                            <h4>Correo del usuario:</h4>
+                                        <div class="col-md-12">
+                                            <h4>Para:</h4>
                                             <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <h4>Mensaje:</h4>
+                                            <asp:TextBox ID="txtAvisoMensaje" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                                            <br />
+                                            <div align="center">
+                                               <asp:Label ID="lblExcep" runat="server" Text="Label" ForeColor="Red"></asp:Label>
+                                            <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-success" OnClick="btnEnviar_Click" />
+                                            </div>
                                         </div>
-                                        <asp:TextBox ID="txtAvisoMensaje" runat="server" CssClass="form-control"></asp:TextBox>
                                     </div>
                                     </asp:Panel>    <%--Termina panel--%>
                                 </div>
