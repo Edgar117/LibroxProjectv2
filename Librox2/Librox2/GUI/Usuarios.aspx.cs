@@ -63,7 +63,7 @@ namespace Librox2.GUI
             después de hacer click para saber si el correo se envió con éxito o no.*/
 
 
-            /*Para poder realizar una prueba del método cambiar en la línea 82 y en la línea 91, en dichas líneas se describe lo que se requiere,
+            /*Para poder realizar una prueba del método cambiar en la línea 89 y en la línea 98, en dichas líneas se describe lo que se requiere,
             particularmente, son las credenciales del correo del que se va enviar el aviso.*/
 
             //Se crea un nuevo obeto de mensaje
