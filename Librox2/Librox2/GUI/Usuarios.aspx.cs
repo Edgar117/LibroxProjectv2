@@ -86,7 +86,7 @@ namespace Librox2.GUI
             mmsg.IsBodyHtml = false; //Si no queremos que se envíe como HTML
 
             //Correo electrónico desde la que enviamos el mensaje
-            mmsg.From = new System.Net.Mail.MailAddress("example@email.com");
+            mmsg.From = new System.Net.Mail.MailAddress("david_may4@hotmail.com");
 
 
             /*-------------------------DEFINIENDO CLIENTE DE CORREO----------------------*/
@@ -95,7 +95,7 @@ namespace Librox2.GUI
             System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
 
             //Hay que crear las credenciales del correo emisor
-            cliente.Credentials = new System.Net.NetworkCredential("CorreoDeEllos", "SuContraseña");
+            cliente.Credentials = new System.Net.NetworkCredential("david_may4@hotmail.com", "passwd");
 
             //Lo siguiente es obligatorio si enviamos el mensaje desde Gmail
             /*
