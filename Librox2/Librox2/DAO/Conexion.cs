@@ -14,7 +14,6 @@ namespace Librox2.DAO
         
         public SqlConnection EstablecerConexion()
         {
-            //string cs = "Data Source=SQL5013.site4now.net;Initial Catalog=DB_A3EBA7_Librox;User Id=DB_A3EBA7_Librox_admin;Password=Edgar117;";
             //Obtiene la cadena de conexión del webconfig
             string cs = ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
             con = new SqlConnection(cs);
