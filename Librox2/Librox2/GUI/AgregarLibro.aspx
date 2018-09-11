@@ -62,7 +62,6 @@
         <div class="section section-contact-us text-center">
             <div class="container">
                 <h2 class="title">Algo sorprende esta a punto de ocurrir.</h2>
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 <p class="description">No lo dudes</p>
                 <div class="row">
                     <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
@@ -75,14 +74,14 @@
                             <input type="text" id="txtNombre" runat="server" class="form-control" placeholder="Titulo del libro">
                         </div>
                         <div class="textarea-container">
-                            <textarea class="form-control" id="txtMensaje" runat="server" name="name" rows="4" cols="80" placeholder="Sinopsis del libro..."></textarea>
+                            <textarea class="form-control" id="txtSinopsis" runat="server" name="name" rows="4" cols="80" placeholder="Sinopsis del libro..."></textarea>
                         </div>
                         <br />
                         <div class="input-group input-lg">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"></span>
                             </div>
-                            <asp:DropDownList CssClass="form-control" ID="dpCategorias" runat="server"></asp:DropDownList>
+                            <asp:DropDownList CssClass="form-control" ID="dpCategorias" runat="server" Height="45px" Width="408px"></asp:DropDownList>
                         </div>
                         <div class="send-button">
                             <div class="dropzone" id="dropzoneForm">
@@ -94,7 +93,7 @@
                                     <input type="submit" value="Upload" />
                                 </div>
                             </div>
-                            <%-- <asp:Button ID="btnEnviarMensaje" runat="server" CssClass="btn btn-primary btn-round btn-block btn-lg" OnClick="btnEnviarMensaje_Click" Text="Enviar Mensaje" />--%>
+                             <asp:Button ID="btnRegistrarLibro" runat="server" CssClass="btn btn-primary btn-round btn-block btn-lg" OnClick="btnRegistrarLibro_Click" Text="Registrar Mi libro" />
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPro.master.cs" Inherits="Librox2.Master.MasterPro" %>
-
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
     <title>
@@ -13,6 +11,7 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- CSS Files -->
     <link href="../Maybe/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../Maybe/assets/css/now-ui-kit.css" rel="stylesheet" />
@@ -133,6 +132,26 @@
       </div>
     </div>
   </nav>
+        <%--SWEET ALERT ERROR TRY--%>
+          <script type="text/javascript">
+          function TRY() {
+              swal({
+                title: "ERROR",
+                text: "Internal failure, this error can be caused by an invalid FTP address!",
+                icon: "error",
+            });
+        }
+    </script>
+        <%--SWEET ALERT TEST SUCCESS--%>
+     <script type="text/javascript">
+         function LibroGuardado() {
+             swal({
+                 title: "Registro de libro",
+                 text: "Se registro tu libro de forma Exitosa!",
+                 icon: "success",
+             });
+         }
+    </script>
       <!--   Core JS Files   -->
     <script src="../Maybe/assets/js/core/jquery.min.js"></script>
     <script src="../Maybe/assets/js/core/popper.min.js"></script>

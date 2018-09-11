@@ -14,5 +14,6 @@ namespace Librox2.BO
         public string ImagenPòrtada { get; set; }
         public int Ranking { get; set; }
         public string Categoria { get; set; }
+        public string LibroFisico { get; set; }
     }
 }

@@ -37,7 +37,7 @@
                 <h6><%# Eval("Titulo") %></h6>
             </div>
               <div class="input-group input-lg">
-                  <img alt="" src="../images/BooksImg/<%# Eval("ImagenPortada") %>" />
+                  <img alt="" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" />
             </div>
                     <div class="input-group input-lg">
                 <h6><%# Eval("Sinopsis") %></h6>
@@ -49,7 +49,7 @@
                 <h6>Precio $ : <%# Eval("PRECIO") %> </h6>
             </div>
                     <div class="input-group input-lg">
-                <h6><%# Eval("Ranking") %></h6>
+                <h6>Ranking: <%# Eval("Ranking") %></h6>
             </div>
                     <div class="input-group input-lg">
                 <h6>Categoria: <%# Eval("Categoria") %></h6>

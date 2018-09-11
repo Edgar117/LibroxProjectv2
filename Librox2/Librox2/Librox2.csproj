@@ -329,7 +329,6 @@
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\style.css" />
-    <Content Include="GUI\Index.aspx" />
     <Content Include="images\arr.png" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\banner1.jpg" />
@@ -426,13 +425,6 @@
     </Compile>
     <Compile Include="GUI\Contactanos.aspx.designer.cs">
       <DependentUpon>Contactanos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GUI\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\IndexBack.aspx.cs">
       <DependentUpon>IndexBack.aspx</DependentUpon>

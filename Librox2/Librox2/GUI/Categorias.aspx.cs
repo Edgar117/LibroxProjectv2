@@ -87,7 +87,7 @@ namespace Librox2.GUI
                         if (OBCategoriasDao.DeleteCategorias(OBCategorias) == 1)
                         {
                             LoadCategorias();
-                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error();", true);
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "TRY();", true);
                         }
                     }
                     break;

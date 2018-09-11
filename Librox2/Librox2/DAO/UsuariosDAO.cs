@@ -47,7 +47,7 @@ namespace Librox2.DAO
         }
         public DataTable ConsultarUsuarios()
         {
-            SQL = "SELECT ID,Nombre,Usuario,Correo FROM USUARIOS";
+            SQL = "SELECT ID,Nombre,Usuario,Correo FROM USUARIOS WHERE TipoUsuario=0";
             return con.TablaGeneral(SQL);
         }
         public int UpdateUser(object obj)

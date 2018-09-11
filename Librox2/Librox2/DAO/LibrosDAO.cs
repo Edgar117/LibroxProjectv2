@@ -18,8 +18,8 @@ namespace Librox2.DAO
         {
             LibrosBO  nom = (LibrosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-          //  string sql = "INSERT INTO USUARIOS (Nombre,Usuario,Correo,Cumpleaños,Contraseña,TipoUsuario,DescriptionUser) VALUES( '" + nom.Nombre + "','" + nom.Usuario + "','" + nom.Correo + "','" + nom.Cumpleaños + "','" + nom.Contraseña + "','" + nom.TipoUsuario + "','" + nom.DescriptionUser + "')";
-          //  cmd.CommandText = sql;
+            string sql = "EXEC [spInsertBook] NULL,'"+nom.Titulo+"','"+nom.Sinpsis+"',"+nom.Autor_ID+",'"+nom.ImagenPòrtada+"',null,null,'"+nom.LibroFisico+"','"+nom.Categoria+"'";
+            cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
             con.CerrarConexion();
@@ -49,23 +49,23 @@ namespace Librox2.DAO
             }
             return 1;
         }
-        public string validarusuario(UsuarioBO ObjUsuario)
-        {
+        //public string validarusuario(UsuarioBO ObjUsuario)
+        //{
 
-            string contra = "";
+        //    string contra = "";
 
-            SQL = "Select Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID from Usuarios  where Usuario = '" + ObjUsuario.Usuario + "'";
-            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
-            con.AbrirConexion();
-            cmd.Parameters.AddWithValue("@Usuario", contra);
-            SqlDataReader leer = cmd.ExecuteReader();
-            if (leer.Read())
-            {
-                contra = leer["Contraseña"].ToString() + "|" + leer["Tipousuario"].ToString() + "|" + leer["ImagenUsuario"].ToString() + "|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString() + "|" + leer["ID"].ToString();
-            }
-            con.CerrarConexion();
-            return contra;
+        //    SQL = "Select Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID from Usuarios  where Usuario = '" + ObjUsuario.Usuario + "'";
+        //    SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+        //    con.AbrirConexion();
+        //    cmd.Parameters.AddWithValue("@Usuario", contra);
+        //    SqlDataReader leer = cmd.ExecuteReader();
+        //    if (leer.Read())
+        //    {
+        //        contra = leer["Contraseña"].ToString() + "|" + leer["Tipousuario"].ToString() + "|" + leer["ImagenUsuario"].ToString() + "|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString() + "|" + leer["ID"].ToString();
+        //    }
+        //    con.CerrarConexion();
+        //    return contra;
 
-        }
+        //}
     }
 }

@@ -64,5 +64,11 @@ namespace Librox2.DAO
             SQL = "SELECT ID AS 'Identificador', NombreCategoria AS 'Categoria', 'Status' =CASE WHEN Status  = 1 THEN 'Activo' WHEN Status=2 THEN 'Proximamente' ELSE 'No Activo' END FROM Categorias";
            return con.TablaGeneral(SQL);
         }
+
+        public DataTable ConsultarCategoriasLibrosVista()
+        {
+            SQL = "SELECT NombreCategoria FROM Categorias WHERE Status=1";
+            return con.TablaGeneral(SQL);
+        }
     }
 }
