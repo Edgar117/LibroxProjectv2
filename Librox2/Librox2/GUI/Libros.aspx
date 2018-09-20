@@ -55,7 +55,7 @@
                 <h6>Categoria: <%# Eval("Categoria") %></h6>
             </div>
             <div class="send-button">
-               <%-- <asp:Button  class="btn btn-primary btn-round btn-block btn-lg" ID="btnRegistro" OnClick="btnRegistro_Click" runat="server" Text="Registrar Usuario" />--%>
+                <asp:Button  class="btn btn-primary btn-round btn-block btn-lg" Enabled="false"  ID="btnRegistro" runat="server" Text="Comprar" />
             </div>
           </div>
                      </ItemTemplate>

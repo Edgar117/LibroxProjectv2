@@ -1,6 +1,7 @@
 ﻿using System;
 using Librox2.BO;
 using Librox2.DAO;
+using System.Web.UI;
 
 namespace Librox2.GUI
 {
@@ -25,7 +26,7 @@ namespace Librox2.GUI
             if (OBMensajesDao.SaveMensaje(OBMensajes)==1)
             {
                 //Mensaje Enviado
-                Response.Write("<script>alert('" + "Mensaje Enviado" + "');</script>");
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "MensajeEnviado();", true);
             }
         }
     }

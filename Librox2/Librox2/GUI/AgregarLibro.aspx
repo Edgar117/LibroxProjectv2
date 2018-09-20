@@ -17,7 +17,7 @@
                 });
                 this.on("addedfile", function (file) {
                     // Create the remove button
-                    var removeButton = Dropzone.createElement("<button>Remove file</button>");
+                    var removeButton = Dropzone.createElement("<button>Remover Archivo</button>");
                     // Capture the Dropzone instance as closure.
                     var _this = this;
                     // Listen to the click event

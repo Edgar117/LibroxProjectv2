@@ -151,6 +151,17 @@
             });
         }
     </script>
+<%--    MensajeEnviado--%>
+     <%--SWEET ALERT TEST SUCCESS--%>
+     <script type="text/javascript">
+         function MensajeEnviado() {
+             swal({
+                 title: "Mensaje Enviado",
+                 text: "Se envio tu mensaje de forma exitosa Escribox se pondra en contacto contigo!",
+                 icon: "success",
+             });
+         }
+    </script>
         <%--SWEET ALERT TEST SUCCESS--%>
      <script type="text/javascript">
          function LibroGuardado() {
