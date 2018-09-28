@@ -72,22 +72,22 @@
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="GUI\AcercaDe.aspx" />
-    <Content Include="GUI\AgregarLibro.aspx" />
-    <Content Include="GUI\Callback.aspx" />
-    <Content Include="GUI\Categorias.aspx" />
-    <Content Include="GUI\Contactanos.aspx" />
-    <Content Include="GUI\index.html" />
-    <Content Include="GUI\IndexBack.aspx" />
-    <Content Include="GUI\IndexMaybe.aspx" />
-    <Content Include="GUI\Libros.aspx" />
-    <Content Include="GUI\MensajesBack.aspx" />
-    <Content Include="GUI\Perfil.aspx" />
-    <Content Include="GUI\PerfilBack.aspx" />
-    <Content Include="GUI\PreciosLibros.aspx" />
-    <Content Include="GUI\RegistroUsuario.aspx" />
-    <Content Include="GUI\Servicios.aspx" />
-    <Content Include="GUI\Usuarios.aspx" />
+    <Content Include="Forms\AcercaDe.aspx" />
+    <Content Include="Forms\AgregarLibro.aspx" />
+    <Content Include="Forms\Callback.aspx" />
+    <Content Include="Forms\Categorias.aspx" />
+    <Content Include="Forms\Contactanos.aspx" />
+    <Content Include="Forms\index.html" />
+    <Content Include="Forms\IndexBack.aspx" />
+    <Content Include="Forms\IndexMaybe.aspx" />
+    <Content Include="Forms\Libros.aspx" />
+    <Content Include="Forms\MensajesBack.aspx" />
+    <Content Include="Forms\Perfil.aspx" />
+    <Content Include="Forms\PerfilBack.aspx" />
+    <Content Include="Forms\PreciosLibros.aspx" />
+    <Content Include="Forms\RegistroUsuario.aspx" />
+    <Content Include="Forms\Servicios.aspx" />
+    <Content Include="Forms\Usuarios.aspx" />
     <Content Include="images\BooksImg\g3.jpg" />
     <Content Include="images\ImagenDefualt.png" />
     <Content Include="images\Users\DaniFoto.jpg" />
@@ -229,8 +229,10 @@
     <Content Include="Maybe\assets\img\flags\VE.png" />
     <Content Include="Maybe\assets\img\flags\VN.png" />
     <Content Include="Maybe\assets\img\flags\YE.png" />
+    <Content Include="Maybe\assets\img\Fondo.png" />
+    <Content Include="Maybe\assets\img\FondoCel2.png" />
+    <Content Include="Maybe\assets\img\FondoCel3.png" />
     <Content Include="Maybe\assets\img\header.jpg" />
-    <Content Include="Maybe\assets\img\hero-image-1.png" />
     <Content Include="Maybe\assets\img\hero-image-2.png" />
     <Content Include="Maybe\assets\img\hero-image-3.png" />
     <Content Include="Maybe\assets\img\invision-white-slim.png" />
@@ -239,6 +241,7 @@
     <Content Include="Maybe\assets\img\login.jpg" />
     <Content Include="Maybe\assets\img\logo-square.jpg" />
     <Content Include="Maybe\assets\img\logo.png" />
+    <Content Include="Maybe\assets\img\MujerLeyendo.jpg" />
     <Content Include="Maybe\assets\img\now-logo.png" />
     <Content Include="Maybe\assets\img\nucleo-logo.svg" />
     <Content Include="Maybe\assets\img\profile.jpg" />
@@ -315,6 +318,7 @@
     <Content Include="Maybe\CHANGELOG.md" />
     <Content Include="Maybe\package.json" />
     <Content Include="Maybe\README.md" />
+    <None Include="Properties\PublishProfiles\Edgar.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -391,109 +395,109 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="GUI\AcercaDe.aspx.cs">
+    <Compile Include="Forms\AcercaDe.aspx.cs">
       <DependentUpon>AcercaDe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\AcercaDe.aspx.designer.cs">
+    <Compile Include="Forms\AcercaDe.aspx.designer.cs">
       <DependentUpon>AcercaDe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\AgregarLibro.aspx.cs">
+    <Compile Include="Forms\AgregarLibro.aspx.cs">
       <DependentUpon>AgregarLibro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\AgregarLibro.aspx.designer.cs">
+    <Compile Include="Forms\AgregarLibro.aspx.designer.cs">
       <DependentUpon>AgregarLibro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Callback.aspx.cs">
+    <Compile Include="Forms\Callback.aspx.cs">
       <DependentUpon>Callback.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Callback.aspx.designer.cs">
+    <Compile Include="Forms\Callback.aspx.designer.cs">
       <DependentUpon>Callback.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Categorias.aspx.cs">
+    <Compile Include="Forms\Categorias.aspx.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Categorias.aspx.designer.cs">
+    <Compile Include="Forms\Categorias.aspx.designer.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Contactanos.aspx.cs">
+    <Compile Include="Forms\Contactanos.aspx.cs">
       <DependentUpon>Contactanos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Contactanos.aspx.designer.cs">
+    <Compile Include="Forms\Contactanos.aspx.designer.cs">
       <DependentUpon>Contactanos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\IndexBack.aspx.cs">
+    <Compile Include="Forms\IndexBack.aspx.cs">
       <DependentUpon>IndexBack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\IndexBack.aspx.designer.cs">
+    <Compile Include="Forms\IndexBack.aspx.designer.cs">
       <DependentUpon>IndexBack.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\IndexMaybe.aspx.cs">
+    <Compile Include="Forms\IndexMaybe.aspx.cs">
       <DependentUpon>IndexMaybe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\IndexMaybe.aspx.designer.cs">
+    <Compile Include="Forms\IndexMaybe.aspx.designer.cs">
       <DependentUpon>IndexMaybe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Libros.aspx.cs">
+    <Compile Include="Forms\Libros.aspx.cs">
       <DependentUpon>Libros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Libros.aspx.designer.cs">
+    <Compile Include="Forms\Libros.aspx.designer.cs">
       <DependentUpon>Libros.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\MensajesBack.aspx.cs">
+    <Compile Include="Forms\MensajesBack.aspx.cs">
       <DependentUpon>MensajesBack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\MensajesBack.aspx.designer.cs">
+    <Compile Include="Forms\MensajesBack.aspx.designer.cs">
       <DependentUpon>MensajesBack.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Perfil.aspx.cs">
+    <Compile Include="Forms\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Perfil.aspx.designer.cs">
+    <Compile Include="Forms\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\PerfilBack.aspx.cs">
+    <Compile Include="Forms\PerfilBack.aspx.cs">
       <DependentUpon>PerfilBack.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\PerfilBack.aspx.designer.cs">
+    <Compile Include="Forms\PerfilBack.aspx.designer.cs">
       <DependentUpon>PerfilBack.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\PreciosLibros.aspx.cs">
+    <Compile Include="Forms\PreciosLibros.aspx.cs">
       <DependentUpon>PreciosLibros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\PreciosLibros.aspx.designer.cs">
+    <Compile Include="Forms\PreciosLibros.aspx.designer.cs">
       <DependentUpon>PreciosLibros.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\RegistroUsuario.aspx.cs">
+    <Compile Include="Forms\RegistroUsuario.aspx.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\RegistroUsuario.aspx.designer.cs">
+    <Compile Include="Forms\RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Servicios.aspx.cs">
+    <Compile Include="Forms\Servicios.aspx.cs">
       <DependentUpon>Servicios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Servicios.aspx.designer.cs">
+    <Compile Include="Forms\Servicios.aspx.designer.cs">
       <DependentUpon>Servicios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Usuarios.aspx.cs">
+    <Compile Include="Forms\Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Usuarios.aspx.designer.cs">
+    <Compile Include="Forms\Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">

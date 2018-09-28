@@ -35,15 +35,15 @@ namespace Librox2.Master
             String activepage = Request.RawUrl;
             switch (activepage)
             {
-                case "/GUI/Perfil.aspx":
+                case "/Forms/Perfil.aspx":
                     CSSBody.Attributes.Add("class", "profile-page sidebar-collapse");
                     //ULTest.Attributes.Add("class", "sidebar-menu .active > .treeview-menu");
                     //EMPTY.Attributes.Add("class", "active");
                     break;
-                case "/GUI/AcercaDe.aspx":
+                case "/Forms/AcercaDe.aspx":
                     CSSBody.Attributes.Add("class","landing-page sidebar-collapse");
                     break;
-                case "/GUI/IndexMaybe.aspx":
+                case "/Forms/IndexMaybe.aspx":
                     CSSBody.Attributes.Add("class", "index-page sidebar-collapse");
                     break;
                 //case "/DBTestSite/Configure_Scripts.aspx":
