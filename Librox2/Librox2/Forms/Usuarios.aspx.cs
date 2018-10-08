@@ -104,7 +104,7 @@ namespace Librox2.GUI
             */
 
             cliente.Host = "smtp.live.com"; //Para Gmail "smtp.gmail.com";
-            cliente.EnableSsl = true;
+            cliente.EnableSsl = false;
 
 
             /*-------------------------ENVIO DE CORREO----------------------*/
