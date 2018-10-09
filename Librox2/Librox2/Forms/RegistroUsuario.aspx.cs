@@ -29,7 +29,7 @@ namespace Librox2.GUI
             int TU = 0;
             TU = ObUsuario.TipoUsuario;
             ObUsuario.DescriptionUser = txtdescription.Value;
-
+            ObUsuario.Cumpleaños = txtFechaNaci.Value;
         }
 
         protected void btnRegistro_Click(object sender, EventArgs e)

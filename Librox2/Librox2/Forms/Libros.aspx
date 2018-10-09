@@ -37,10 +37,10 @@
                 <h6><%# Eval("Titulo") %></h6>
             </div>
               <div class="input-group input-lg">
-                  <img alt="" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" />
+                  <img alt="" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" width="250" height="125" />
             </div>
                     <div class="input-group input-lg">
-                <h6><%# Eval("Sinopsis") %></h6>
+                <h6 class="text"><%# Eval("Sinopsis") %></h6>
             </div>
                     <div class="input-group input-lg">
                 <h6>Escrito por: <%# Eval("Autor") %></h6>
@@ -89,8 +89,8 @@
           <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
           </script>, Diseñado por
-          <a href="#" target="_blank">Developers Corp</a>. Desarrollado por
-          <a href="#" target="_blank">Developers Corp</a>.
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>. Desarrollado por
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>.
         </div>
       </div>
     </footer>

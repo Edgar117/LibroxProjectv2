@@ -52,6 +52,14 @@
   background: rgba(44, 44, 44, 0.2);
 }
 
+.text {
+  display: block;
+  width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .bootstrap-switch .bootstrap-switch-container {
   display: inline-flex;
   top: 0;

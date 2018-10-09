@@ -118,7 +118,7 @@
       </div>
     </div>
     <!--  End Modal -->
-     <footer class="footer footer-default">
+         <footer class="footer footer-default">
       <div class="container">
         <nav>
           <ul>
@@ -144,8 +144,8 @@
           <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
           </script>, Diseñado por
-          <a href="#" target="_blank">Developers Corp</a>. Desarrollado por
-          <a href="#" target="_blank">Developers Corp</a>.
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>. Desarrollado por
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>.
         </div>
       </div>
     </footer>

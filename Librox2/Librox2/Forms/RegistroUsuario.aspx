@@ -57,6 +57,14 @@
               </div>
               <input id="txtemail" runat="server" type="text" class="form-control" placeholder="Email">
             </div>
+                    <div class="input-group input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="now-ui-icons ui-1_calendar-60"></i>
+                </span>
+              </div>
+              <input id="txtFechaNaci" runat="server" type="text" class="form-control" placeholder="17/12/1996">
+            </div>
               <%--Contraseña--%>
             <div class="input-group input-lg">
               <div class="input-group-prepend">
@@ -77,7 +85,7 @@
         </div>
       </div>
     </div>
-  <footer class="footer footer-default">
+       <footer class="footer footer-default">
       <div class="container">
         <nav>
           <ul>
@@ -103,8 +111,8 @@
           <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
           </script>, Diseñado por
-          <a href="#" target="_blank">Developers Corp</a>. Desarrollado por
-          <a href="#" target="_blank">Developers Corp</a>.
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>. Desarrollado por
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>.
         </div>
       </div>
     </footer>

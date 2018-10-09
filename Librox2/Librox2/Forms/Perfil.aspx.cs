@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Librox2.DAO;
 using Librox2.BO;
 using System.IO;
+using System.Data;
 
 namespace Librox2.GUI
 {
@@ -16,6 +17,7 @@ namespace Librox2.GUI
         UsuarioBO OBUsuario = new UsuarioBO();
         UsuariosDAO ActualizarDAO = new UsuariosDAO();
         int ID = 0;
+        DataTable dt = new DataTable();
         String[] cart1 = new String[0];
         
         protected void Page_Load(object sender, EventArgs e)
@@ -35,6 +37,10 @@ namespace Librox2.GUI
                     txtdescription.InnerText = cart1[3].ToString().Trim();
                     lblSeguidres.InnerText = cart1[6].ToString();
                     Libros.InnerText = cart1[7].ToString();
+                    //Cargamos los libros del usuario
+                    LoadLibros();
+                    Repeater1.DataSource = dt;
+                    Repeater1.DataBind();
                 }
                 
             }
@@ -44,6 +50,10 @@ namespace Librox2.GUI
                 Response.Redirect("../Login.aspx");
             }
             
+        }
+        private void LoadLibros()
+        {
+            dt = ActualizarDAO.ConsultarMisLibros(ID);
         }
         private void EnviarDatos()
         {

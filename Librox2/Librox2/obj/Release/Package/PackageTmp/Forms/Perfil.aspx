@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <script type="text/javascript">  
 
             function showimagepreview(input) {
@@ -82,20 +83,21 @@
           </div>
           <!-- Tab panes -->
           <div class="tab-content gallery">
+             
             <div class="tab-pane active" id="home" role="tabpanel">
               <div class="col-md-10 ml-auto mr-auto">
                 <div class="row collections">
-                  <div class="col-md-6">
-                    <img src="../Maybe/assets/img/bg1.jpg" alt="" class="img-raised">
-                    <img src="../Maybe/assets/img/bg3.jpg" alt="" class="img-raised">
+                     <asp:Repeater ID="Repeater1" runat="server">
+                  <ItemTemplate>
+                  <div class="col-md-4">
+                    <img alt="" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" width="500" height="250" />                     
                   </div>
-                  <div class="col-md-6">
-                    <img src="../Maybe/assets/img/bg8.jpg" alt="" class="img-raised">
-                    <img src="../Maybe/assets/img/bg7.jpg" alt="" class="img-raised">
-                  </div>
+                     </ItemTemplate>
+              </asp:Repeater>
                 </div>
               </div>
             </div>
+                     
             <div class="tab-pane" id="profile" role="tabpanel">
               <div class="col-md-10 ml-auto mr-auto">
                 <div class="row collections">
@@ -144,24 +146,24 @@
         </div>
       </div>
     </div>
-    <footer class="footer footer-default">
+       <footer class="footer footer-default">
       <div class="container">
         <nav>
           <ul>
             <li>
-              <a href="https://www.creative-tim.com">
-                Creative Tim
+              <a href="#">
+                Aviso de Privacidad.
               </a>
             </li>
             <li>
-              <a href="http://presentation.creative-tim.com">
-                About Us
+              <a href="AcercaDe.aspx">
+               Acerca de nosotros
               </a>
             </li>
             <li>
-              <a href="http://blog.creative-tim.com">
-                Blog
-              </a>
+             <%-- <a href="http://blog.creative-tim.com">
+                Blog--%>
+             <%-- </a>--%>
             </li>
           </ul>
         </nav>
@@ -169,9 +171,9 @@
           &copy;
           <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-          </script>, Designed by
-          <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-          <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+          </script>, Diseñado por
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>. Desarrollado por
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>.
         </div>
       </div>
     </footer>

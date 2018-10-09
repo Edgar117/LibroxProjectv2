@@ -120,6 +120,9 @@
               <a class="dropdown-item"  href="../Forms/AgregarLibro.aspx">
                 <i class="now-ui-icons files_single-copy-04"></i>Registrar un Libro
               </a>
+                  <a class="dropdown-item" href="#">
+                <i class="now-ui-icons loader_gear"></i>Editar Mis Libros
+              </a>
             </div>
           </li>
             <%--TestLogin--%>
@@ -188,6 +191,16 @@
              swal({
                  title: "Registro de Usuario Escribox",
                  text: "Tu registro fallo. Pueden ser dos motivos. 1 El usuario ya existe. 2. El correo ya existe!",
+                 icon: "error",
+             });
+         }
+    </script>
+       <%--SWEET ALERT Libro Fallido--%>
+     <script type="text/javascript">
+         function RegistroFailLibro() {
+             swal({
+                 title: "Registro de Libro Fallido",
+                 text: "Tu registro fallo. Pueden ser dos motivos. 1 No se cargo la foto o pdf. 2. No se llenaron todos los campos!",
                  icon: "error",
              });
          }

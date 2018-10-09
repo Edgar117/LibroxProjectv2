@@ -133,6 +133,8 @@ namespace Librox2.GUI
         }
         protected void btnRegistrarLibro_Click(object sender, EventArgs e)
         {
+            try
+            {
             String[] cart1 = new String[0];
             cart1 = (String[])Session["ALL"];
             OBLibros.Autor_ID = (cart1[5]).ToString();
@@ -143,7 +145,12 @@ namespace Librox2.GUI
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error();", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFailLibro();", true);
+            }
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFailLibro();", true);
             }
 
         }

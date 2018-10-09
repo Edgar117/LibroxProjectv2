@@ -56,24 +56,24 @@
         </div>
       </div>
     </div>
-    <footer class="footer footer-default">
+         <footer class="footer footer-default">
       <div class="container">
         <nav>
           <ul>
             <li>
-              <a href="https://www.creative-tim.com">
-                Creative Tim
+              <a href="#">
+                Aviso de Privacidad.
               </a>
             </li>
             <li>
-              <a href="http://presentation.creative-tim.com">
-                About Us
+              <a href="AcercaDe.aspx">
+               Acerca de nosotros
               </a>
             </li>
             <li>
-              <a href="http://blog.creative-tim.com">
-                Blog
-              </a>
+             <%-- <a href="http://blog.creative-tim.com">
+                Blog--%>
+             <%-- </a>--%>
             </li>
           </ul>
         </nav>
@@ -81,9 +81,9 @@
           &copy;
           <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-          </script>, Designed by
-          <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-          <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+          </script>, Diseñado por
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>. Desarrollado por
+          <a href="https://www.facebook.com/Developers-Corp-2308672249427418" target="_blank">Developers Corp</a>.
         </div>
       </div>
     </footer>

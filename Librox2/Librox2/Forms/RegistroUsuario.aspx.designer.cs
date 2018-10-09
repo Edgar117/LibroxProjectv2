@@ -40,6 +40,15 @@ namespace Librox2.GUI {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtemail;
         
         /// <summary>
+        /// Control txtFechaNaci.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtFechaNaci;
+        
+        /// <summary>
         /// Control txtcontraseña.
         /// </summary>
         /// <remarks>

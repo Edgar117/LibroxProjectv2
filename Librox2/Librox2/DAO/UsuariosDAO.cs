@@ -70,7 +70,7 @@ namespace Librox2.DAO
 
             string contra = "";
             
-            SQL = "Select TOP 1 Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID,(select count(*) from seguidores where ID_Usuario=3) AS 'SEGUIDORES',(select count(*) from LIBROS where ID_Usuario=3)  as 'TotalLibros' from Usuarios US LEFT JOIN Seguidores SR ON SR.ID_Usuario = US.ID where Usuario = '"+ObjUsuario.Usuario+ "'OR Correo='"+ObjUsuario.Usuario+"'";
+            SQL = "Select TOP 1 Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID,(select count(*) from seguidores where ID_Usuario=Us.ID) AS 'SEGUIDORES',(select count(*) from LIBROS where ID_Autor=US.ID)  as 'TotalLibros' from Usuarios US  where Usuario = '"+ObjUsuario.Usuario+ "'OR Correo='"+ObjUsuario.Usuario+"'";
             SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
             con.AbrirConexion();
             cmd.Parameters.AddWithValue("@Usuario", contra);
@@ -82,6 +82,12 @@ namespace Librox2.DAO
             con.CerrarConexion();
             return contra;
 
+        }
+
+        public DataTable ConsultarMisLibros(int ID)
+        {
+            SQL = "SELECT ImagenPortada FROM LIBROS WHERE ID_Autor='"+ID+"'";
+            return con.TablaGeneral(SQL);
         }
     }
 }

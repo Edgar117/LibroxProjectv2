@@ -124,22 +124,7 @@ C:\Users\david\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox
 C:\Users\david\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.csproj.CopyComplete
 C:\Users\david\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.dll
 C:\Users\david\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.pdb
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\csc.exe
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\vbc.exe
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\VBCSCompiler.exe
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\Librox2.dll.config
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\Librox2.dll
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\Librox2.pdb
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.dll
-C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.pdb
