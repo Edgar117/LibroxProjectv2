@@ -36,15 +36,20 @@ namespace Librox2.GUI
         {
             try
             {
-                GetData();
-                if (Register.SaveUserRegister(ObUsuario) == 1)
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroGood();", true);
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFail();", true);
-                    //Algo salio mal :(
+                    if (Page.IsValid())
+                    {
+                        GetData();
+                        if (Register.SaveUserRegister(ObUsuario) == 1)
+                        {
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroGood();", true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFail();", true);
+                            //Algo salio mal :(
+                        }
+                    }
                 }
             }
             catch (Exception)
@@ -52,8 +57,6 @@ namespace Librox2.GUI
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFail();", true);
                 //Algo salio mal :(
             }
-
-
         }
     }
 }
