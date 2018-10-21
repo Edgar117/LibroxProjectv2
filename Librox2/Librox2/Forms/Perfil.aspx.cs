@@ -39,8 +39,11 @@ namespace Librox2.GUI
                     Libros.InnerText = cart1[7].ToString();
                     //Cargamos los libros del usuario
                     LoadLibros();
-                    Repeater1.DataSource = dt;
-                    Repeater1.DataBind();
+                    if (dt != null)
+                    {
+                        Repeater1.DataSource = dt;
+                        Repeater1.DataBind();
+                    }
                 }
                 
             }
