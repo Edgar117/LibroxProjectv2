@@ -97,7 +97,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="tab-pane" id="profile" role="tabpanel">
                             <div class="col-md-10 ml-auto mr-auto">
                                 <div class="row collections">
