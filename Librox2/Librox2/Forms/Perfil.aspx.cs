@@ -49,7 +49,6 @@ namespace Librox2.GUI
             }
             catch (Exception EX)
             {
-
                 Response.Redirect("../Login.aspx");
             }
             

@@ -83,6 +83,7 @@
                         </div>
                     </div>
                     <!-- Tab panes -->
+                    <asp:Panel ID="Panel1" runat="server"></asp:Panel>
                     <div class="tab-content gallery">
                         <div class="tab-pane active" id="home" role="tabpanel">
                             <div class="col-md-10 ml-auto mr-auto">

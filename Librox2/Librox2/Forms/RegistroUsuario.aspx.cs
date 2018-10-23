@@ -37,7 +37,7 @@ namespace Librox2.GUI
             try
             {
                 {
-                    if (Page.IsValid())
+                    if (Page.IsValid)
                     {
                         GetData();
                         if (Register.SaveUserRegister(ObUsuario) == 1)
