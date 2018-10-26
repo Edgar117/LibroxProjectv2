@@ -49,6 +49,21 @@ namespace Librox2.DAO
             }
             return 1;
         }
+        public int UpdateBookWithOutImage(object obj)
+        {
+            LibrosBO nom = (LibrosBO)obj;
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "UPDATE LIBROS SET Titulo='" + nom.Titulo + "',Sinopsis='" + nom.Sinpsis + "',Categoria='"+nom.Categoria+"' WHERE IDLibro='" + nom.ID_LIBRO + "' ";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
         //public string validarusuario(UsuarioBO ObjUsuario)
         //{
 

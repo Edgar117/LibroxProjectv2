@@ -120,7 +120,7 @@
               <a class="dropdown-item"  href="../Forms/AgregarLibro.aspx">
                 <i class="now-ui-icons files_single-copy-04"></i>Registrar un Libro
               </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="../Forms/AdministrarMisLibros.aspx">
                 <i class="now-ui-icons loader_gear"></i>Editar Mis Libros
               </a>
             </div>
