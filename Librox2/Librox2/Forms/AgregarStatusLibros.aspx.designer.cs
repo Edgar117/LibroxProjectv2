@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Librox2.GUI {
+namespace Librox2.Forms {
     
     
-    public partial class AgregarLibro {
+    public partial class AgregarStatusLibros {
         
         /// <summary>
         /// Control ScriptManager1.
@@ -22,48 +22,48 @@ namespace Librox2.GUI {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Control txtNombre.
+        /// Control UpdatePanel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNombre;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control txtSinopsis.
+        /// Control txtEstadoLibro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtSinopsis;
+        protected global::System.Web.UI.WebControls.TextBox txtEstadoLibro;
         
         /// <summary>
-        /// Control dpCategorias.
+        /// Control DPGeneraSc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpCategorias;
+        protected global::System.Web.UI.WebControls.DropDownList DPGeneraSc;
         
         /// <summary>
-        /// Control dpStatusLibro.
+        /// Control btnRegisterCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dpStatusLibro;
+        protected global::System.Web.UI.WebControls.Button btnRegisterCategoria;
         
         /// <summary>
-        /// Control btnRegistrarLibro.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrarLibro;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

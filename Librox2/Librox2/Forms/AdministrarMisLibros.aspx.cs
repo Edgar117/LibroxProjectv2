@@ -44,8 +44,10 @@ namespace Librox2.Forms
         }
         private void LoadGrid(int ID)
         {
-
-            GridView1.DataSource = DAOLibros.ConsultarMisLibrosToEdit(ID);
+            DataTable dt = new DataTable();
+            dt = DAOLibros.ConsultarMisLibrosToEdit(ID);
+            //DataRow dr = new DataRow[dt.Rows[1]];
+            GridView1.DataSource = dt;
             GridView1.DataBind();
         }
         private void LoadCategorias()

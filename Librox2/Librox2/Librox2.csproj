@@ -72,6 +72,9 @@
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
     <Content Include="Forms\AdministrarMisLibros.aspx" />
+    <Content Include="Forms\AgregarStatusLibros.aspx" />
+    <Content Include="Forms\Politicas.aspx" />
+    <Content Include="Forms\TerminosyCondiciones.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Forms\AcercaDe.aspx" />
     <Content Include="Forms\AgregarLibro.aspx" />
@@ -382,12 +385,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\CategoriasBO.cs" />
+    <Compile Include="BO\EstadoLibroBO.cs" />
     <Compile Include="BO\LibrosBO.cs" />
     <Compile Include="BO\Mensajes.cs" />
     <Compile Include="BO\Ranking.cs" />
     <Compile Include="BO\UsuarioBO.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\Conexion.cs" />
+    <Compile Include="DAO\EstatusLibroDAO.cs" />
     <Compile Include="DAO\LibrosDAO.cs" />
     <Compile Include="DAO\MensajesDAO.cs" />
     <Compile Include="DAO\RankingDAO.cs" />
@@ -399,6 +404,27 @@
     </Compile>
     <Compile Include="Forms\AdministrarMisLibros.aspx.designer.cs">
       <DependentUpon>AdministrarMisLibros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AgregarStatusLibros.aspx.cs">
+      <DependentUpon>AgregarStatusLibros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\AgregarStatusLibros.aspx.designer.cs">
+      <DependentUpon>AgregarStatusLibros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Politicas.aspx.cs">
+      <DependentUpon>Politicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Politicas.aspx.designer.cs">
+      <DependentUpon>Politicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TerminosyCondiciones.aspx.cs">
+      <DependentUpon>TerminosyCondiciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\TerminosyCondiciones.aspx.designer.cs">
+      <DependentUpon>TerminosyCondiciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -61,40 +61,47 @@ namespace Librox2
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
-            
-            if (txtusuario.Text.Length == 0 || txtpassword.Text.Length == 0)
+            try
             {
-                Response.Write("<script>alert('" + "El Usuario o la Contraseña no Existen" + "');</script>");
-            }
-            else
-            {
-                ObUsuario.Usuario = txtusuario.Text;
-                ObUsuario.Contraseña = txtpassword.Text;
-                String[] substrings = OB.validarusuario(ObUsuario).Split('|');
-                //Usuario Administrador
-                if (ObUsuario.Contraseña == substrings[0].ToString() && substrings[1].ToString()=="1")
+                if (txtusuario.Text.Length == 0 || txtpassword.Text.Length == 0)
                 {
-                    Session["Usuario"] = ObUsuario.Usuario;
-                    Session["Contraseña"] = ObUsuario.Contraseña;
-                    Session["Imagen"] ="~/images/" + substrings[2].ToString()+".png";
-                    //Session["Imagen"] = ObUsuario.ConsultaImagenParamedico(on);
-                    Session["ALL"] = substrings;
-                    Response.Redirect("/Forms/IndexBack.aspx");
-                    //Response.Write("<script>alert('" + "Bienvendo a nuestro Sistema" + "');</script>");
+                    Response.Write("<script>alert('" + "El Usuario o la Contraseña no Existen" + "');</script>");
                 }
                 else
                 {
-                    //Usuario Normal 
-                    if (ObUsuario.Contraseña ==OBSecurity.desencrypt(substrings[0].ToString()) && substrings[1].ToString() == "0")
+                    ObUsuario.Usuario = txtusuario.Text;
+                    ObUsuario.Contraseña = txtpassword.Text;
+                    String[] substrings = OB.validarusuario(ObUsuario).Split('|');
+                    //Usuario Administrador
+                    if (ObUsuario.Contraseña == substrings[0].ToString() && substrings[1].ToString() == "1")
                     {
                         Session["Usuario"] = ObUsuario.Usuario;
-                        Session["Panel"] = "Logeado";
+                        Session["Contraseña"] = ObUsuario.Contraseña;
+                        Session["Imagen"] = "~/images/" + substrings[2].ToString() + ".png";
+                        //Session["Imagen"] = ObUsuario.ConsultaImagenParamedico(on);
                         Session["ALL"] = substrings;
-                        Response.Redirect("/Forms/IndexMaybe.aspx");
-                        
+                        Response.Redirect("/Forms/IndexBack.aspx");
+                        //Response.Write("<script>alert('" + "Bienvendo a nuestro Sistema" + "');</script>");
                     }
-                   // Response.Write("<script>alert('" + "El Usuario o la Contraseña no existen" + "');</script>");
+                    else
+                    {
+                        //Usuario Normal 
+                        if (ObUsuario.Contraseña == OBSecurity.desencrypt(substrings[0].ToString()) && substrings[1].ToString() == "0")
+                        {
+                            Session["Usuario"] = ObUsuario.Usuario;
+                            Session["Panel"] = "Logeado";
+                            Session["ALL"] = substrings;
+                            Response.Redirect("/Forms/IndexMaybe.aspx");
+
+                        }
+                        // Response.Write("<script>alert('" + "El Usuario o la Contraseña no existen" + "');</script>");
+                    }
                 }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

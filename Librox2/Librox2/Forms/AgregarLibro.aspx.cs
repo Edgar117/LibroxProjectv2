@@ -13,6 +13,7 @@ namespace Librox2.GUI
     public partial class AgregarLibro : System.Web.UI.Page
     {
         CategoriaDAO DAOCategorias = new CategoriaDAO();
+        EstatusLibroDAO DAOStatusLibros = new EstatusLibroDAO();
         LibrosDAO DAOLibros = new LibrosDAO();
         LibrosBO OBLibros = new LibrosBO();
 
@@ -24,6 +25,7 @@ namespace Librox2.GUI
                 {
                     SaveUploadedFile(Request.Files);
                     LoadCategorias();
+                    LoadStatusLibros();
                 }
                 catch (Exception)
                 {
@@ -41,6 +43,14 @@ namespace Librox2.GUI
             this.dpCategorias.DataValueField = "NombreCategoria";//Nombre que tiene el field en la base de datos
             this.dpCategorias.DataTextField = "NombreCategoria";//Nombre que tendra en el Drop
             this.dpCategorias.DataBind();//Se le pasa los datos para que se llene de nuevo
+        }
+        private void LoadStatusLibros()
+        {
+            // llenamos el dropdownlist de acuerdo a las categorias Disponibles (Visibles en el admin)
+            this.dpStatusLibro.DataSource = DAOStatusLibros.ConsultarStatusLibrosVista();//Metodo que consulta las categorias disponibles para el usuario
+            this.dpStatusLibro.DataValueField = "ID";//Nombre que tiene el field en la base de datos
+            this.dpStatusLibro.DataTextField = "NombreEstatus";//Nombre que tendra en el Drop
+            this.dpStatusLibro.DataBind();//Se le pasa los datos para que se llene de nuevo
         }
         public void SaveUploadedFile(HttpFileCollection httpFileCollection)
         {

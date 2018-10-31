@@ -83,6 +83,15 @@
                             </div>
                             <asp:DropDownList CssClass="form-control" ID="dpCategorias" runat="server" Height="45px" Width="408px"></asp:DropDownList>
                         </div>
+                        <br />
+                        
+                         <div class="input-group input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"></span>
+                            </div>
+                             
+                            <asp:DropDownList CssClass="form-control" ID="dpStatusLibro" runat="server" Height="45px" Width="408px"></asp:DropDownList>
+                        </div>
                         <div class="send-button">
                             <div class="dropzone" id="dropzoneForm">
                                 <span class="issue-drop-zone__text">Arrastra tu libro en PDF e imagen de portada
