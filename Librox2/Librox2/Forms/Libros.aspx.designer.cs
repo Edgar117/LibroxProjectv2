@@ -22,6 +22,15 @@ namespace Librox2.GUI {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
+        /// Control dpCategorias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpCategorias;
+        
+        /// <summary>
         /// Control Repeater1.
         /// </summary>
         /// <remarks>

@@ -140,6 +140,7 @@ namespace Librox2.GUI
             OBLibros.LibroFisico = Session["LibroFisico"].ToString();
             OBLibros.ImagenPòrtada = Session["ImagenPortada"].ToString();
             OBLibros.Categoria = dpCategorias.Text;
+            OBLibros.EstatusLibro = int.Parse(dpStatusLibro.SelectedValue);
         }
         protected void btnRegistrarLibro_Click(object sender, EventArgs e)
         {

@@ -16,5 +16,6 @@ namespace Librox2.BO
         public string Categoria { get; set; }
         public string LibroFisico { get; set; }
         public int ID_LIBRO { get; set; }
+        public int EstatusLibro { get; set; }
     }
 }

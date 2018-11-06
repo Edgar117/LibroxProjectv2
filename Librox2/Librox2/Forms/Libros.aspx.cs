@@ -26,5 +26,9 @@ namespace Librox2.GUI
         {
             dt=DAOLibros.ConsultarLibros();
         }
+        private void PaginarPorCategorias()
+        {
+
+        }
     }
 }

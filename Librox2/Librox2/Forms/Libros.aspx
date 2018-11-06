@@ -29,6 +29,7 @@
         <h2 class="title">Libros que pueden ser tuyos.</h2>
         <p class="description">Descubrir nuevos mundos esta a tu alcance.</p>
         <div class="row">
+        <asp:DropDownList CssClass="form-control" ID="dpCategorias" runat="server" Height="45px" Width="408px"></asp:DropDownList>
          <asp:Repeater ID="Repeater1" runat="server">
                 <ItemTemplate>
           <div class="col-lg-2 text-center col-md-8 ml-auto mr-auto">

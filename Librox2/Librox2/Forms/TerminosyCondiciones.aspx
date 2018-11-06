@@ -266,7 +266,7 @@ soluciones a su problema..
         <nav>
           <ul>
             <li>
-              <a href="#">
+              <a href="Politicas.aspx">
                 Aviso de Privacidad.
               </a>
             </li>

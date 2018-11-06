@@ -81,6 +81,20 @@
               <p class="d-lg-none d-xl-none">Facebook</p>
             </a>
           </li>
+                  <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="Avisos" data-toggle="dropdown">
+              <i class="now-ui-icons education_glasses"></i>
+              <p>Politicas del sitio</p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
+              <a class="dropdown-item" href="../Forms/Politicas.aspx">
+                <i class="now-ui-icons ui-1_lock-circle-open"></i>Aviso de Privacidad
+              </a>
+              <a class="dropdown-item"  href="../Forms/TerminosyCondiciones.aspx">
+                <i class="now-ui-icons files_paper"></i> Terminos y Condiciones del sitio
+              </a>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
