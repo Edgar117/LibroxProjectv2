@@ -28,8 +28,10 @@
       <div class="container">
         <h2 class="title">Libros que pueden ser tuyos.</h2>
         <p class="description">Descubrir nuevos mundos esta a tu alcance.</p>
+            <asp:DropDownList CssClass="form-control" ID="dpCategorias" AutoPostBack="true" runat="server" Height="30px" Width="250px" OnSelectedIndexChanged="dpCategorias_SelectedIndexChanged"></asp:DropDownList>
+          <br />
         <div class="row">
-        <asp:DropDownList CssClass="form-control" ID="dpCategorias" runat="server" Height="45px" Width="408px"></asp:DropDownList>
+            <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
          <asp:Repeater ID="Repeater1" runat="server">
                 <ItemTemplate>
           <div class="col-lg-2 text-center col-md-8 ml-auto mr-auto">
@@ -55,6 +57,9 @@
                     <div class="input-group input-lg">
                 <h6>Categoria: <%# Eval("Categoria") %></h6>
             </div>
+                    <div class="input-group input-lg">
+                <h6>Estado del Libro: <%# Eval("NombreEstatus") %></h6>
+            </div>
             <div class="send-button">
                 <asp:Button  class="btn btn-primary btn-round btn-block btn-lg" Enabled="false"  ID="btnRegistro" runat="server" Text="Comprar" />
             </div>
@@ -69,7 +74,7 @@
         <nav>
           <ul>
             <li>
-              <a href="#">
+              <a href="Politicas.aspx">
                 Aviso de Privacidad.
               </a>
             </li>

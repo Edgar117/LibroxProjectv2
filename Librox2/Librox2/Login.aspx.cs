@@ -73,7 +73,7 @@ namespace Librox2
                     ObUsuario.Contraseña = txtpassword.Text;
                     String[] substrings = OB.validarusuario(ObUsuario).Split('|');
                     //Usuario Administrador
-                    if (ObUsuario.Contraseña == substrings[0].ToString() && substrings[1].ToString() == "1")
+                    if (ObUsuario.Contraseña == OBSecurity.desencrypt(substrings[0].ToString()) && substrings[1].ToString() == "1")
                     {
                         Session["Usuario"] = ObUsuario.Usuario;
                         Session["Contraseña"] = ObUsuario.Contraseña;

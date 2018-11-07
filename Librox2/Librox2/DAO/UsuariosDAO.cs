@@ -83,7 +83,24 @@ namespace Librox2.DAO
             return contra;
 
         }
+        public string validarusuarioApp(string Usuario,string Pass)
+        {
+            Security S = new Security();
+            string passEncry = S.encrypt(Pass);
+            string ID = "";
+            SQL = " EXEC [dbo].[ValidUserApp] '"+Usuario+"','"+passEncry+"'";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            cmd.Parameters.AddWithValue("@Usuario", Usuario);
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                ID = leer[0].ToString();
+            }
+            con.CerrarConexion();
+            return ID;
 
+        }
         public DataTable ConsultarMisLibros(int ID)
         {
             SQL = "SELECT ImagenPortada FROM LIBROS WHERE ID_Autor='"+ID+"'";

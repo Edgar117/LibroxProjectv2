@@ -18,7 +18,7 @@ namespace Librox2.DAO
         {
             LibrosBO  nom = (LibrosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "EXEC [spInsertBook] NULL,'"+nom.Titulo+"','"+nom.Sinpsis+"',"+nom.Autor_ID+",'"+nom.ImagenPòrtada+"',null,null,'"+nom.LibroFisico+"','"+nom.Categoria+"'";
+            string sql = "EXEC [spInsertBook] NULL,'"+nom.Titulo+"','"+nom.Sinpsis+"',"+nom.Autor_ID+",'"+nom.ImagenPòrtada+"',null,null,'"+nom.LibroFisico+"','"+nom.Categoria+"','"+nom.EstatusLibro+"'";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
@@ -31,7 +31,12 @@ namespace Librox2.DAO
         }
         public DataTable ConsultarLibros()
         {
-            SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR";
+            SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            return con.TablaGeneral(SQL);
+        }
+        public DataTable ConsultarLibrosPorCategorias(string CategoriaToFind)
+        {
+            SQL = "EXEC [dbo].[PaginadorCategorias] '"+CategoriaToFind+"'";
             return con.TablaGeneral(SQL);
         }
         public int UpdateUser(object obj)

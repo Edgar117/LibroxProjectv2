@@ -17,7 +17,7 @@
                 });
                 this.on("addedfile", function (file) {
                     // Create the remove button
-                    var removeButton = Dropzone.createElement("<button>Remover Archivo</button>");
+                    var removeButton = Dropzone.createElement("<button>Remover archivo</button>");
                     // Capture the Dropzone instance as closure.
                     var _this = this;
                     // Listen to the click event
@@ -61,7 +61,7 @@
         </div>
         <div class="section section-contact-us text-center">
             <div class="container">
-                <h2 class="title">Algo sorprende esta a punto de ocurrir.</h2>
+                <h2 class="title">Algo sorprende está a punto de ocurrir.</h2>
                 <p class="description">No lo dudes</p>
                 <div class="row">
                     <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
@@ -83,9 +83,18 @@
                             </div>
                             <asp:DropDownList CssClass="form-control" ID="dpCategorias" runat="server" Height="45px" Width="408px"></asp:DropDownList>
                         </div>
+                        <br />
+                        
+                         <div class="input-group input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"></span>
+                            </div>
+                             
+                            <asp:DropDownList CssClass="form-control" ID="dpStatusLibro" runat="server" Height="45px" Width="408px"></asp:DropDownList>
+                        </div>
                         <div class="send-button">
                             <div class="dropzone" id="dropzoneForm">
-                                <span class="issue-drop-zone__text">Arrastra tu libro y Fotografia del libro "AQUI"
+                                <span class="issue-drop-zone__text">Arrastra tu libro en PDF e imagen de portada
                                 </span>
                                 <br />
                                 <div class="fallback">
