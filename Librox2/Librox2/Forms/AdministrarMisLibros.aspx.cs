@@ -111,5 +111,10 @@ namespace Librox2.Forms
                     break;
             }
         }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            e.Row.Cells[7].Visible = false;
+        }
     }
 }
