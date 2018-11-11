@@ -22,7 +22,7 @@
                         <div class="col-md-12">
                             <div class="box box-info">
                                 <div class="box-header">
-                                    <h3 class="box-title">Lista de usuarios "Mucho cuidado con lo que se realice"</h3>
+                                    <h3 class="box-title">Lista de usuarios registrados</h3>
                                     <br />
                                     <asp:Panel ID="pnAviso" runat="server"> <%--Panel que aparece al seleccionar un usuario para enviar aviso, desaparecerá al enviar el correo automáticamente(pendiente)--%>
                                         <div class="row">
