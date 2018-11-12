@@ -13,13 +13,13 @@ namespace Librox2.GUI {
     public partial class IndexBack {
         
         /// <summary>
-        /// Control Project.
+        /// Control Libros.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Project;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Libros;
         
         /// <summary>
         /// Control freespace.
@@ -31,13 +31,13 @@ namespace Librox2.GUI {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl freespace;
         
         /// <summary>
-        /// Control Visit.
+        /// Control Usuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Visit;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Usuarios;
         
         /// <summary>
         /// Control empty.

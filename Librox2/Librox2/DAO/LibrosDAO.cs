@@ -87,5 +87,42 @@ namespace Librox2.DAO
         //    return contra;
 
         //}
+        
+        public int CONTARLIBROS()
+        {
+
+            int CUENTA = 0;
+
+            SQL = "Select COUNT(*) FROM LIBROS";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            cmd.Parameters.AddWithValue("@Usuario", CUENTA);
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                CUENTA =int.Parse( leer[0].ToString());
+            }
+            con.CerrarConexion();
+            return CUENTA;
+
+        }
+        public int ContarUsuarios()
+        {
+
+            int CUENTA = 0;
+
+            SQL = "Select COUNT(*) FROM Usuarios";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            cmd.Parameters.AddWithValue("@Usuario", CUENTA);
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                CUENTA = int.Parse(leer[0].ToString());
+            }
+            con.CerrarConexion();
+            return CUENTA;
+
+        }
     }
 }

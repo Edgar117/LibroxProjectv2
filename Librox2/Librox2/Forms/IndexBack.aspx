@@ -38,7 +38,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Libros Registrados</span>
-              <span id="Project" runat="server" class="info-box-number"><small>4</small></span>
+              <span id="Libros" runat="server" class="info-box-number"><small>4</small></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -68,7 +68,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Usuarios</span>
-              <span id="Visit" runat="server" class="info-box-number"></span>
+              <span id="Usuarios" runat="server" class="info-box-number"></span>
             </div>
             <!-- /.info-box-content -->
           </div>

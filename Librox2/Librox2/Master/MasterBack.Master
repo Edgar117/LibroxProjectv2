@@ -24,9 +24,9 @@
     <!-- Logo -->
     <a href="Welcome.aspx" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>L</b>X</span>
+      <span class="logo-mini"><b>E</b>X</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Librox</b></span>
+      <span class="logo-lg"><b>Escribox</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -81,6 +81,7 @@
                 <li><a href="../Forms/PreciosLibros.aspx"><i class="fa fa-dollar"></i>Precios Libros</a></li>
             <li><a href="../Forms/Usuarios.aspx"><i class="fa fa-user"></i>Administrar Usuarios</a></li>
                 <li><a href="#"><i class="fa fa-book"></i>Administrar Libros</a></li>
+                <li><a href="../Forms/AgregarStatusLibros.aspx"><i class="fa fa-archive"></i>Administrar Estatus Libro</a></li>
           </ul>
         </li>
         <li class="header">Categorias</li>

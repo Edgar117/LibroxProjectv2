@@ -7,11 +7,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      Registro de Categorias
+      Registro de Estatus
         </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li><a href="#">Registrar Categorias</a></li>
+        <li><a href="#">Registrar Estatus</a></li>
       </ol>
     </section>
           <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -22,7 +22,7 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header">
-              <h3 class="box-title">Registro de Categorias para libros</h3>
+              <h3 class="box-title">Registro de Estatus para libros</h3>
             </div>
             <div class="box-body">
                 <div class="col-md-4">
