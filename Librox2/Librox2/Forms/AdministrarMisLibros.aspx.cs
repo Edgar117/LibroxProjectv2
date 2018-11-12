@@ -121,12 +121,13 @@ namespace Librox2.Forms
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Select$" + e.Row.RowIndex);
-                e.Row.ToolTip = "Toca para seleccionar este libro.";
+                e.Row.ToolTip = "Toca para seleccionar este libro.";    //Ayuda
             }
         }
 
         private void cargarDatos(GridViewCommandEventArgs e)
         {
+            //Este método recupera el índice del grid y carga los datos de la fila en el formulario.
             int index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = GridView1.Rows[index];
             txtNombre.Value = Server.HtmlDecode(row.Cells[4].Text);
@@ -169,11 +170,22 @@ namespace Librox2.Forms
             }
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        //protected void LinkButton1_Click(object sender, EventArgs e)
+        //{
+        //    DataListItem row = (DataListItem)((LinkButton)sender).NamingContainer;
+        //    string titulo = (row.FindControl("LinkButton1") as LinkButton).Text;
+        //    Response.Write("<script>alert('" + titulo + "');</script>");
+        //}
+
+        protected void dtlBooks_EditCommand(object source, DataListCommandEventArgs e)
         {
-            DataListItem row = (DataListItem)((LinkButton)sender).NamingContainer;
-            string titulo = (row.FindControl("LinkButton1") as LinkButton).Text;
-            Response.Write("<script>alert('" + titulo + "');</script>");
+            dtlBooks.EditItemIndex = e.Item.ItemIndex;
+            dtlBooks.DataBind();
+        }
+
+        protected void dtlBooks_UpdateCommand(object source, DataListCommandEventArgs e)
+        {
+
         }
     }
 }

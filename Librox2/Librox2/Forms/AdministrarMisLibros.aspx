@@ -25,7 +25,7 @@
             </div>
             <div class="content-center">
                 <div class="container">
-                    <h2 class="title">Menú Administrativo</h2>
+                    <h2 class="title">Menú administrativo</h2>
                     <div class="text-center">
                         <a href="#" class="btn btn-primary btn-icon btn-round">
                             <i class="fab fa-facebook-square"></i>
@@ -106,18 +106,28 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>Libros como items</h3>
+                        <h3>Libros como ítems</h3>
                         <br />
-                        <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellSpacing="5">
+                        <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellSpacing="5" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand">
+                            <EditItemTemplate>
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("IDLibro") %>'></asp:Label>
+                                    <%--Debe ir aquí la imagen--%>
+                                        <asp:TextBox ID="txtCategoria" runat="server" Text='<%# Eval("Categoria") %>' CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtSinopsis" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="form-control"></asp:TextBox>
+                                        <asp:LinkButton ID="lbtnUpdate" runat="server" CommandName="update">Save</asp:LinkButton>
+                                        &nbsp;<asp:LinkButton ID="lbtnCancel" runat="server" CommandName="cancel">Cancelar</asp:LinkButton>
+                            </EditItemTemplate>
                             <ItemTemplate>
                                 <div class="card" style="width: 19rem;">
                                     <h5 class="card-header">Editar</h5>
+                                    <asp:Label ID="Label3" runat="server" Text='<%# Eval("IDLibro") %>'></asp:Label>
                                     <img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">
                                     <div class="card-body">
                                         <h5 class="title"><%# Eval("Categoria") %></h5>
                                         <h5 class="card-title"><%# Eval("Titulo") %></h5>
                                         <p class="text"><%# Eval("Sinopsis") %></p>
-                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="card-link" Text='<%# Eval("Titulo") %>' OnClick="LinkButton1_Click"></asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="card-link" CommandName="edit">Editar</asp:LinkButton>
                                     </div>
                                 </div>
                             </ItemTemplate>
