@@ -54,11 +54,11 @@ namespace Librox2.DAO
             }
             return 1;
         }
-        public int UpdateBookWithOutImage(object obj)
+        public int UpdateLibroDelete(object obj)
         {
             LibrosBO nom = (LibrosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "UPDATE LIBROS SET Titulo='" + nom.Titulo + "',Sinopsis='" + nom.Sinpsis + "',Categoria='"+nom.Categoria+"' WHERE IDLibro='" + nom.ID_LIBRO + "' ";
+            string sql = "EXEC [spUpdateDelete] '"+nom.ID_LIBRO+ "','" + nom.Titulo + "','" + nom.Sinpsis + "','" + nom.ImagenPòrtada + "','" + nom.Categoria + "','" + nom.EstatusLibro + "' ";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

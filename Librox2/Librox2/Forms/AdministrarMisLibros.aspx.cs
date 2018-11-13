@@ -91,19 +91,6 @@ namespace Librox2.Forms
                     }
                     break;
                 case "btnActualizar":
-                    //int indexUpdate = Convert.ToInt32(e.CommandArgument);
-                    //GridViewRow rowUpdate = GridView1.Rows[indexUpdate];
-                    ////   SelectCategoria();
-                    //OBLibros.ID_LIBRO = int.Parse(Server.HtmlDecode(rowUpdate.Cells[3].Text));
-                    //OBLibros.Titulo = txtNombre.Value;
-                    //OBLibros.Sinpsis = txtSinopsis.Value;
-                    //OBLibros.Categoria = dpCategorias.SelectedValue;
-                    //if (DAOLibrosToedit.UpdateBookWithOutImage(OBLibros) == 1)
-                    //{
-                    //    cart1 = (String[])Session["ALL"];
-                    //    ID = int.Parse(cart1[5]).ToString();
-                    //    LoadGrid(int.Parse(ID));
-                    //}
                     actualizarDatos(e);
                     break;
                 case "btnSeleccionar":
@@ -145,7 +132,7 @@ namespace Librox2.Forms
             OBLibros.Titulo = txtNombre.Value;
             OBLibros.Sinpsis = txtSinopsis.Value;
             OBLibros.Categoria = dpCategorias.SelectedValue;
-            if (DAOLibrosToedit.UpdateBookWithOutImage(OBLibros) == 1)
+            if (DAOLibrosToedit.UpdateLibroDelete(OBLibros) == 1)
             {
                 cart1 = (String[])Session["ALL"];
                 ID = int.Parse((cart1[5]).ToString());
@@ -180,9 +167,16 @@ namespace Librox2.Forms
         protected void dtlBooks_EditCommand(object source, DataListCommandEventArgs e)
         {
             dtlBooks.EditItemIndex = e.Item.ItemIndex;
-            dtlBooks.DataBind();
+            //dtlBooks.DataBind();
+            cart1 = (String[])Session["ALL"];
+            ID = int.Parse(cart1[5]);
+            cargarDatalist(ID);
         }
+        private void bind(int ID)
+        {
 
+
+        }
         protected void dtlBooks_UpdateCommand(object source, DataListCommandEventArgs e)
         {
 
