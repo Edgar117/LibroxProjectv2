@@ -46,7 +46,8 @@
                 <div class="row">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
-                            <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                            <asp:Panel ID="Panel1" runat="server">
+                                <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                                 <div class="input-group input-lg">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
@@ -73,10 +74,10 @@
                                         </div>
                                         <div class="col-md-6">
                                             <asp:Label ID="lblcambiarfoto" runat="server" Text="Cambiar Foto (Nueva Foto)"></asp:Label>
-                                            <img id="imagend2" class="img-raised" alt="" width="250" height="250" src="" />
+                                            
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                                 <div class="send-button">
                                 </div>
@@ -101,6 +102,7 @@
                                 <div class="send-button">
                                 </div>
                             </div>
+                            </asp:Panel>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
@@ -108,8 +110,8 @@
                     <div class="col-md-12">
                         <h3>Libros como ítems</h3>
                         <br />
-                        <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellSpacing="5" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand">
-                           <ItemTemplate>
+                        <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellSpacing="5" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand" OnCancelCommand="dtlBooks_CancelCommand">
+                            <ItemTemplate>
                                 <div class="card" style="width: 19rem;">
                                     <h5 class="card-header">Editar</h5>
                                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("IDLibro") %>'></asp:Label>
@@ -119,21 +121,29 @@
                                         <h5 class="card-title"><%# Eval("Titulo") %></h5>
                                         <p class="text"><%# Eval("Sinopsis") %></p>
                                         <asp:LinkButton ID="LinkButton1" runat="server" CssClass="card-link" CommandName="edit">Editar</asp:LinkButton>
-                                   
-                                         </div>
+                                    </div>
                                 </div>
                             </ItemTemplate>
-                             <EditItemTemplate>
-                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("IDLibro") %>'></asp:Label>
-                                    <%--Debe ir aquí la imagen--%>
-                                        <asp:TextBox ID="txtCategoria" runat="server" Text='<%# Eval("Categoria") %>' CssClass="form-control"></asp:TextBox>
-                                        <asp:TextBox ID="txtTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="form-control"></asp:TextBox>
-                                        <asp:TextBox ID="txtSinopsis" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="form-control"></asp:TextBox>
-                                        <asp:LinkButton ID="lbtnUpdate" runat="server" CommandName="update">Save</asp:LinkButton>
+                            <EditItemTemplate>
+                                <div class="card" style="width: 19rem;">
+                                    <h5 class="card-header">
+                                        Editando libro...
+                                        <asp:Label ID="lblIdLibro" runat="server" Text='<%# Eval("IDLibro") %>'></asp:Label></h5>
+                                    <img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">
+                                    <img id="imagend2" class="img-raised" alt="" width="237" height="260" src="" />
+                                    <div class="card-body">
+                                        <asp:TextBox ID="txtCategoria" runat="server" Text='<%# Eval("Categoria") %>' CssClass="form-control" Height="30" Width="250"></asp:TextBox>
+                                        <br />
+                                        <asp:TextBox ID="txtTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="form-control" Height="30" Width="250"></asp:TextBox>
+                                        <br />
+                                        <asp:TextBox ID="txtSinopsis" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="form-control" Height="30" Width="250"></asp:TextBox>
+                                        <br />
+                                        <asp:LinkButton ID="lbtnUpdate" runat="server" CommandName="update" CssClass="btn bnt-sm btn-round btn-warning">Guardar</asp:LinkButton>
                                         &nbsp;<asp:LinkButton ID="lbtnCancel" runat="server" CommandName="cancel">Cancelar</asp:LinkButton>
-                                 <asp:FileUpload ID="FileUpload1" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
-                                     </EditItemTemplate>
-                            
+                                        <asp:FileUpload ID="FileUpload1" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
+                                    </div>
+                                </div>
+                            </EditItemTemplate>
                         </asp:DataList>
                     </div>
                 </div>

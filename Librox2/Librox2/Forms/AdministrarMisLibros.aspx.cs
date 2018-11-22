@@ -42,7 +42,7 @@ namespace Librox2.Forms
                 }
 
             }
-
+            Panel1.Visible = false;
         }
         private void cargarDatalist(int ID)
         {
@@ -157,29 +157,35 @@ namespace Librox2.Forms
             }
         }
 
-        //protected void LinkButton1_Click(object sender, EventArgs e)
-        //{
-        //    DataListItem row = (DataListItem)((LinkButton)sender).NamingContainer;
-        //    string titulo = (row.FindControl("LinkButton1") as LinkButton).Text;
-        //    Response.Write("<script>alert('" + titulo + "');</script>");
-        //}
-
         protected void dtlBooks_EditCommand(object source, DataListCommandEventArgs e)
         {
             dtlBooks.EditItemIndex = e.Item.ItemIndex;
-            //dtlBooks.DataBind();
+            bind();
+            
+        }
+        private void bind()
+        {
             cart1 = (String[])Session["ALL"];
             ID = int.Parse(cart1[5]);
             cargarDatalist(ID);
         }
-        private void bind(int ID)
-        {
-
-
-        }
         protected void dtlBooks_UpdateCommand(object source, DataListCommandEventArgs e)
         {
+            int id = Convert.ToInt32(dtlBooks.DataKeys[e.Item.ItemIndex]);
+            TextBox nombreLibro = (TextBox)e.Item.FindControl("txtTitulo");
+            TextBox sinopsisLibro = (TextBox)e.Item.FindControl("txtSinopsis");
+            TextBox categoriaLibro = (TextBox)e.Item.FindControl("txtCategoria");
+            OBLibros.ID_LIBRO = id;
+            OBLibros.Titulo = nombreLibro.Text;
+            OBLibros.Sinpsis = sinopsisLibro.Text;
+            OBLibros.Categoria = categoriaLibro.Text;
 
+        }
+
+        protected void dtlBooks_CancelCommand(object source, DataListCommandEventArgs e)
+        {
+            dtlBooks.EditItemIndex = -1;
+            bind();
         }
     }
 }
