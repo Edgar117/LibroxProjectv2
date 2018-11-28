@@ -76,6 +76,7 @@
     <Content Include="Forms\AdministrarMisLibros.aspx" />
     <Content Include="Forms\AgregarStatusLibros.aspx" />
     <Content Include="Forms\Politicas.aspx" />
+    <Content Include="Forms\ProcesarPago.aspx" />
     <Content Include="Forms\TerminosyCondiciones.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Forms\AcercaDe.aspx" />
@@ -402,6 +403,7 @@
     <Compile Include="BO\EstadoLibroBO.cs" />
     <Compile Include="BO\LibrosBO.cs" />
     <Compile Include="BO\Mensajes.cs" />
+    <Compile Include="BO\Paypal.cs" />
     <Compile Include="BO\Ranking.cs" />
     <Compile Include="BO\UserBoWebService.cs" />
     <Compile Include="BO\UsuarioBO.cs" />
@@ -433,6 +435,13 @@
     </Compile>
     <Compile Include="Forms\Politicas.aspx.designer.cs">
       <DependentUpon>Politicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcesarPago.aspx.cs">
+      <DependentUpon>ProcesarPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcesarPago.aspx.designer.cs">
+      <DependentUpon>ProcesarPago.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\TerminosyCondiciones.aspx.cs">
       <DependentUpon>TerminosyCondiciones.aspx</DependentUpon>

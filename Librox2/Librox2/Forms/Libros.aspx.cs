@@ -6,11 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Librox2.DAO;
 using System.Data;
-
+using Librox2.BO;
 namespace Librox2.GUI
 {
     public partial class Libros : System.Web.UI.Page
     {
+        //Declaramos la instancia de paypal
+        Paypal entity = new Paypal();
+
         LibrosDAO DAOLibros = new LibrosDAO();
         CategoriaDAO DAOCategorias = new CategoriaDAO();
         DataTable dt = new DataTable();
@@ -18,6 +21,7 @@ namespace Librox2.GUI
         {
             if (!IsPostBack)
             {
+                Session["myOrderingEntity"] = null;
                 LoadLibros();
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
@@ -60,5 +64,24 @@ namespace Librox2.GUI
             dt = DAOLibros.ConsultarLibrosPorCategorias(dpCategorias.Text);
             LoadAll();
         }
+
+        //Metodo que llena los datos del paypal
+        private void SetOrderingValue(string itemName, string itemNumber, string amount, string noShipping, string quantity)
+        {
+            entity.Business = "Escribox@gmail.com";
+            entity.ItemName = itemName;
+            entity.ItemNumber = itemNumber;
+            entity.Amount = amount;
+            entity.NoShipping = noShipping;
+            entity.Quantity = quantity;
+            Session["myOrderingEntity"] = entity;
+        }
+
+        //Metodo que david hara para pasar los datos
+        //protected void btnPaypal4_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    SetOrderingValue("Championship Tennis", "PN4", "13.98", "1", "3");
+        //    Response.Redirect("~/PaypalProcess.aspx");
+        //}
     }
 }
