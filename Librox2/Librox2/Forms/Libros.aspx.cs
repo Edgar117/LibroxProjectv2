@@ -25,6 +25,9 @@ namespace Librox2.GUI
                 LoadLibros();
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
+                Repeater1.Visible = false;
+                dtlBooks.DataSource = dt;
+                dtlBooks.DataBind();
                 PaginarPorCategorias();
             }
         }
@@ -65,7 +68,7 @@ namespace Librox2.GUI
             LoadAll();
         }
 
-        //Metodo que llena los datos del paypal
+        //Método que llena los datos del paypal
         private void SetOrderingValue(string itemName, string itemNumber, string amount, string noShipping, string quantity)
         {
             entity.Business = "Escribox@gmail.com";
@@ -75,6 +78,22 @@ namespace Librox2.GUI
             entity.NoShipping = noShipping;
             entity.Quantity = quantity;
             Session["myOrderingEntity"] = entity;
+        }
+
+        protected void dtlBooks_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "pay")
+            {
+                //Busca una referencia al 'linkbutton' dentro del datalist
+                DataListItem item = (DataListItem)(((LinkButton)(e.CommandSource)).NamingContainer);
+                //Obtiene valores del item seleccionado (título y precio)
+                string titulo = ((Label)item.FindControl("lblTitulo")).Text;
+                string precio = ((Label)item.FindControl("lblPrecio")).Text;
+                //Método para activar la sesión para enviar al proceso de pago
+                SetOrderingValue(titulo, "BB01", precio, "1", "1");
+                //Redirige al proceso de pago con los datos del libro elegido ya en la sesión.
+                Response.Redirect("~/Forms/ProcesarPago.aspx");
+            }
         }
 
         //Metodo que david hara para pasar los datos

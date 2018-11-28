@@ -32,6 +32,25 @@
           <br />
         <div class="row">
             <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
+            <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="4" CellSpacing="10" OnItemCommand="dtlBooks_ItemCommand">
+                <ItemTemplate>
+                    <div class="card" style="width: 19rem;">
+                        <h5 class="card-header">Book</h5>
+                        <img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">
+                        <div class="card-body">
+                            <%--<h5 class="title"><%# Eval("Categoria") %></h5>--%>
+                            <h5><asp:Label ID="lblCat" runat="server" Text='<%# Eval("Categoria") %>' CssClass="title"></asp:Label></h5>
+                            <%--<h5 class="card-title"><%# Eval("Titulo") %></h5>--%>
+                            <h5><asp:Label ID="lblTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="card-title"></asp:Label></h5>
+                            <%--<p class="text"><%# Eval("Sinopsis") %></p>--%>
+                            <p><asp:Label ID="lblSinop" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="text"></asp:Label></p>
+                            <p><asp:Label ID="lblPrecio" runat="server" Text='<%# Eval("PRECIO") %>'></asp:Label></p>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-outline-warning" CommandName="pay">Comprar</asp:LinkButton>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:DataList>
+
          <asp:Repeater ID="Repeater1" runat="server">
                 <ItemTemplate>
           <div class="col-lg-2 text-center col-md-8 ml-auto mr-auto">
