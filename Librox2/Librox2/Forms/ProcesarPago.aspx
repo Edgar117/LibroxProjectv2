@@ -71,7 +71,7 @@
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td>
-                <img class="ajaxloader_style" src='<%=ResolveUrl("~/images/ajax_loader.gif")%>' width="100" height="100" /></td>
+                <img class="ajaxloader_style" src='<%=ResolveUrl("~/PaypalScri/scripts/ajax_loader.gif")%>' width="100" height="100" /></td>
             <td>&nbsp;</td>
         </tr>
         <tr>

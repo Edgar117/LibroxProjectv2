@@ -325,6 +325,8 @@
     <Content Include="Maybe\CHANGELOG.md" />
     <Content Include="Maybe\package.json" />
     <Content Include="Maybe\README.md" />
+    <Content Include="PaypalScri\scripts\ajax_loader.gif" />
+    <Content Include="PaypalScri\scripts\jquery.min.js" />
     <Content Include="Service References\ServiceReference2\Librox2.ServiceReference2.ValidUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

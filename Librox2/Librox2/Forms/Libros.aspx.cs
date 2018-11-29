@@ -71,7 +71,7 @@ namespace Librox2.GUI
         //Método que llena los datos del paypal
         private void SetOrderingValue(string itemName, string itemNumber, string amount, string noShipping, string quantity)
         {
-            entity.Business = "Escribox@gmail.com";
+            entity.Business = "huesos_blin182-facilitator@hotmail.com";
             entity.ItemName = itemName;
             entity.ItemNumber = itemNumber;
             entity.Amount = amount;
