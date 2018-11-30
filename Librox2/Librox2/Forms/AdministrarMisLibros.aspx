@@ -110,7 +110,7 @@
                     <div class="col-md-12">
                         <h3>Libros como ítems</h3>
                         <br />
-                        <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellSpacing="5" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand" OnCancelCommand="dtlBooks_CancelCommand">
+                        <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellSpacing="5" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand" OnCancelCommand="dtlBooks_CancelCommand" OnItemDataBound="dtlBooks_ItemDataBound">
                             <ItemTemplate>
                                 <div class="card" style="width: 19rem;">
                                     <h5 class="card-header">Editar</h5>
@@ -132,7 +132,8 @@
                                     <img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">
                                     <img id="imagend2" class="img-raised" alt="" width="237" height="260" src="" />
                                     <div class="card-body">
-                                        <asp:TextBox ID="txtCategoria" runat="server" Text='<%# Eval("Categoria") %>' CssClass="form-control" Height="30" Width="250"></asp:TextBox>
+                                        <%--<asp:TextBox ID="txtCategoria" runat="server" Text='<%# Eval("Categoria") %>' CssClass="form-control" Height="30" Width="250"></asp:TextBox>--%>
+                                        <asp:DropDownList ID="ddlCat" runat="server" CssClass="form-control" Height="30" Width="250"></asp:DropDownList>
                                         <br />
                                         <asp:TextBox ID="txtTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="form-control" Height="30" Width="250"></asp:TextBox>
                                         <br />

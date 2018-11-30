@@ -195,5 +195,21 @@ namespace Librox2.Forms
             dtlBooks.EditItemIndex = -1;
             bind();
         }
+
+        protected void dtlBooks_ItemDataBound(object sender, DataListItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.EditItem)
+            {
+                DropDownList ddl = e.Item.FindControl("ddlCat") as DropDownList;
+                if (ddl != null)
+                {
+                    //populate the ddl now  
+                    ddl.DataSource = DAOCategorias.ConsultarCategoriasLibrosVista();
+                    ddl.DataTextField  = "NombreCategoria";
+                    ddl.DataValueField = "NombreCategoria";
+                    ddl.DataBind();
+                }
+            }
+        }
     }
 }

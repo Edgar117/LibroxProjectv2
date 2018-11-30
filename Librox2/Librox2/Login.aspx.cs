@@ -100,7 +100,7 @@ namespace Librox2
             }
             catch (Exception)
             {
-
+                Response.Write("<script>alert('" + "Error de conexión, intenta de nuevo" + "');</script>");
                 throw;
             }
         }
