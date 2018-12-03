@@ -36,7 +36,7 @@ namespace Librox2
                 int Validar = OB.SaveUserFB(oUser);
                 if (Validar == 0)
                 {
-                    Response.Redirect("/Forms/Index.aspx");
+                    Response.Redirect("/Forms/Home.aspx");
                 }
                 else
                 {
@@ -80,7 +80,7 @@ namespace Librox2
                         Session["Imagen"] = "~/images/" + substrings[2].ToString() + ".png";
                         //Session["Imagen"] = ObUsuario.ConsultaImagenParamedico(on);
                         Session["ALL"] = substrings;
-                        Response.Redirect("/Forms/IndexBack.aspx");
+                        Response.Redirect("/Forms/Home.aspx");
                         //Response.Write("<script>alert('" + "Bienvendo a nuestro Sistema" + "');</script>");
                     }
                     else

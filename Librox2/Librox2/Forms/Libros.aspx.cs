@@ -36,14 +36,14 @@ namespace Librox2.GUI
             if (dt.Rows.Count>0)
             {
                 Label1.Visible = false;
-                Repeater1.DataSource = dt;
-                Repeater1.DataBind();
+                dtlBooks.DataSource = dt;
+                dtlBooks.DataBind();
             }
             else
             {
                 dt.Clear();
-                Repeater1.DataSource = dt;
-                Repeater1.DataBind();
+                dtlBooks.DataSource = dt;
+                dtlBooks.DataBind();
                 Label1.Visible = true;
                 Label1.Text = "No hay Libros con esa Categoria Para Mostrar";
             }

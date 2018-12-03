@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/MasterBack.Master" AutoEventWireup="true" CodeBehind="AgregarStatusLibros.aspx.cs" Inherits="Librox2.Forms.AgregarStatusLibros" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/MasterBack.Master" AutoEventWireup="true" CodeBehind="AgregarAdmin.aspx.cs" Inherits="Librox2.Forms.AgregarAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
       <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -11,7 +11,7 @@
         </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li><a href="#">Registrar Estatus</a></li>
+        <li><a href="#">Registrar Usuario Admin</a></li>
       </ol>
     </section>
           <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -22,7 +22,7 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header">
-              <h3 class="box-title">Registro de Estatus para libros</h3>
+              <h3 class="box-title">Registro de Usuario Administrador</h3>
             </div>
             <div class="box-body">
                 <div class="col-md-4">
@@ -87,4 +87,5 @@
           </div>
             </ContentTemplate>
     </asp:UpdatePanel>
+
 </asp:Content>

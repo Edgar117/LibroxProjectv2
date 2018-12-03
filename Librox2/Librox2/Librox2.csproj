@@ -75,6 +75,7 @@
     <Content Include="css\_all-skins.min.css" />
     <Content Include="Forms\AdministrarMisLibros.aspx" />
     <Content Include="Forms\AgregarStatusLibros.aspx" />
+    <Content Include="Forms\Home.aspx" />
     <Content Include="Forms\Politicas.aspx" />
     <Content Include="Forms\ProcesarPago.aspx" />
     <Content Include="Forms\TerminosyCondiciones.aspx" />
@@ -97,6 +98,7 @@
     <Content Include="Forms\Usuarios.aspx" />
     <Content Include="images\BooksImg\g3.jpg" />
     <Content Include="images\ImagenDefualt.png" />
+    <Content Include="images\IMG-20180924-WA0010.jpg" />
     <Content Include="images\Users\DaniFoto.jpg" />
     <Content Include="images\Users\ImagenDefualt.png" />
     <Content Include="js\adminlte.min.js" />
@@ -430,6 +432,13 @@
     </Compile>
     <Compile Include="Forms\AgregarStatusLibros.aspx.designer.cs">
       <DependentUpon>AgregarStatusLibros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Politicas.aspx.cs">
       <DependentUpon>Politicas.aspx</DependentUpon>
