@@ -98,7 +98,9 @@
                     <%--Breve descripcion--%>
                     <div class="textarea-container">
                         <textarea id="txtdescription" runat="server" class="form-control" name="name" rows="4" cols="80" placeholder="Breve descripción(Opcional)"></textarea>
-                    </div>
+                   <br />
+                        <asp:CheckBox ID="ChkTerminos" Text="Aceptar terminos y condiciones" runat="server" /><br /><a href="TerminosyCondiciones.aspx" target="_blank">Ver aqui</a>
+                      </div>
                     <div class="send-button">
                         <asp:Button class="btn btn-primary btn-round btn-block btn-lg" ID="btnRegistro" OnClick="btnRegistro_Click" runat="server" Text="Registrar Usuario" />
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Ocurrió un error al registrarte" ForeColor="Red" />

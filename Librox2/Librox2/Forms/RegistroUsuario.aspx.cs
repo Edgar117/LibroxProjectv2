@@ -43,16 +43,20 @@ namespace Librox2.GUI
                         {
                             ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "AceptarTerminos();", true);
                         }
-                        GetData();
-                        if (Register.SaveUserRegister(ObUsuario) == 1)
-                        {
-                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroGood();", true);
-                        }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFail();", true);
-                            //Algo salio mal :(
+                            GetData();
+                            if (Register.SaveUserRegister(ObUsuario) == 1)
+                            {
+                                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroGood();", true);
+                            }
+                            else
+                            {
+                                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFail();", true);
+                                //Algo salio mal :(
+                            }
                         }
+                       
                     }
                 }
             }

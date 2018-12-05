@@ -25,7 +25,9 @@ namespace Librox2.Forms
         protected void btnRegisterAdminUser_Click(object sender, EventArgs e)
         {
             ObUsuario.Usuario = txtUsuario.Text;
-            ObUsuario.Contraseña = txtContraseña.Text;
+            string contraseña = "";
+            contraseña = OBSecurity.encrypt(txtContraseña.Text);
+            ObUsuario.Contraseña = contraseña;
             ObUsuario.Correo = txtcorreo.Text;
             ObUsuario.Cumpleaños = "12/12/2020";
             ObUsuario.TipoUsuario = 1;

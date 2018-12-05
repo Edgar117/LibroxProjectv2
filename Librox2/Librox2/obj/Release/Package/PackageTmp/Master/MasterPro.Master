@@ -219,6 +219,16 @@
              });
          }
     </script>
+          <%--SWEET ALERT Check Terminos--%>
+     <script type="text/javascript">
+         function AceptarTerminos() {
+             swal({
+                 title: "No aceptaste los terminos",
+                 text: "No podemos continuar con el registro si no se aceptan los terminos y condiciones!",
+                 icon: "error",
+             });
+         }
+    </script>
        <%--SWEET ALERT Login--%>
      <script type="text/javascript">
          function NoLogin() {
