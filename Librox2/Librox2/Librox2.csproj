@@ -74,6 +74,7 @@
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
     <Content Include="Forms\AdministrarMisLibros.aspx" />
+    <Content Include="Forms\AgregarAdmin.aspx" />
     <Content Include="Forms\AgregarStatusLibros.aspx" />
     <Content Include="Forms\Home.aspx" />
     <Content Include="Forms\Politicas.aspx" />
@@ -357,37 +358,7 @@
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\style.css" />
     <Content Include="images\arr.png" />
-    <Content Include="images\banner.jpg" />
-    <Content Include="images\banner1.jpg" />
-    <Content Include="images\banner2.jpg" />
-    <Content Include="images\banner3.jpg" />
-    <Content Include="images\g1.jpg" />
-    <Content Include="images\g10.jpg" />
-    <Content Include="images\g11.jpg" />
-    <Content Include="images\g12.jpg" />
-    <Content Include="images\g2.jpg" />
-    <Content Include="images\g3.jpg" />
-    <Content Include="images\g4.jpg" />
-    <Content Include="images\g5.jpg" />
-    <Content Include="images\g6.jpg" />
-    <Content Include="images\g7.jpg" />
-    <Content Include="images\g8.jpg" />
-    <Content Include="images\g9.jpg" />
     <Content Include="images\prettyPhoto\light_rounded\sprite.png" />
-    <Content Include="images\slide1.jpg" />
-    <Content Include="images\slide2.jpg" />
-    <Content Include="images\slide3.jpg" />
-    <Content Include="images\slide4.jpg" />
-    <Content Include="images\slide5.jpg" />
-    <Content Include="images\slide6.jpg" />
-    <Content Include="images\stats.jpg" />
-    <Content Include="images\t1.jpg" />
-    <Content Include="images\t2.jpg" />
-    <Content Include="images\team1.jpg" />
-    <Content Include="images\team2.jpg" />
-    <Content Include="images\team3.jpg" />
-    <Content Include="images\team4.jpg" />
-    <Content Include="images\test.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\easing.js" />
     <Content Include="js\jquery-1.7.2.js" />
@@ -425,6 +396,13 @@
     </Compile>
     <Compile Include="Forms\AdministrarMisLibros.aspx.designer.cs">
       <DependentUpon>AdministrarMisLibros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AgregarAdmin.aspx.cs">
+      <DependentUpon>AgregarAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\AgregarAdmin.aspx.designer.cs">
+      <DependentUpon>AgregarAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\AgregarStatusLibros.aspx.cs">
       <DependentUpon>AgregarStatusLibros.aspx</DependentUpon>

@@ -39,6 +39,10 @@ namespace Librox2.GUI
                 {
                     if (Page.IsValid)
                     {
+                        if (ChkTerminos.Checked==false)
+                        {
+                            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "AceptarTerminos();", true);
+                        }
                         GetData();
                         if (Register.SaveUserRegister(ObUsuario) == 1)
                         {

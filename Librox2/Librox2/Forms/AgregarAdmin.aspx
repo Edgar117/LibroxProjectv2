@@ -25,58 +25,57 @@
               <h3 class="box-title">Registro de Usuario Administrador</h3>
             </div>
             <div class="box-body">
-                <div class="col-md-4">
+                <div class="col-md-3">
                  <div class="form-group">
-                 <label>Nombre del Status:</label>
+                 <label>Usuario:</label>
                 <div class="input-group">
                   <div class="input-group-addon">
                     <i class="fa fa-folder"></i>
                   </div>
-                   <asp:TextBox ID="txtEstadoLibro" CssClass="form-control" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="txtUsuario" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
               </div>
                 </div>
-          <div class="col-md-4">
+                 <div class="col-md-3">
                  <div class="form-group">
-                <label>Estado Visible:</label>
+                 <label>Correo:</label>
                 <div class="input-group">
                   <div class="input-group-addon">
-                         <i class="fa fa-question"></i>
+                    <i class="fa fa-folder"></i>
                   </div>
-                         <asp:DropDownList ID="DPGeneraSc" AutoPostBack="true" CssClass="form-control" runat="server" >
-                         <asp:ListItem>Escoja una opción</asp:ListItem>
-                         <asp:ListItem>SI</asp:ListItem>
-                         <asp:ListItem>NO</asp:ListItem>
-                         <asp:ListItem>Proximamente</asp:ListItem>
-                    </asp:DropDownList>
-
+                   <asp:TextBox ID="txtcorreo" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
               </div>
                 </div>
-                      <div class="col-md-4">
+          <div class="col-md-3">
+                 <div class="form-group">
+                <label>Contraseña:</label>
+               <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-folder"></i>
+                  </div>
+                   <asp:TextBox ID="txtContraseña" CssClass="form-control" runat="server"></asp:TextBox>
+                </div>
+              </div>
+                </div>
+                      <div class="col-md-3">
                  <div class="form-group">
                 <label>Guardar:</label>
                 <div class="input-group">
                   <div class="input-group-addon">
                     <i class="fa  fa-save"></i>
                   </div>               
-                    <asp:Button ID="btnRegisterCategoria" CssClass="form-control" OnClick="btnRegisterCategoria_Click"  runat="server" Text="Registrar" />
+                    <asp:Button ID="btnRegisterAdminUser" CssClass="form-control" OnClick="btnRegisterAdminUser_Click"  runat="server" Text="Registrar" />
                 </div>
               </div>
                 </div>
-                      
-                 
-            
-
                       <div class="col-md-12">
-                          <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server" >
+                          <asp:GridView ID="GVUsersAdmin" CssClass="table table-bordered table-hover" runat="server" OnSelectedIndexChanged="GVUsersAdmin_SelectedIndexChanged" OnRowCommand="GVUsersAdmin_RowCommand" >
                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
                                <Columns>
-                                    <asp:ButtonField CommandName="btnseleccionar" ControlStyle-CssClass="btn btn-success"  Text="Seleccionar"/>
-                                    <asp:ButtonField CommandName="btneliminar" ControlStyle-CssClass="btn btn-danger"  Text="Eliminar"/>
-                                    <asp:ButtonField CommandName="btnactualizar" ControlStyle-CssClass="btn btn-info"  Text="Actualizar"/>                                  
+                                    <asp:ButtonField CommandName="btneliminar" ControlStyle-CssClass="btn btn-danger"  Text="Eliminar"/>                                
                        </Columns>
                           </asp:GridView>   
                       </div>

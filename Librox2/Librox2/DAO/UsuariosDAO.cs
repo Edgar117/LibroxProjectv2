@@ -30,6 +30,22 @@ namespace Librox2.DAO
             }
             return 1;
         }
+
+        public int DeleteUser(object obj)
+        {
+            UsuarioBO nom = (UsuarioBO)obj;
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "DELETE USUARIOS WHERE ID ='" + nom.ID + "'";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
         public int SaveUserRegister(object obj)
         {
             UsuarioBO nom = (UsuarioBO)obj;
@@ -48,6 +64,11 @@ namespace Librox2.DAO
         public DataTable ConsultarUsuarios()
         {
             SQL = "SELECT ID,Nombre,Usuario,Correo FROM USUARIOS WHERE TipoUsuario=0";
+            return con.TablaGeneral(SQL);
+        }
+        public DataTable ConsultarUsuariosAdmin()
+        {
+            SQL = "SELECT ID,Nombre,Usuario,Correo FROM USUARIOS WHERE TipoUsuario=1";
             return con.TablaGeneral(SQL);
         }
         public int UpdateUser(object obj)
