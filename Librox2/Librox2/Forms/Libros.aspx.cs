@@ -25,7 +25,8 @@ namespace Librox2.GUI
                 LoadLibros();
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
-                Repeater1.Visible = false;
+                Repeater1.Visible = true;
+                dtlBooks.Visible = false;
                 dtlBooks.DataSource = dt;
                 dtlBooks.DataBind();
                 PaginarPorCategorias();
