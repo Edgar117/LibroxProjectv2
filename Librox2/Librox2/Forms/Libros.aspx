@@ -39,7 +39,8 @@
                             <div class="col-sm-4">
                                 <div class="card" style="width: 19rem;">
                                     <h5 class="card-header"></h5>
-                                    <img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">
+                                    <%--<img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">--%>
+                                    <asp:Image ID="imgPortada" runat="server" CssClass="card-img-top" ImageUrl=<%# string.Format("~/LibrosPortadas/{0}",Eval("ImagenPortada"))%> alt="Card image cap" width="237" height="260"/>
                                     <div class="card-body">
                                         <%--<h5 class="title"><%# Eval("Categoria") %></h5>--%>
                                         <h5>Categoría:

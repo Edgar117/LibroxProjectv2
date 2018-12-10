@@ -24,10 +24,16 @@ namespace Librox2.Forms
                 {
                     System.Collections.Hashtable ht = new System.Collections.Hashtable();
                     ht = (System.Collections.Hashtable)Session["LibroDetalle"];
-                    string strEmployeeName = Convert.ToString(ht["Titulo"]);
+                    string titulo = Convert.ToString(ht["Titulo"]);
+                    string categoria = Convert.ToString(ht["Categoria"]);
+                    string precio = Convert.ToString(ht["Precio"]);
+                    string autor = Convert.ToString(ht["Autor"]);
+                    string sinopsis = Convert.ToString(ht["Sinopsis"]);
+                    string imgPath = Convert.ToString(ht["ImagenPortada"]);
                     //string strDesignation = ht.ContainsKey("Precio") ? Convert.ToString(ht["Precio"]) : "";
 
-                    lblTitulo.Text = strEmployeeName;
+                    lblTitulo.Text = titulo;
+                    imgPortada.ImageUrl = imgPath;
                     //lblPrecio.Text = strDesignation;
                 }
             }

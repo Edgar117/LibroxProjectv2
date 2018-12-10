@@ -105,14 +105,17 @@ namespace Librox2.GUI
                 string categoria = ((Label)item.FindControl("lblCat")).Text;
                 string sinopsis = ((Label)item.FindControl("lblSinop")).Text;
                 string autor = ((Label)item.FindControl("Label2")).Text;
+                Image imgPortada = (Image)item.FindControl("imgPortada");
+                string imgRuta = imgPortada.ImageUrl;
                 System.Collections.Hashtable ht = new System.Collections.Hashtable();
                 ht.Add("Titulo", titulo);
                 ht.Add("Precio", precio);
                 ht.Add("Categoria", categoria);
                 ht.Add("Sinopsis", sinopsis);
                 ht.Add("Autor", autor);
+                ht.Add("ImagenPortada", imgRuta);
                 Session["LibroDetalle"] = ht;
-                Response.Redirect("~/Forms/LibrosDetails.aspx");
+                Server.Transfer("~/Forms/LibrosDetails.aspx");
             }
         }
     }

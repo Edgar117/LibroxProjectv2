@@ -13,6 +13,15 @@ namespace Librox2.Forms {
     public partial class LibrosDetails {
         
         /// <summary>
+        /// Control imgPortada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgPortada;
+        
+        /// <summary>
         /// Control lblCat.
         /// </summary>
         /// <remarks>
@@ -49,22 +58,13 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.Label lblPrecio;
         
         /// <summary>
-        /// Control Label3.
+        /// Control lblAutor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// Control Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblAutor;
         
         /// <summary>
         /// Control LinkButton1.
