@@ -26,33 +26,33 @@ namespace Librox2.GUI
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
                 Repeater1.Visible = true;
-                dtlBooks.Visible = false;
-                dtlBooks.DataSource = dt;
-                dtlBooks.DataBind();
+                //dtlBooks.Visible = false;
+                //dtlBooks.DataSource = dt;
+                //dtlBooks.DataBind();
                 PaginarPorCategorias();
             }
         }
         private void LoadAll()
         {
-            if (dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 Label1.Visible = false;
-                dtlBooks.DataSource = dt;
-                dtlBooks.DataBind();
+                Repeater1.DataSource = dt;
+                Repeater1.DataBind();
             }
             else
             {
                 dt.Clear();
-                dtlBooks.DataSource = dt;
-                dtlBooks.DataBind();
+                Repeater1.DataSource = dt;
+                Repeater1.DataBind();
                 Label1.Visible = true;
-                Label1.Text = "No hay Libros con esa Categoria Para Mostrar";
+                Label1.Text = "No hay libros con esa categoría para mostrar";
             }
-            
+
         }
         private void LoadLibros()
         {
-            dt=DAOLibros.ConsultarLibros();
+            dt = DAOLibros.ConsultarLibros();
         }
         private void PaginarPorCategorias()
         {
@@ -81,12 +81,12 @@ namespace Librox2.GUI
             Session["myOrderingEntity"] = entity;
         }
 
-        protected void dtlBooks_ItemCommand(object source, DataListCommandEventArgs e)
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "pay")
             {
-                //Busca una referencia al 'linkbutton' dentro del datalist
-                DataListItem item = (DataListItem)(((LinkButton)(e.CommandSource)).NamingContainer);
+                //Busca una referencia al 'linkbutton' dentro del repeater
+                RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
                 //Obtiene valores del item seleccionado (título y precio)
                 string titulo = ((Label)item.FindControl("lblTitulo")).Text;
                 string precio = ((Label)item.FindControl("lblPrecio")).Text;
@@ -95,13 +95,25 @@ namespace Librox2.GUI
                 //Redirige al proceso de pago con los datos del libro elegido ya en la sesión.
                 Response.Redirect("~/Forms/ProcesarPago.aspx");
             }
+            if (e.CommandName == "details")
+            {
+                //Busca una referencia al 'linkbutton' dentro del repeater
+                RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
+                //Obtiene valores del item seleccionado (título y precio)
+                string titulo = ((Label)item.FindControl("lblTitulo")).Text;
+                string precio = ((Label)item.FindControl("lblPrecio")).Text;
+                string categoria = ((Label)item.FindControl("lblCat")).Text;
+                string sinopsis = ((Label)item.FindControl("lblSinop")).Text;
+                string autor = ((Label)item.FindControl("Label2")).Text;
+                System.Collections.Hashtable ht = new System.Collections.Hashtable();
+                ht.Add("Titulo", titulo);
+                ht.Add("Precio", precio);
+                ht.Add("Categoria", categoria);
+                ht.Add("Sinopsis", sinopsis);
+                ht.Add("Autor", autor);
+                Session["LibroDetalle"] = ht;
+                Response.Redirect("~/Forms/LibrosDetails.aspx");
+            }
         }
-
-        //Metodo que david hara para pasar los datos
-        //protected void btnPaypal4_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    SetOrderingValue("Championship Tennis", "PN4", "13.98", "1", "3");
-        //    Response.Redirect("~/PaypalProcess.aspx");
-        //}
     }
 }

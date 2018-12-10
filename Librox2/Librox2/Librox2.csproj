@@ -77,6 +77,7 @@
     <Content Include="Forms\AgregarAdmin.aspx" />
     <Content Include="Forms\AgregarStatusLibros.aspx" />
     <Content Include="Forms\Home.aspx" />
+    <Content Include="Forms\LibrosDetails.aspx" />
     <Content Include="Forms\Politicas.aspx" />
     <Content Include="Forms\ProcesarPago.aspx" />
     <Content Include="Forms\TerminosyCondiciones.aspx" />
@@ -417,6 +418,13 @@
     </Compile>
     <Compile Include="Forms\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LibrosDetails.aspx.cs">
+      <DependentUpon>LibrosDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\LibrosDetails.aspx.designer.cs">
+      <DependentUpon>LibrosDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Politicas.aspx.cs">
       <DependentUpon>Politicas.aspx</DependentUpon>
