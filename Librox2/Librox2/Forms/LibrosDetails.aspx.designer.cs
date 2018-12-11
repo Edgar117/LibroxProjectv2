@@ -22,15 +22,6 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.Image imgPortada;
         
         /// <summary>
-        /// Control lblCat.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCat;
-        
-        /// <summary>
         /// Control lblTitulo.
         /// </summary>
         /// <remarks>
@@ -49,13 +40,13 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.Label lblSinop;
         
         /// <summary>
-        /// Control lblPrecio.
+        /// Control lblCat.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrecio;
+        protected global::System.Web.UI.WebControls.Label lblCat;
         
         /// <summary>
         /// Control lblAutor.
@@ -67,6 +58,15 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.Label lblAutor;
         
         /// <summary>
+        /// Control lblEstatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstatus;
+        
+        /// <summary>
         /// Control LinkButton1.
         /// </summary>
         /// <remarks>
@@ -74,5 +74,23 @@ namespace Librox2.Forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        
+        /// <summary>
+        /// Control LinkButton2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        
+        /// <summary>
+        /// Control Repeater1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
     }
 }

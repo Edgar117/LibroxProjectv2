@@ -57,7 +57,7 @@
                                             <asp:Label ID="lblSinop" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="text"></asp:Label>
                                         </p>
                                         <p>Precio :$<asp:Label ID="lblPrecio" runat="server" Text='<%# Eval("PRECIO") %>'></asp:Label></p>
-                                        <h5>Estado Actual del Libro:
+                                        <h5>Estado actual del libro:
                                     <br />
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("NombreEstatus") %>' CssClass="title"></asp:Label></h5>
                                         <h5>Autor:

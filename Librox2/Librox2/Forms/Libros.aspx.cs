@@ -105,6 +105,7 @@ namespace Librox2.GUI
                 string categoria = ((Label)item.FindControl("lblCat")).Text;
                 string sinopsis = ((Label)item.FindControl("lblSinop")).Text;
                 string autor = ((Label)item.FindControl("Label2")).Text;
+                string estatus = ((Label)item.FindControl("Label3")).Text;
                 Image imgPortada = (Image)item.FindControl("imgPortada");
                 string imgRuta = imgPortada.ImageUrl;
                 System.Collections.Hashtable ht = new System.Collections.Hashtable();
@@ -113,6 +114,7 @@ namespace Librox2.GUI
                 ht.Add("Categoria", categoria);
                 ht.Add("Sinopsis", sinopsis);
                 ht.Add("Autor", autor);
+                ht.Add("Estatus", estatus);
                 ht.Add("ImagenPortada", imgRuta);
                 Session["LibroDetalle"] = ht;
                 Server.Transfer("~/Forms/LibrosDetails.aspx");
