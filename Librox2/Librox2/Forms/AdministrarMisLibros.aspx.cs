@@ -14,6 +14,7 @@ namespace Librox2.Forms
     public partial class AdministrarMisLibros : System.Web.UI.Page
     {
         CategoriaDAO DAOCategorias = new CategoriaDAO();
+        EstatusLibroDAO EstatusLibroMetodos = new EstatusLibroDAO();
         LibrosDAO DAOLibrosToedit = new LibrosDAO();
         // LibrosDAO DAOLibros = new LibrosDAO();
         LibrosBO OBLibros = new LibrosBO();
@@ -208,6 +209,15 @@ namespace Librox2.Forms
                     ddl.DataTextField  = "NombreCategoria";
                     ddl.DataValueField = "NombreCategoria";
                     ddl.DataBind();
+                }
+                DropDownList ddlEsta = e.Item.FindControl("ddlEstatus") as DropDownList;
+                if (ddlEsta != null)
+                {
+                    //populate the ddl now  
+                    ddlEsta.DataSource = EstatusLibroMetodos.ConsultarStatusLibro();
+                    ddlEsta.DataTextField = "Estado del Libro";
+                    ddlEsta.DataValueField = "Identificador";
+                    ddlEsta.DataBind();
                 }
             }
         }
