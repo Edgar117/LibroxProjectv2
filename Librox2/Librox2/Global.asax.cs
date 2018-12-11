@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using Librox2.App_Start;
 
 namespace Librox2
 {
@@ -17,6 +18,7 @@ namespace Librox2
         protected void Application_Start(object sender, EventArgs e)
         {
             //rutasAmigables();test
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 
         protected void Session_Start(object sender, EventArgs e)

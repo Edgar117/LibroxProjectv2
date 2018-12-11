@@ -59,7 +59,7 @@
 						</span>
 
 						<a href="#" class="txt2 bo1 m-l-5">
-							Olvidaste tu contraseña?
+							¿Olvidaste tu contraseña?
 						</a>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
@@ -73,7 +73,7 @@
                            
                         </div>
                         <div class="col-md-6">
-                             <a href="Forms/RegistroUsuario.aspx" class="login100-form-btn">
+                             <a href="/register" class="login100-form-btn">
 						Registrarse
 					</a>
                         </div>
