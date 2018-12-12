@@ -66,6 +66,13 @@ namespace Librox2.DAO
             SQL = "SELECT ID,Nombre,Usuario,Correo FROM USUARIOS WHERE TipoUsuario=0";
             return con.TablaGeneral(SQL);
         }
+        //Metodo que devuelve información basica del usuario
+        public DataTable ConsultaDatosUsuario(string Usuario)
+        {
+            SQL = "SELECT ID AS 'Identificador',Usuario,Correo,ImagenUsuario as 'Imagen' FROM Usuarios WHERE TipoUsuario=0 ADN Usuario='"+Usuario+"'";
+            return con.TablaGeneral(SQL);
+        }
+
         public DataTable ConsultarUsuariosAdmin()
         {
             SQL = "SELECT ID,Nombre,Usuario,Correo FROM USUARIOS WHERE TipoUsuario=1";
