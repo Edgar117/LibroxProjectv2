@@ -34,12 +34,14 @@ namespace Librox2.GUI
         }
         private void LoadAll()
         {
+            //Si el data table devolvio algo entonces se llena el repeater.
             if (dt.Rows.Count > 0)
             {
                 Label1.Visible = false;
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
             }
+            //De lo contrario se limpia la tabla, y se muestra el mensaje de que no se encontraron libros con ese dato.
             else
             {
                 dt.Clear();
@@ -50,9 +52,19 @@ namespace Librox2.GUI
             }
 
         }
+        //Metodo que devuelve todos los libros que hay en el sistema.
         private void LoadLibros()
         {
             dt = DAOLibros.ConsultarLibros();
+        }
+        //Este Metodó realiza la busqueda de libros por un texto que el usuario escriba en el control que vas a crear saludos.
+        private void BuscarLibrosPorTexto(string Text)
+        {
+            //Se llena el data table con la consulta que nos devuelve el metodo.
+            dt = DAOLibros.ConsultarLibrosXTexto(Text);
+            //Se llama al metodo LoadAll() para cargar los datos que se hayan devuelto.
+            LoadAll();
+
         }
         private void PaginarPorCategorias()
         {
