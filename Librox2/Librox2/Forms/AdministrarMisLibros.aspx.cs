@@ -133,7 +133,7 @@ namespace Librox2.Forms
             OBLibros.Titulo = txtNombre.Value;
             OBLibros.Sinpsis = txtSinopsis.Value;
             OBLibros.Categoria = dpCategorias.SelectedValue;
-            if (DAOLibrosToedit.UpdateLibroDelete(OBLibros) == 1)
+            if (DAOLibrosToedit.UpdLibro(OBLibros) == 1)
             {
                 cart1 = (String[])Session["ALL"];
                 ID = int.Parse((cart1[5]).ToString());
@@ -182,7 +182,7 @@ namespace Librox2.Forms
             OBLibros.Categoria = categoriaLibro.Text;
             //Falta Tener el combo de los estatus de los libros el metodo ya esta hecho, seria que anexes el control nada mas
             //ENVIAMOS LOS NUEVOS DATOS
-            if (DAOLibrosToedit.UpdateLibroDelete(OBLibros) == 1)
+            if (DAOLibrosToedit.UpdLibro(OBLibros) == 1)
             {
                 cart1 = (String[])Session["ALL"];
                 ID = int.Parse((cart1[5]).ToString());

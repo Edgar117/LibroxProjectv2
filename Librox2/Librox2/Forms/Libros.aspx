@@ -30,6 +30,7 @@
                 <h2 class="title">Libros que pueden ser tuyos.</h2>
                 <p class="description">Descubrir nuevos mundos esta a tu alcance.</p>
                 <asp:DropDownList CssClass="form-control" ID="dpCategorias" AutoPostBack="true" runat="server" Height="30px" Width="250px" OnSelectedIndexChanged="dpCategorias_SelectedIndexChanged"></asp:DropDownList>
+             
                 <br />
                 <div class="row">
                     <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
