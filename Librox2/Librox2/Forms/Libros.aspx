@@ -3,6 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        function showModal() {
+            $("#myModal").modal('show');
+        }
+
+        $(function () {
+            $("#btnShow").click(function () {
+                showModal();
+            });
+        });
+    </script>
+
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="wrapper">
         <div class="page-header page-header-small">
@@ -42,8 +54,8 @@
                                         </div>
                                         <%--<input type="text" class="form-control" placeholder="Left Font Awesome Icon">--%>
                                         <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" PlaceHolder="  Escribe para buscar cientos de libros"></asp:TextBox>
-                                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-round btn-warning" />
                                     </div>
+                                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-sm btn-round btn-warning" />
                                 </ContentTemplate>
                                 <Triggers>
                                     <asp:PostBackTrigger ControlID="btnBuscar" />
@@ -59,7 +71,6 @@
                 <br />
                 <div class="row">
                     <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
-
                     <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
                         <ItemTemplate>
                             <div class="col-sm-4">
@@ -76,7 +87,8 @@
                                         <h5>Título:
                                     <br />
                                             <asp:LinkButton ID="LinkButton2" runat="server" CommandName="details">
-                                                <asp:Label ID="lblTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="card-title"></asp:Label></asp:LinkButton></h5>
+                                                <asp:Label ID="lblTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="card-title"></asp:Label>
+                                            </asp:LinkButton></h5>
                                         <%--<p class="text"><%# Eval("Sinopsis") %></p>--%>
                                         <p>
                                             Sinopsis:
@@ -87,14 +99,37 @@
                                         <h5>Estado actual del libro:
                                     <br />
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("NombreEstatus") %>' CssClass="title"></asp:Label></h5>
-                                        <h5>Autor:
-                                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("Autor") %>' CssClass="title"></asp:Label></h5>
+                                        <h5>Autor:<asp:LinkButton ID="LinkButton3" runat="server" CommandName="profile">
+                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Autor") %>' CssClass="title"></asp:Label>
+                                            </asp:LinkButton></h5>
                                         <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay">Comprar</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
+
+                </div>
+                <!-- Small modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm" id="btnShow">Small modal</button>
+
+                <div class="modal fade modal-mini modal-primary" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-center">
+                                <div class="modal-profile">
+                                    <i class="now-ui-icons users_circle-08"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

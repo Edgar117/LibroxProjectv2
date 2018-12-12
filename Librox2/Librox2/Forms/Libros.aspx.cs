@@ -16,6 +16,7 @@ namespace Librox2.GUI
 
         LibrosDAO DAOLibros = new LibrosDAO();
         CategoriaDAO DAOCategorias = new CategoriaDAO();
+        UsuariosDAO DAOUsers = new UsuariosDAO();
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -134,6 +135,15 @@ namespace Librox2.GUI
                 ht.Add("ImagenPortada", imgRuta);
                 Session["LibroDetalle"] = ht;
                 Server.Transfer("~/Forms/LibrosDetails.aspx");
+            }
+            if (e.CommandName=="profile")
+            {
+                RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
+                lblUser.Text = ((Label)item.FindControl("Label2")).Text;
+                DataTable dtuser = new DataTable();
+                dtuser = DAOUsers.ConsultaDatosUsuario(lblUser.Text);
+                lblUserMail.Text = dtuser.Rows[0]["Correo"].ToString();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
         }
 
