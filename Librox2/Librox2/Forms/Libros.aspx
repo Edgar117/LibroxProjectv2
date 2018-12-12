@@ -28,9 +28,34 @@
         <div class="section section-contact-us text-center">
             <div class="container">
                 <h2 class="title">Libros que pueden ser tuyos.</h2>
-                <p class="description">Descubrir nuevos mundos esta a tu alcance.</p>
-                <asp:DropDownList CssClass="form-control" ID="dpCategorias" AutoPostBack="true" runat="server" Height="30px" Width="250px" OnSelectedIndexChanged="dpCategorias_SelectedIndexChanged"></asp:DropDownList>
-             
+                <div class="row">
+                    <div class="col-md-4">
+                        <asp:DropDownList CssClass="form-control" ID="dpCategorias" AutoPostBack="true" runat="server" Height="30px" Width="250px" OnSelectedIndexChanged="dpCategorias_SelectedIndexChanged"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:Panel ID="Panel1" runat="server" CssClass="input-group" DefaultButton="btnBuscar">
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-search"></i></div>
+                                        </div>
+                                        <%--<input type="text" class="form-control" placeholder="Left Font Awesome Icon">--%>
+                                        <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" PlaceHolder="  Escribe para buscar cientos de libros"></asp:TextBox>
+                                        <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-round btn-warning" />
+                                    </div>
+                                </ContentTemplate>
+                                <Triggers>
+                                    <asp:PostBackTrigger ControlID="btnBuscar" />
+                                </Triggers>
+                            </asp:UpdatePanel>
+                        </asp:Panel>
+                    </div>
+                </div>
+                <h3 class="description">
+                    <asp:Label ID="lblTit2" runat="server" Text="Descubrir nuevos mundos esta a tu alcance."></asp:Label>
+                    <asp:Label ID="lblSearchResults" runat="server" Text=""></asp:Label>
+                </h3>
                 <br />
                 <div class="row">
                     <asp:Label ID="Label1" Visible="false" runat="server" Text="Label"></asp:Label>
@@ -41,7 +66,7 @@
                                 <div class="card" style="width: 19rem;">
                                     <h5 class="card-header"></h5>
                                     <%--<img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">--%>
-                                    <asp:Image ID="imgPortada" runat="server" CssClass="card-img-top" ImageUrl=<%# string.Format("~/LibrosPortadas/{0}",Eval("ImagenPortada"))%> alt="Card image cap" width="237" height="260"/>
+                                    <asp:Image ID="imgPortada" runat="server" CssClass="card-img-top" ImageUrl='<%# string.Format("~/LibrosPortadas/{0}",Eval("ImagenPortada"))%>' alt="Card image cap" Width="237" Height="260" />
                                     <div class="card-body">
                                         <%--<h5 class="title"><%# Eval("Categoria") %></h5>--%>
                                         <h5>Categoría:
@@ -50,7 +75,8 @@
                                         <%--<h5 class="card-title"><%# Eval("Titulo") %></h5>--%>
                                         <h5>Título:
                                     <br />
-                                            <asp:LinkButton ID="LinkButton2" runat="server" CommandName="details"><asp:Label ID="lblTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="card-title"></asp:Label></asp:LinkButton></h5>
+                                            <asp:LinkButton ID="LinkButton2" runat="server" CommandName="details">
+                                                <asp:Label ID="lblTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="card-title"></asp:Label></asp:LinkButton></h5>
                                         <%--<p class="text"><%# Eval("Sinopsis") %></p>--%>
                                         <p>
                                             Sinopsis:

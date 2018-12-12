@@ -91,7 +91,7 @@ namespace Librox2
                             Session["Usuario"] = ObUsuario.Usuario;
                             Session["Panel"] = "Logeado";
                             Session["ALL"] = substrings;
-                            Response.Redirect("/home");
+                            Response.Redirect("/libros");
 
                         }
                         // Response.Write("<script>alert('" + "El Usuario o la Contraseña no existen" + "');</script>");

@@ -30,40 +30,44 @@ namespace Librox2.GUI
                 //dtlBooks.DataSource = dt;
                 //dtlBooks.DataBind();
                 PaginarPorCategorias();
+                //this.txtSearch.Attributes.Add("onkeypress", "button_click(this,'" + this.txtSearch.ClientID + "')");
             }
         }
-        private void LoadAll()
+        private void LoadAll(string text)
         {
-            //Si el data table devolvio algo entonces se llena el repeater.
+            //Si el data table devolvió, algo entonces se llena el repeater.
             if (dt.Rows.Count > 0)
             {
                 Label1.Visible = false;
+                lblTit2.Visible = false;
+                lblSearchResults.Text = "Resultados para: " + "'" + text + "'";
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
             }
-            //De lo contrario se limpia la tabla, y se muestra el mensaje de que no se encontraron libros con ese dato.
+            //De lo contrario, se limpia la tabla y se muestra el mensaje de que no se encontraron libros con ese dato.
             else
             {
                 dt.Clear();
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
                 Label1.Visible = true;
-                Label1.Text = "No hay libros con esa categoría para mostrar";
+                Label1.Text = "Nada para mostrar por ahora";
+                lblSearchResults.Text = "No se encontraron libros para: " + "'" + text + "'";
             }
 
         }
-        //Metodo que devuelve todos los libros que hay en el sistema.
+        //Método que devuelve todos los libros que hay en el sistema.
         private void LoadLibros()
         {
             dt = DAOLibros.ConsultarLibros();
         }
-        //Este Metodó realiza la busqueda de libros por un texto que el usuario escriba en el control que vas a crear saludos.
+        //Este Método realiza la búsqueda de libros por un texto que el usuario escriba en el control que vas a crear saludos.
         private void BuscarLibrosPorTexto(string Text)
         {
             //Se llena el data table con la consulta que nos devuelve el metodo.
             dt = DAOLibros.ConsultarLibrosXTexto(Text);
             //Se llama al metodo LoadAll() para cargar los datos que se hayan devuelto.
-            LoadAll();
+            LoadAll(Text);
 
         }
         private void PaginarPorCategorias()
@@ -78,7 +82,7 @@ namespace Librox2.GUI
         protected void dpCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
             dt = DAOLibros.ConsultarLibrosPorCategorias(dpCategorias.Text);
-            LoadAll();
+            LoadAll(dpCategorias.Text);
         }
 
         //Método que llena los datos del paypal
@@ -131,6 +135,11 @@ namespace Librox2.GUI
                 Session["LibroDetalle"] = ht;
                 Server.Transfer("~/Forms/LibrosDetails.aspx");
             }
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            BuscarLibrosPorTexto(txtSearch.Text);
         }
     }
 }
