@@ -178,7 +178,18 @@ namespace Librox2.Forms
             DropDownList categoriaLibro = e.Item.FindControl("ddlCat") as DropDownList;
             DropDownList ddlEsta = e.Item.FindControl("ddlEstatus") as DropDownList;
             FileUpload fileU = e.Item.FindControl("fuImg") as FileUpload;
-            OBLibros.ImagenPòrtada = "~/LibrosPortadas/" + Session["Usuario"].ToString() + "/" + fileU.FileName;    //Actualiza la imagen
+            if (fileU.HasFile)
+            { var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"].ToString() + "/"));
+                OBLibros.ImagenPòrtada = Session["Usuario"].ToString() + "/" + fileU.FileName;    //Actualiza la imagen
+                string pathString = originalDirectory.ToString();
+                var path = string.Format("{0}\\{1}", pathString, fileU.FileName);//Formamos la ruta donde se guardara la imagen
+                fileU.SaveAs(path);  //Guarda el archivo físico original en servidor
+            }
+            else
+            {
+                OBLibros.ImagenPòrtada = null;
+            }
+           
             OBLibros.EstatusLibro = Convert.ToInt32(ddlEsta.SelectedValue);
             OBLibros.ID_LIBRO = id;
             OBLibros.Titulo = nombreLibro.Text;
@@ -195,16 +206,6 @@ namespace Librox2.Forms
                 Response.Write("<script>alert('" + "No se pudo actualizar el libro. Código de error: " + ex.ToString() + "');</script>");
                 throw;
             }
-
-
-            //Falta Tener el combo de los estatus de los libros el metodo ya esta hecho, seria que anexes el control nada mas
-            //ENVIAMOS LOS NUEVOS DATOS
-            //if (DAOLibrosToedit.UpdLibro(OBLibros) == 1)
-            //{
-            //    cart1 = (String[])Session["ALL"];
-            //    ID = int.Parse((cart1[5]).ToString());
-            //    LoadGrid(ID);
-            //}
 
         }
 
