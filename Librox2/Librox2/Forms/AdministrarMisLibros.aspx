@@ -143,7 +143,7 @@
                                         <br />
                                         <asp:LinkButton ID="lbtnUpdate" runat="server" CommandName="update" CssClass="btn bnt-sm btn-round btn-warning">Guardar</asp:LinkButton>
                                         &nbsp;<asp:LinkButton ID="lbtnCancel" runat="server" CommandName="cancel">Cancelar</asp:LinkButton>
-                                        <asp:FileUpload ID="FileUpload1" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
+                                        <asp:FileUpload ID="fuImg" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
                                     </div>
                                 </div>
                             </EditItemTemplate>

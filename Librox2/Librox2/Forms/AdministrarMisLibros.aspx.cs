@@ -162,7 +162,7 @@ namespace Librox2.Forms
         {
             dtlBooks.EditItemIndex = e.Item.ItemIndex;
             bind();
-            
+
         }
         private void bind()
         {
@@ -175,19 +175,36 @@ namespace Librox2.Forms
             int id = Convert.ToInt32(dtlBooks.DataKeys[e.Item.ItemIndex]);
             TextBox nombreLibro = (TextBox)e.Item.FindControl("txtTitulo");
             TextBox sinopsisLibro = (TextBox)e.Item.FindControl("txtSinopsis");
-            TextBox categoriaLibro = (TextBox)e.Item.FindControl("txtCategoria");
+            DropDownList categoriaLibro = e.Item.FindControl("ddlCat") as DropDownList;
+            DropDownList ddlEsta = e.Item.FindControl("ddlEstatus") as DropDownList;
+            FileUpload fileU = e.Item.FindControl("fuImg") as FileUpload;
+            OBLibros.ImagenPòrtada = "~/LibrosPortadas/" + Session["Usuario"].ToString() + "/" + fileU.FileName;    //Actualiza la imagen
+            OBLibros.EstatusLibro = Convert.ToInt32(ddlEsta.SelectedValue);
             OBLibros.ID_LIBRO = id;
             OBLibros.Titulo = nombreLibro.Text;
             OBLibros.Sinpsis = sinopsisLibro.Text;
             OBLibros.Categoria = categoriaLibro.Text;
+            cart1 = (String[])Session["ALL"];
+            try
+            {
+                DAOLibrosToedit.UpdLibro(OBLibros);
+                bind();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + "No se pudo actualizar el libro. Código de error: " + ex.ToString() + "');</script>");
+                throw;
+            }
+
+
             //Falta Tener el combo de los estatus de los libros el metodo ya esta hecho, seria que anexes el control nada mas
             //ENVIAMOS LOS NUEVOS DATOS
-            if (DAOLibrosToedit.UpdLibro(OBLibros) == 1)
-            {
-                cart1 = (String[])Session["ALL"];
-                ID = int.Parse((cart1[5]).ToString());
-                LoadGrid(ID);
-            }
+            //if (DAOLibrosToedit.UpdLibro(OBLibros) == 1)
+            //{
+            //    cart1 = (String[])Session["ALL"];
+            //    ID = int.Parse((cart1[5]).ToString());
+            //    LoadGrid(ID);
+            //}
 
         }
 
@@ -206,7 +223,7 @@ namespace Librox2.Forms
                 {
                     //populate the ddl now  
                     ddl.DataSource = DAOCategorias.ConsultarCategoriasLibrosVista();
-                    ddl.DataTextField  = "NombreCategoria";
+                    ddl.DataTextField = "NombreCategoria";
                     ddl.DataValueField = "NombreCategoria";
                     ddl.DataBind();
                 }
