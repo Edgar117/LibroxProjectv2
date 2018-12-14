@@ -8,6 +8,7 @@ using Librox2.DAO;
 using System.Data;
 using Librox2.BO;
 using System.Drawing;
+using System.IO;
 namespace Librox2.Forms
 {
 

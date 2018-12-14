@@ -10,7 +10,7 @@
         //File Upload response from the server
         Dropzone.options.dropzoneForm = {
             maxFiles: 10,
-            url: "AgregarLibro.aspx",
+            url: "newbook",
             init: function () {
                 this.on("maxfilesexceeded", function (data) {
                     var res = eval('(' + data.xhr.responseText + ')');

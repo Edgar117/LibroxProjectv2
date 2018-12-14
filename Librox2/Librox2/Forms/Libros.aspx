@@ -14,7 +14,11 @@
             });
         });
     </script>
-
+    <style>
+.checked {
+  color: orange;
+}
+</style>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="wrapper">
         <div class="page-header page-header-small">
@@ -96,13 +100,15 @@
                                             <asp:Label ID="lblSinop" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="text"></asp:Label>
                                         </p>
                                         <p>Precio :$<asp:Label ID="lblPrecio" runat="server" Text='<%# Eval("PRECIO") %>'></asp:Label></p>
+              
                                         <h5>Estado actual del libro:
                                     <br />
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("NombreEstatus") %>' CssClass="title"></asp:Label></h5>
                                         <h5>Autor:<asp:LinkButton ID="LinkButton3" runat="server" CommandName="profile">
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Autor") %>' CssClass="title"></asp:Label>
                                             </asp:LinkButton></h5>
-                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay">Comprar</asp:LinkButton>
+                                          <%# Eval("Ranking") %><br />
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="false" CommandName="pay">Comprar</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
@@ -111,9 +117,9 @@
 
                 </div>
                 <!-- Small modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm" id="btnShow">Small modal</button>
+               <%-- <button type="button" class="btn btn-primary"  data-toggle="modal" data-target=".bd-example-modal-sm" id="btnShow">Small modal</button>--%>
 
-                <div class="modal fade modal-mini modal-primary" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal fade modal-mini modal-primary"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header justify-content-center">

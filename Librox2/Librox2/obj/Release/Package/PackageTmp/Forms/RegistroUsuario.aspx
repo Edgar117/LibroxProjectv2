@@ -99,11 +99,11 @@
                     <div class="textarea-container">
                         <textarea id="txtdescription" runat="server" class="form-control" name="name" rows="4" cols="80" placeholder="Breve descripción(Opcional)"></textarea>
                    <br />
-                        <asp:CheckBox ID="ChkTerminos" Text="Aceptar terminos y condiciones" runat="server" /><br /><a href="TerminosyCondiciones.aspx" target="_blank">Ver aqui</a>
+                        <asp:CheckBox ID="ChkTerminos" Text="  Acepto los " runat="server" /><a href="/privacy" target="_blank"> Términos y condiciones</a>
                       </div>
                     <div class="send-button">
                         <asp:Button class="btn btn-primary btn-round btn-block btn-lg" ID="btnRegistro" OnClick="btnRegistro_Click" runat="server" Text="Registrar Usuario" />
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Ocurrió un error al registrarte" ForeColor="Red" />
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Algo salió mal. Intenta de nuevo" ForeColor="Red" />
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="AcercaDe.aspx">Acerca de nosotros
+                            <a href="/about">Acerca de nosotros
                             </a>
                         </li>
                         <li>

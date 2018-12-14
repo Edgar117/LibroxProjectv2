@@ -42,7 +42,8 @@
         </div>
         <div class="section section-contact-us text-center">
             <div class="container">
-                <h2 class="title">Edita la información de tus libros</h2>
+                <h2 class="title">Edita la información de tus libros
+                </h2>
                 <div class="row">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
@@ -108,7 +109,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>Libros como ítems</h3>
+                        <h3>Libros a editar</h3>
                         <br />
                         <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellSpacing="5" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand" OnCancelCommand="dtlBooks_CancelCommand" OnItemDataBound="dtlBooks_ItemDataBound">
                             <ItemTemplate>
@@ -139,9 +140,11 @@
                                         <br />
                                         <asp:TextBox ID="txtSinopsis" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="form-control" Height="30" Width="250"></asp:TextBox>
                                         <br />
+                                        <asp:DropDownList CssClass="form-control" ID="ddlEstatus" runat="server" Height="30" Width="250"></asp:DropDownList>
+                                        <br />
                                         <asp:LinkButton ID="lbtnUpdate" runat="server" CommandName="update" CssClass="btn bnt-sm btn-round btn-warning">Guardar</asp:LinkButton>
                                         &nbsp;<asp:LinkButton ID="lbtnCancel" runat="server" CommandName="cancel">Cancelar</asp:LinkButton>
-                                        <asp:FileUpload ID="FileUpload1" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
+                                        <asp:FileUpload ID="fuImg" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
                                     </div>
                                 </div>
                             </EditItemTemplate>
