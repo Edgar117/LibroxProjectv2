@@ -180,7 +180,8 @@ namespace Librox2.Forms
             DropDownList ddlEsta = e.Item.FindControl("ddlEstatus") as DropDownList;
             FileUpload fileU = e.Item.FindControl("fuImg") as FileUpload;
             if (fileU.HasFile)
-            { var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"].ToString() + "/"));
+            {
+                var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"].ToString() + "/"));
                 OBLibros.ImagenPòrtada = Session["Usuario"].ToString() + "/" + fileU.FileName;    //Actualiza la imagen
                 string pathString = originalDirectory.ToString();
                 var path = string.Format("{0}\\{1}", pathString, fileU.FileName);//Formamos la ruta donde se guardara la imagen
@@ -190,7 +191,7 @@ namespace Librox2.Forms
             {
                 OBLibros.ImagenPòrtada = null;
             }
-           
+
             OBLibros.EstatusLibro = Convert.ToInt32(ddlEsta.SelectedValue);
             OBLibros.ID_LIBRO = id;
             OBLibros.Titulo = nombreLibro.Text;
@@ -239,6 +240,32 @@ namespace Librox2.Forms
                     ddlEsta.DataBind();
                 }
             }
+        }
+
+        protected void dtlBooks_DeleteCommand(object source, DataListCommandEventArgs e)
+        {
+            //Se recupera el ID del libro a eliminar
+            int id = Convert.ToInt32(dtlBooks.DataKeys[e.Item.ItemIndex]);
+            //Script de confirmación, se requiere para poder eliminar el libro, de lo contrario se recarga la página.
+            ClientScriptManager CSM = Page.ClientScript;
+            if (!ReturnValue())
+            {
+                string strconfirm = "<script>if(!window.confirm('¿Estás seguro de eliminar tu libro?')){window.location.href='/mybooks'}</script>";
+                CSM.RegisterClientScriptBlock(this.GetType(), "Confirm", strconfirm, false);
+                try
+                {
+                    //Método para eliminar el libro
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('" + "No se pudo eliminar el libro. Código de error: " + ex.ToString() + "');</script>");
+                }
+            }
+            
+        }
+        bool ReturnValue()
+        {
+            return false;
         }
     }
 }

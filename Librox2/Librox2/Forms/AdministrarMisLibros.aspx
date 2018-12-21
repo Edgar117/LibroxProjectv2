@@ -111,7 +111,7 @@
                     <div class="col-md-12">
                         <h3>Libros a editar</h3>
                         <br />
-                        <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellSpacing="5" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand" OnCancelCommand="dtlBooks_CancelCommand" OnItemDataBound="dtlBooks_ItemDataBound">
+                        <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellPadding="10" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand" OnCancelCommand="dtlBooks_CancelCommand" OnItemDataBound="dtlBooks_ItemDataBound" OnDeleteCommand="dtlBooks_DeleteCommand">
                             <ItemTemplate>
                                 <div class="card" style="width: 19rem;">
                                     <h5 class="card-header">Editar</h5>
@@ -128,7 +128,7 @@
                             <EditItemTemplate>
                                 <div class="card" style="width: 19rem;">
                                     <h5 class="card-header">
-                                        Editando libro...
+                                        Editando...
                                         <asp:Label ID="lblIdLibro" runat="server" Text='<%# Eval("IDLibro") %>'></asp:Label></h5>
                                     <img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">
                                     <img id="imagend2" class="img-raised" alt="" width="237" height="260" src="" />
@@ -144,6 +144,7 @@
                                         <br />
                                         <asp:LinkButton ID="lbtnUpdate" runat="server" CommandName="update" CssClass="btn bnt-sm btn-round btn-warning">Guardar</asp:LinkButton>
                                         &nbsp;<asp:LinkButton ID="lbtnCancel" runat="server" CommandName="cancel">Cancelar</asp:LinkButton>
+                                        &nbsp;<asp:LinkButton ID="lbtnDelete" runat="server" CommandName="delete" CssClass="btn-outline-danger">Eliminar</asp:LinkButton>
                                         <asp:FileUpload ID="fuImg" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
                                     </div>
                                 </div>
