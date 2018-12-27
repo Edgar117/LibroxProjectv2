@@ -144,7 +144,7 @@
                                         <br />
                                         <asp:LinkButton ID="lbtnUpdate" runat="server" CommandName="update" CssClass="btn bnt-sm btn-round btn-warning">Guardar</asp:LinkButton>
                                         &nbsp;<asp:LinkButton ID="lbtnCancel" runat="server" CommandName="cancel">Cancelar</asp:LinkButton>
-                                        &nbsp;<asp:LinkButton ID="lbtnDelete" runat="server" CommandName="delete" CssClass="btn-outline-danger">Eliminar</asp:LinkButton>
+                                        &nbsp;<asp:LinkButton ID="lbtnDelete" runat="server" CommandName="delete" CssClass="btn bnt-sm btn-round btn-danger">Eliminar</asp:LinkButton>
                                         <asp:FileUpload ID="fuImg" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
                                     </div>
                                 </div>

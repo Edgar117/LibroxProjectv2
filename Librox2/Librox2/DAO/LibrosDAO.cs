@@ -69,7 +69,7 @@ namespace Librox2.DAO
         {
             LibrosBO nom = (LibrosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "EXEC [spUpdateDelete] '"+nom.ID_LIBRO+ "','" + nom.Titulo + "','" + nom.Sinpsis + "','" + nom.ImagenPòrtada + "','" + nom.Categoria + "','" + nom.EstatusLibro + "' ";
+            string sql = "EXEC [spUpdateDelete] '"+nom.ID_LIBRO+ "','" + nom.Titulo + "','" + nom.Sinpsis + "','" + nom.ImagenPòrtada + "','" + nom.Categoria + "','" + nom.EstatusLibro + "','" + nom.Action + "'  ";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

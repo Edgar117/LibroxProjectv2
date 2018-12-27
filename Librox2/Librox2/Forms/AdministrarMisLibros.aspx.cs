@@ -255,6 +255,11 @@ namespace Librox2.Forms
                 try
                 {
                     //Método para eliminar el libro
+                    OBLibros.ID_LIBRO = id;
+                    OBLibros.Action = true;
+                    DAOLibrosToedit.UpdLibro(OBLibros);
+                    bind();
+
                 }
                 catch (Exception ex)
                 {
