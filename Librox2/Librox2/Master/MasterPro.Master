@@ -199,6 +199,19 @@
              });
          }
     </script>
+
+              <%--SWEET ALERT Registro SUCCESS--%>
+     <script type="text/javascript">
+         function RegistroGoodLibro() {
+             swal({
+                 title: "Actualizacíón correcta",
+                 text: "Tu libro se actualizo de forma exitosa!",
+                 icon: "success",
+             });
+         }
+    </script>
+
+
       <%--SWEET ALERT Registro SUCCESS--%>
      <script type="text/javascript">
          function RegistroFail() {

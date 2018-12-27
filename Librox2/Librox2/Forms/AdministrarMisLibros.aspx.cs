@@ -201,6 +201,7 @@ namespace Librox2.Forms
             try
             {
                 DAOLibrosToedit.UpdLibro(OBLibros);
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroGoodLibro();", true);
                 bind();
             }
             catch (Exception ex)
