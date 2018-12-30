@@ -40,7 +40,7 @@ namespace Librox2.DAO
         //Metodo que devuelve los comentarios deacuerdo al libro que se este buscando.
         public DataTable ConsultaComentariosLibros(string IDLibro)
         {
-            SQL = " SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios WHERE Libro=" + IDLibro;
+            SQL = " SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios WHERE Libro='"+ IDLibro+"'";
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
@@ -101,6 +101,22 @@ namespace Librox2.DAO
             ComentariosBO nom = (ComentariosBO)obj;
             cmd.Connection = con.EstablecerConexion();
             string sql = "INSERT INTO Comentarios (Usuario,Comentario,Libro) VALUES ('" + nom.Usuario+"','"+nom.Comentarios+"','"+nom.Libro+"')";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+        //Elimina los comentarios desde el admin
+        public int EliminarComentariosAdmin(object obj)
+        {
+            ComentariosBO nom = (ComentariosBO)obj;
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "DELETE FROM Comentarios WHERE IDComentario="+nom.IDComentario+"";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

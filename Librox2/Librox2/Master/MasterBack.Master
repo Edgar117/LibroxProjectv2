@@ -204,6 +204,18 @@
             });
         }
     </script>
+
+ <%--SWEET ALERT Eliminar Comentarios --%>
+      <script type="text/javascript">
+          function BorrarComentarios() {
+              swal({
+                title: "Comentario Eliminado",
+                text: "Comentario del libro Eliminado!",
+                icon: "error",
+            });
+        }
+    </script>
+
     <%--SWEET ALERT ERROR TRY--%>
           <script type="text/javascript">
           function TRY() {
