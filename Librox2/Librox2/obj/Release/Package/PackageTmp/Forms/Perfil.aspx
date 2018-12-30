@@ -35,10 +35,7 @@
                         <h2 id="lblSeguidres" runat="server">0 </h2>
                         <p>Seguidores</p>
                     </div>
-                    <div class="social-description">
-                        <h2>26</h2>
-                        <p>Reseñas</p>
-                    </div>
+                   
                     <div class="social-description">
                         <h2 id="Libros" runat="server">...</h2>
                         <p>Libros</p>
