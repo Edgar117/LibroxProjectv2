@@ -146,7 +146,7 @@ namespace Librox2.GUI
                 ImagenUsuario.ImageUrl = "/images/Users/" + dtuser.Rows[0]["Imagen"].ToString();
                 dtuser = null;
                 dtuser = DAOUsers.ConsultaDatosLibrosXUsuario(lblUser.Text);
-                TotalLibros.Text ="Libros publicados: "+ dtuser.Rows[0].ToString();
+                TotalLibros.Text ="Libros publicados: "+ dtuser.Rows[0]["Libros"].ToString();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
         }

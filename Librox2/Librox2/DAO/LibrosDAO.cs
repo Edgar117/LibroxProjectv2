@@ -37,6 +37,21 @@ namespace Librox2.DAO
            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
+        //Metodo que devuelve los comentarios deacuerdo al libro que se este buscando.
+        public DataTable ConsultaComentariosLibros(string IDLibro)
+        {
+            SQL = " SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dddd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios WHERE Libro=" + IDLibro;
+            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            return con.TablaGeneral(SQL);
+        }
+        //Metodo para consultar los comentarios de lado del administrador de la pagina
+        public DataTable ConsultaComentariosLibrosAdmin()
+        {
+            SQL = "SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dddd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios";
+            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            return con.TablaGeneral(SQL);
+        }
+
         //Este metodó pagina libros segun la categoria que el usuario escoja.
         public DataTable ConsultarLibrosPorCategorias(string CategoriaToFind)
         {
@@ -80,26 +95,22 @@ namespace Librox2.DAO
             }
             return 1;
         }
-        //public string validarusuario(UsuarioBO ObjUsuario)
-        //{
-
-        //    string contra = "";
-
-        //    SQL = "Select Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID from Usuarios  where Usuario = '" + ObjUsuario.Usuario + "'";
-        //    SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
-        //    con.AbrirConexion();
-        //    cmd.Parameters.AddWithValue("@Usuario", contra);
-        //    SqlDataReader leer = cmd.ExecuteReader();
-        //    if (leer.Read())
-        //    {
-        //        contra = leer["Contraseña"].ToString() + "|" + leer["Tipousuario"].ToString() + "|" + leer["ImagenUsuario"].ToString() + "|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString() + "|" + leer["ID"].ToString();
-        //    }
-        //    con.CerrarConexion();
-        //    return contra;
-
-        //}
-        
-         //Metodó que cuenta los libros, con los que cuenta la página
+        //Metodo que Inserta los comentarios de los libros para despues poder verlos en la pagina.
+        public int InsertarComentarios(object obj)
+        {
+            ComentariosBO nom = (ComentariosBO)obj;
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "INSERT INTO Comentarios (Usuario,Comentario,Libro) VALUES ('" + nom.Usuario+"','"+nom.Comentarios+"','"+nom.Libro+"')";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
         public int CONTARLIBROS()
         {
             int CUENTA = 0;

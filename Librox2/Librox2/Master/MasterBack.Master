@@ -81,6 +81,7 @@
                 <li><a href="../Forms/PreciosLibros.aspx"><i class="fa fa-dollar"></i>Precios Libros</a></li>
             <li><a href="../Forms/Usuarios.aspx"><i class="fa fa-user"></i>Administrar Usuarios</a></li>
                 <li><a href="#"><i class="fa fa-book"></i>Administrar Libros</a></li>
+              <li><a href="../Forms/AdministrarComentarios.aspx"><i class="fa fa-comment"></i>Administrar Comentarios</a></li>
                 <li><a href="../Forms/AgregarStatusLibros.aspx"><i class="fa fa-archive"></i>Administrar Estatus Libro</a></li>
               <li><a href="../Forms/AgregarAdmin.aspx"><i class="fa fa-key"></i>Administrar Administradores</a></li>
           </ul>

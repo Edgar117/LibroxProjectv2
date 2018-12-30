@@ -73,6 +73,7 @@
     <Content Include="css\dropzone.css" />
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
+    <Content Include="Forms\AdministrarComentarios.aspx" />
     <Content Include="Forms\AdministrarMisLibros.aspx" />
     <Content Include="Forms\AgregarAdmin.aspx" />
     <Content Include="Forms\AgregarStatusLibros.aspx" />
@@ -377,6 +378,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BO\CategoriasBO.cs" />
+    <Compile Include="BO\ComentariosBO.cs" />
     <Compile Include="BO\EstadoLibroBO.cs" />
     <Compile Include="BO\LibrosBO.cs" />
     <Compile Include="BO\Mensajes.cs" />
@@ -392,6 +394,13 @@
     <Compile Include="DAO\RankingDAO.cs" />
     <Compile Include="DAO\Security.cs" />
     <Compile Include="DAO\UsuariosDAO.cs" />
+    <Compile Include="Forms\AdministrarComentarios.aspx.cs">
+      <DependentUpon>AdministrarComentarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrarComentarios.aspx.designer.cs">
+      <DependentUpon>AdministrarComentarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdministrarMisLibros.aspx.cs">
       <DependentUpon>AdministrarMisLibros.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
