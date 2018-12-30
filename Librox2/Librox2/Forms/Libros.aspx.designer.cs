@@ -103,6 +103,15 @@ namespace Librox2.GUI {
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
+        /// Control ImagenUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImagenUsuario;
+        
+        /// <summary>
         /// Control lblUser.
         /// </summary>
         /// <remarks>
@@ -119,5 +128,14 @@ namespace Librox2.GUI {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUserMail;
+        
+        /// <summary>
+        /// Control TotalLibros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalLibros;
     }
 }

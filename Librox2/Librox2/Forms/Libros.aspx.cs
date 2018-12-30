@@ -143,6 +143,10 @@ namespace Librox2.GUI
                 DataTable dtuser = new DataTable();
                 dtuser = DAOUsers.ConsultaDatosUsuario(lblUser.Text);
                 lblUserMail.Text = dtuser.Rows[0]["Correo"].ToString();
+                ImagenUsuario.ImageUrl = "/images/Users/" + dtuser.Rows[0]["Imagen"].ToString();
+                dtuser = null;
+                dtuser = DAOUsers.ConsultaDatosLibrosXUsuario(lblUser.Text);
+                TotalLibros.Text ="Libros publicados: "+ dtuser.Rows[0].ToString();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
         }

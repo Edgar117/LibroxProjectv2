@@ -73,6 +73,12 @@ namespace Librox2.DAO
             return con.TablaGeneral(SQL);
         }
 
+        public DataTable ConsultaDatosLibrosXUsuario(string Usuario)
+        {
+            SQL = "SELECT COUNT(LS.IDlibro)AS Libros FROM Usuarios INNER JOIN LIBROS LS ON LS.ID_Autor = Usuarios.ID WHERE TipoUsuario = 0 AND  Usuario='" + Usuario + "'";
+            return con.TablaGeneral(SQL);
+        }
+
         public DataTable ConsultarUsuariosAdmin()
         {
             SQL = "SELECT ID,Nombre,Usuario,Correo FROM USUARIOS WHERE TipoUsuario=1";
