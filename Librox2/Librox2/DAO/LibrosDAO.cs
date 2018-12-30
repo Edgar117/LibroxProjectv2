@@ -40,14 +40,14 @@ namespace Librox2.DAO
         //Metodo que devuelve los comentarios deacuerdo al libro que se este buscando.
         public DataTable ConsultaComentariosLibros(string IDLibro)
         {
-            SQL = " SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dddd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios WHERE Libro=" + IDLibro;
+            SQL = " SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios WHERE Libro=" + IDLibro;
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
         //Metodo para consultar los comentarios de lado del administrador de la pagina
         public DataTable ConsultaComentariosLibrosAdmin()
         {
-            SQL = "SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dddd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios";
+            SQL = "SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios";
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
