@@ -51,5 +51,11 @@ namespace Librox2.Forms
                     break;
             }
         }
+
+        protected void GVComentarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GVComentarios.PageIndex = e.NewPageIndex;
+            CargarGrid();
+        }
     }
 }

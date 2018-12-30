@@ -126,5 +126,11 @@ namespace Librox2.GUI
                 lblExcep.Text = ex.ToString();
             }
         }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            LoadUsuarios();
+        }
     }
 }

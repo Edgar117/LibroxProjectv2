@@ -26,7 +26,7 @@
             </div>
             <div class="box-body">
                       <div class="col-md-12">
-                          <asp:GridView ID="GVComentarios" CssClass="table table-bordered table-hover" runat="server" OnRowCommand="GVComentarios_RowCommand"  >
+                          <asp:GridView ID="GVComentarios" CssClass="table table-bordered table-hover" runat="server" PageSize="10" AllowPaging="true"  OnPageIndexChanging="GVComentarios_PageIndexChanging" OnRowCommand="GVComentarios_RowCommand"  >
                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />

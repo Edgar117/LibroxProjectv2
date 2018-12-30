@@ -17,9 +17,9 @@ namespace Librox2.DAO
         //Metodó que guarda el libro que el usuario este registrando.
         public int SaveBook(object obj)
         {
-            LibrosBO  nom = (LibrosBO)obj;
+            LibrosBO nom = (LibrosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "EXEC [spInsertBook] NULL,'"+nom.Titulo+"','"+nom.Sinpsis+"',"+nom.Autor_ID+",'"+nom.ImagenPòrtada+"',null,null,'"+nom.LibroFisico+"','"+nom.Categoria+"','"+nom.EstatusLibro+"'";
+            string sql = "EXEC [spInsertBook] NULL,'" + nom.Titulo + "','" + nom.Sinpsis + "'," + nom.Autor_ID + ",'" + nom.ImagenPòrtada + "',null,null,'" + nom.LibroFisico + "','" + nom.Categoria + "','" + nom.EstatusLibro + "'";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
@@ -33,14 +33,14 @@ namespace Librox2.DAO
         //Metodò general que consulta todos los libros que se tienen en el portal.
         public DataTable ConsultarLibros()
         {
-            SQL="EXEC [DBO].[PaginadorLibros]";
-           //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            SQL = "EXEC [DBO].[PaginadorLibros]";
+            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
         //Metodo que devuelve los comentarios deacuerdo al libro que se este buscando.
         public DataTable ConsultaComentariosLibros(string IDLibro)
         {
-            SQL = " SET LANGUAGE SPANISH SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios WHERE Libro='"+ IDLibro+"'";
+            SQL = "SELECT IDComentario AS ID, Usuario,Comentario, FORMAT(Hora , 'dd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro FROM Comentarios WHERE Libro='" + IDLibro + "' ORDER BY Hora DESC";
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
@@ -55,7 +55,7 @@ namespace Librox2.DAO
         //Este metodó pagina libros segun la categoria que el usuario escoja.
         public DataTable ConsultarLibrosPorCategorias(string CategoriaToFind)
         {
-            SQL = "EXEC [dbo].[PaginadorCategorias] '"+CategoriaToFind+"'";
+            SQL = "EXEC [dbo].[PaginadorCategorias] '" + CategoriaToFind + "'";
             return con.TablaGeneral(SQL);
         }
         //Este metodó pagina libros segun el texto que mande el usuario, si el usuario manda Angular el sp buscara todas las coincidencias con esa palabra en el titulo.
@@ -84,7 +84,7 @@ namespace Librox2.DAO
         {
             LibrosBO nom = (LibrosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "EXEC [spUpdateDelete] '"+nom.ID_LIBRO+ "','" + nom.Titulo + "','" + nom.Sinpsis + "','" + nom.ImagenPòrtada + "','" + nom.Categoria + "','" + nom.EstatusLibro + "','" + nom.Action + "'  ";
+            string sql = "EXEC [spUpdateDelete] '" + nom.ID_LIBRO + "','" + nom.Titulo + "','" + nom.Sinpsis + "','" + nom.ImagenPòrtada + "','" + nom.Categoria + "','" + nom.EstatusLibro + "','" + nom.Action + "'  ";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
@@ -100,7 +100,7 @@ namespace Librox2.DAO
         {
             ComentariosBO nom = (ComentariosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "INSERT INTO Comentarios (Usuario,Comentario,Libro) VALUES ('" + nom.Usuario+"','"+nom.Comentarios+"','"+nom.Libro+"')";
+            string sql = "INSERT INTO Comentarios (Usuario,Comentario,Libro) VALUES ('" + nom.Usuario + "','" + nom.Comentarios + "','" + nom.Libro + "')";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
@@ -116,7 +116,7 @@ namespace Librox2.DAO
         {
             ComentariosBO nom = (ComentariosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "DELETE FROM Comentarios WHERE IDComentario="+nom.IDComentario+"";
+            string sql = "DELETE FROM Comentarios WHERE IDComentario=" + nom.IDComentario + "";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
@@ -137,7 +137,7 @@ namespace Librox2.DAO
             SqlDataReader leer = cmd.ExecuteReader();
             if (leer.Read())
             {
-                CUENTA =int.Parse( leer[0].ToString());
+                CUENTA = int.Parse(leer[0].ToString());
             }
             con.CerrarConexion();
             return CUENTA;

@@ -40,7 +40,7 @@ namespace Librox2.Forms
                 catch (Exception ex)
                 {
 
-                    Response.Redirect("../Login.aspx");
+                    Response.Redirect("Login.aspx");
                 }
 
             }

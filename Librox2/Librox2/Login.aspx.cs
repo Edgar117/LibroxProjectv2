@@ -20,9 +20,10 @@ namespace Librox2
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["Panel"] = "";
-            Session["Usuario"]="";
+            Session["Usuario"]=null;
             Session["Contraseña"] = "";
             Session["Imagen"] = "";
+            Session["ALL"] = null;
             if (string.IsNullOrEmpty(Request.QueryString["access_token"])) return; //ERROR! No token returned from Facebook!!
 
             //let's send an http-request to facebook using the token            

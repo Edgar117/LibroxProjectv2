@@ -72,10 +72,10 @@ namespace Librox2.Forms
                         }
                     }
                     break;
-                        default:
-                            break;
-                    }
+                default:
+                    break;
             }
+        }
         private void CleanControls()
         {
             txtContraseña.Text = "";

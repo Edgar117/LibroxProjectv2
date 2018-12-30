@@ -22,7 +22,7 @@ namespace Librox2.Forms
         {
             if (!IsPostBack)
             {
-                if (Session["Usuario"]=="")
+                if (Session["Usuario"]==null)
                 {
                     pnlComments2.Visible = false;
                     pnlLogin.Visible = true;

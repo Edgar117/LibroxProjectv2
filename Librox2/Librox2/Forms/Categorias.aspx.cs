@@ -133,5 +133,11 @@ namespace Librox2.GUI
                     break;
             }
         }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            LoadCategorias();
+        }
     }
 }

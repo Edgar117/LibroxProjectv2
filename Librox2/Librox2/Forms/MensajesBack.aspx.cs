@@ -22,5 +22,11 @@ namespace Librox2.GUI
             GridView1.DataSource = OMensajes.ConsultarCategorias();
             GridView1.DataBind();
         }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            LoadMensajes();
+        }
     }
 }
