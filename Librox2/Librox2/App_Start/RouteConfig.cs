@@ -11,6 +11,7 @@ namespace Librox2.App_Start
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.MapPageRoute("default", "", "~/Login.aspx");
+            routes.MapPageRoute("login", "login", "~/Login.aspx");
             routes.MapPageRoute("home", "home", "~/Forms/Home.aspx");
             routes.MapPageRoute("libros", "libros", "~/Forms/Libros.aspx");
             routes.MapPageRoute("newbook", "newbook", "~/Forms/AgregarLibro.aspx");
