@@ -144,3 +144,4 @@ C:\Users\david\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox
 C:\Users\david\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.csproj.CopyComplete
 C:\Users\david\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.dll
 C:\Users\david\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.pdb
+C:\Users\Soporte Auxiliar 2\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\itextsharp.dll

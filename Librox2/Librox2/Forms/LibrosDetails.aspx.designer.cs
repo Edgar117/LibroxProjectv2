@@ -76,6 +76,15 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
+        /// Control lbtnPrueba.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnPrueba;
+        
+        /// <summary>
         /// Control Repeater1.
         /// </summary>
         /// <remarks>
@@ -130,12 +139,12 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.Panel pnlLogin;
         
         /// <summary>
-        /// Control dtlComments.
+        /// Control Repeater2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtlComments;
+        protected global::System.Web.UI.WebControls.Repeater Repeater2;
     }
 }

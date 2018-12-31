@@ -77,7 +77,7 @@ namespace Librox2.GUI
                         var fileName1 = Path.GetFileNameWithoutExtension(file.FileName);    //Cambié esta instrucción para obtener solo el nombre del archivo, sin la extensión.
                         if (FileNameVerify.Contains(".pdf") || FileNameVerify.Contains(".PDF"))
                         {
-                            //Solo el pdf necesitamos encriptar Creo
+                            //Solo el pdf necesitamos encriptar
                             string encryptedName = fileName1 + "_encrypted";    //Se asigna el nombre que tendrá el archivo ya encriptado
                             string pathDestino = pathString + encryptedName;    //Se combinan las rutas para indicar en dónde se guardará el archivo encriptado
                             EncryptFile(file, pathDestino); //Llamada al método para encriptar archivo

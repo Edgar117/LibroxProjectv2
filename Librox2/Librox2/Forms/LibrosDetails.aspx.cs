@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Librox2.DAO;
 using System.Data;
 using Librox2.BO;
+using System.IO;
 
 namespace Librox2.Forms
 {
@@ -86,8 +87,8 @@ namespace Librox2.Forms
         {
             DataTable dtComments = new DataTable();
             dtComments = DAOLibros.ConsultaComentariosLibros(titulo);
-            dtlComments.DataSource = dtComments;
-            dtlComments.DataBind();
+            Repeater2.DataSource = dtComments;
+            Repeater2.DataBind();
         }
 
         protected void btnComment_Click(object sender, EventArgs e)
@@ -98,6 +99,16 @@ namespace Librox2.Forms
             DAOLibros.InsertarComentarios(comentarios);
             Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri);
             //bindComments();
+        }
+        private void buscarLibro() {
+            string user = Session["Usuario"].ToString();
+            var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + user + "/"));
+            string pathString = originalDirectory.ToString();
+        }
+
+        protected void lbtnPrueba_Click(object sender, EventArgs e)
+        {
+            //buscarLibro();
         }
     }
 }

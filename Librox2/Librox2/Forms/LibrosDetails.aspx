@@ -52,6 +52,7 @@
                     <%--<p>$<asp:Label ID="lblPrecio" runat="server" Text=''></asp:Label></p>--%>
                     <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay"></asp:LinkButton>
                     <br />
+                    <asp:LinkButton ID="lbtnPrueba" runat="server" CssClass="btn-link btn-warning" OnClick="lbtnPrueba_Click">Descargar una muestra</asp:LinkButton>
                 </div>
                 <div class="col-sm-4">
                     <h4>Libros que pueden gustarte...</h4>
@@ -92,7 +93,7 @@
                     <asp:Panel ID="pnlLogin" runat="server">
                         <a href="/Login.aspx" class="btn btn-round btn-warning">Inicia sesión para comentar</a>
                     </asp:Panel>
-                    <asp:DataList ID="dtlComments" runat="server" RepeatDirection="Vertical" Width="720px">
+                    <asp:Repeater ID="Repeater2" runat="server">
                         <ItemTemplate>
                             <h5><b>
                                 <asp:Label ID="lblUser" runat="server" Text='<%# Eval ("Usuario") %>'></asp:Label></b></h5>
@@ -104,7 +105,8 @@
                             </p>
                             <hr />
                         </ItemTemplate>
-                    </asp:DataList>
+                    </asp:Repeater>
+                    <hr />
                 </div>
                 <div class="col-md-2"></div>
             </div>
