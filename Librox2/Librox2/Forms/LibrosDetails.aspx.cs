@@ -48,7 +48,7 @@ namespace Librox2.Forms
                     string sinopsis = Convert.ToString(ht["Sinopsis"]);
                     string estatus = Convert.ToString(ht["Estatus"]);
                     string imgPath = Convert.ToString(ht["ImagenPortada"]);
-                    //prepareMuestra();
+                    
                     //string strDesignation = ht.ContainsKey("Precio") ? Convert.ToString(ht["Precio"]) : "";
 
                     //Cargando sección de comentarios
@@ -62,6 +62,8 @@ namespace Librox2.Forms
                     imgPortada.ImageUrl = imgPath;
 
                     LinkButton1.Text = "$" + precio + ".00";
+
+                    prepareMuestra();
 
                     //Recomendaciones basadas en la categoría del libro seleccionado
                     dt = DAOLibros.ConsultarLibrosPorCategorias(categoria);
