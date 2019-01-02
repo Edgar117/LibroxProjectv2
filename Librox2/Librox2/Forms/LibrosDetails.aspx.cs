@@ -8,6 +8,10 @@ using Librox2.DAO;
 using System.Data;
 using Librox2.BO;
 using System.IO;
+using System.Text;
+using System.Security.Cryptography;
+using iTextSharp.text.pdf;
+using iTextSharp.text.xml;
 
 namespace Librox2.Forms
 {
@@ -44,6 +48,7 @@ namespace Librox2.Forms
                     string sinopsis = Convert.ToString(ht["Sinopsis"]);
                     string estatus = Convert.ToString(ht["Estatus"]);
                     string imgPath = Convert.ToString(ht["ImagenPortada"]);
+                    //prepareMuestra();
                     //string strDesignation = ht.ContainsKey("Precio") ? Convert.ToString(ht["Precio"]) : "";
 
                     //Cargando sección de comentarios
@@ -100,15 +105,53 @@ namespace Librox2.Forms
             Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri);
             //bindComments();
         }
-        private void buscarLibro() {
-            string user = Session["Usuario"].ToString();
-            var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + user + "/"));
-            string pathString = originalDirectory.ToString();
+        private void prepareMuestra() {
+            //Método que se ocupa para prepara el archivo de muestra con páginas limitadas
+            DataTable dtBooks = new DataTable();
+            dtBooks = DAOLibros.ConsultarLibrosXTexto(lblTitulo.Text);
+            string libroFisico = dtBooks.Rows[0]["LibroFisico"].ToString();
+            var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + libroFisico + "_encrypted"));
+            string input = originalDirectory.ToString();
+            string output = Server.MapPath("~/LibrosPortadas/" + libroFisico + ".pdf");
+            decryptBook(input, output);
+            determinePaginas(output);
         }
 
         protected void lbtnPrueba_Click(object sender, EventArgs e)
         {
-            //buscarLibro();
+            prepareMuestra();
+        }
+        protected void decryptBook(string input, string output) {
+            string password = "mikey2018";  //Se encripta con esta contraseña
+
+            UnicodeEncoding UE = new UnicodeEncoding();
+
+            FileStream fsCrypt = new FileStream(input, FileMode.Open);
+
+            RijndaelManaged RMCrypto = new RijndaelManaged();   //Se crea un objeto del algoritmo de criptografía
+            Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(password, Encoding.ASCII.GetBytes("Salt text"));    //Codifica el password en bytes ASCII como lo requiere el algoritmo
+
+            //Se asigna la clave 'key' y el índice del vector 'IV' basados en 8 bytes como propiedades del objeto de encriptación, mismos que servirán para decodificar
+            RMCrypto.Key = key.GetBytes(RMCrypto.KeySize / 8);
+            RMCrypto.IV = key.GetBytes(RMCrypto.BlockSize / 8);
+
+            CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateDecryptor(), CryptoStreamMode.Read);
+
+            FileStream fsOut = new FileStream(output, FileMode.Create);
+
+            int data;
+            while ((data = cs.ReadByte()) != -1)
+                fsOut.WriteByte((byte)data);
+
+            fsOut.Close();
+            cs.Close();
+            fsCrypt.Close();
+        }
+        protected void determinePaginas(string archivoMuestra)
+        {
+            PdfReader pdfReader = new PdfReader(archivoMuestra);
+            int numberOfPages = pdfReader.NumberOfPages;
+            lblPages.Text = numberOfPages.ToString() + " páginas";
         }
     }
 }

@@ -36,6 +36,7 @@
                         <h3 class="card-header">
                             <asp:Label ID="lblTitulo" runat="server" Text='' CssClass="card-title"></asp:Label>
                         </h3>
+                        <asp:Label ID="lblPages" runat="server" Text="" CssClass="text-center"></asp:Label>
                     </div>
                     <hr />
                     <div class="card-body">

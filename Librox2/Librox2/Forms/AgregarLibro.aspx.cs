@@ -81,7 +81,7 @@ namespace Librox2.GUI
                             string encryptedName = fileName1 + "_encrypted";    //Se asigna el nombre que tendrá el archivo ya encriptado
                             string pathDestino = pathString + encryptedName;    //Se combinan las rutas para indicar en dónde se guardará el archivo encriptado
                             EncryptFile(file, pathDestino); //Llamada al método para encriptar archivo
-                            Session["LibroFisico"] = Variable + "/"+ FileNameVerify.ToString();
+                            Session["LibroFisico"] = Variable + "/"+ fileName1;
                     }
                         else
                         {
