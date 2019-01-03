@@ -54,6 +54,8 @@
                     <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay"></asp:LinkButton>
                     <br />
                     <asp:LinkButton ID="lbtnPrueba" runat="server" CssClass="btn-link btn-warning" OnClick="lbtnPrueba_Click">Descargar una muestra</asp:LinkButton>
+                    <br />
+                    <asp:Label ID="lblMuestraNo" runat="server" Text="" ForeColor="Red"></asp:Label>
                 </div>
                 <div class="col-sm-4">
                     <h4>Libros que pueden gustarte...</h4>

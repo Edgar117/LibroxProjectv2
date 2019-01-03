@@ -12,6 +12,8 @@ using System.Text;
 using System.Security.Cryptography;
 using iTextSharp.text.pdf;
 using iTextSharp.text.xml;
+using iTextSharp.text;
+using System.Net;
 
 namespace Librox2.Forms
 {
@@ -22,12 +24,13 @@ namespace Librox2.Forms
         ComentariosBO comentarios = new ComentariosBO();
         DataTable dt = new DataTable();
         string titulo;
+        string libroFisico;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                if (Session["Usuario"]==null)
+                if (Session["Usuario"] == null)
                 {
                     pnlComments2.Visible = false;
                     pnlLogin.Visible = true;
@@ -48,7 +51,7 @@ namespace Librox2.Forms
                     string sinopsis = Convert.ToString(ht["Sinopsis"]);
                     string estatus = Convert.ToString(ht["Estatus"]);
                     string imgPath = Convert.ToString(ht["ImagenPortada"]);
-                    
+
                     //string strDesignation = ht.ContainsKey("Precio") ? Convert.ToString(ht["Precio"]) : "";
 
                     //Cargando sección de comentarios
@@ -63,6 +66,8 @@ namespace Librox2.Forms
 
                     LinkButton1.Text = "$" + precio + ".00";
 
+                    //Cuando se abre la página de detalles del libro, se desencripta dicho libro y se queda guardado en servidor.
+                    obtenerLibroFisico();
                     prepareMuestra();
 
                     //Recomendaciones basadas en la categoría del libro seleccionado
@@ -107,23 +112,34 @@ namespace Librox2.Forms
             Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri);
             //bindComments();
         }
-        private void prepareMuestra() {
+        private void prepareMuestra()
+        {
             //Método que se ocupa para prepara el archivo de muestra con páginas limitadas
-            DataTable dtBooks = new DataTable();
-            dtBooks = DAOLibros.ConsultarLibrosXTexto(lblTitulo.Text);
-            string libroFisico = dtBooks.Rows[0]["LibroFisico"].ToString();
+            obtenerLibroFisico();
             var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + libroFisico + "_encrypted"));
             string input = originalDirectory.ToString();
             string output = Server.MapPath("~/LibrosPortadas/" + libroFisico + ".pdf");
+
             decryptBook(input, output);
             determinePaginas(output);
         }
 
+        private void obtenerLibroFisico()
+        {
+            DataTable dtBooks = new DataTable();
+            dtBooks = DAOLibros.ConsultarLibrosXTexto(lblTitulo.Text);
+            libroFisico = dtBooks.Rows[0]["LibroFisico"].ToString();
+        }
+
         protected void lbtnPrueba_Click(object sender, EventArgs e)
         {
-            prepareMuestra();
+            obtenerLibroFisico();
+            string book = Server.MapPath("~/LibrosPortadas/" + libroFisico + ".pdf");
+            string muestraLimitada = Server.MapPath("~/LibrosPortadas/" + libroFisico + "_trial.pdf");
+            extraerPaginas(book, muestraLimitada);
         }
-        protected void decryptBook(string input, string output) {
+        protected void decryptBook(string input, string output)
+        {
             string password = "mikey2018";  //Se encripta con esta contraseña
 
             UnicodeEncoding UE = new UnicodeEncoding();
@@ -153,7 +169,65 @@ namespace Librox2.Forms
         {
             PdfReader pdfReader = new PdfReader(archivoMuestra);
             int numberOfPages = pdfReader.NumberOfPages;
-            lblPages.Text = numberOfPages.ToString() + " páginas";
+            lblPages.Text = "(" + numberOfPages.ToString() + " páginas)";
+        }
+        protected void extraerPaginas(string archivoMuestra, string outputPdfPath)
+        {
+            PdfReader reader = null;
+            Document sourceDocument = null;
+            PdfCopy pdfCopyProvider = null;
+            PdfImportedPage importedPage = null;
+            int rangoPaginas = 4;
+
+            try
+            {
+                //Inicializa un lector de PDF en la ruta del archivo desencriptado
+                reader = new PdfReader(archivoMuestra);
+
+                //Por simplicidad, se asume que todas las páginas del PDF comparten el mismo tamaño de página
+                //y la misma rotación que la primera página.
+                sourceDocument = new Document();
+
+                // Inicializa una instancia de PdfCopy con la fuente y la salida del archivo PDF 
+                pdfCopyProvider = new PdfCopy(sourceDocument, new System.IO.FileStream(outputPdfPath, System.IO.FileMode.Create));
+
+                sourceDocument.Open();
+
+                if (reader.NumberOfPages >= rangoPaginas)   //Si tiene más de un rango de páginas predeterminado se puede descargar una muestra.
+                {
+                    //Recorre el rango de páginas especificadas y las copia a un nuevo archivo PDF:
+                    for (int i = 1; i <= rangoPaginas; i++)
+                    {
+                        importedPage = pdfCopyProvider.GetImportedPage(reader, i);
+                        pdfCopyProvider.AddPage(importedPage);
+                    }
+                }
+                //De lo contrario, no es posible generar una muestra, aparece el siguiente mensaje.
+                else
+                {
+                    lblMuestraNo.Text = "No es posible descargar una muestra de este libro";
+                }
+
+
+                //Cerrando streams abiertos
+                sourceDocument.Close();
+                reader.Close();
+
+                //Abre archivo de muestra en el explorador
+                WebClient User = new WebClient();
+                Byte[] FileBuffer = User.DownloadData(outputPdfPath);
+                if (FileBuffer != null)
+                {
+                    Response.ContentType = "application/pdf";
+                    Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                    Response.BinaryWrite(FileBuffer);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
