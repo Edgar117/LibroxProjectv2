@@ -104,7 +104,7 @@
                                         <h5>Estado actual del libro:
                                     <br />
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("NombreEstatus") %>' CssClass="title"></asp:Label></h5>
-                                        <h5>Autor:<asp:LinkButton ID="LinkButton3" runat="server" CommandName="profile">
+                                        <h5>Autor: <asp:LinkButton ID="LinkButton3" runat="server" CommandName="profile">
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Autor") %>' CssClass="title"></asp:Label>
                                             </asp:LinkButton></h5>
                                           <%# Eval("Ranking") %><br />
@@ -124,12 +124,14 @@
                         <div class="modal-content">
                             <div class="modal-header justify-content-center">
                                 <div class="modal-profile">
-                                    <i class="now-ui-icons users_circle-08"></i>
+                                     <asp:Image CssClass="rounded-circle" ID="ImagenUsuario" runat="server" />
                                 </div>
                             </div>
                             <div class="modal-body">
                                 <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label>
+                                  <asp:Label ID="TotalLibros" runat="server" Text=""></asp:Label>
+                               
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Cerrar</button>
