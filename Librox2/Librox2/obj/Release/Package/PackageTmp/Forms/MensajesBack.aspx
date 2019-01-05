@@ -26,7 +26,7 @@
             </div>
             <div class="box-body">
                       <div class="col-md-12">
-                          <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="10" AllowPaging="true" runat="server">
+                          <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server">
                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />

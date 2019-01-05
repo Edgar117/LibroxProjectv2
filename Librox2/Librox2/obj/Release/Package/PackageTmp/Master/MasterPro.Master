@@ -204,8 +204,8 @@
      <script type="text/javascript">
          function RegistroGoodLibro() {
              swal({
-                 title: "Actualización correcta",
-                 text: "Tu libro se actualizó de forma exitosa!",
+                 title: "Actualizacíón correcta",
+                 text: "Tu libro se actualizo de forma exitosa!",
                  icon: "success",
              });
          }

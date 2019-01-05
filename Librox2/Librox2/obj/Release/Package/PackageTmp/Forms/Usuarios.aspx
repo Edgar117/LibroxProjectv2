@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="box-body">
                                     <div class="col-md-12">
-                                        <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" PageSize="10" AllowPaging="true" OnPageIndexChanging="GridView1_PageIndexChanging" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GridView1_RowCommand">
+                                        <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCommand="GridView1_RowCommand">
                                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                             <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
