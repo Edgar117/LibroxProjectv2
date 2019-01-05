@@ -38,10 +38,10 @@
 						<i class="fa fa-facebook-official"></i>
 						Facebook
 					</a>
-					<a href="#" class="btn-google m-b-20">
+				<%--	<a href="#" class="btn-google m-b-20">
 						<img src="Login/images/icons/icon-google.png" alt="GOOGLE">
 						Google
-					</a>
+					</a>--%>
 					
 					<div class="p-t-31 p-b-9">
 						<span class="txt1">

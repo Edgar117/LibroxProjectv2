@@ -31,8 +31,17 @@ namespace Librox2.GUI
                     
                     Categoria.InnerText = cart1[4].ToString();
                     about.InnerText = cart1[3].ToString();
-                    ImagenUsuario.Src = "/images/Users/" + cart1[2].ToString();
-                    Imagen.Src = "/images/Users/" + cart1[2].ToString();
+                    if (Session["FaceLogin"]!=null)
+                    {
+                        ImagenUsuario.Src = Session["FaceLogin"].ToString();
+                        Imagen.Src = Session["FaceLogin"].ToString();
+                    }
+                    else
+                    {
+                        ImagenUsuario.Src = "/images/Users/" + cart1[2].ToString();
+                        Imagen.Src = "/images/Users/" + cart1[2].ToString();
+                    }
+                    
                     ID = int.Parse(cart1[5]);
                     txtdescription.InnerText = cart1[3].ToString().Trim();
                     lblSeguidres.InnerText = cart1[6].ToString();

@@ -9,6 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using static Librox2.Propety;
 using Librox2.DAO;
+using Librox2.BO;
 namespace Librox2.GUI
 {
     public partial class Callback : System.Web.UI.Page
@@ -27,10 +28,17 @@ namespace Librox2.GUI
             FacebookUser oUser = js.Deserialize<FacebookUser>(json);
             if (oUser != null)
             {
-             int Validar= OB.SaveUserFB(oUser);
-                if (Validar==0)
+                int Validar = OB.SaveUserFB(oUser);
+                if (Validar == 0)
                 {
-                    Response.Redirect("/GUI/Index.aspx");
+                    Session["FaceLogin"]  = string.Format("https://graph.facebook.com/{0}/picture", oUser.id);
+                    Session["Usuario"] = oUser.name;
+                    Session["Panel"] = "Logeado";
+                    UsuarioBO OUserCo = new UsuarioBO();
+                    OUserCo.Usuario = oUser.email;
+                    String[] substrings = OB.validarusuario(OUserCo).Split('|');
+                    Session["ALL"] = substrings;
+                    Response.Redirect("/libros");
                 }
                 else
                 {

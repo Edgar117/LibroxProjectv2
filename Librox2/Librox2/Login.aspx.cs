@@ -24,6 +24,7 @@ namespace Librox2
             Session["Contraseña"] = "";
             Session["Imagen"] = "";
             Session["ALL"] = null;
+            Session["FaceLogin"] = null;
             if (string.IsNullOrEmpty(Request.QueryString["access_token"])) return; //ERROR! No token returned from Facebook!!
 
             //let's send an http-request to facebook using the token            
@@ -37,6 +38,7 @@ namespace Librox2
                 int Validar = OB.SaveUserFB(oUser);
                 if (Validar == 0)
                 {
+                    string test =oUser.picture;
                     Response.Redirect("/Forms/Home.aspx");
                 }
                 else
