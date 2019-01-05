@@ -109,11 +109,19 @@ namespace Librox2.Forms
 
         protected void btnComment_Click(object sender, EventArgs e)
         {
-            comentarios.Comentarios = txtComment.Text;
-            comentarios.Libro = lblTitulo.Text;
-            comentarios.Usuario = Session["Usuario"].ToString();
-            DAOLibros.InsertarComentarios(comentarios);
-            Response.Redirect(HttpContext.Current.Request.Url.AbsoluteUri);
+            if (txtComment.Text != "")
+            {
+                comentarios.Comentarios = txtComment.Text;
+                comentarios.Libro = lblTitulo.Text;
+                comentarios.Usuario = Session["Usuario"].ToString();
+                DAOLibros.InsertarComentarios(comentarios);
+                Response.Redirect("/details");
+            }
+            else
+            {
+                return;
+            }
+
             //bindComments();
         }
         private void prepareMuestra()
