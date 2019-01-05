@@ -92,6 +92,10 @@ namespace Librox2.Forms
                         Repeater1.DataBind();
                     }
                 }
+                else
+                {
+                    Response.Redirect("libros");
+                }
             }
         }
 
@@ -115,7 +119,7 @@ namespace Librox2.Forms
         private void prepareMuestra()
         {
             //Método que se ocupa para prepara el archivo de muestra con páginas limitadas
-            obtenerLibroFisico();
+            //obtenerLibroFisico();
             var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + libroFisico + "_encrypted"));
             string input = originalDirectory.ToString();
             string output = Server.MapPath("~/LibrosPortadas/" + libroFisico + ".pdf");
@@ -177,56 +181,53 @@ namespace Librox2.Forms
             Document sourceDocument = null;
             PdfCopy pdfCopyProvider = null;
             PdfImportedPage importedPage = null;
-            int rangoPaginas = 4;
+            int rangoPaginas = 5;
 
             try
             {
                 //Inicializa un lector de PDF en la ruta del archivo desencriptado
                 reader = new PdfReader(archivoMuestra);
-
-                //Por simplicidad, se asume que todas las páginas del PDF comparten el mismo tamaño de página
-                //y la misma rotación que la primera página.
-                sourceDocument = new Document();
-
-                // Inicializa una instancia de PdfCopy con la fuente y la salida del archivo PDF 
-                pdfCopyProvider = new PdfCopy(sourceDocument, new System.IO.FileStream(outputPdfPath, System.IO.FileMode.Create));
-
-                sourceDocument.Open();
-
-                if (reader.NumberOfPages >= rangoPaginas)   //Si tiene más de un rango de páginas predeterminado se puede descargar una muestra.
+                if (reader.NumberOfPages > rangoPaginas)   //Si tiene más de un rango de páginas predeterminado se puede descargar una muestra.
                 {
+                    //Por simplicidad, se asume que todas las páginas del PDF comparten el mismo tamaño de página
+                    //y la misma rotación que la primera página.
+                    sourceDocument = new Document();
+
+                    // Inicializa una instancia de PdfCopy con la fuente y la salida del archivo PDF 
+                    pdfCopyProvider = new PdfCopy(sourceDocument, new System.IO.FileStream(outputPdfPath, System.IO.FileMode.Create));
+
+                    sourceDocument.Open();
                     //Recorre el rango de páginas especificadas y las copia a un nuevo archivo PDF:
                     for (int i = 1; i <= rangoPaginas; i++)
                     {
                         importedPage = pdfCopyProvider.GetImportedPage(reader, i);
                         pdfCopyProvider.AddPage(importedPage);
                     }
+
+                    //Cerrando streams abiertos
+                    sourceDocument.Close();
+                    reader.Close();
+
+                    //Abre archivo de muestra en el explorador
+                    WebClient User = new WebClient();
+                    Byte[] FileBuffer = User.DownloadData(outputPdfPath);
+                    if (FileBuffer != null)
+                    {
+                        Response.ContentType = "application/pdf";
+                        Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                        Response.BinaryWrite(FileBuffer);
+                    }
                 }
                 //De lo contrario, no es posible generar una muestra, aparece el siguiente mensaje.
                 else
                 {
                     lblMuestraNo.Text = "No es posible descargar una muestra de este libro";
-                }
-
-
-                //Cerrando streams abiertos
-                sourceDocument.Close();
-                reader.Close();
-
-                //Abre archivo de muestra en el explorador
-                WebClient User = new WebClient();
-                Byte[] FileBuffer = User.DownloadData(outputPdfPath);
-                if (FileBuffer != null)
-                {
-                    Response.ContentType = "application/pdf";
-                    Response.AddHeader("content-length", FileBuffer.Length.ToString());
-                    Response.BinaryWrite(FileBuffer);
+                    return;
                 }
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                lblMuestraNo.Text = "No es posible descargar una muestra de este libro";
             }
         }
     }

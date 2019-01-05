@@ -134,7 +134,7 @@ namespace Librox2.GUI
                 ht.Add("Estatus", estatus);
                 ht.Add("ImagenPortada", imgRuta);
                 Session["LibroDetalle"] = ht;
-                Server.Transfer("~/Forms/LibrosDetails.aspx");
+                Response.Redirect("/details");
             }
             if (e.CommandName=="profile")
             {

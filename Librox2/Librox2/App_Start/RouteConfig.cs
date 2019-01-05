@@ -21,6 +21,7 @@ namespace Librox2.App_Start
             routes.MapPageRoute("contact", "contact", "~/Forms/Contactanos.aspx");
             routes.MapPageRoute("register", "register", "~/Forms/RegistroUsuario.aspx");
             routes.MapPageRoute("privacy", "privacy", "~/Forms/TerminosyCondiciones.aspx");
+            routes.MapPageRoute("details", "details", "~/Forms/LibrosDetails.aspx");
         }
     }
 }
