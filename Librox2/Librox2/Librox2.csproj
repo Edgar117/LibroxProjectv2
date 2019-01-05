@@ -76,6 +76,7 @@
     <Content Include="css\dropzone.css" />
     <Content Include="css\LoginStyle.css" />
     <Content Include="css\_all-skins.min.css" />
+    <Content Include="Defualt.aspx" />
     <Content Include="Forms\AdministrarComentarios.aspx" />
     <Content Include="Forms\AdministrarMisLibros.aspx" />
     <Content Include="Forms\AgregarAdmin.aspx" />
@@ -91,7 +92,6 @@
     <Content Include="Forms\Callback.aspx" />
     <Content Include="Forms\Categorias.aspx" />
     <Content Include="Forms\Contactanos.aspx" />
-    <Content Include="Forms\index.html" />
     <Content Include="Forms\IndexBack.aspx" />
     <Content Include="Forms\IndexMaybe.aspx" />
     <Content Include="Forms\Libros.aspx" />
@@ -107,6 +107,7 @@
     <Content Include="images\IMG-20180924-WA0010.jpg" />
     <Content Include="images\Users\DaniFoto.jpg" />
     <Content Include="images\Users\ImagenDefualt.png" />
+    <Content Include="Index.aspx" />
     <Content Include="js\adminlte.min.js" />
     <Content Include="js\bootstrap.min.css" />
     <Content Include="js\dropzone.js" />
@@ -397,6 +398,13 @@
     <Compile Include="DAO\RankingDAO.cs" />
     <Compile Include="DAO\Security.cs" />
     <Compile Include="DAO\UsuariosDAO.cs" />
+    <Compile Include="Defualt.aspx.cs">
+      <DependentUpon>Defualt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Defualt.aspx.designer.cs">
+      <DependentUpon>Defualt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdministrarComentarios.aspx.cs">
       <DependentUpon>AdministrarComentarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -567,6 +575,13 @@
     </Compile>
     <Compile Include="Forms\Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
