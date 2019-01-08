@@ -276,6 +276,10 @@
     <Content Include="Maybe\examples\profile-page.html" />
     <Content Include="Maybe\gulpfile.js" />
     <Content Include="Maybe\index.html" />
+    <Content Include="Maybe\materialize\css\materialize.css" />
+    <Content Include="Maybe\materialize\css\materialize.min.css" />
+    <Content Include="Maybe\materialize\js\materialize.js" />
+    <Content Include="Maybe\materialize\js\materialize.min.js" />
     <Content Include="Maybe\nucleo-icons.html" />
     <Content Include="packages.config" />
     <Content Include="Master\MasterBack.Master" />
@@ -339,6 +343,9 @@
     <Content Include="Service References\ServiceReference2\Librox2.ServiceReference2.ValidUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Maybe\materialize\LICENSE" />
+    <Content Include="Maybe\materialize\README.md" />
+    <Content Include="css\fbutton.less" />
     <None Include="Service References\ServiceReference2\LoginUsuarios.disco" />
     <None Include="Service References\ServiceReference2\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference2\configuration.svcinfo" />

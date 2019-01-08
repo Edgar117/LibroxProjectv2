@@ -48,10 +48,23 @@ namespace Librox2.Forms
         }
         private void cargarDatalist(int ID)
         {
+            pnlMyBooks.Visible = false;
+            pnlNoBooks.Visible = false;
             DataTable dt = new DataTable();
             dt = DAOLibros.ConsultarMisLibrosToEdit(ID);
-            dtlBooks.DataSource = dt;
-            dtlBooks.DataBind();
+            if (dt.Rows.Count > 0)
+            {
+                pnlMyBooks.Visible = true;
+                pnlNoBooks.Visible = false;
+                dtlBooks.DataSource = dt;
+                dtlBooks.DataBind();
+            }
+            else
+            {
+                pnlMyBooks.Visible = false;
+                pnlNoBooks.Visible = true;
+            }
+            
         }
         private void LoadGrid(int ID)
         {

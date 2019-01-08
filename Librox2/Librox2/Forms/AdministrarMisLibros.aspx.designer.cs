@@ -103,6 +103,15 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
+        /// Control pnlMyBooks.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlMyBooks;
+        
+        /// <summary>
         /// Control dtlBooks.
         /// </summary>
         /// <remarks>
@@ -110,5 +119,14 @@ namespace Librox2.Forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList dtlBooks;
+        
+        /// <summary>
+        /// Control pnlNoBooks.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoBooks;
     }
 }

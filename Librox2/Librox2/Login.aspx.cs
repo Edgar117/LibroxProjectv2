@@ -19,16 +19,16 @@ namespace Librox2
         UsuariosDAO OB = new UsuariosDAO();
         protected void Page_Load(object sender, EventArgs e)
         {
-            // check is secure connection used
-            if (!Request.IsSecureConnection)
-            {
-                // redirect visitor to SSL connection
-                Response.Redirect(Request.Url.AbsoluteUri.Replace("http://", "https://"));
-            }
+            //// check is secure connection used
+            //if (!Request.IsSecureConnection)
+            //{
+            //    // redirect visitor to SSL connection
+            //    Response.Redirect(Request.Url.AbsoluteUri.Replace("http://", "https://"));
+            //}
 
-            //string urll = HttpContext.Current.Request.RawUrl;
-            //string host = Request.ServerVariables["HTTP_HOST"];
-            Response.Redirect("https://www.escribox.com");
+            ////string urll = HttpContext.Current.Request.RawUrl;
+            ////string host = Request.ServerVariables["HTTP_HOST"];
+            //Response.Redirect("https://www.escribox.com");
             Session["Panel"] = "";
             Session["Usuario"]=null;
             Session["Contraseña"] = "";

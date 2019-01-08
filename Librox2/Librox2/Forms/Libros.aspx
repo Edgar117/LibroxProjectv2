@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <script type="text/javascript">
         function showModal() {
             $("#myModal").modal('show');
@@ -13,12 +14,14 @@
                 showModal();
             });
         });
+
     </script>
+
     <style>
-.checked {
-  color: orange;
-}
-</style>
+        .checked {
+            color: orange;
+        }
+    </style>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="wrapper">
         <div class="page-header page-header-small">
@@ -114,7 +117,6 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-
                 </div>
                 <!-- Small modal -->
                <%-- <button type="button" class="btn btn-primary"  data-toggle="modal" data-target=".bd-example-modal-sm" id="btnShow">Small modal</button>--%>
@@ -130,8 +132,8 @@
                             <div class="modal-body">
                                 <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label>
-                                  <asp:Label ID="TotalLibros" runat="server" Text=""></asp:Label>
-                               
+                                <asp:Label ID="TotalLibros" runat="server" Text=""></asp:Label>
+                                <asp:LinkButton ID="lbtnFollow" runat="server">Seguir</asp:LinkButton>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Cerrar</button>
