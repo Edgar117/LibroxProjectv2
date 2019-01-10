@@ -104,7 +104,7 @@ namespace Librox2.DAO
 
             string contra = "";
             
-            SQL = "Select TOP 1 Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID,(select count(*) from seguidores where ID_Usuario=Us.ID) AS 'SEGUIDORES',(select count(*) from LIBROS where ID_Autor=US.ID)  as 'TotalLibros' from Usuarios US  where Usuario = '"+ObjUsuario.Usuario+ "'OR Correo='"+ObjUsuario.Usuario+"'";
+            SQL = "Select TOP 1 Contraseña,Tipousuario,ImagenUsuario,DescriptionUser,Categoria,ID,(SELECT COUNT(*) FROM [dbo].[fnSplit](US.Seguidores,',')) AS 'SEGUIDORES',(select count(*) from LIBROS where ID_Autor=US.ID)  as 'TotalLibros' from Usuarios US  where Usuario = '"+ObjUsuario.Usuario+ "'OR Correo='"+ObjUsuario.Usuario+"'";
             SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
             con.AbrirConexion();
             cmd.Parameters.AddWithValue("@Usuario", contra);
