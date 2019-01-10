@@ -346,6 +346,7 @@
     <Content Include="Maybe\materialize\LICENSE" />
     <Content Include="Maybe\materialize\README.md" />
     <Content Include="css\fbutton.less" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Service References\ServiceReference2\LoginUsuarios.disco" />
     <None Include="Service References\ServiceReference2\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference2\configuration.svcinfo" />

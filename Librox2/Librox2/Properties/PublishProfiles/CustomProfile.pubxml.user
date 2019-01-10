@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Soporte Auxiliar 2\Desktop\e</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>12/20/2018 07:37:12</publishTime>
+    </File>
+    <File Include="bin/Librox2.dll">
+      <publishTime>01/09/2019 18:20:45</publishTime>
+    </File>
+    <File Include="bin/Librox2.pdb">
+      <publishTime>01/09/2019 18:20:45</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="css/AdminLTE.min.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/dropzone.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/fbutton.less">
+      <publishTime>01/08/2019 10:31:41</publishTime>
+    </File>
+    <File Include="css/flexslider.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/fontawesome-all.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/LoginStyle.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/owl.carousel.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/prettyPhoto.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="css/_all-skins.min.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Defualt.aspx">
+      <publishTime>01/05/2019 10:28:18</publishTime>
+    </File>
+    <File Include="Forms/AcercaDe.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/AdministrarComentarios.aspx">
+      <publishTime>12/31/2018 08:51:46</publishTime>
+    </File>
+    <File Include="Forms/AdministrarMisLibros.aspx">
+      <publishTime>01/08/2019 08:28:36</publishTime>
+    </File>
+    <File Include="Forms/AgregarAdmin.aspx">
+      <publishTime>08/12/2018 09:37:26</publishTime>
+    </File>
+    <File Include="Forms/AgregarLibro.aspx">
+      <publishTime>11/12/2018 10:32:46</publishTime>
+    </File>
+    <File Include="Forms/AgregarStatusLibros.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/Callback.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/Categorias.aspx">
+      <publishTime>12/31/2018 08:51:47</publishTime>
+    </File>
+    <File Include="Forms/Contactanos.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/Home.aspx">
+      <publishTime>08/12/2018 09:37:26</publishTime>
+    </File>
+    <File Include="Forms/IndexBack.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/IndexMaybe.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/Libros.aspx">
+      <publishTime>01/09/2019 17:49:30</publishTime>
+    </File>
+    <File Include="Forms/LibrosDetails.aspx">
+      <publishTime>01/03/2019 09:20:47</publishTime>
+    </File>
+    <File Include="Forms/MensajesBack.aspx">
+      <publishTime>12/31/2018 08:51:47</publishTime>
+    </File>
+    <File Include="Forms/Perfil.aspx">
+      <publishTime>12/31/2018 08:51:47</publishTime>
+    </File>
+    <File Include="Forms/PerfilBack.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/Politicas.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/PreciosLibros.aspx">
+      <publishTime>11/28/2018 09:02:43</publishTime>
+    </File>
+    <File Include="Forms/ProcesarPago.aspx">
+      <publishTime>10/12/2018 08:36:02</publishTime>
+    </File>
+    <File Include="Forms/RegistroUsuario.aspx">
+      <publishTime>11/12/2018 08:55:21</publishTime>
+    </File>
+    <File Include="Forms/Servicios.aspx">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Forms/TerminosyCondiciones.aspx">
+      <publishTime>11/12/2018 08:55:29</publishTime>
+    </File>
+    <File Include="Forms/Usuarios.aspx">
+      <publishTime>01/09/2019 18:17:17</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="images/arr.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="images/BooksImg/g3.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="images/ImagenDefualt.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="images/IMG-20180924-WA0010.jpg">
+      <publishTime>08/12/2018 09:37:26</publishTime>
+    </File>
+    <File Include="images/prettyPhoto/light_rounded/sprite.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="images/Users/DaniFoto.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="images/Users/ImagenDefualt.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>01/05/2019 10:28:18</publishTime>
+    </File>
+    <File Include="js/adminlte.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/bootstrap.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/dropzone.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/dropzone.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/easing.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/jquery-1.7.2.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/jquery-2.1.4.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/jquery.flexslider.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/jquery.prettyPhoto.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/jquery.quicksand.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/move-top.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/odometer.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/owl.carousel.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/script.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="js/SmoothScroll.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>01/09/2019 16:54:12</publishTime>
+    </File>
+    <File Include="Login/animate.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/bootstrap.min.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/css/main.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/css/util.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/font-awesome.min.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/icon-font.min.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/images/bg-01.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/images/icons/favicon.ico">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/images/icons/icon-google.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/images/icons/map-marker.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/images/icons/symbol-01.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Login/js/main.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Master/MasterBack.Master">
+      <publishTime>12/31/2018 08:51:47</publishTime>
+    </File>
+    <File Include="Master/MasterPro.Master">
+      <publishTime>01/08/2019 10:37:32</publishTime>
+    </File>
+    <File Include="Maybe/assets/css/bootstrap.min.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/css/bootstrap.min.css.map">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/css/now-ui-kit.css">
+      <publishTime>01/08/2019 10:13:31</publishTime>
+    </File>
+    <File Include="Maybe/assets/css/now-ui-kit.css.map">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/css/now-ui-kit.min.css">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/demo/demo.css">
+      <publishTime>01/08/2019 10:13:25</publishTime>
+    </File>
+    <File Include="Maybe/assets/fonts/nucleo-license.md">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/fonts/nucleo-outline.eot">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/fonts/nucleo-outline.ttf">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/fonts/nucleo-outline.woff">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/fonts/nucleo-outline.woff2">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/apple-icon.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/avatar.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/bg1.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/bg11.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/bg3.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/bg4.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/bg5.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/bg6.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/bg7.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/bg8.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/blurred-image-1.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/contacto.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/creative-tim-white-slim2.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/default-avatar.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/eva.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/favicon.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/AD.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/AE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/AG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/AM.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/AR.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/AT.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/AU.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/BE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/BF.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/BG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/BO.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/BR.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CA.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CD.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CH.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CL.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CM.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CN.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CO.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/CZ.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/DE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/DJ.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/DK.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/DZ.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/EE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/EG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/ES.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/FI.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/FR.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/GA.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/GB.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/GM.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/GT.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/HN.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/HT.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/HU.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/ID.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/IE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/IL.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/IN.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/IQ.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/IR.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/IT.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/JM.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/JO.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/JP.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/KG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/KN.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/KP.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/KR.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/KW.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/KZ.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/LA.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/LB.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/LC.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/LS.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/LU.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/LV.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/MG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/MK.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/ML.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/MM.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/MT.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/MX.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/NA.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/NE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/NG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/NI.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/NL.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/NO.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/OM.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/PA.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/PE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/PG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/PK.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/PL.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/PT.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/PY.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/QA.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/RO.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/RU.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/RW.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/SA.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/SE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/SG.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/SL.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/SN.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/SO.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/SV.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/TD.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/TJ.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/TL.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/TR.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/TZ.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/UA.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/US.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/VE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/VN.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/flags/YE.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/Fondo.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/FondoCel2.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/FondoCel3.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/header.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/hero-image-2.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/hero-image-3.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/invision-white-slim.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/julie.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/landing.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/login.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/logo-square.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/logo.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/MujerLeyendo.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/now-logo.png">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/nucleo-logo.svg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/profile.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/img/ryan.jpg">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/core/bootstrap.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/core/jquery.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/core/popper.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/now-ui-kit.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/now-ui-kit.js.map">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/now-ui-kit.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/plugins/bootstrap-datepicker.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/plugins/bootstrap-switch.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/js/plugins/nouislider.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/cards/_card-plain.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/cards/_card-signup.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_badges.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_buttons.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_cards.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_datepicker.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_dropdown.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_inputs.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_modals.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_navbar.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_pages.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_popovers.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_transparency.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/mixins/_vendor-prefixes.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/plugins/_plugin-bootstrap-switch.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/plugins/_plugin-datepicker.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/plugins/_plugin-nouislider.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_alerts.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_badges.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_buttons.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_cards.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_carousel.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_checkboxes-radio.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_dropdown.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_example-pages.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_footers.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_images.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_inputs.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_misc.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_mixins.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_modals.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_navbar.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_nucleo-outline.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_pagination.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_pills.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_popups.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_progress.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_responsive.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_sections.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_tabs.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_typography.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/assets/scss/now-ui-kit/_variables.scss">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/CHANGELOG.md">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/docs/documentation.html">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/examples/landing-page.html">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/examples/login-page.html">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/examples/profile-page.html">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/gulpfile.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/index.html">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/materialize/css/materialize.css">
+      <publishTime>09/09/2018 21:53:48</publishTime>
+    </File>
+    <File Include="Maybe/materialize/css/materialize.min.css">
+      <publishTime>09/09/2018 21:53:48</publishTime>
+    </File>
+    <File Include="Maybe/materialize/js/materialize.js">
+      <publishTime>09/09/2018 21:53:48</publishTime>
+    </File>
+    <File Include="Maybe/materialize/js/materialize.min.js">
+      <publishTime>09/09/2018 21:53:48</publishTime>
+    </File>
+    <File Include="Maybe/materialize/LICENSE">
+      <publishTime>09/09/2018 21:21:24</publishTime>
+    </File>
+    <File Include="Maybe/materialize/README.md">
+      <publishTime>09/09/2018 21:21:24</publishTime>
+    </File>
+    <File Include="Maybe/nucleo-icons.html">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/package.json">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Maybe/README.md">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/28/2018 09:02:48</publishTime>
+    </File>
+    <File Include="PaypalScri/scripts/ajax_loader.gif">
+      <publishTime>11/30/2018 10:28:03</publishTime>
+    </File>
+    <File Include="PaypalScri/scripts/jquery.min.js">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Service References/ServiceReference2/Librox2.ServiceReference2.ValidUserResponse.datasource">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/09/2019 17:07:53</publishTime>
+    </File>
+    <File Include="WebServices/LoginUsuarios.asmx">
+      <publishTime>11/28/2018 09:02:44</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

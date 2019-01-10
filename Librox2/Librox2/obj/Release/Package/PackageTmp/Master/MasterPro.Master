@@ -1,289 +1,289 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPro.master.cs" Inherits="Librox2.Master.MasterPro" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <title>
-        Escribox
+    <title>Escribox
     </title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <!-- CSS Files -->
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- CSS Files -->
     <link href="../Maybe/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../Maybe/assets/css/now-ui-kit.css" rel="stylesheet" />
     <link href="../Maybe/assets/demo/demo.css" rel="stylesheet" />
+    <%--<link href="../Maybe/materialize/css/materialize.min.css" rel="stylesheet" />--%>
 </head>
 <body runat="server" id="CSSBody" class="index-page sidebar-collapse">
-  <!-- Navbar -->
-  <nav id="PanelNormal" runat="server" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="../Forms/Home.aspx" rel="tooltip" title="Crear esta al alcance de tus manos." data-placement="bottom" >
-          Escribox
-        </a>
-        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar top-bar"></span>
-          <span class="navbar-toggler-bar middle-bar"></span>
-          <span class="navbar-toggler-bar bottom-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../Forms/Home.aspx">
-              <i class="now-ui-icons gestures_tap-01"></i>
-              <p>Inicio</p>
-            </a>
-          </li>
-              <%--test de menu nuevo--%>
-            <li class="nav-item">
-               <a class="nav-link" href="/about">
-              <i class="now-ui-icons business_bulb-63"></i>
-              <p>Acerca de </p>
-            </a>
-                </li>
-            <%--Libros--%>
-              <li class="nav-item">
-               <a class="nav-link" href="/libros">
-              <i class="now-ui-icons education_agenda-bookmark"></i>
-              <p>Libros </p>
-            </a>
-                </li>
-            <%--contactanos--%>
-              <li class="nav-item">
-               <a class="nav-link" href="/contact">
-              <i class="now-ui-icons ui-1_email-85"></i>
-              <p>Contactanos</p>
-            </a>
-                </li>
-                <%--Registrar--%>
-              <li class="nav-item">
-               <a class="nav-link" href="/register">
-              <i class="now-ui-icons users_single-02"></i>
-              <p>Registrarse</p>
-            </a>
-                </li>
-              <%--Iniciar--%>
-              <li class="nav-item">
-               <a class="nav-link" href="../Login.aspx">
-              <i class="now-ui-icons users_circle-08"></i>
-              <p>Iniciar Sesión</p>
-            </a>
-                </li>
-              <%--test de menu nuevo--%>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Regálanos un Like" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-              <i class="fab fa-facebook-square"></i>
-              <p class="d-lg-none d-xl-none">Facebook</p>
-            </a>
-          </li>
-                  <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="Avisos" data-toggle="dropdown">
-              <i class="now-ui-icons education_glasses"></i>
-              <p>Politicas del sitio</p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
-              <a class="dropdown-item" href="../Forms/Politicas.aspx">
-                <i class="now-ui-icons ui-1_lock-circle-open"></i>Aviso de Privacidad
-              </a>
-              <a class="dropdown-item"  href="../Forms/TerminosyCondiciones.aspx">
-                <i class="now-ui-icons files_paper"></i> Terminos y Condiciones del sitio
-              </a>
+    <!-- Navbar -->
+    <nav id="PanelNormal" runat="server" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="../Forms/Home.aspx" rel="tooltip" title="Crear esta al alcance de tus manos." data-placement="bottom">Escribox
+                </a>
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar top-bar"></span>
+                    <span class="navbar-toggler-bar middle-bar"></span>
+                    <span class="navbar-toggler-bar bottom-bar"></span>
+                </button>
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Forms/Home.aspx">
+                            <i class="now-ui-icons gestures_tap-01"></i>
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <%--test de menu nuevo--%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">
+                            <i class="now-ui-icons business_bulb-63"></i>
+                            <p>Acerca de </p>
+                        </a>
+                    </li>
+                    <%--Libros--%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/libros">
+                            <i class="now-ui-icons education_agenda-bookmark"></i>
+                            <p>Libros </p>
+                        </a>
+                    </li>
+                    <%--contactanos--%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">
+                            <i class="now-ui-icons ui-1_email-85"></i>
+                            <p>Contactanos</p>
+                        </a>
+                    </li>
+                    <%--Registrar--%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>Registrarse</p>
+                        </a>
+                    </li>
+                    <%--Iniciar--%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Login.aspx">
+                            <i class="now-ui-icons users_circle-08"></i>
+                            <p>Iniciar Sesión</p>
+                        </a>
+                    </li>
+                    <%--test de menu nuevo--%>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Regálanos un Like" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                            <i class="fab fa-facebook-square"></i>
+                            <p class="d-lg-none d-xl-none">Facebook</p>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="Avisos" data-toggle="dropdown">
+                            <i class="now-ui-icons education_glasses"></i>
+                            <p>Politicas del sitio</p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
+                            <a class="dropdown-item" href="../Forms/Politicas.aspx">
+                                <i class="now-ui-icons ui-1_lock-circle-open"></i>Aviso de Privacidad
+                            </a>
+                            <a class="dropdown-item" href="../Forms/TerminosyCondiciones.aspx">
+                                <i class="now-ui-icons files_paper"></i>Terminos y Condiciones del sitio
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <nav id="panelLogeado" runat="server" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="../Forms/Home.aspx" rel="tooltip" title="Si lo puedes pensar, lo puedes escribir." data-placement="bottom">
-          ESCRIBOX
-        </a>
-        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar top-bar"></span>
-          <span class="navbar-toggler-bar middle-bar"></span>
-          <span class="navbar-toggler-bar bottom-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/home">
-              <i class="now-ui-icons gestures_tap-01"></i>
-              <p>Inicio</p>
-            </a>
-          </li>
-            <%--Libros--%>
-            <%--test de menu de libros--%>
-                 <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" data-toggle="dropdown">
-              <i class="now-ui-icons education_agenda-bookmark"></i>
-              <p>Libros</p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
-              <a class="dropdown-item" href="/libros">
-                <i class="now-ui-icons files_paper"></i>Ver Libros
-              </a>
-              <a class="dropdown-item"  href="/newbook">
-                <i class="now-ui-icons files_single-copy-04"></i>Registrar un Libro
-              </a>
-                  <a class="dropdown-item" href="/mybooks">
-                <i class="now-ui-icons loader_gear"></i>Editar Mis Libros
-              </a>
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="../Forms/Home.aspx" rel="tooltip" title="Si lo puedes pensar, lo puedes escribir." data-placement="bottom">ESCRIBOX
+                </a>
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar top-bar"></span>
+                    <span class="navbar-toggler-bar middle-bar"></span>
+                    <span class="navbar-toggler-bar bottom-bar"></span>
+                </button>
             </div>
-          </li>
-            <%--TestLogin--%>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown">
-              <i class="now-ui-icons users_single-02"></i>
-              <p>Mi Perfil</p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
-              <a class="dropdown-item" href="../Forms/Perfil.aspx">
-                <i class="now-ui-icons users_single-02"></i>Mi Perfil
-              </a>
-              <a class="dropdown-item"  href="../Login.aspx">
-                <i class="now-ui-icons arrows-1_refresh-69"></i> Salir
-              </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">
+                            <i class="now-ui-icons gestures_tap-01"></i>
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <%--Libros--%>
+                    <%--test de menu de libros--%>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" data-toggle="dropdown">
+                            <i class="now-ui-icons education_agenda-bookmark"></i>
+                            <p>Libros</p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
+                            <a class="dropdown-item" href="/libros">
+                                <i class="now-ui-icons files_paper"></i>Ver Libros
+                            </a>
+                            <a class="dropdown-item" href="/newbook">
+                                <i class="now-ui-icons files_single-copy-04"></i>Registrar un Libro
+                            </a>
+                            <a class="dropdown-item" href="/mybooks">
+                                <i class="now-ui-icons loader_gear"></i>Editar Mis Libros
+                            </a>
+                        </div>
+                    </li>
+                    <%--TestLogin--%>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>Mi Perfil</p>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
+                            <a class="dropdown-item" href="../Forms/Perfil.aspx">
+                                <i class="now-ui-icons users_single-02"></i>Mi Perfil
+                            </a>
+                            <a class="dropdown-item" href="../Login.aspx">
+                                <i class="now-ui-icons arrows-1_refresh-69"></i>Salir
+                            </a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-        <%--SWEET ALERT ERROR TRY--%>
-          <script type="text/javascript">
-          function TRY() {
-              swal({
+        </div>
+    </nav>
+    <%--SWEET ALERT ERROR TRY--%>
+    <script type="text/javascript">
+        function TRY() {
+            swal({
                 title: "ERROR",
                 text: "Internal failure, this error can be caused by an invalid FTP address!",
                 icon: "error",
             });
         }
     </script>
-<%--    MensajeEnviado--%>
-     <%--SWEET ALERT TEST SUCCESS--%>
-     <script type="text/javascript">
-         function MensajeEnviado() {
-             swal({
-                 title: "Mensaje Enviado",
-                 text: "Se envio tu mensaje de forma exitosa Escribox se pondra en contacto contigo!",
-                 icon: "success",
-             });
-         }
+    <%--    MensajeEnviado--%>
+    <%--SWEET ALERT TEST SUCCESS--%>
+    <script type="text/javascript">
+        function MensajeEnviado() {
+            swal({
+                title: "Mensaje Enviado",
+                text: "Se envio tu mensaje de forma exitosa Escribox se pondra en contacto contigo!",
+                icon: "success",
+            });
+        }
     </script>
-        <%--SWEET ALERT TEST SUCCESS--%>
-     <script type="text/javascript">
-         function LibroGuardado() {
-             swal({
-                 title: "Registro de libro",
-                 text: "Se registro tu libro de forma Exitosa!",
-                 icon: "success",
-             });
-         }
+    <%--SWEET ALERT TEST SUCCESS--%>
+    <script type="text/javascript">
+        function LibroGuardado() {
+            swal({
+                title: "Registro de libro",
+                text: "Se registro tu libro de forma Exitosa!",
+                icon: "success",
+            });
+        }
     </script>
-            <%--SWEET ALERT Registro SUCCESS--%>
-     <script type="text/javascript">
-         function RegistroGood() {
-             swal({
-                 title: "Registro de Usuario Escribox",
-                 text: "Registro de forma exitosa. Dirigete al inicio de sesión para comenzar!",
-                 icon: "success",
-             });
-         }
-    </script>
-
-              <%--SWEET ALERT Registro SUCCESS--%>
-     <script type="text/javascript">
-         function RegistroGoodLibro() {
-             swal({
-                 title: "Actualizacíón correcta",
-                 text: "Tu libro se actualizo de forma exitosa!",
-                 icon: "success",
-             });
-         }
+    <%--SWEET ALERT Registro SUCCESS--%>
+    <script type="text/javascript">
+        function RegistroGood() {
+            swal({
+                title: "Registro de Usuario Escribox",
+                text: "Registro de forma exitosa. Dirigete al inicio de sesión para comenzar!",
+                icon: "success",
+            });
+        }
     </script>
 
+    <%--SWEET ALERT Registro SUCCESS--%>
+    <script type="text/javascript">
+        function RegistroGoodLibro() {
+            swal({
+                title: "Actualización correcta",
+                text: "Tu libro se actualizó de forma exitosa!",
+                icon: "success",
+            });
+        }
+    </script>
 
-      <%--SWEET ALERT Registro SUCCESS--%>
-     <script type="text/javascript">
-         function RegistroFail() {
-             swal({
-                 title: "Registro de Usuario Escribox",
-                 text: "Tu registro fallo. Pueden ser dos motivos. 1 El usuario ya existe. 2. El correo ya existe!",
-                 icon: "error",
-             });
-         }
+
+    <%--SWEET ALERT Registro SUCCESS--%>
+    <script type="text/javascript">
+        function RegistroFail() {
+            swal({
+                title: "Registro de Usuario Escribox",
+                text: "Tu registro fallo. Pueden ser dos motivos. 1 El usuario ya existe. 2. El correo ya existe!",
+                icon: "error",
+            });
+        }
     </script>
-       <%--SWEET ALERT Libro Fallido--%>
-     <script type="text/javascript">
-         function RegistroFailLibro() {
-             swal({
-                 title: "Registro de Libro Fallido",
-                 text: "Tu registro fallo. Pueden ser dos motivos. 1 No se cargo la foto o pdf. 2. No se llenaron todos los campos!",
-                 icon: "error",
-             });
-         }
+    <%--SWEET ALERT Libro Fallido--%>
+    <script type="text/javascript">
+        function RegistroFailLibro() {
+            swal({
+                title: "Registro de Libro Fallido",
+                text: "Tu registro fallo. Pueden ser dos motivos. 1 No se cargo la foto o pdf. 2. No se llenaron todos los campos!",
+                icon: "error",
+            });
+        }
     </script>
-          <%--SWEET ALERT Check Terminos--%>
-     <script type="text/javascript">
-         function AceptarTerminos() {
-             swal({
-                 title: "No aceptaste los terminos",
-                 text: "No podemos continuar con el registro si no se aceptan los terminos y condiciones!",
-                 icon: "error",
-             });
-         }
+    <%--SWEET ALERT Check Terminos--%>
+    <script type="text/javascript">
+        function AceptarTerminos() {
+            swal({
+                title: "No aceptaste los terminos",
+                text: "No podemos continuar con el registro si no se aceptan los terminos y condiciones!",
+                icon: "error",
+            });
+        }
     </script>
-       <%--SWEET ALERT Login--%>
-     <script type="text/javascript">
-         function NoLogin() {
-             swal({
-                 title: "No puedes Comprar",
-                 text: "Detectamos que no iniciaste sesión, por favor inicia sesión para poder comprar.",
-                 icon: "error",
-             });
-         }
+    <%--SWEET ALERT Login--%>
+    <script type="text/javascript">
+        function NoLogin() {
+            swal({
+                title: "No puedes Comprar",
+                text: "Detectamos que no iniciaste sesión, por favor inicia sesión para poder comprar.",
+                icon: "error",
+            });
+        }
     </script>
-      <!--   Core JS Files   -->
+    <!--   Core JS Files   -->
     <script src="../Maybe/assets/js/core/jquery.min.js"></script>
     <script src="../Maybe/assets/js/core/popper.min.js"></script>
     <script src="../Maybe/assets/js/core/bootstrap.min.js"></script>
-  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
     <script src="../Maybe/assets/js/plugins/bootstrap-switch.js"></script>
-  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
     <script src="../Maybe/assets/js/plugins/nouislider.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
     <script src="../Maybe/assets/js/now-ui-kit.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      // the body of this function is in assets/js/now-ui-kit.js
-      nowuiKit.initSliders();
-    });
+    <script>
+        $(document).ready(function () {
+            // the body of this function is in assets/js/now-ui-kit.js
+            nowuiKit.initSliders();
+        });
 
-    function scrollToDownload() {
+        function scrollToDownload() {
 
-      if ($('.section-download').length != 0) {
-        $("html, body").animate({
-          scrollTop: $('.section-download').offset().top
-        }, 1000);
-      }
-    }
-  </script>
+            if ($('.section-download').length != 0) {
+                $("html, body").animate({
+                    scrollTop: $('.section-download').offset().top
+                }, 1000);
+            }
+        }
+    </script>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script src="../Maybe/materialize/js/materialize.min.js"></script>
 </body>
 </html>

@@ -153,6 +153,7 @@ namespace Librox2.GUI
             if (DAOLibros.SaveBook(OBLibros)==1)
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "LibroGuardado();", true);
+                    limpiarFormulario();
             }
             else
             {
@@ -164,6 +165,11 @@ namespace Librox2.GUI
                 ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFailLibro();", true);
             }
 
+        }
+        private void limpiarFormulario()
+        {
+            txtNombre.Value = "";
+            txtSinopsis.Value = "";    
         }
     }
 }

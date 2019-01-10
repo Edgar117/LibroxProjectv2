@@ -36,6 +36,7 @@
                                             <br />
                                             <div align="center">
                                                <asp:Label ID="lblExcep" runat="server" Text="Label" ForeColor="Red"></asp:Label>
+                                                <asp:Label ID="lblSuccess" runat="server" Text="" ForeColor="Green"></asp:Label>
                                             <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-success" OnClick="btnEnviar_Click" />
                                             </div>
                                         </div>

@@ -109,6 +109,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
+                        <asp:Panel ID="pnlMyBooks" runat="server">
                         <h3>Libros a editar</h3>
                         <br />
                         <asp:DataList ID="dtlBooks" runat="server" RepeatDirection="Horizontal" Width="883px" HorizontalAlign="Center" RepeatColumns="3" CellPadding="10" DataKeyField="IDLibro" OnEditCommand="dtlBooks_EditCommand" OnUpdateCommand="dtlBooks_UpdateCommand" OnCancelCommand="dtlBooks_CancelCommand" OnItemDataBound="dtlBooks_ItemDataBound" OnDeleteCommand="dtlBooks_DeleteCommand">
@@ -150,6 +151,11 @@
                                 </div>
                             </EditItemTemplate>
                         </asp:DataList>
+                        </asp:Panel>
+                        <asp:Panel ID="pnlNoBooks" runat="server">
+                            <h3 class="title">No tienes libros actualmente, no te quedes atrás</h3>
+                            <a href="\newbook" class="btn btn-outline-warning btn-warning">Registra un libro!</a>
+                        </asp:Panel>
                     </div>
                 </div>
             </div>

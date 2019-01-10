@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <script type="text/javascript">
         function showModal() {
             $("#myModal").modal('show');
@@ -13,12 +14,14 @@
                 showModal();
             });
         });
+
     </script>
+
     <style>
-.checked {
-  color: orange;
-}
-</style>
+        .checked {
+            color: orange;
+        }
+    </style>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="wrapper">
         <div class="page-header page-header-small">
@@ -27,7 +30,7 @@
             <div class="content-center">
                 <div class="container">
                     <h1 class="title">Escribox.</h1>
-                    <div class="text-center">
+                    <%--<div class="text-center">
                         <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                             <i class="fab fa-facebook-square"></i>
                         </a>
@@ -37,7 +40,7 @@
                         <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                             <i class="fab fa-google-plus"></i>
                         </a>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
@@ -69,7 +72,7 @@
                     </div>
                 </div>
                 <h3 class="description">
-                    <asp:Label ID="lblTit2" runat="server" Text="Descubrir nuevos mundos esta a tu alcance."></asp:Label>
+                    <asp:Label ID="lblTit2" runat="server" Text="Descubrir nuevos mundos está a tu alcance."></asp:Label>
                     <asp:Label ID="lblSearchResults" runat="server" Text=""></asp:Label>
                 </h3>
                 <br />
@@ -95,7 +98,7 @@
                                             </asp:LinkButton></h5>
                                         <%--<p class="text"><%# Eval("Sinopsis") %></p>--%>
                                         <p>
-                                            Sinopsis:
+                                            Resumen:
                                     <br />
                                             <asp:Label ID="lblSinop" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="text"></asp:Label>
                                         </p>
@@ -114,7 +117,6 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-
                 </div>
                 <!-- Small modal -->
                <%-- <button type="button" class="btn btn-primary"  data-toggle="modal" data-target=".bd-example-modal-sm" id="btnShow">Small modal</button>--%>
@@ -130,8 +132,9 @@
                             <div class="modal-body">
                                 <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label>
-                                  <asp:Label ID="TotalLibros" runat="server" Text=""></asp:Label>
-                               
+                                <asp:Label ID="TotalLibros" runat="server" Text=""></asp:Label>
+                                <br />
+                                <asp:LinkButton ID="lbtnFollow" runat="server" CssClass="btn btn-round btn-warning" Enabled="false">Seguir</asp:LinkButton>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Cerrar</button>
