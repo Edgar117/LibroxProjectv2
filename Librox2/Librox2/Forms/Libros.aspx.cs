@@ -23,18 +23,6 @@ namespace Librox2.GUI
             
             if (!IsPostBack)
             {
-                if (Request.Cookies["check"] != null)
-                {
-                    this.cookiesMsg.Visible = false;
-                    if (Request.Cookies["check"].Value == "Yes")
-                    {
-                        this.cookiesMsg.Visible = false;
-                    }
-                    else
-                    {
-                        this.cookiesMsg.Visible = true;
-                    }
-                }
                 Session["myOrderingEntity"] = null;
                 LoadLibros();
                 Repeater1.DataSource = dt;
@@ -45,10 +33,6 @@ namespace Librox2.GUI
                 //dtlBooks.DataBind();
                 PaginarPorCategorias();
                 //this.txtSearch.Attributes.Add("onkeypress", "button_click(this,'" + this.txtSearch.ClientID + "')");
-            }
-            else
-            {
-                
             }
         }
         private void LoadAll(string text)
@@ -176,6 +160,7 @@ namespace Librox2.GUI
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
             Response.Cookies["check"].Value = "Yes";
+            Response.Redirect("/libros");
         }
 
         protected void btnDeclinar_Click(object sender, EventArgs e)

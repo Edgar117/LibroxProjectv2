@@ -144,14 +144,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="cookiesMsg" runat="server" class="card card-text">
-            <h5>Al navegar en Escribox aceptas el uso de cookies para el mejor funcionamiento del sitio</h5>
-            <asp:Button ID="btnAceptar" runat="server" Text="Acepto" CssClass="btn btn-warning" OnClick="btnAceptar_Click" />
-            <asp:Button ID="btnDeclinar" runat="server" Text="No acepto" CssClass="btn btn-danger" OnClick="btnDeclinar_Click"/>
-        </div>
-                </div>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Uso de cookies</strong> Escribox utiliza cookies de terceros para generar estadísticas de visitantes. Al seguir navegando aceptas el uso de las mismas.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
             </div>
             
         </div>

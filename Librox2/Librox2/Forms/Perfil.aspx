@@ -46,15 +46,9 @@
         <div class="section">
             <div class="container">
                 <div class="button-container">
-                    <a href="#button" class="btn btn-primary btn-round btn-lg">Sigueme</a>
-                    <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <%--<a href="#button" class="btn btn-primary btn-round btn-lg">Sigueme</a>--%>
                 </div>
-                <h3 class="title">Acerca de mi</h3>
+                <h3 class="title">Acerca de mí</h3>
                 <h5 id="about" runat="server" class="description"></h5>
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto">
@@ -81,7 +75,10 @@
                     </div>
                     <!-- Tab panes -->
                     <asp:Panel ID="Panel1" runat="server"></asp:Panel>
-                    <div class="tab-content gallery">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tab-content gallery">
                         <div class="tab-pane active" id="home" role="tabpanel">
                             <div class="col-md-10 ml-auto mr-auto">
                                 <div class="row collections">
@@ -133,13 +130,18 @@
                                     </div>
                                     <div class="col-md-6">
                                         <br />
-                                        <br />
-                                        <asp:Button class="btn btn-primary btn-round btn-block btn-lg" ID="btnRegistro" OnClick="btnRegistro_Click" runat="server" Text="Guardar Cambios" />
+                                        <p class="text-center">
+                                        <asp:Button class="btn btn-primary btn-round" ID="btnRegistro" OnClick="btnRegistro_Click" runat="server" Text="Guardar Cambios" />
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
