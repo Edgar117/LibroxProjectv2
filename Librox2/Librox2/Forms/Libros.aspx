@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/MasterPro.Master" AutoEventWireup="true" CodeBehind="Libros.aspx.cs" Inherits="Librox2.GUI.Libros" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+   
     <script type="text/javascript">
         function showModal() {
             $("#myModal").modal('show');
@@ -143,7 +144,18 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="cookiesMsg" runat="server" class="card card-text">
+            <h5>Al navegar en Escribox aceptas el uso de cookies para el mejor funcionamiento del sitio</h5>
+            <asp:Button ID="btnAceptar" runat="server" Text="Acepto" CssClass="btn btn-warning" OnClick="btnAceptar_Click" />
+            <asp:Button ID="btnDeclinar" runat="server" Text="No acepto" CssClass="btn btn-danger" OnClick="btnDeclinar_Click"/>
         </div>
+                </div>
+            </div>
+            
+        </div>
+        
         <footer class="footer footer-default">
             <div class="container">
                 <nav>

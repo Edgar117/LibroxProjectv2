@@ -99,7 +99,7 @@
             </div>
         </div>
     </nav>
-
+     
     <nav id="panelLogeado" runat="server" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
         <div class="container">
             <div class="navbar-translate">
@@ -279,6 +279,7 @@
         }
     </script>
     <form id="form1" runat="server">
+        
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
