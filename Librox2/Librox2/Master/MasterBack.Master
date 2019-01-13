@@ -22,7 +22,7 @@
       <div class="wrapper">
   <header class="main-header">
     <!-- Logo -->
-    <a href="Welcome.aspx" class="logo">
+    <a href="../Forms/IndexBack.aspx" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>E</b>X</span>
       <!-- logo for regular state and mobile devices -->
@@ -72,7 +72,7 @@
             <i class="fa fa-user-circle-o"></i>
             <span>Modulos Admin</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">3</span>
+              <span class="label label-primary pull-right">8</span>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -85,40 +85,7 @@
                 <li><a href="../Forms/AgregarStatusLibros.aspx"><i class="fa fa-archive"></i>Administrar Estatus Libro</a></li>
               <li><a href="../Forms/AgregarAdmin.aspx"><i class="fa fa-key"></i>Administrar Administradores</a></li>
           </ul>
-        </li>
-        <li class="header">Categorias</li>
-              <li class="treeview">
-          <a href="#">
-            <i class="fa fa-bookmark-o"></i>
-            <span>Crear Categorias</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">3</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="Configure_Test.aspx"><i class="fa fa-database"></i>Empty Test</a></li>
-            <li><a href="Configure_Scripts.aspx"><i class="fa fa-database"></i>Test Scripts</a></li>
-            <li><a href="Configure_Scripts_ftp.aspx"><i class="fa fa-database"></i>Test Scripts with FTP</a></li>
-          </ul>
-        </li>
-          <li class="header">Administrar Usuarios</li>
-                  <li class="treeview">
-          <a href="#">
-            <i class="fa fa-money"></i>
-            <span>Precios</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">3</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-file-word-o"></i>Word</a></li>
-            <li><a href="#"><i class="fa fa-file-excel-o"></i>Excel</a></li>
-            <li><a href="#"><i class="fa fa-file-pdf-o"></i>PDF</a></li>
-          </ul>
-        </li>
-           <li class="header">Create Task Scheduler</li>
-           <li><a href="Task_Scheduler.aspx"><i class="fa fa-windows"></i> <span>Generate Tasks </span></a></li>
-           <li class="header">Logout</li>
+        </li>   
            <li><a href="../Login.aspx"><i class="fa fa-power-off"></i> <span>Logout</span></a></li>
     
       </ul>

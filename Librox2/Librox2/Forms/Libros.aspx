@@ -4,7 +4,6 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <input type="text"  id="Usuario" name="Usuario" value="edgar" runat="server"/>
     <script type="text/javascript">
         function showModal() {
             $("#myModal").modal('show');
