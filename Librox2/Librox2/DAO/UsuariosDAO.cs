@@ -31,6 +31,23 @@ namespace Librox2.DAO
             return 1;
         }
 
+
+        //Metodo para insertar seguidores a un usuario.
+        public int InsertaSeguidores(int UsuarioLogeado ,int UsuarioASeguir)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "EXEC [dbo].[SelRegistrarSeguidores] " + UsuarioLogeado + ","+UsuarioASeguir+"";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
         public int DeleteUser(object obj)
         {
             UsuarioBO nom = (UsuarioBO)obj;
@@ -69,7 +86,7 @@ namespace Librox2.DAO
         //Metodo que devuelve información basica del usuario
         public DataTable ConsultaDatosUsuario(string Usuario)
         {
-            SQL = "SELECT ID AS 'Identificador',Usuario,Correo,ImagenUsuario as 'Imagen' FROM Usuarios WHERE TipoUsuario=0 AND Usuario='"+Usuario+"'";
+            SQL = "SELECT ID AS 'Identificador',Usuario,Correo,ImagenUsuario as 'Imagen',Seguidores FROM Usuarios WHERE TipoUsuario=0 AND Usuario='"+Usuario+"'";
             return con.TablaGeneral(SQL);
         }
 

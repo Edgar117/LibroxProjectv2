@@ -167,5 +167,42 @@ namespace Librox2.GUI
         {
             Response.Cookies["check"].Value = "No";
         }
+
+        protected void lbtnFollow_Click(object sender, EventArgs e)
+        {
+            //Recuperamos al usuario logeado y tomamos su ID
+            String[] cart1 = new String[0];
+            cart1 = (String[])Session["ALL"];
+            //Obtenemos su Id del usuario.
+            int  ID = int.Parse(cart1[5]);
+            //Obtenemos los datos del usuario.
+            DataTable dtuser = new DataTable();
+            dtuser = DAOUsers.ConsultaDatosUsuario(lblUser.Text);
+            //Hacemos un split a los seguidores para ver si el usuario logeado no forma parte ya de los seguidores.           
+            string Seguidores=  dtuser.Rows[0]["Seguidores"].ToString();
+            string[] substrings = Seguidores.Split(',');
+            //Declaramos un Bool para validar si el usuario ya es seguidor y saber que hacer
+            bool IsFollow = false;
+            foreach (var substring in substrings)
+            {
+                if (ID.ToString()==substring)
+                {
+                    IsFollow = true;
+                }
+            }
+            if (IsFollow)
+            {
+                //Mensaje de que ya es seguidor
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "SeguirFail();", true);
+                
+            }
+            else
+            {
+                DAOUsers.InsertaSeguidores(ID, Convert.ToInt32(dtuser.Rows[0]["Identificador"].ToString()));
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "SeguirSuccess();", true);
+            }
+
+        }
+
     }
 }

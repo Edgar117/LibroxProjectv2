@@ -4,7 +4,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
+    <input type="text"  id="Usuario" name="Usuario" value="edgar" runat="server"/>
     <script type="text/javascript">
         function showModal() {
             $("#myModal").modal('show');
@@ -135,7 +135,7 @@
                                 <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label>
                                 <asp:Label ID="TotalLibros" runat="server" Text=""></asp:Label>
                                 <br />
-                                <asp:LinkButton ID="lbtnFollow" runat="server" CssClass="btn btn-round btn-warning" Enabled="false">Seguir</asp:LinkButton>
+                                <asp:LinkButton ID="lbtnFollow" OnClick="lbtnFollow_Click" runat="server" CssClass="btn btn-round btn-warning" Enabled="true">Seguir</asp:LinkButton>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Cerrar</button>

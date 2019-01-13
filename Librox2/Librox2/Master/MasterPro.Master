@@ -210,6 +210,27 @@
         }
     </script>
 
+        <%--SWEET ALERT  Ya sigues--%>
+    <script type="text/javascript">
+        function SeguirFail() {
+            swal({
+                title: "Mensaje",
+                text: "Tu ya sigues a este usuario.",
+                icon: "error",
+            });
+        }
+    </script>
+
+        <script type="text/javascript">
+        function SeguirSuccess() {
+            swal({
+                title: "Mensaje",
+                text: "Exito al seguir a este usuario. ",
+                icon: "success",
+            });
+        }
+    </script>
+
 
     <%--SWEET ALERT Registro SUCCESS--%>
     <script type="text/javascript">
