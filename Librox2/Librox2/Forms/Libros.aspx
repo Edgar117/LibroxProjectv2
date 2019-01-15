@@ -121,23 +121,24 @@
                 <!-- Small modal -->
                <%-- <button type="button" class="btn btn-primary"  data-toggle="modal" data-target=".bd-example-modal-sm" id="btnShow">Small modal</button>--%>
 
-                <div class="modal fade modal-mini modal-primary"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal fade modal-primary"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header justify-content-center">
                                 <div class="modal-profile">
-                                     <asp:Image CssClass="rounded-circle" ID="ImagenUsuario" runat="server" />
+                                     <asp:Image CssClass="rounded-circle" ID="ImagenUsuario" runat="server" Width="140" Height="140" />
                                 </div>
                             </div>
                             <div class="modal-body">
-                                <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
-                                <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="lblUser" runat="server" Text=""></asp:Label><br />
+                                <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label><br />
                                 <asp:Label ID="TotalLibros" runat="server" Text=""></asp:Label>
                                 <br />
-                                <asp:LinkButton ID="lbtnFollow" OnClick="lbtnFollow_Click" runat="server" CssClass="btn btn-round btn-warning" Enabled="true">Seguir</asp:LinkButton>
+                                <asp:LinkButton ID="lbtnFollow" OnClick="lbtnFollow_Click" runat="server" CssClass="btn btn-round btn-warning">Seguir</asp:LinkButton>
+                                <b><asp:Label ID="lblFollower" runat="server" Text="" CssClass="text_bold"></asp:Label></b>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Cerrar</button>
+                                <b><button type="button" class="btn btn-simple" data-dismiss="modal">X</button></b>
                             </div>
                         </div>
                     </div>

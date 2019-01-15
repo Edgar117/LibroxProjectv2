@@ -20,7 +20,7 @@ namespace Librox2.GUI
         DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 Session["myOrderingEntity"] = null;
@@ -137,7 +137,7 @@ namespace Librox2.GUI
                 Session["LibroDetalle"] = ht;
                 Response.Redirect("/details");
             }
-            if (e.CommandName=="profile")
+            if (e.CommandName == "profile")
             {
                 RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
                 lblUser.Text = ((Label)item.FindControl("Label2")).Text;
@@ -147,7 +147,21 @@ namespace Librox2.GUI
                 ImagenUsuario.ImageUrl = "/images/Users/" + dtuser.Rows[0]["Imagen"].ToString();
                 dtuser = null;
                 dtuser = DAOUsers.ConsultaDatosLibrosXUsuario(lblUser.Text);
-                TotalLibros.Text ="Libros publicados: "+ dtuser.Rows[0]["Libros"].ToString();
+                TotalLibros.Text = "Libros: " + dtuser.Rows[0]["Libros"].ToString();
+                if (isFollow(lblUser.Text)) //Si ya lo sigue, entonces no debe poder seguirlo
+                {
+                    lbtnFollow.Visible = false;
+                    lblFollower.Visible = true;
+                    string[] userr = lblUser.Text.Split(' ');
+                    lblFollower.Text = "Ya sigues a " + userr[0].ToString() + ". Genial!";
+                }
+                else
+                {
+                    lblFollower.Visible = false;
+                    //Si no, pues puede seguirlo
+                    lbtnFollow.Visible = true;
+                    lbtnFollow.Text = "Seguir";
+                }
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
         }
@@ -174,35 +188,35 @@ namespace Librox2.GUI
             String[] cart1 = new String[0];
             cart1 = (String[])Session["ALL"];
             //Obtenemos su Id del usuario.
-            int  ID = int.Parse(cart1[5]);
+            int ID = int.Parse(cart1[5]);
             //Obtenemos los datos del usuario.
             DataTable dtuser = new DataTable();
             dtuser = DAOUsers.ConsultaDatosUsuario(lblUser.Text);
-            //Hacemos un split a los seguidores para ver si el usuario logeado no forma parte ya de los seguidores.           
-            string Seguidores=  dtuser.Rows[0]["Seguidores"].ToString();
-            string[] substrings = Seguidores.Split(',');
-            //Declaramos un Bool para validar si el usuario ya es seguidor y saber que hacer
-            bool IsFollow = false;
-            foreach (var substring in substrings)
-            {
-                if (ID.ToString()==substring)
-                {
-                    IsFollow = true;
-                }
-            }
-            if (IsFollow)
-            {
-                //Mensaje de que ya es seguidor
-                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "SeguirFail();", true);
-                
-            }
-            else
-            {
-                DAOUsers.InsertaSeguidores(ID, Convert.ToInt32(dtuser.Rows[0]["Identificador"].ToString()));
-                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "SeguirSuccess();", true);
-            }
+            DAOUsers.InsertaSeguidores(ID, Convert.ToInt32(dtuser.Rows[0]["Identificador"].ToString()));
 
         }
-
+        private bool isFollow(string user)
+        {
+            bool isFollow = false;
+            //Recuperamos al usuario logeado y tomamos su ID
+            String[] cart1 = new String[0];
+            cart1 = (String[])Session["ALL"];
+            //Obtenemos su Id del usuario.
+            int ID = int.Parse(cart1[5]);
+            //Obtenemos los datos del usuario.
+            DataTable dtuser = new DataTable();
+            dtuser = DAOUsers.ConsultaDatosUsuario(user);
+            //Hacemos un split a los seguidores para ver si el usuario logeado no forma parte ya de los seguidores.           
+            string Seguidores = dtuser.Rows[0]["Seguidores"].ToString();
+            string[] substrings = Seguidores.Split(',');
+            foreach (var substring in substrings)
+            {
+                if (ID.ToString() == substring)
+                {
+                    isFollow = true;
+                }
+            }
+            return isFollow;
+        }
     }
 }
