@@ -27,7 +27,7 @@
                 <div class="container">
                     <h2 class="title">Menú administrativo</h2>
                     <div class="text-center">
-                        <a href="#" class="btn btn-primary btn-icon btn-round">
+                        <%--<a href="#" class="btn btn-primary btn-icon btn-round">
                             <i class="fab fa-facebook-square"></i>
                         </a>
                         <a href="#" class="btn btn-primary btn-icon btn-round">
@@ -35,7 +35,7 @@
                         </a>
                         <a href="#" class="btn btn-primary btn-icon btn-round">
                             <i class="fab fa-google-plus"></i>
-                        </a>
+                        </a>--%>
                     </div>
                 </div>
             </div>

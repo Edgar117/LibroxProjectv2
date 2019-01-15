@@ -31,7 +31,7 @@ namespace Librox2.GUI
                 int Validar = OB.SaveUserFB(oUser);
                 if (Validar == 0)
                 {
-                    Session["FaceLogin"]  = string.Format("https://graph.facebook.com/{0}/picture", oUser.id);
+                    Session["FaceLogin"]  = string.Format("https://graph.facebook.com/{0}/picture?type=large", oUser.id);
                     Session["Usuario"] = oUser.name;
                     Session["Panel"] = "Logeado";
                     UsuarioBO OUserCo = new UsuarioBO();

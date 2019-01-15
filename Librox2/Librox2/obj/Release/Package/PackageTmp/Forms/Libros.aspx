@@ -4,7 +4,6 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
     <script type="text/javascript">
         function showModal() {
             $("#myModal").modal('show');
@@ -122,36 +121,34 @@
                 <!-- Small modal -->
                <%-- <button type="button" class="btn btn-primary"  data-toggle="modal" data-target=".bd-example-modal-sm" id="btnShow">Small modal</button>--%>
 
-                <div class="modal fade modal-mini modal-primary"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal fade modal-primary"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header justify-content-center">
                                 <div class="modal-profile">
-                                     <asp:Image CssClass="rounded-circle" ID="ImagenUsuario" runat="server" />
+                                     <asp:Image CssClass="rounded-circle" ID="ImagenUsuario" runat="server" Width="140" Height="140" />
                                 </div>
                             </div>
                             <div class="modal-body">
-                                <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
-                                <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="lblUser" runat="server" Text=""></asp:Label><br />
+                                <asp:Label ID="lblUserMail" runat="server" Text=""></asp:Label><br />
                                 <asp:Label ID="TotalLibros" runat="server" Text=""></asp:Label>
                                 <br />
-                                <asp:LinkButton ID="lbtnFollow" runat="server" CssClass="btn btn-round btn-warning" Enabled="false">Seguir</asp:LinkButton>
+                                <asp:LinkButton ID="lbtnFollow" OnClick="lbtnFollow_Click" runat="server" CssClass="btn btn-round btn-warning">Seguir</asp:LinkButton>
+                                <b><asp:Label ID="lblFollower" runat="server" Text="" CssClass="text_bold"></asp:Label></b>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Cerrar</button>
+                                <b><button type="button" class="btn btn-simple" data-dismiss="modal">X</button></b>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="cookiesMsg" runat="server" class="card card-text">
-            <h5>Al navegar en Escribox aceptas el uso de cookies para el mejor funcionamiento del sitio</h5>
-            <asp:Button ID="btnAceptar" runat="server" Text="Acepto" CssClass="btn btn-warning" OnClick="btnAceptar_Click" />
-            <asp:Button ID="btnDeclinar" runat="server" Text="No acepto" CssClass="btn btn-danger" OnClick="btnDeclinar_Click"/>
-        </div>
-                </div>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Uso de cookies</strong> Escribox utiliza cookies de terceros para generar estadísticas de visitantes. Al seguir navegando aceptas el uso de las mismas.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
             </div>
             
         </div>

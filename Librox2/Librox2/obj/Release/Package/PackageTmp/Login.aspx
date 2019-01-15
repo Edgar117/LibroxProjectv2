@@ -34,6 +34,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div align="center">
+                                        <div id="fb-root"></div>
                                         <a href="#" onclick="loginByFacebook();" class="btn btn-face">
                                             <i class="fa fa-facebook-official"></i>
                                             Facebook
