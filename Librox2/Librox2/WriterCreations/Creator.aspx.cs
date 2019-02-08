@@ -54,7 +54,14 @@ namespace Librox2.WriterCreations
             Repeater1.DataSource = files;
             Repeater1.DataBind();
             string[] user = Session["Usuario"].ToString().Split(' ');
-            lblUser.Text = "Hola, " + user[0] + ". Estas son tus creaciones";
+            if (files.Count > 0)
+            {
+                lblUser.Text = "Hola, " + user[0] + ". Estas son tus creaciones";
+            }
+            else {
+                lblUser.Text = "Hola, " + user[0] + ". Parece que no tienes creaciones por ahora, empieza a escribir!";
+            }
+            
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
