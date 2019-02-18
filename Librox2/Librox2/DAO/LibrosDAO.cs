@@ -30,6 +30,24 @@ namespace Librox2.DAO
             }
             return 1;
         }
+
+        //Metodo para insertar las peticiones de los usuarios de los libros
+        public int ProcesarLibroPaypal(object obj, int IdUsuario)
+        {
+            LibrosBO nom = (LibrosBO)obj;
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "EXEC [dbo].[ProcesarPago] "+IdUsuario+", "+nom.Precio+",'" + nom.Titulo + "'";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
         //Metodò general que consulta todos los libros que se tienen en el portal.
         public DataTable ConsultarLibros()
         {

@@ -34,6 +34,7 @@ namespace Librox2
             Session["Contraseña"] = "";
             Session["Imagen"] = "";
             Session["ALL"] = null;
+            Session["LibroFisico"] = null;
             Session["FaceLogin"] = null;
             if (string.IsNullOrEmpty(Request.QueryString["access_token"])) return; //ERROR! No token returned from Facebook!!
 

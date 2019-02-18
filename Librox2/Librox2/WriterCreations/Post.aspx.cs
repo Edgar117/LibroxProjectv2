@@ -30,12 +30,16 @@ namespace Librox2.WriterCreations
             }
             else
             {
-                LoadCategorias();
-                LoadStatusLibros();
-                System.Collections.Hashtable ht = new System.Collections.Hashtable();
-                ht = (System.Collections.Hashtable)Session["Post"];
-                //txtTitulo.Text = Convert.ToString(ht["Titulo"]);
-                file = Convert.ToString(ht["Titulo"]);
+                if (!IsPostBack)
+                {
+                    LoadCategorias();
+                    LoadStatusLibros();
+                    System.Collections.Hashtable ht = new System.Collections.Hashtable();
+                    ht = (System.Collections.Hashtable)Session["Post"];
+                    //txtTitulo.Text = Convert.ToString(ht["Titulo"]);
+                    file = Convert.ToString(ht["Titulo"]);
+                }
+                
             }
 
         }
@@ -85,6 +89,12 @@ namespace Librox2.WriterCreations
         }
         private void copyBook(string file)
         {
+            System.Collections.Hashtable ht = new System.Collections.Hashtable();
+            ht = (System.Collections.Hashtable)Session["Post"];
+            if (String.IsNullOrEmpty(file))
+            {
+                file = Convert.ToString(ht["Titulo"]);
+            }
             string variable = Session["Usuario"].ToString();
             var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + variable + "/"));
             var fromDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + variable + "/Creations/"));

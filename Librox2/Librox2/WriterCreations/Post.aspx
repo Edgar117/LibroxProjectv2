@@ -25,7 +25,9 @@
 
 </head>
 <body>
+
     <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <script type="text/javascript">  
 
             function showimagepreview(input) {
@@ -69,6 +71,9 @@
                                     <label>Elige una portada genial!</label>
                                     <asp:FileUpload ID="fuImg" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
                                 </div>
+                          <%--      Agrego el update panel para evitar el post y que se vea mas mamalon--%>
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
                                 <div class="col-md-6">
                                     <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" placeholder="Elige un buen título"></asp:TextBox>
                                     <asp:TextBox ID="txtSinop" runat="server" CssClass="form-control" TextMode="MultiLine" placeholder="Atrae a los lectores con una pequeña sinópsis"></asp:TextBox>
@@ -78,6 +83,8 @@
                                     <asp:Button ID="Button1" runat="server" Text="Publicar!" CssClass="btn btn-warning" OnClick="Button1_Click" />
                                     </div>
                                 </div>
+                                </ContentTemplate>
+                                </asp:UpdatePanel>
                                 <div class="col-md-2"></div>
                             </div>
                         </div>

@@ -13,7 +13,7 @@ namespace Librox2.GUI
     {
         //Declaramos la instancia de paypal
         Paypal entity = new Paypal();
-
+        LibrosBO DatosLibro = new LibrosBO();
         LibrosDAO DAOLibros = new LibrosDAO();
         CategoriaDAO DAOCategorias = new CategoriaDAO();
         UsuariosDAO DAOUsers = new UsuariosDAO();
@@ -110,6 +110,16 @@ namespace Librox2.GUI
                 string precio = ((Label)item.FindControl("lblPrecio")).Text;
                 //Método para activar la sesión para enviar al proceso de pago
                 SetOrderingValue(titulo, "BB01", precio, "1", "1");
+                //Insertamos los datos del usuario a la tabla para la comparación de datos posteriormente
+                DatosLibro.Titulo = titulo;
+                DatosLibro.Precio = precio;
+                //Datos para obtener el id
+                String[] cart1 = new String[0];
+                cart1 = (String[])Session["ALL"];
+                //Obtenemos su Id del usuario.
+                int ID = int.Parse(cart1[5]);
+                //Obtenemos los datos del usuario.
+                DAOLibros.ProcesarLibroPaypal(DatosLibro, ID);
                 //Redirige al proceso de pago con los datos del libro elegido ya en la sesión.
                 Response.Redirect("~/Forms/ProcesarPago.aspx");
             }
