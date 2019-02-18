@@ -149,6 +149,8 @@ namespace Librox2.GUI
             }
             if (e.CommandName == "profile")
             {
+                if (Session["Usuario"]!=null)
+                {
                 RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
                 lblUser.Text = ((Label)item.FindControl("Label2")).Text;
                 DataTable dtuser = new DataTable();
@@ -174,6 +176,11 @@ namespace Librox2.GUI
                 }
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "Session();", true);
+                }
+          }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
