@@ -115,8 +115,15 @@ namespace Librox2.WriterCreations
             string variable = Session["Usuario"].ToString();
             var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + variable + "/"));
             string pathString = originalDirectory.ToString();
-            var path = string.Format("{0}\\{1}", pathString, fuImg.FileName);//Formamos la ruta donde se guardará la imagen
-            fuImg.SaveAs(path);
+            if (fuImg.HasFile) // Si el usuario tiene un archivo
+            {
+                //DeletePhoto();
+                string filename2 = Path.GetFileName(fuImg.FileName);
+                var path = string.Format("{0}\\{1}", pathString, fuImg.FileName);//Formamos la ruta donde se guardará la imagen
+                fuImg.SaveAs(path);
+            }
+               
+
         }
         private void ObtenerDatos()
         {
