@@ -32,7 +32,7 @@
     </style>
 </head>
 <body>
-    <form id="frmPaypal" method="post" action="https://www.paypal.com/cgi-bin/webscr" runat="server">
+    <form id="frmPaypal" method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr" runat="server">
         <input type="hidden" name="cmd" value="_xclick" />
         <input type="hidden" name="business" value="<%= this.BusinessValue %>" />
         <input type="hidden" name="item_name" value="<%= this.ItemNameValue %>" />
