@@ -18,7 +18,8 @@ namespace Librox2.Forms
             if (!Page.IsPostBack)
             {
                 pe = (Paypal)Session["myOrderingEntity"];
-
+                NombreLibro.InnerText = pe.ItemName;
+                PrecioLibro.InnerText="Precio: $ "+ pe.Amount;
                 this.BusinessValue = pe.Business;
                 this.ItemNameValue = pe.ItemName;
                 this.ItemNumberValue = pe.ItemNumber;
