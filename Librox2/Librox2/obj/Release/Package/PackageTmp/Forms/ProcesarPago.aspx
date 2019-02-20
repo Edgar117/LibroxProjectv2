@@ -4,7 +4,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Procesando Pago</title>
-    <script src="../PaypalScri/scripts/jquery.min.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="../PagoPaypal/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="../PagoPaypal/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../PagoPaypal/css/stylish-portfolio.css" rel="stylesheet" />
+    <script src="https://www.paypal.com/sdk/js?client-id=AbCPnvXObi8MHbjfcBp9U8XuQsaJXuIW2JyGxW9KYeaka_L8W7jWdfCjD43Jmqn--z9MOxLVbDDkfN_g&currency=MXN"></script>
+    <%--    <script src="../PaypalScri/scripts/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             setTimeout(function () {
@@ -12,9 +20,9 @@
                 $('#frmPaypal').submit();
             }, 1000);
         });
-    </script>
+    </script>--%>
 
-    <style type="text/css">
+    <%--<style type="text/css">
         .auto-style1
         {
             width: 100%;
@@ -29,10 +37,10 @@
         {
             width: 486px;
         }
-    </style>
+    </style>--%>
 </head>
-<body>
-    <form id="frmPaypal" method="post" action="https://www.paypal.com/cgi-bin/webscr" runat="server">
+<body id="page-top">
+    <%--    <form id="frmPaypal" method="post" action="https://www.paypal.com/cgi-bin/webscr" runat="server">
         <input type="hidden" name="cmd" value="_xclick" />
         <input type="hidden" name="business" value="<%= this.BusinessValue %>" />
         <input type="hidden" name="item_name" value="<%= this.ItemNameValue %>" />
@@ -41,55 +49,58 @@
         <input type="hidden" name="no_shipping" value="<%= this.NoShippingValue %>" />
         <input type="hidden" name="quantity" value="<%= this.QuantityValue %>" />
         <input type="hidden" name="currency_code" value="MXN"/>
-    </form>
+    </form>--%>
+    <form id="form1" runat="server">
 
-    <table class="auto-style1">
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>
-                <img class="ajaxloader_style" src='<%=ResolveUrl("~/PaypalScri/scripts/ajax_loader.gif")%>' width="180" height="180" /></td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style2">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
+        <header class="masthead d-flex">
+            <div class="container text-center my-auto">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 id="H1" runat="server" class="mb-1">Estás a punto de pagar por el libro:</h2>
+                        <h2 id="NombreLibro" runat="server" class="mb-1">Stylish Portfolio</h2>
+                        <h3 id="PrecioLibro" runat="server" class="mb-5">
+                            <em>A Free Bootstrap Theme by Start Bootstrap</em>
+                        </h3>
+                        <div id="paypal-button-container"></div>
+                        <%--<script>paypal.Buttons().render('#paypal-button-container');</script>--%>
+                        <%--      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>--%>
+                        <%--<img src="https://www.paypalobjects.com/webstatic/es_MX/mktg/logos-buttons/redesign/btn_10.png" alt="PayPal" />--%>
+
+                        <h4 id="H2" runat="server" class="mb-5">
+                            <br />
+                            <em>Podrás descargar el libro una vez que tu pago se haya verificado.</em>
+                            <br />
+                            <em>Dudas o aclaraciones: escribox.com.mx</em>
+                        </h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="overlay"></div>
+        </header>
+        <script>
+            paypal.Buttons({
+                createOrder: function (data, actions) {
+                    // Set up the transaction
+                    var precio = document.getElementById('<%= PrecioLibro.ClientID %>').textContent;
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: precio
+                            }
+                        }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    // Capture the funds from the transaction
+                    return actions.order.capture().then(function (details) {
+                        // Show a success message to your buyer
+                        //alert('Transaction completed by ' + details.payer.name.given_name);
+                        console.log(data);
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script>
+    </form>
 </body>
 </html>

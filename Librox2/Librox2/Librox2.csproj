@@ -344,10 +344,6 @@
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap-reboot.min.css" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap.min.css" />
-    <Content Include="PagoPaypal\vendor\bootstrap\js\bootstrap.bundle.js" />
-    <Content Include="PagoPaypal\vendor\bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="PagoPaypal\vendor\bootstrap\js\bootstrap.js" />
-    <Content Include="PagoPaypal\vendor\bootstrap\js\bootstrap.min.js" />
     <Content Include="PagoPaypal\vendor\fontawesome-free\css\all.css" />
     <Content Include="PagoPaypal\vendor\fontawesome-free\css\all.min.css" />
     <Content Include="PagoPaypal\vendor\fontawesome-free\css\brands.css" />
@@ -2092,10 +2088,6 @@
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="PagoPaypal\vendor\bootstrap\js\bootstrap.bundle.js.map" />
-    <Content Include="PagoPaypal\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
-    <Content Include="PagoPaypal\vendor\bootstrap\js\bootstrap.js.map" />
-    <Content Include="PagoPaypal\vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="PagoPaypal\vendor\fontawesome-free\less\brands.less" />
     <Content Include="PagoPaypal\vendor\fontawesome-free\less\fontawesome.less" />
     <Content Include="PagoPaypal\vendor\fontawesome-free\less\regular.less" />

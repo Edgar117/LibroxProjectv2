@@ -262,6 +262,17 @@
             });
         }
     </script>
+
+    
+        <script type="text/javascript">
+            function Session() {
+            swal({
+                title: "No puedes Seguir  Usuarios",
+                text: "Detectamos que no iniciaste sesión, por favor inicia sesión para poder seguir usuarios.",
+                icon: "error",
+            });
+        }
+    </script>
     <%--SWEET ALERT Login--%>
     <script type="text/javascript">
         function NoLogin() {
