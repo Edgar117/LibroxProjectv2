@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title></title>
+    <title>Creador</title>
     <!-- Bootstrap css-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <!--Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- Propeller css -->
     <link href="resources_material/assets/css/propeller.min.css" rel="stylesheet" />
 </head>
@@ -21,7 +21,7 @@
     <form id="form1" runat="server">
 
         <!-- Basic nav menu which will remain fixed at the top -->
-        <nav class="navbar navbar-inverse navbar-fixed-top pmd-navbar pmd-z-depth">
+        <nav class="navbar navbar-default navbar-fixed-top pmd-navbar pmd-z-depth">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -31,26 +31,35 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="javascript:void(0);" class="navbar-brand navbar-brand-custome">Brand</a>
+                    <a href="javascript:void(0);" class="navbar-brand navbar-brand-custome">Escribox</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a class="pmd-ripple-effect" href="javascript:void(0);">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a class="pmd-ripple-effect" href="javascript:void(0);">Link</a></li>
-                        <li class="dropdown pmd-dropdown">
-                            <a data-toggle="dropdown" class="pmd-ripple-effect dropdown-toggle" data-sidebar="true" href="javascript:void(0);">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="pmd-ripple-effect" href="javascript:void(0);">Action</a></li>
-                                <li><a class="pmd-ripple-effect" href="javascript:void(0);">Another action</a></li>
-                                <li><a class="pmd-ripple-effect" href="javascript:void(0);">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a class="pmd-ripple-effect" href="javascript:void(0);">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a class="pmd-ripple-effect" href="javascript:void(0);">One more separated link</a></li>
-                            </ul>
-                        </li>
+                        <li><a class="pmd-ripple-effect" href="/home">Inicio <span class="sr-only">(current)</span></a></li>
+                        <li><a class="pmd-ripple-effect" href="/libros">Libros</a></li>
+                        <li><a class="pmd-ripple-effect" href="/mybooks">Mis publicaciones</a></li>
+                        <li><a class="pmd-ripple-effect" href="/libros"></a></li>
                     </ul>
+                    <div class="dropdown pmd-dropdown pmd-user-info pull-right">
+                        <a href="javascript:void(0);" class="btn-user dropdown-toggle media" data-toggle="dropdown" aria-expanded="false">
+                            <div class="media-left">
+                                <img runat="server" id="ImagenUsuario" class="img-circle" src="http://propeller.in/assets/images/avatar-icon-40x40.png" width="40" height="40" alt="avatar" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <asp:Label ID="lblUserP" runat="server" Text="David" Visible="true"></asp:Label>
+                            </div>
+                            <div class="media-right media-middle">
+                                <i class="material-icons md-dark pmd-sm">more_vert</i>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="../Forms/Perfil.aspx">Perfil</a></li>
+                            <li><%--<a href="javascript:void(0);">Salir</a>--%>
+                                <asp:LinkButton ID="lbtnLogout" runat="server" OnClick="lbtnLogout_Click">Salir</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
@@ -81,6 +90,7 @@
                             <asp:Panel ID="pnlGeneral" runat="server">
                                 <h1 class="text-center">
                                     <asp:Label ID="lblUser" runat="server" Text="Label"></asp:Label></h1>
+                                <br />
                                 <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
                                     <ItemTemplate>
                                         <div class="col-md-3">
@@ -90,8 +100,8 @@
                                                     <!-- Card media heading -->
                                                     <div class="media-body">
                                                         <h2 class="pmd-card-title-text">
-                                                            <asp:LinkButton ID="lbtnTitulo" runat="server" Text='<%# Eval("Text") %>'></asp:LinkButton></h2>
-                                                        <span class="pmd-card-subtitle-text">Elige la acción que desees, edita o elimina este libro
+                                                            <asp:LinkButton ID="lbtnTitulo" runat="server" CommandName="edit" Text='<%# Eval("Text") %>'></asp:LinkButton></h2>
+                                                        <span class="pmd-card-subtitle-text">Elige la acción que desees, edita o elimina este libro. Ten en cuenta que al seleccionar 'Eliminar' no se te solicitará confirmación.
                                                         <asp:Label ID="lblValue" runat="server" Text='<%# Eval("Value") %>' Visible="false"></asp:Label></span>
                                                     </div>
                                                     <!-- Card media image -->
@@ -103,9 +113,9 @@
                                                 </div>
                                                 <!-- Card action -->
                                                 <div class="pmd-card-actions">
-                                                    <asp:LinkButton ID="lbtnPost" CssClass="btn pmd-btn-flat pmd-ripple-effect btn-primary" runat="server" CommandName="post">Publicar</asp:LinkButton>
-                                                    <asp:LinkButton ID="lbtnEdit" CssClass="btn pmd-btn-flat pmd-ripple-effect btn-primary" runat="server" CommandName="edit">Editar</asp:LinkButton>
-                                                    <asp:LinkButton ID="lbtnDelete" CssClass="btn pmd-btn-flat pmd-ripple-effect btn-danger" runat="server" CommandName="delete">Eliminar</asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtnPost" CssClass="btn pmd-btn-flat pmd-ripple-effect btn-primary" runat="server" CommandName="post"><i class="material-icons pmd-sm">cloud_upload</i></asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtnEdit" CssClass="btn pmd-btn-flat pmd-ripple-effect btn-primary" runat="server" CommandName="edit"><i class="material-icons pmd-sm">edit</i></asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtnDelete" CssClass="btn pmd-btn-flat pmd-ripple-effect btn-danger" runat="server" CommandName="delete"><i class="material-icons pmd-sm">delete</i></asp:LinkButton>
                                                 </div>
                                             </div>
                                         </div>

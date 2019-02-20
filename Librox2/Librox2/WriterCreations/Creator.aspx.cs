@@ -27,8 +27,19 @@ namespace Librox2.WriterCreations
                 pnlWritter.Visible = false;
                 try
                 {
+                    String[] cart1 = (String[])Session["ALL"];
                     getBooks();
                     pnlGeneral.Visible = true;
+                    if (Session["FaceLogin"] != null)
+                    {
+                        ImagenUsuario.Src = Session["FaceLogin"].ToString();
+                        //Imagen.Src = Session["FaceLogin"].ToString();
+                    }
+                    else
+                    {
+                        ImagenUsuario.Src = "/images/Users/" + cart1[2].ToString();
+                        //Imagen.Src = "/images/Users/" + cart1[2].ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -61,7 +72,7 @@ namespace Librox2.WriterCreations
             else {
                 lblUser.Text = "Hola, " + user[0] + ". Parece que no tienes creaciones por ahora, empieza a escribir!";
             }
-            
+            lblUserP.Text = user[0];
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
@@ -188,6 +199,12 @@ namespace Librox2.WriterCreations
             txtContent.Text = "";
             lblHelp.Text = "";
             LinkButton1.Visible = true;
+        }
+
+        protected void lbtnLogout_Click(object sender, EventArgs e)
+        {
+            Session["Usuario"] = null;
+            Response.Redirect("../Login.aspx");
         }
     }
 }
