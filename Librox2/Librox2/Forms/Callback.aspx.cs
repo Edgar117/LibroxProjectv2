@@ -26,12 +26,19 @@ namespace Librox2.GUI
             //and Deserialize the JSON response
             JavaScriptSerializer js = new JavaScriptSerializer();
             FacebookUser oUser = js.Deserialize<FacebookUser>(json);
+            oUser.picture = oUser.name + "_UsuarioLogin.jpg";
             if (oUser != null)
             {
                 int Validar = OB.SaveUserFB(oUser);
                 if (Validar == 0)
                 {
                     Session["FaceLogin"]  = string.Format("https://graph.facebook.com/{0}/picture?type=large", oUser.id);
+                    if (!File.Exists(Server.MapPath("~/images/Users/") + oUser.name + "_UsuarioLogin.jpg"))
+                    {
+                        WebClient webClient = new WebClient();
+                        webClient.DownloadFile(string.Format("https://graph.facebook.com/{0}/picture?type=large", oUser.id), Server.MapPath("~/images/Users/") + oUser.name + "_UsuarioLogin.jpg");
+                    }
+                   
                     Session["Usuario"] = oUser.name;
                     Session["Panel"] = "Logeado";
                     UsuarioBO OUserCo = new UsuarioBO();

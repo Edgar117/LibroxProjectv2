@@ -19,7 +19,7 @@ namespace Librox2.DAO
         {
             FacebookUser nom = (FacebookUser)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "EXEC [SPVerifyUser] '" + nom.name+ "','" + nom.email + "','"+nom.birthday+"','"+nom.name+"'";
+            string sql = "EXEC [SPVerifyUser] '" + nom.name+ "','" + nom.email + "','"+nom.birthday+"','"+nom.name+"','"+nom.picture+"'";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
