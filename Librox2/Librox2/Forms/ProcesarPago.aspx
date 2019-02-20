@@ -87,7 +87,8 @@
                         purchase_units: [{
                             amount: {
                                 value: precio
-                            }
+                            },
+                            description: 'Estás comprando a Escribox $' + precio
                         }]
                     });
                 },
@@ -97,6 +98,7 @@
                         // Show a success message to your buyer
                         //alert('Transaction completed by ' + details.payer.name.given_name);
                         console.log(data);
+                        window.location="Verificador.aspx?orderID="+data.orderID
                     });
                 }
             }).render('#paypal-button-container');
