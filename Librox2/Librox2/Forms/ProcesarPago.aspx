@@ -11,7 +11,7 @@
     <link href="../PagoPaypal/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../PagoPaypal/css/stylish-portfolio.css" rel="stylesheet" />
-    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AbCPnvXObi8MHbjfcBp9U8XuQsaJXuIW2JyGxW9KYeaka_L8W7jWdfCjD43Jmqn--z9MOxLVbDDkfN_g&currency=MXN"></script>
     <%--    <script src="../PaypalScri/scripts/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -89,6 +89,14 @@
                                 value: precio
                             }
                         }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    // Capture the funds from the transaction
+                    return actions.order.capture().then(function (details) {
+                        // Show a success message to your buyer
+                        //alert('Transaction completed by ' + details.payer.name.given_name);
+                        console.log(data);
                     });
                 }
             }).render('#paypal-button-container');
