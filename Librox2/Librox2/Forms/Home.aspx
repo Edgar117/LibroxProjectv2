@@ -122,15 +122,13 @@
         <nav>
           <ul>
             <li>
-              <a href="#">
-                Aviso de Privacidad.
+              <a href="Politicas.aspx">Aviso de Privacidad.
               </a>
-            </li>
-            <li>
-              <a href="AcercaDe.aspx">
-               Acerca de nosotros
-              </a>
-            </li>
+              </li>
+                <li>
+                  <a href="AcercaDe.aspx">Acerca de nosotros
+                </a>
+              </li>
             <li>
              <%-- <a href="http://blog.creative-tim.com">
                 Blog--%>

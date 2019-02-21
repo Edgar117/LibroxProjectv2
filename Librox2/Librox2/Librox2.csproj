@@ -86,6 +86,7 @@
     <Content Include="Forms\Politicas.aspx" />
     <Content Include="Forms\ProcesarPago.aspx" />
     <Content Include="Forms\TerminosyCondiciones.aspx" />
+    <Content Include="Forms\Verificador.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Forms\AcercaDe.aspx" />
     <Content Include="Forms\AgregarLibro.aspx" />
@@ -958,6 +959,13 @@
     </Compile>
     <Compile Include="Forms\TerminosyCondiciones.aspx.designer.cs">
       <DependentUpon>TerminosyCondiciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Verificador.aspx.cs">
+      <DependentUpon>Verificador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Verificador.aspx.designer.cs">
+      <DependentUpon>Verificador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

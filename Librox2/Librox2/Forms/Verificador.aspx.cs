@@ -17,13 +17,21 @@ namespace Librox2.Forms
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //No funcionó esto :´v hay que seguir investigando
-            //this.Label1.Text = Request.QueryString["estatus"];
-            object details = Request.QueryString["details"];
-            System.Collections.Generic.Dictionary<String, Object[]> Collection;
-            Collection = details as System.Collections.Generic.Dictionary<String, Object[]>;
-            //string status = Collection["status"] as String;
-            //this.Label1.Text = status;
+            //Recivimos el json, verificar si mandamos mas datos.
+            string json = Request.QueryString["details"];
+            //Instancia al using para deserealizar json
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            //Instancia de la clase paypal
+            paypal oUser = js.Deserialize<paypal>(json);
+            //Logica para convertir a Byte lo que recivimos de la base 64
+            byte[] data = System.Convert.FromBase64String(oUser.status);
+            //Lo volvemos al lenguaje español
+            oUser.status = System.Text.ASCIIEncoding.ASCII.GetString(data);
+            //Se aplica lo mismo
+            data = System.Convert.FromBase64String(oUser.id);
+            oUser.id = System.Text.ASCIIEncoding.ASCII.GetString(data);
+            //Listo ya funciona
+
         }
     }
 }

@@ -111,7 +111,7 @@
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Autor") %>' CssClass="title"></asp:Label>
                                             </asp:LinkButton></h5>
                                           <%# Eval("Ranking") %><br />
-                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay">Comprar</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="false" CommandName="pay">Comprar</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
@@ -158,11 +158,11 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="Politicas.aspx">Aviso de Privacidad.
+                            <a href="Forms/Politicas.aspx">Aviso de Privacidad.
                             </a>
                         </li>
                         <li>
-                            <a href="AcercaDe.aspx">Acerca de nosotros
+                            <a href="Forms/AcercaDe.aspx">Acerca de nosotros
                             </a>
                         </li>
                         <li>
