@@ -178,7 +178,7 @@ iframe {
   
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;;
+  background-repeat: no-repeat;
 }
 
 
@@ -212,7 +212,7 @@ iframe {
 .btn-face,
 .btn-google {
   font-family: Montserrat-SemiBold;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.2;
 
   display: -webkit-box;
@@ -223,7 +223,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  width: calc((100% - 20px) / 2);
+  width: calc((100% - -140px) / 2);
   height: 70px;
   border-radius: 10px;
   box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2);
@@ -264,7 +264,7 @@ iframe {
 
 .btn-face {
   color: #fff;
-  background-color: #3b5998;
+  background-color: #4267B2;
 }
 
 .btn-face i {

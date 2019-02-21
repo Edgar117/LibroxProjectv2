@@ -136,6 +136,9 @@
                             <a class="dropdown-item" href="/mybooks">
                                 <i class="now-ui-icons loader_gear"></i>Editar Mis Libros
                             </a>
+                            <a class="dropdown-item" href="/WriterCreations/Creator.aspx">
+                                <i class="now-ui-icons loader_gear"></i>Escribir
+                            </a>
                         </div>
                     </li>
                     <%--TestLogin--%>

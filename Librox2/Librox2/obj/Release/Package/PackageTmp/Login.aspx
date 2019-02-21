@@ -35,10 +35,12 @@
                                 <div class="col-md-12">
                                     <div align="center">
                                         <div id="fb-root"></div>
-                                        <a href="#" onclick="loginByFacebook();" class="btn btn-face">
+                                        <a style="width:280px;height:70px;background-color:#4267B2" href="#" onclick="loginByFacebook();" class="btn btn-face">
                                             <i class="fa fa-facebook-official"></i>
-                                            Facebook
+                                           Iniciar sesión con Facebook
                                         </a>
+                                        <br />
+                                        <span class="txt1">*No publicaremos en tu Facebook.</span>
                                     </div>
                                 </div>
                             </div>

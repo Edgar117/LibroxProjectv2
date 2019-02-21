@@ -158,11 +158,11 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="Politicas.aspx">Aviso de Privacidad.
+                            <a href="Forms/Politicas.aspx">Aviso de Privacidad.
                             </a>
                         </li>
                         <li>
-                            <a href="AcercaDe.aspx">Acerca de nosotros
+                            <a href="Forms/AcercaDe.aspx">Acerca de nosotros
                             </a>
                         </li>
                         <li>
