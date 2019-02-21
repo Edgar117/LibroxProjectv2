@@ -97,8 +97,10 @@
                     return actions.order.capture().then(function (details) {
                         // Show a success message to your buyer
                         //alert('Transaction completed by ' + details.payer.name.given_name);
-                        console.log(data);
-                        window.location="Verificador.aspx?orderID="+data.orderID
+                        console.log(details);
+                        //var myJSON = { "status": details.status, "id": details.id };
+                        //var myString = JSON.stringify(myJSON);
+                        window.location = "Verificador.aspx?details=" + details
                     });
                 }
             }).render('#paypal-button-container');
