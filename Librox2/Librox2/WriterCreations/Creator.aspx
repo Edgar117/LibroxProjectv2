@@ -44,7 +44,7 @@
                     <div class="dropdown pmd-dropdown pmd-user-info pull-right">
                         <a href="javascript:void(0);" class="btn-user dropdown-toggle media" data-toggle="dropdown" aria-expanded="false">
                             <div class="media-left">
-                                <img runat="server" id="ImagenUsuario" class="img-circle" src="http://propeller.in/assets/images/avatar-icon-40x40.png" width="40" height="40" alt="avatar" />
+                                <img runat="server" id="ImagenUsuario" class="img-circle" src="" width="40" height="40" alt="avatar" />
                             </div>
                             <div class="media-body media-middle">
                                 <asp:Label ID="lblUserP" runat="server" Text="David" Visible="true"></asp:Label>
@@ -77,6 +77,7 @@
                             <asp:Panel ID="pnlWritter" runat="server">
                                 <div class="pmd-card pmd-card-default pmd-z-depth pmd-card-custom-form">
                                     <div class="pmd-card-body">
+                                        <asp:Label ID="lblWar" runat="server" Text="" ForeColor="Red"></asp:Label>
                                         <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" placeholder="Documento sin título"></asp:TextBox>
                                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
                                             <label class="control-label">Toca aquí para escribir...</label>
@@ -84,7 +85,7 @@
                                             <asp:TextBox ID="txtContent" runat="server" CssClass="form-control" TextMode="MultiLine" Height="700px" Columns="10"></asp:TextBox>
                                         </div>
                                     </div>
-                                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" Text="Label" Visible="false"></asp:Label>
                                 </div>
                             </asp:Panel>
                             <asp:Panel ID="pnlGeneral" runat="server">

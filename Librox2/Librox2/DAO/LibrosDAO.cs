@@ -41,11 +41,19 @@ namespace Librox2.DAO
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
             con.CerrarConexion();
+            DataTable dt8 = PruebaID();
             if (i <= 0)
             {
                 return 0;
             }
             return 1;
+        }
+        //Método copiado
+        public DataTable PruebaID()
+        {
+            SQL = "SELECT SCOPE_IDENTITY() as id";
+            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            return con.TablaGeneral(SQL);
         }
 
         //Metodò general que consulta todos los libros que se tienen en el portal.

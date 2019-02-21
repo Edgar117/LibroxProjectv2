@@ -77,7 +77,17 @@ namespace Librox2.WriterCreations
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            writeBook();
+            if (string.IsNullOrWhiteSpace(txtTitulo.Text))
+            {
+                lblWar.Text = "Escribe un título para guardar";
+                pnlGeneral.Visible = false;
+                pnlWritter.Visible = true;
+                LinkButton1.Visible = true;
+            }
+            else
+            {
+                writeBook();
+            }
         }
         private void writeBook()
         {

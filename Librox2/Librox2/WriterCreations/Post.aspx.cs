@@ -62,24 +62,35 @@ namespace Librox2.WriterCreations
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            copyBook(file);
-            savePic();
+            
             //ObtenerDatos();
             try
             {
+                savePic();
+                copyBook(file);
                 String[] cart1 = new String[0];
                 cart1 = (String[])Session["ALL"];
                 OBLibros.Autor_ID = (cart1[5]).ToString();
                 ObtenerDatos();
-                if (DAOLibros.SaveBook(OBLibros) == 1)
+                if (string.IsNullOrWhiteSpace(OBLibros.Titulo) || !fuImg.HasFile)
                 {
-                    //ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "LibroGuardado();", true);
-                    Response.Redirect("~/WriterCreations/Creator.aspx");
+                    lblWar.Text = "Llena todos los campos antes de publicar";
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFailLibro();", true);
+                    
+                    
+                    if (DAOLibros.SaveBook(OBLibros) == 1)
+                    {
+                        //ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "LibroGuardado();", true);
+                        Response.Redirect("~/WriterCreations/Creator.aspx");
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "RegistroFailLibro();", true);
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
