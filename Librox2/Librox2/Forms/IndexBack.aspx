@@ -37,7 +37,7 @@
             <span class="info-box-icon bg-aqua"><i class="fa fa-book"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Libros Registrados</span>
+              <span class="info-box-text">Libros</span>
               <span id="Libros" runat="server" class="info-box-number"><small>4</small></span>
             </div>
             <!-- /.info-box-content -->
@@ -77,11 +77,11 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="fa fa-terminal"></i></span>
+            <span class="info-box-icon bg-yellow"><i class="fa fa-money"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Total...</span>
-              <span id="empty" runat="server" class="info-box-number"></span>
+              <span class="info-box-text">Libros Vendidos</span>
+              <span id="VentasLibros" runat="server" class="info-box-number"></span>
             </div>
             <!-- /.info-box-content -->
           </div>
