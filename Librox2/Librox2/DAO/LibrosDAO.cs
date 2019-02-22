@@ -82,6 +82,23 @@ namespace Librox2.DAO
             SQL = "EXEC [dbo].[SelPaginadorLibrosXTitulo] '" + Texto + "'";
             return con.TablaGeneral(SQL);
         }
+        //Actuliza el estatus de la venta segun si fue verificado o no
+        public int UpdEstatusVentaPaypal(string IDVenta)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "UPDATE  [dbo].[ProcesoPagoPaypal] SET EstatusPayPal='COMPLETED' WHERE IDPago=" + IDVenta + " ";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
+
         public int UpdateUser(object obj)
         {
             UsuarioBO nom = (UsuarioBO)obj;
