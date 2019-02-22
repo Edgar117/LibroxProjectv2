@@ -46,7 +46,8 @@ namespace Librox2.Forms
                 try
                 {
                     books.UpdEstatusVentaPaypal(idVenta, orderID);
-                    Label1.Text = "Tu compra ha sido autorizada con el siguiente número de orden: " + orderID +", ya puedes descargar el libro";
+                    //Label1.Text = "Tu compra ha sido autorizada con el siguiente número de orden: " + orderID +", ya puedes descargar el libro";
+                    Response.Redirect("~/Forms/MisCompras.aspx");
                 }
                 catch (Exception ex)
                 {
