@@ -229,5 +229,24 @@ WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
             return CUENTA;
 
         }
+
+
+        //Metodó que cuenta los usuarios con los que cuenta la pagina.
+        public int ContarVentas()
+        {
+            int CUENTA = 0;
+            SQL = "SELECT COUNT(*) FROM [dbo].[ProcesoPagoPaypal] PP WHERE PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            cmd.Parameters.AddWithValue("@Usuario", CUENTA);
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                CUENTA = int.Parse(leer[0].ToString());
+            }
+            con.CerrarConexion();
+            return CUENTA;
+
+        }
     }
 }

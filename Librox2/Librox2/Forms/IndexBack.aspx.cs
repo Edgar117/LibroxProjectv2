@@ -25,6 +25,7 @@ namespace Librox2.GUI
         public void ContarUsuarios()
         {
             Usuarios.InnerText = Contar.ContarUsuarios().ToString();
+            VentasLibros.InnerText = Contar.ContarVentas().ToString();
         }
     }
 }

@@ -84,6 +84,7 @@
               <li><a href="../Forms/AdministrarComentarios.aspx"><i class="fa fa-comment"></i>Administrar Comentarios</a></li>
                 <li><a href="../Forms/AgregarStatusLibros.aspx"><i class="fa fa-archive"></i>Administrar Estatus Libro</a></li>
               <li><a href="../Forms/AgregarAdmin.aspx"><i class="fa fa-key"></i>Administrar Administradores</a></li>
+              <li><a href="../Forms/Compras.aspx"><i class="fa fa-money"></i>Ventas</a></li>
           </ul>
         </li>   
            <li><a href="../Login.aspx"><i class="fa fa-power-off"></i> <span>Logout</span></a></li>
