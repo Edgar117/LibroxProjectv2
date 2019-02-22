@@ -32,28 +32,20 @@ namespace Librox2.DAO
         }
 
         //Metodo para insertar las peticiones de los usuarios de los libros
-        public int ProcesarLibroPaypal(object obj, int IdUsuario)
+        public string ProcesarLibroPaypal(object obj, int IdUsuario)
         {
             LibrosBO nom = (LibrosBO)obj;
-            cmd.Connection = con.EstablecerConexion();
             string sql = "EXEC [dbo].[ProcesarPago] "+IdUsuario+", "+nom.Precio+",'" + nom.Titulo + "'";
-            cmd.CommandText = sql;
-            con.AbrirConexion();
-            int i = cmd.ExecuteNonQuery();
-            con.CerrarConexion();
-            DataTable dt8 = PruebaID();
-            if (i <= 0)
-            {
-                return 0;
-            }
-            return 1;
+            DataTable DevuelveId = PruebaID(sql);
+            DataRow row = DevuelveId.Rows[0];
+            return row["ID"].ToString();
         }
         //Método copiado
-        public DataTable PruebaID()
+        public DataTable PruebaID( string sql)
         {
             SQL = "SELECT SCOPE_IDENTITY() as id";
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
-            return con.TablaGeneral(SQL);
+            return con.TablaGeneral(sql);
         }
 
         //Metodò general que consulta todos los libros que se tienen en el portal.

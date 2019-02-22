@@ -119,7 +119,8 @@ namespace Librox2.GUI
                 //Obtenemos su Id del usuario.
                 int ID = int.Parse(cart1[5]);
                 //Obtenemos los datos del usuario.
-                DAOLibros.ProcesarLibroPaypal(DatosLibro, ID);
+                //Variable que tendra el id
+                string IDIns= DAOLibros.ProcesarLibroPaypal(DatosLibro, ID);
                 ////Redirige al proceso de pago con los datos del libro elegido ya en la sesión.
                 Response.Redirect("~/Forms/ProcesarPago.aspx");
             }
