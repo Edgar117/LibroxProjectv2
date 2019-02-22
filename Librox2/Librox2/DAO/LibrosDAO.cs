@@ -199,7 +199,7 @@ WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
         public int CONTARLIBROS()
         {
             int CUENTA = 0;
-            SQL = "Select COUNT(*) FROM LIBROS";
+            SQL = "Select COUNT(*) FROM LIBROS WHERE ISNULL(RegBorrado,0)=0";
             SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
             con.AbrirConexion();
             cmd.Parameters.AddWithValue("@Usuario", CUENTA);
