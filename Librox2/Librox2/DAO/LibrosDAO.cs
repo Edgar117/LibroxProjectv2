@@ -31,6 +31,24 @@ namespace Librox2.DAO
             return 1;
         }
 
+        //Metodo para recuperar los libros que el usuario ah adquirido
+        public DataTable ConsultarMisLibrosComprados(int ID_Usuario)
+        {
+            SQL = "EXEC [DBO].[ST_SelMisLibrosComprados] " + ID_Usuario+"";
+            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            return con.TablaGeneral(SQL);
+        }
+
+        public DataTable ConsultarLibrosComprados()
+        {
+            SQL = @"SELECT LS.IDLibro,PP.IDPago,LS.ImagenPortada,LS.LibroFisico,LS.Titulo,US.Usuario FROM LIBROS LS
+INNER JOIN [dbo].[ProcesoPagoPaypal] PP ON PP.IDLibroAComprar=LS.IDLibro
+INNER JOIN USUARIOS US ON US.ID=PP.IDUsuarioPeticion
+WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
+            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            return con.TablaGeneral(SQL);
+        }
+
         //Metodo para insertar las peticiones de los usuarios de los libros
         public string ProcesarLibroPaypal(object obj, int IdUsuario)
         {
