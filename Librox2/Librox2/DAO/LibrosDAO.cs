@@ -27,7 +27,7 @@ namespace Librox2.DAO
             if (i <= 0)
             {
                 return 0;
-            }
+            } 
             return 1;
         }
 
@@ -41,7 +41,8 @@ namespace Librox2.DAO
 
         public DataTable ConsultarLibrosComprados()
         {
-            SQL = @"SELECT LS.IDLibro,PP.IDPago,LS.ImagenPortada,LS.LibroFisico,LS.Titulo,US.Usuario FROM LIBROS LS
+            SQL = @"SET LANGUAGE SPANISH
+SELECT LS.Titulo as Libro,US.Usuario,PP.PrecioAPagar as 'Precio de venta',FORMAT(PP.FechaPeticion , 'dd/MMMM/yyyy HH:mm') AS 'Dia de Venta' FROM LIBROS LS
 INNER JOIN [dbo].[ProcesoPagoPaypal] PP ON PP.IDLibroAComprar=LS.IDLibro
 INNER JOIN USUARIOS US ON US.ID=PP.IDUsuarioPeticion
 WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
@@ -116,6 +117,21 @@ WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
             return 1;
         }
 
+        //Metodo para actualizar el campo descargado de la base de datos
+        public int UpdCampoDescargado(string IDVenta, string orderID)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "UPDATE  [dbo].[ProcesoPagoPaypal] SET Descargado=1 WHERE IDPago=" + IDVenta + " ";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
 
         public int UpdateUser(object obj)
         {
