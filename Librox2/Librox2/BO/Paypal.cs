@@ -13,6 +13,6 @@ namespace Librox2.BO
             public string Amount { get; set; }
             public string NoShipping { get; set; }
             public string Quantity { get; set; }
-        
+            public string idVenta { get; set; }
     }
 }

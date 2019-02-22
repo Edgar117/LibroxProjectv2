@@ -88,7 +88,7 @@ namespace Librox2.GUI
         }
 
         //Método que llena los datos del paypal
-        private void SetOrderingValue(string itemName, string itemNumber, string amount, string noShipping, string quantity)
+        private void SetOrderingValue(string itemName, string itemNumber, string amount, string noShipping, string quantity, string idVenta)
         {
             entity.Business = "huesos_blin182-facilitator@hotmail.com";
             entity.ItemName = itemName;
@@ -96,6 +96,7 @@ namespace Librox2.GUI
             entity.Amount = amount;
             entity.NoShipping = noShipping;
             entity.Quantity = quantity;
+            entity.idVenta = idVenta;
             Session["myOrderingEntity"] = entity;
         }
 
@@ -108,8 +109,6 @@ namespace Librox2.GUI
                 //Obtiene valores del item seleccionado (título y precio)
                 string titulo = ((Label)item.FindControl("lblTitulo")).Text;
                 string precio = ((Label)item.FindControl("lblPrecio")).Text;
-                //Método para activar la sesión para enviar al proceso de pago
-                SetOrderingValue(titulo, "BB01", precio, "1", "1");
                 //Insertamos los datos del usuario a la tabla para la comparación de datos posteriormente
                 DatosLibro.Titulo = titulo;
                 DatosLibro.Precio = precio;
@@ -121,6 +120,8 @@ namespace Librox2.GUI
                 //Obtenemos los datos del usuario.
                 //Variable que tendra el id
                 string IDIns= DAOLibros.ProcesarLibroPaypal(DatosLibro, ID);
+                //Método para activar la sesión para enviar al proceso de pago
+                SetOrderingValue(titulo, "BB01", precio, "1", "1", IDIns);
                 ////Redirige al proceso de pago con los datos del libro elegido ya en la sesión.
                 Response.Redirect("~/Forms/ProcesarPago.aspx");
             }
