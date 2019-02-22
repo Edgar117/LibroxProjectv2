@@ -101,10 +101,10 @@ WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
             return con.TablaGeneral(SQL);
         }
         //Actuliza el estatus de la venta segun si fue verificado o no
-        public int UpdEstatusVentaPaypal(string IDVenta)
+        public int UpdEstatusVentaPaypal(string IDVenta, string orderID)
         {
             cmd.Connection = con.EstablecerConexion();
-            string sql = "UPDATE  [dbo].[ProcesoPagoPaypal] SET EstatusPayPal='COMPLETED' WHERE IDPago=" + IDVenta + " ";
+            string sql = "UPDATE  [dbo].[ProcesoPagoPaypal] SET EstatusPayPal='COMPLETED', IndentificadorPaypal = '" + orderID + "'" + " WHERE IDPago=" + IDVenta + " ";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
