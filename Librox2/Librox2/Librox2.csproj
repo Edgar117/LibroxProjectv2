@@ -81,9 +81,12 @@
     <Content Include="Forms\AdministrarMisLibros.aspx" />
     <Content Include="Forms\AgregarAdmin.aspx" />
     <Content Include="Forms\AgregarStatusLibros.aspx" />
+    <Content Include="Forms\Compras.aspx" />
     <Content Include="Forms\Home.aspx" />
     <Content Include="Forms\LibrosDetails.aspx" />
     <Content Include="Forms\MisCompras.aspx" />
+    <Content Include="Forms\MisVentas.aspx" />
+    <Content Include="Forms\PagosPorRealizar.aspx" />
     <Content Include="Forms\Politicas.aspx" />
     <Content Include="Forms\ProcesarPago.aspx" />
     <Content Include="Forms\TerminosyCondiciones.aspx" />
@@ -340,6 +343,12 @@
     <Content Include="Maybe\CHANGELOG.md" />
     <Content Include="Maybe\package.json" />
     <Content Include="Maybe\README.md" />
+    <Content Include="PagoPaypal\css\stylish-portfolio.css" />
+    <Content Include="PagoPaypal\css\stylish-portfolio.min.css" />
+    <Content Include="PagoPaypal\img\bg-callout.jpg" />
+    <Content Include="PagoPaypal\img\bg-masthead.jpg" />
+    <Content Include="PagoPaypal\img\portfolio-1.jpg" />
+    <Content Include="PagoPaypal\img\portfolio-2.jpg" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -926,6 +935,13 @@
     <Compile Include="Forms\AgregarStatusLibros.aspx.designer.cs">
       <DependentUpon>AgregarStatusLibros.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Compras.aspx.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Compras.aspx.designer.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -946,6 +962,20 @@
     </Compile>
     <Compile Include="Forms\MisCompras.aspx.designer.cs">
       <DependentUpon>MisCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MisVentas.aspx.cs">
+      <DependentUpon>MisVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\MisVentas.aspx.designer.cs">
+      <DependentUpon>MisVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PagosPorRealizar.aspx.cs">
+      <DependentUpon>PagosPorRealizar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PagosPorRealizar.aspx.designer.cs">
+      <DependentUpon>PagosPorRealizar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Politicas.aspx.cs">
       <DependentUpon>Politicas.aspx</DependentUpon>
@@ -1139,8 +1169,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LibrosPortadas\" />
-    <Folder Include="PagoPaypal\css\" />
-    <Folder Include="PagoPaypal\img\" />
     <Folder Include="SERVICES\" />
     <Folder Include="TempFiles\" />
     <Folder Include="webfonts\" />

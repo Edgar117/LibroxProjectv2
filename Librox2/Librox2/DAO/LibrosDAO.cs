@@ -152,7 +152,7 @@ WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
             cmd.Connection = con.EstablecerConexion();
             
 
-            string sql = "EXEC [dbo].[ProcesoPagoPaypal] '" + IDVenta + "' ,'" + orderID + "'";
+            string sql = "EXEC [dbo].[UpdEstatusPago] '" + IDVenta + "' ,'" + orderID + "'";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

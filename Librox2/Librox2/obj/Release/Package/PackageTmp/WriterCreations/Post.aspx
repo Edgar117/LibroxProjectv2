@@ -44,12 +44,12 @@
 
         </script>
 
-        <div class="image-container set-full-height" style="background-image: url('wizard_res/assets/img/wizard-city.jpg')">
+        <div class="image-container set-full-height" style="background-image: url('https://www.solofondos.com/wp-content/uploads/2015/11/21omxpw.jpg')">
             <!--   Creative Tim Branding   -->
-            <a href="http://creative-tim.com">
+            <a href="/home">
                 <div class="logo-container">
                     <div class="logo">
-                        <img src="wizard_res/assets/img/new_logo.png" />
+                        <img src="https://i.ytimg.com/vi/ZPGHuuk2bKw/hqdefault.jpg" />
                     </div>
                     <div class="brand">
                         Escribox
@@ -83,6 +83,7 @@
                                 </asp:UpdatePanel>--%>
                                      <div class="pull-right">
                                     <asp:Button ID="Button1" runat="server" Text="Publicar!" CssClass="btn btn-warning" OnClick="Button1_Click" />
+                                         <asp:Label ID="lblWar" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     </div>
                                 </div>
 

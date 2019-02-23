@@ -151,6 +151,12 @@
                             <a class="dropdown-item" href="../Forms/Perfil.aspx">
                                 <i class="now-ui-icons users_single-02"></i>Mi Perfil
                             </a>
+                            <a class="dropdown-item" href="../Forms/MisCompras.aspx">
+                                <i class="now-ui-icons users_single-02"></i>Mis compras
+                            </a>
+                            <a class="dropdown-item" href="../Forms/MisVentas.aspx">
+                                <i class="now-ui-icons users_single-02"></i>Mi ventas
+                            </a>
                             <a class="dropdown-item" href="../Login.aspx">
                                 <i class="now-ui-icons arrows-1_refresh-69"></i>Salir
                             </a>
