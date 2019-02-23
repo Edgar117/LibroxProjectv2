@@ -48,6 +48,22 @@ namespace Librox2.DAO
             return 1;
         }
 
+        //Metoto para actualizar cuanto se le pagara al usuario
+        public int InsertarPagoUsuario(int ID_Vendedor,Decimal PrecioReal,Decimal PrecioFinal)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "EXEC [dbo].[InsertarPagoToPay] "+ID_Vendedor+","+PrecioReal+","+PrecioFinal+"";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
         //Metodo para recuperar los libros que el usuario ah adquirido
         public DataTable ConsultarMisLibrosComprados(int ID_Usuario)
         {
