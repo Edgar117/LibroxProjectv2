@@ -3,6 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        setTimeout(function () { _spFormOnSubmitCalled = false; }, 3000);
+    return true;
+</script>
+
     <div class="wrapper">
         <div class="page-header page-header-small">
             <div class="page-header-image" data-parallax="true" style="background-image: url('../Maybe/assets/img/bg6.jpg');">
@@ -28,13 +33,15 @@
                                         <asp:Label ID="lblDescargado" runat="server" Text='<%# Eval("Descargado") %>' CssClass="card-title" Visible="false"></asp:Label>
                                         <asp:Label ID="lblIDPago" runat="server" Text='<%# Eval("IDPago") %>' CssClass="card-title" Visible="false"></asp:Label>
                                         <asp:Label ID="lblIDLibro" runat="server" Text='<%# Eval("IDLibro") %>' CssClass="card-title" Visible="false"></asp:Label>
-                                        <asp:LinkButton ID="lbtnDescargar" runat="server" CssClass="btn btn-warning btn-round" CommandName="dwd">Descargar</asp:LinkButton>
+                                        <br />
+                                        <asp:LinkButton ID="lbtnDescargar" runat="server" CssClass="btn btn-warning btn-round" CommandName="dwd" OnClientClick="javascript:setFormSubmitToFalse()">Descargar</asp:LinkButton>
                                         <asp:LinkButton ID="lbtnValorar" runat="server" CssClass="btn btn-warning btn-round" CommandName="val">Valorar</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                 </div>
             </div>
         </div>

@@ -59,7 +59,6 @@ namespace Librox2.Forms
                 string rutaFisico = ((Label)item.FindControl("lblFisico")).Text;
                 books.UpdCampoDescargado(idPago, "");
                 prepareBook(rutaFisico);
-                Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
         private void prepareBook(string encriptedPath)
@@ -107,14 +106,16 @@ namespace Librox2.Forms
             Byte[] FileBuffer = User.DownloadData(book);
             if (FileBuffer != null)
             {
+                Label1.Text = book;
                 Response.Clear();
                 Response.ContentType = "application/pdf";
-                Response.AppendHeader("Content-Disposition", String.Format("attachment; filename={0}.pdf", Path.GetFileName(book)));
+                Response.AddHeader("Content-Disposition", String.Format("attachment; filename={0}", Path.GetFileName(book)));
                 //Response.ContentType = "application/pdf";
                 //Response.AddHeader("Content-Disposition",
                 //    "attachment; filename=\"" + Path.GetFileName(book) + "\"");
                 Response.TransmitFile(book);
-                Response.End();
+                //Response.End();
+                //Response.Redirect("~/Forms/Home.aspx");
             }
         }
 
@@ -122,17 +123,17 @@ namespace Librox2.Forms
         {
             if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
             {
-                DataRowView dbr = (DataRowView)e.Item.DataItem;
-                if (Convert.ToString(DataBinder.Eval(dbr, "Descargado")) == "True")
-                {
-                    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = false;
-                    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = true;
-                }
-                else
-                {
-                    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = true;
-                    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = false;
-                }
+                //DataRowView dbr = (DataRowView)e.Item.DataItem;
+                //if (Convert.ToString(DataBinder.Eval(dbr, "Descargado")) == "True")
+                //{
+                //    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = false;
+                //    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = true;
+                //}
+                //else
+                //{
+                //    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = true;
+                //    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = false;
+                //}
             }
         }
     }
