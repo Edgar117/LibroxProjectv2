@@ -101,11 +101,19 @@ WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
             SQL = "EXEC [dbo].[SelPaginadorLibrosXTitulo] '" + Texto + "'";
             return con.TablaGeneral(SQL);
         }
+
+        public DataTable ConsultarMiPago(int IDUsuario)
+        {
+            SQL = "[dbo].[st_SelCalculaMiPago] " + IDUsuario + "";
+            return con.TablaGeneral(SQL);
+        }
         //Actuliza el estatus de la venta segun si fue verificado o no
         public int UpdEstatusVentaPaypal(string IDVenta, string orderID)
         {
             cmd.Connection = con.EstablecerConexion();
-            string sql = "UPDATE  [dbo].[ProcesoPagoPaypal] SET EstatusPayPal='COMPLETED', IndentificadorPaypal = '" + orderID + "'" + " WHERE IDPago=" + IDVenta + " ";
+            
+
+            string sql = "EXEC [dbo].[ProcesoPagoPaypal] '" + IDVenta + "' ,'" + orderID + "'";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
