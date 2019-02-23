@@ -31,6 +31,23 @@ namespace Librox2.DAO
             return 1;
         }
 
+
+        //Metoto para actualizar el estatus del los pagos de la tabla de pagos
+        public int ActualizarPagoUsuario(int IDPago)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "UPDATE [dbo].[ProcesoPagoPaypal] SET EstatusPago='COMPLETED' WHERE IDPago="+ IDPago;
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
         //Metodo para recuperar los libros que el usuario ah adquirido
         public DataTable ConsultarMisLibrosComprados(int ID_Usuario)
         {
