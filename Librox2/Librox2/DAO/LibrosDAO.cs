@@ -140,6 +140,12 @@ WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
             SQL = " EXEC [dbo].[st_SelCalculaMiPago] " + IDUsuario + "";
             return con.TablaGeneral(SQL);
         }
+
+        public DataTable ConsultarPagosPendientes()
+        {
+            SQL = " EXEC  [dbo].[st_SelPagosPendientes]";
+            return con.TablaGeneral(SQL);
+        }
         //Actuliza el estatus de la venta segun si fue verificado o no
         public int UpdEstatusVentaPaypal(string IDVenta, string orderID)
         {
