@@ -14,6 +14,8 @@ using System.Security.Cryptography;
 using iTextSharp.text.pdf;
 using iTextSharp.text.xml;
 using iTextSharp.text;
+using System.Data.Common;
+using System.Net;
 
 namespace Librox2.Forms
 {
@@ -57,6 +59,7 @@ namespace Librox2.Forms
                 string rutaFisico = ((Label)item.FindControl("lblFisico")).Text;
                 books.UpdCampoDescargado(idPago, "");
                 prepareBook(rutaFisico);
+                Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
         private void prepareBook(string encriptedPath)
@@ -94,6 +97,43 @@ namespace Librox2.Forms
             fsOut.Close();
             cs.Close();
             fsCrypt.Close();
+            dwdBook(output);
+        }
+
+        protected void dwdBook(string book)
+        {
+            //Abre archivo de muestra en el explorador
+            WebClient User = new WebClient();
+            Byte[] FileBuffer = User.DownloadData(book);
+            if (FileBuffer != null)
+            {
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AppendHeader("Content-Disposition", String.Format("attachment; filename={0}.pdf", Path.GetFileName(book)));
+                //Response.ContentType = "application/pdf";
+                //Response.AddHeader("Content-Disposition",
+                //    "attachment; filename=\"" + Path.GetFileName(book) + "\"");
+                Response.TransmitFile(book);
+                Response.End();
+            }
+        }
+
+        protected void rptCompras_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
+            {
+                DataRowView dbr = (DataRowView)e.Item.DataItem;
+                if (Convert.ToString(DataBinder.Eval(dbr, "Descargado")) == "True")
+                {
+                    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = false;
+                    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = true;
+                }
+                else
+                {
+                    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = true;
+                    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = false;
+                }
+            }
         }
     }
 }
