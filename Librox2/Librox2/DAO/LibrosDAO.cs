@@ -104,7 +104,7 @@ WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
 
         public DataTable ConsultarMiPago(int IDUsuario)
         {
-            SQL = "[dbo].[st_SelCalculaMiPago] " + IDUsuario + "";
+            SQL = " EXEC [dbo].[st_SelCalculaMiPago] " + IDUsuario + "";
             return con.TablaGeneral(SQL);
         }
         //Actuliza el estatus de la venta segun si fue verificado o no
