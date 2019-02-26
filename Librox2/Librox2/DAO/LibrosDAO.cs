@@ -78,7 +78,7 @@ namespace Librox2.DAO
 SELECT LS.Titulo as Libro,US.Usuario,PP.PrecioAPagar as 'Precio de venta',FORMAT(PP.FechaPeticion , 'dd/MMMM/yyyy HH:mm') AS 'Dia de Venta' FROM LIBROS LS
 INNER JOIN [dbo].[ProcesoPagoPaypal] PP ON PP.IDLibroAComprar=LS.IDLibro
 INNER JOIN USUARIOS US ON US.ID=PP.IDUsuarioPeticion
-WHERE  PP.EstatusPayPal='COMPLETED' AND PP.Descargado=0";
+WHERE  PP.EstatusPayPal='COMPLETED'";
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
