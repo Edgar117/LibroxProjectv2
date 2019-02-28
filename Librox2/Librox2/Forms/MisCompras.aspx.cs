@@ -22,10 +22,14 @@ namespace Librox2.Forms
     public partial class MisCompras : System.Web.UI.Page
     {
         int ID = 0;
+        int porcentajeLeído = 0;
+        int numberOfPages = 0;
+        string page = "";
         String[] cart1 = new String[0];
         LibrosDAO books = new LibrosDAO();
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.ClientScript.RegisterOnSubmitStatement(this.GetType(), "submit", "ShowLoading()");
             if (!IsPostBack)
             {
                 try
@@ -55,15 +59,17 @@ namespace Librox2.Forms
                 //Busca una referencia al 'linkbutton' dentro del repeater
                 RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
                 //Obtenemos los datos del item seleccionado
-                string idPago = ((Label)item.FindControl("lblIDPago")).Text;
+                string tit = ((Label)item.FindControl("lblTitulo")).Text;
                 string rutaFisico = ((Label)item.FindControl("lblFisico")).Text;
-                books.UpdCampoDescargado(idPago, "");
-                prepareBook(rutaFisico);
+                string page = ((Label)item.FindControl("lblPage")).Text;
+                Response.Redirect("~/Forms/Read.aspx?read=" + rutaFisico + "&tit=" + tit + "&track=" + page);
+                //books.UpdCampoDescargado(idPago, "");
+                //prepareBook(rutaFisico);
             }
         }
         private void prepareBook(string encriptedPath)
         {
-            //Método que se ocupa para prepara el archivo de muestra con páginas limitadas
+            
             //obtenerLibroFisico();
             var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + encriptedPath + "_encrypted"));
             string input = originalDirectory.ToString();
@@ -96,7 +102,14 @@ namespace Librox2.Forms
             fsOut.Close();
             cs.Close();
             fsCrypt.Close();
-            dwdBook(output);
+            //Response.Redirect("~/Forms/Read.aspx?read=" + output);
+            determinePaginas(output);
+        }
+
+        protected void determinePaginas(string archivoMuestra)
+        {
+            PdfReader pdfReader = new PdfReader(archivoMuestra);
+            numberOfPages = pdfReader.NumberOfPages;
         }
 
         protected void dwdBook(string book)
@@ -123,7 +136,7 @@ namespace Librox2.Forms
         {
             if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
             {
-                //DataRowView dbr = (DataRowView)e.Item.DataItem;
+                DataRowView dbr = (DataRowView)e.Item.DataItem;
                 //if (Convert.ToString(DataBinder.Eval(dbr, "Descargado")) == "True")
                 //{
                 //    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = false;
@@ -134,6 +147,26 @@ namespace Librox2.Forms
                 //    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = true;
                 //    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = false;
                 //}
+                string libro = Convert.ToString(DataBinder.Eval(dbr, "Titulo"));
+                string libroFisico = Convert.ToString(DataBinder.Eval(dbr, "LibroFisico"));
+                prepareBook(libroFisico);
+                libro = libro.Replace(" ", "_");
+                var pathReading = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/"));
+                if (!Directory.Exists(pathReading.ToString()))
+                {
+                    Directory.CreateDirectory(pathReading.ToString());
+                }
+                string ruta = System.IO.Path.Combine(pathReading.ToString(), libro);
+                StreamReader reader = File.OpenText(ruta + ".txt");
+                page = reader.ReadLine();
+                reader.Close();
+                porcentajeLeído = Convert.ToInt32(page) * 100 / numberOfPages;
+                ((Label)e.Item.FindControl("lblPage")).Text = page;
+                ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuemin"] = "0";
+                ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuemax"] = "100";
+                ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuenow"] = porcentajeLeído.ToString();
+                ((Panel)e.Item.FindControl("pnlProgress")).Style["width"] = String.Format("{0}%;", porcentajeLeído);
+                ((Panel)e.Item.FindControl("pnlProgress")).Controls.Add(new LiteralControl(String.Format("{0}% leído", porcentajeLeído)));
             }
         }
     }
