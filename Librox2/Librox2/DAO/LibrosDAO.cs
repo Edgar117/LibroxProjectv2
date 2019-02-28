@@ -64,6 +64,23 @@ namespace Librox2.DAO
             return 1;
         }
 
+
+        //Metoto para ranquear libros deacuerdo al usuario que tiene comprado el libro y si ya lo ranqueo o no
+        public int UpdRantingLibros(int IDPago,int IDUsuario,int IDLibro, int Valoracion)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "EXEC [dbo].[St_SelUpdValoradoSetRating] " + IDPago + "," + IDUsuario + "," + IDLibro + "," + Valoracion + " ";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
         //Metodo para recuperar los libros que el usuario ah adquirido
         public DataTable ConsultarMisLibrosComprados(int ID_Usuario)
         {
