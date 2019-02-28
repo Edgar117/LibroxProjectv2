@@ -104,7 +104,13 @@ namespace Librox2.Forms
 
         protected void lbtnSalir_Click(object sender, EventArgs e)
         {
-
+            StreamReader reader = File.OpenText(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
+            int pagina = Convert.ToInt32(reader.ReadLine());
+            reader.Close();
+            StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
+            writer.WriteLine(pagina);
+            writer.Close();
+            Response.Redirect("~/Forms/MisCompras.aspx");
         }
 
         protected void lbtnNext_Click(object sender, EventArgs e)
@@ -116,7 +122,8 @@ namespace Librox2.Forms
             StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/"+tit+".txt"));
             writer.WriteLine(pagina);
             writer.Close();
-            getNextPage(desencrypetdBook, pagina);
+            book = Server.MapPath("~/LibrosPortadas/"+book+".pdf");
+            getNextPage(book, pagina);
         }
         protected void getNextPage(string book, int page)
         {
