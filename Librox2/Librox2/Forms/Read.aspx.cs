@@ -29,14 +29,23 @@ namespace Librox2.Forms
                 page = Convert.ToInt32(Request.QueryString["track"]);
                 if (page == 1)
                 {
-                    prepareBook(book);
+                    prepareBook(book);  //Este método desencadena 2 métodos consecuentes (desencriptado y lectura de la primera página)
+                    if (isRead(page))
+                        lbtnNext.Enabled = false;
+
                 }
                 else
                 {
                     book = Server.MapPath("~/LibrosPortadas/" + book + ".pdf");
                     getNextPage(book, page);
+                    if (lblPaginas.Text == "")
+                    {
+                        determinePaginas(book);
+                        if (isRead(page))
+                            lbtnNext.Enabled = false;
+                    }
                 }
-                
+
             }
             else
             {
@@ -68,6 +77,9 @@ namespace Librox2.Forms
                     texto += line + "\n";
                 }
                 lblTexto.Text = texto.Replace("\n", "<br/>");
+                StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
+                writer.WriteLine(page);
+                writer.Close();
             }
         }
         private void prepareBook(string encriptedPath)
@@ -107,8 +119,14 @@ namespace Librox2.Forms
             fsCrypt.Close();
             desencrypetdBook = output;
             getContenido(output);
+            determinePaginas(output);
             //Response.Redirect("~/Forms/Read.aspx?read=" + output);
             //dwdBook(output);
+        }
+        protected void determinePaginas(string archivoMuestra)
+        {
+            PdfReader pdfReader = new PdfReader(archivoMuestra);
+            lblPaginas.Text = pdfReader.NumberOfPages.ToString();
         }
 
         protected void lbtnSalir_Click(object sender, EventArgs e)
@@ -128,7 +146,7 @@ namespace Librox2.Forms
             int pagina = Convert.ToInt32(reader.ReadLine());
             reader.Close();
             pagina++;
-            StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/"+tit+".txt"));
+            StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
             writer.WriteLine(pagina);
             writer.Close();
             //book = Server.MapPath("~/LibrosPortadas/"+book+".pdf");
@@ -137,7 +155,7 @@ namespace Librox2.Forms
         }
         protected void getNextPage(string book, int page)
         {
-            
+
             if (File.Exists(book))
             {
                 string texto = "";
@@ -148,8 +166,7 @@ namespace Librox2.Forms
 
                 ITextExtractionStrategy strategy = new iTextSharp.text.pdf.parser.LocationTextExtractionStrategy();
 
-                // 1. if pdf document has only one page
-                //here second parameter is PDF Page number
+
                 ExtractedData = PdfTextExtractor.GetTextFromPage(reader, page, strategy);
                 string[] lineas = ExtractedData.Split('\n');
                 StringBuilder db = new StringBuilder();
@@ -161,6 +178,17 @@ namespace Librox2.Forms
                 StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
                 writer.WriteLine(page);
                 writer.Close();
+            }
+        }
+        private bool isRead(int page)
+        {
+            if (page == Convert.ToInt32(lblPaginas.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

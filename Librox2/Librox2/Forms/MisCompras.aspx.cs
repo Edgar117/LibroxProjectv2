@@ -62,14 +62,21 @@ namespace Librox2.Forms
                 string tit = ((Label)item.FindControl("lblTitulo")).Text;
                 string rutaFisico = ((Label)item.FindControl("lblFisico")).Text;
                 string page = ((Label)item.FindControl("lblPage")).Text;
-                Response.Redirect("~/Forms/Read.aspx?read=" + rutaFisico + "&tit=" + tit + "&track=" + page);
+                if (page == "F")
+                {
+                    Response.Redirect("~/Forms/Read.aspx?read=" + rutaFisico + "&tit=" + tit + "&track=1");
+                }
+                else
+                {
+                    Response.Redirect("~/Forms/Read.aspx?read=" + rutaFisico + "&tit=" + tit + "&track=" + page);
+                }
                 //books.UpdCampoDescargado(idPago, "");
                 //prepareBook(rutaFisico);
             }
         }
         private void prepareBook(string encriptedPath)
         {
-            
+
             //obtenerLibroFisico();
             var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + encriptedPath + "_encrypted"));
             string input = originalDirectory.ToString();
@@ -155,7 +162,7 @@ namespace Librox2.Forms
                 if (!Directory.Exists(pathReading.ToString()))
                 {
                     Directory.CreateDirectory(pathReading.ToString());
-                    
+
                 }
                 if (!File.Exists(System.IO.Path.Combine(pathReading.ToString(), libro + ".txt")))
                 {
@@ -167,28 +174,41 @@ namespace Librox2.Forms
                 StreamReader reader = File.OpenText(ruta + ".txt");
                 page = reader.ReadLine();
                 reader.Close();
+
                 if (page == "1")
                 {
                     porcentajeLeído = 0;
                     ((Label)e.Item.FindControl("lblPage")).Text = page;
-                    ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuemin"] = "0";
-                    ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuemax"] = "100";
-                    ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuenow"] = porcentajeLeído.ToString();
-                    ((Panel)e.Item.FindControl("pnlProgress")).Style["width"] = String.Format("{0}%;", porcentajeLeído);
-                    ((Panel)e.Item.FindControl("pnlProgress")).Controls.Add(new LiteralControl(String.Format("{0}% leído", porcentajeLeído)));
+                    pintarProgress(e, porcentajeLeído);
                 }
                 else
                 {
                     porcentajeLeído = Convert.ToInt32(page) * 100 / numberOfPages;
-                    ((Label)e.Item.FindControl("lblPage")).Text = page;
-                    ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuemin"] = "0";
-                    ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuemax"] = "100";
-                    ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuenow"] = porcentajeLeído.ToString();
-                    ((Panel)e.Item.FindControl("pnlProgress")).Style["width"] = String.Format("{0}%;", porcentajeLeído);
-                    ((Panel)e.Item.FindControl("pnlProgress")).Controls.Add(new LiteralControl(String.Format("{0}% leído", porcentajeLeído)));
+                    if (porcentajeLeído == 100) //Si ya terminó de leer el libro entonces
+                    {
+                        ((Label)e.Item.FindControl("lblInfo")).Text = "Terminaste de leer!";
+                        ((Label)e.Item.FindControl("lblPage")).Visible = false;
+                        ((Label)e.Item.FindControl("lblPage")).Text = "F";
+                        pintarProgress(e, porcentajeLeído);
+                    }
+                    else
+                    {
+                        ((Label)e.Item.FindControl("lblInfo")).Visible = false;
+                        ((Label)e.Item.FindControl("lblPage")).Text = page;
+                        pintarProgress(e, porcentajeLeído);
+                    }
+
                 }
-                
+
             }
+        }
+        private void pintarProgress(RepeaterItemEventArgs e, int porcentajeLeido)
+        {
+            ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuemin"] = "0";
+            ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuemax"] = "100";
+            ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuenow"] = porcentajeLeído.ToString();
+            ((Panel)e.Item.FindControl("pnlProgress")).Style["width"] = String.Format("{0}%;", porcentajeLeído);
+            ((Panel)e.Item.FindControl("pnlProgress")).Controls.Add(new LiteralControl(String.Format("{0}% leído", porcentajeLeído)));
         }
     }
 }

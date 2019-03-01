@@ -87,7 +87,7 @@
                                 <div><i class="ni education_hat mr-2"></i>University of Computer Science</div>
                             </div>
                             <div class="mt-5 py-5 border-top text-center">
-                                <div class="row justify-content-center">
+                                <div class="row justify-content-around">
                                     <div class="col-lg-9">
                                         <%--Aquí va el texto--%>
                                         <p>
@@ -106,24 +106,17 @@
                                 </div>
                                 <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                                     <div class="card-profile-actions py-4 mt-lg-0">
-                                        <asp:LinkButton ID="lbtnNext" runat="server" OnClick="lbtnNext_Click">Siguiente</asp:LinkButton>
+                                        <asp:LinkButton ID="lbtnNext" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info mr-4">Siguiente</asp:LinkButton>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
                                     
                                     <div class="card-profile-stats d-flex justify-content-center">
-                                        <asp:LinkButton ID="lbtnSalir" runat="server" OnClick="lbtnSalir_Click">Salir</asp:LinkButton>
+                                        <asp:LinkButton ID="lbtnSalir" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    
-                                </div>
-                                <div class="col-md-6">
-                                    
-                                </div>
-                            </div>
+                            <asp:Label ID="lblPaginas" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                 </div>
