@@ -56,8 +56,8 @@
                                 </div>
                                 <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                                     <div class="card-profile-actions py-4 mt-lg-0">
-                                        <a href="#" class="btn btn-sm btn-info mr-4"></a>
-                                        <a href="#" class="btn btn-sm btn-default float-right"></a>
+                                        <a href="#" class="btn btn-sm btn-info mr-4">Hola</a>
+                                        <a href="#" class="btn btn-sm btn-default float-right">Mundo</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
@@ -94,10 +94,34 @@
                                             <asp:Label ID="lblTexto" runat="server" Text="Label"></asp:Label>
                                             <br />
                                         </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 order-lg-2">
+                                    <div class="card-profile-image">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+                                    <div class="card-profile-actions py-4 mt-lg-0">
                                         <asp:LinkButton ID="lbtnNext" runat="server" OnClick="lbtnNext_Click">Siguiente</asp:LinkButton>
-                                        <br />
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 order-lg-1">
+                                    
+                                    <div class="card-profile-stats d-flex justify-content-center">
                                         <asp:LinkButton ID="lbtnSalir" runat="server" OnClick="lbtnSalir_Click">Salir</asp:LinkButton>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    
                                 </div>
                             </div>
                         </div>

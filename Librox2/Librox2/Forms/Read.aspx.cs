@@ -26,8 +26,17 @@ namespace Librox2.Forms
                 book = Request.QueryString["read"];
                 tit = Request.QueryString["tit"];
                 tit = tit.Replace(" ", "_");
-                //page = Convert.ToInt32(Request.QueryString["track"]);
-                prepareBook(book);
+                page = Convert.ToInt32(Request.QueryString["track"]);
+                if (page == 1)
+                {
+                    prepareBook(book);
+                }
+                else
+                {
+                    book = Server.MapPath("~/LibrosPortadas/" + book + ".pdf");
+                    getNextPage(book, page);
+                }
+                
             }
             else
             {
@@ -122,8 +131,9 @@ namespace Librox2.Forms
             StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/"+tit+".txt"));
             writer.WriteLine(pagina);
             writer.Close();
-            book = Server.MapPath("~/LibrosPortadas/"+book+".pdf");
-            getNextPage(book, pagina);
+            //book = Server.MapPath("~/LibrosPortadas/"+book+".pdf");
+            //getNextPage(book, pagina);
+            Response.Redirect("~/Forms/Read.aspx?read=" + book + "&tit=" + tit + "&track=" + pagina);
         }
         protected void getNextPage(string book, int page)
         {
@@ -148,6 +158,9 @@ namespace Librox2.Forms
                     texto += line + "\n";
                 }
                 lblTexto.Text = texto.Replace("\n", "<br/>");
+                StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
+                writer.WriteLine(page);
+                writer.Close();
             }
         }
     }
