@@ -124,6 +124,13 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
+        //Metodò general que consulta datos de un libro.
+        public DataTable ConsultarLibrosXNombreLibro(string NombreLibro)
+        {
+            SQL = "EXEC [dbo].[SelPaginadorLibrosXNombreLibro] '" + NombreLibro + "'";
+            return con.TablaGeneral(SQL);
+        }
+
         //Metodo que devuelve los comentarios deacuerdo al libro que se este buscando.
         public DataTable ConsultaComentariosLibros(string IDLibro)
         {
