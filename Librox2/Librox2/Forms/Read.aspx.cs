@@ -10,6 +10,8 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Librox2.DAO;
+using System.Data;
 
 namespace Librox2.Forms
 {
@@ -32,7 +34,6 @@ namespace Librox2.Forms
                     prepareBook(book);  //Este método desencadena 2 métodos consecuentes (desencriptado y lectura de la primera página)
                     if (isRead(page))
                         lbtnNext.Enabled = false;
-
                 }
                 else
                 {
@@ -45,7 +46,7 @@ namespace Librox2.Forms
                             lbtnNext.Enabled = false;
                     }
                 }
-
+                getBookDetails();
             }
             else
             {
@@ -161,12 +162,8 @@ namespace Librox2.Forms
                 string texto = "";
                 lblTexto.Text = "";
                 string ExtractedData = string.Empty;
-
                 PdfReader reader = new PdfReader(book);
-
                 ITextExtractionStrategy strategy = new iTextSharp.text.pdf.parser.LocationTextExtractionStrategy();
-
-
                 ExtractedData = PdfTextExtractor.GetTextFromPage(reader, page, strategy);
                 string[] lineas = ExtractedData.Split('\n');
                 StringBuilder db = new StringBuilder();
@@ -190,6 +187,18 @@ namespace Librox2.Forms
             {
                 return false;
             }
+        }
+        private void getBookDetails()
+        {
+            string libro = Request.QueryString["tit"];
+            libro = libro.Replace("_", " ");
+            LibrosDAO book = new LibrosDAO();
+            DataTable dt = new DataTable();
+            dt = book.ConsultarLibrosXNombreLibro(libro);
+            titulo.InnerText = dt.Rows[0][0].ToString();
+            lblAutor.Text = dt.Rows[0][2].ToString();
+            lblSinop.Text = dt.Rows[0][1].ToString();
+            imgPerfil.Src = "https://www.escribox.com/LibrosPortadas/"+dt.Rows[0][3].ToString();
         }
     }
 }

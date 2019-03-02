@@ -59,8 +59,8 @@
                                         <asp:Label ID="lblIDLibro" runat="server" Text='<%# Eval("IDLibro") %>' CssClass="card-title" Visible="false"></asp:Label>
                                         <br />
                                         <%--<label>Continúa leyendo en la página:</label>--%>
-                                        <asp:Label ID="lblInfo" runat="server" Text="Label"></asp:Label>
-                                        <asp:Label ID="lblPage" runat="server" Text="Label"></asp:Label>
+                                        <asp:Label ID="lblInfo" runat="server" Text=""></asp:Label>
+                                        <asp:Label ID="lblPage" runat="server" Text=""></asp:Label>
                                         <br />
                                         <div class="progress-container progress-warning">
                                             <span class="progress-badge"></span>

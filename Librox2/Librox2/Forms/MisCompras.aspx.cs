@@ -194,7 +194,7 @@ namespace Librox2.Forms
                     else
                     {
                         ((Label)e.Item.FindControl("lblInfo")).Visible = false;
-                        ((Label)e.Item.FindControl("lblPage")).Text = page;
+                        ((Label)e.Item.FindControl("lblPage")).Text = "Continúa leyendo en la página: " + page;
                         pintarProgress(e, porcentajeLeído);
                     }
 

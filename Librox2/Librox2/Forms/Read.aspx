@@ -50,7 +50,7 @@
                                 <div class="col-lg-3 order-lg-2">
                                     <div class="card-profile-image">
                                         <a href="#">
-                                            <img src="../argon/assets/img/theme/team-4-800x800.jpg" class="rounded-circle" />
+                                            <img id="imgPerfil" runat="server" src="../argon/assets/img/theme/team-4-800x800.jpg" class="rounded-circle" width="215" height="200" />
                                         </a>
                                     </div>
                                 </div>
@@ -78,13 +78,16 @@
                                 </div>
                             </div>
                             <div class="text-center mt-5">
-                                <h3>Jessica Jones
-               
-                                    <span class="font-weight-light">, 27</span>
-                                </h3>
-                                <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>Bucharest, Romania</div>
-                                <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer</div>
-                                <div><i class="ni education_hat mr-2"></i>University of Computer Science</div>
+                                <h3 id="titulo" runat="server"></h3>
+                                <div class="h6 font-weight-300">
+                                    <i class="ni location_pin mr-2"></i>
+                                    <asp:Label ID="lblAutor" runat="server" Text=""></asp:Label>
+                                </div>
+                                <div class="h6 mt-4">
+                                    <i class="ni business_briefcase-24 mr-2"></i>
+                                    <asp:Label ID="lblSinop" runat="server" Text=""></asp:Label>
+                                </div>
+                                <%--<div><i class="ni education_hat mr-2"></i>University of Computer Science</div>--%>
                             </div>
                             <div class="mt-5 py-5 border-top text-center">
                                 <div class="row justify-content-around">
@@ -94,14 +97,12 @@
                                             <asp:Label ID="lblTexto" runat="server" Text="Label"></asp:Label>
                                             <br />
                                         </p>
-                                        
                                     </div>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-lg-3 order-lg-2">
                                     <div class="card-profile-image">
-                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
@@ -110,7 +111,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
-                                    
+
                                     <div class="card-profile-stats d-flex justify-content-center">
                                         <asp:LinkButton ID="lbtnSalir" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
                                     </div>
