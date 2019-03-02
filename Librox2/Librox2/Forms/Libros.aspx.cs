@@ -104,26 +104,34 @@ namespace Librox2.GUI
         {
             if (e.CommandName == "pay")
             {
-                //Busca una referencia al 'linkbutton' dentro del repeater
-                RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
-                //Obtiene valores del item seleccionado (título y precio)
-                string titulo = ((Label)item.FindControl("lblTitulo")).Text;
-                string precio = ((Label)item.FindControl("lblPrecio")).Text;
-                //Insertamos los datos del usuario a la tabla para la comparación de datos posteriormente
-                DatosLibro.Titulo = titulo;
-                DatosLibro.Precio = precio;
-                //Datos para obtener el id
-                String[] cart1 = new String[0];
-                cart1 = (String[])Session["ALL"];
-                //Obtenemos su Id del usuario.
-                int ID = int.Parse(cart1[5]);
-                //Obtenemos los datos del usuario.
-                //Variable que tendra el id
-                string IDIns= DAOLibros.ProcesarLibroPaypal(DatosLibro, ID);
-                //Método para activar la sesión para enviar al proceso de pago
-                SetOrderingValue(titulo, "BB01", precio, "1", "1", IDIns);
-                ////Redirige al proceso de pago con los datos del libro elegido ya en la sesión.
-                Response.Redirect("~/Forms/ProcesarPago.aspx");
+                if (Session["Usuario"] != null)
+                {
+                    //Busca una referencia al 'linkbutton' dentro del repeater
+                    RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
+                    //Obtiene valores del item seleccionado (título y precio)
+                    string titulo = ((Label)item.FindControl("lblTitulo")).Text;
+                    string precio = ((Label)item.FindControl("lblPrecio")).Text;
+                    //Insertamos los datos del usuario a la tabla para la comparación de datos posteriormente
+                    DatosLibro.Titulo = titulo;
+                    DatosLibro.Precio = precio;
+                    //Datos para obtener el id
+                    String[] cart1 = new String[0];
+                    cart1 = (String[])Session["ALL"];
+                    //Obtenemos su Id del usuario.
+                    int ID = int.Parse(cart1[5]);
+                    //Obtenemos los datos del usuario.
+                    //Variable que tendra el id
+                    string IDIns = DAOLibros.ProcesarLibroPaypal(DatosLibro, ID);
+                    //Método para activar la sesión para enviar al proceso de pago
+                    SetOrderingValue(titulo, "BB01", precio, "1", "1", IDIns);
+                    ////Redirige al proceso de pago con los datos del libro elegido ya en la sesión.
+                    Response.Redirect("~/Forms/ProcesarPago.aspx");
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "SeguirFail();", true);
+                    
+                }
             }
             if (e.CommandName == "details")
             {
