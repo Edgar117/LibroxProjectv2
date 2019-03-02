@@ -197,6 +197,16 @@
             });
         }
     </script>
+
+        <script type="text/javascript">
+        function Rating() {
+            swal({
+                title: "Calificación de libro exitosa.",
+                text: "Gracias por valorar el libro!",
+                icon: "success",
+            });
+        }
+    </script>
     <%--SWEET ALERT Registro SUCCESS--%>
     <script type="text/javascript">
         function RegistroGood() {

@@ -3,6 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+       <script type="text/javascript">
+        function showModal() {
+            $("#myModal").modal('show');
+        }
+
+        $(function () {
+            $("#btnShow").click(function () {
+                showModal();
+            });
+        });
+
+    </script>
     <script type="text/javascript">
         function ShowLoading(e) {
         // var divBg = document.createElement('div');
@@ -71,7 +83,7 @@
                                             </div>
                                         </div>
                                         <asp:LinkButton ID="lbtnDescargar" runat="server" CssClass="btn btn-warning btn-round" CommandName="dwd" OnClientClick="javascript:setFormSubmitToFalse()">Leer</asp:LinkButton>
-                                        <asp:LinkButton ID="lbtnValorar" runat="server" CssClass="btn btn-warning btn-round" CommandName="val">Valorar</asp:LinkButton>
+                                        <asp:LinkButton ID="btnShow" runat="server" CssClass="btn btn-warning btn-round" CommandName="val">Valorar</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +91,55 @@
                     </asp:Repeater>
                     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                 </div>
-                    
+                     <div class="modal fade modal-primary"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-center">
+                                <div class="modal-profile">
+                                     <asp:Image CssClass="rounded-circle"  ID="ImagenLibro" runat="server" Width="140" Height="140" />
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <asp:Label ID="TituloLirbo" runat="server" Text=""></asp:Label><br />
+                                <asp:Label ID="IDPago" runat="server" Text=""></asp:Label>
+                                    <asp:Label ID="IdLibro" runat="server" Text=""></asp:Label>
+                                <div class="container">
+                                          <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-1"></div>
+                                            <div class="col-sm-2">
+                                             <asp:LinkButton ID="btn1" OnClick="btn1_Click" runat="server" CssClass="btn btn-round btn-warning">1</asp:LinkButton>
+                                        </div>
+                                               <div class="col-sm-2">
+                                             <asp:LinkButton ID="btn2" OnClick="btn2_Click" runat="server" CssClass="btn btn-round btn-warning">2</asp:LinkButton>
+                                        </div>
+                                               <div class="col-sm-2">
+                                             <asp:LinkButton ID="btn3" OnClick="btn3_Click" runat="server" CssClass="btn btn-round btn-warning">3</asp:LinkButton>
+                                        </div>
+                                               <div class="col-sm-2">
+                                             <asp:LinkButton ID="btn4" OnClick="btn4_Click" runat="server" CssClass="btn btn-round btn-warning">4</asp:LinkButton>
+                                        </div>
+                                         <div class="col-sm-2">
+                                             <asp:LinkButton ID="btn5" OnClick="btn5_Click" runat="server" CssClass="btn btn-round btn-warning">5</asp:LinkButton>
+                                        </div>
+                                             <div class="col-sm-1"></div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                </div>
+                          
+                                
+                                <b><asp:Label ID="lblFollower" runat="server" Text="" CssClass="text_bold"></asp:Label></b>
+                            </div>
+
+                            <div class="modal-footer">
+                                <b><button type="button" class="btn btn-simple" data-dismiss="modal">X</button></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

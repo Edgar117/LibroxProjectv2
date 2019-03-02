@@ -33,7 +33,12 @@ namespace Librox2.Forms
                 {
                     prepareBook(book);  //Este método desencadena 2 métodos consecuentes (desencriptado y lectura de la primera página)
                     if (isRead(page))
+                    {
                         lbtnNext.Enabled = false;
+                        LinkButton1.Enabled = false;
+                    }
+                        
+
                 }
                 else
                 {
@@ -41,9 +46,14 @@ namespace Librox2.Forms
                     getNextPage(book, page);
                     if (lblPaginas.Text == "")
                     {
+                        if (page == 1)
+                        {
+                            LinkButton1.Enabled = false;
+                        }
                         determinePaginas(book);
                         if (isRead(page))
                             lbtnNext.Enabled = false;
+                       
                     }
                 }
                 getBookDetails();
@@ -200,5 +210,20 @@ namespace Librox2.Forms
             lblSinop.Text = dt.Rows[0][1].ToString();
             imgPerfil.Src = "https://www.escribox.com/LibrosPortadas/"+dt.Rows[0][3].ToString();
         }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            StreamReader reader = File.OpenText(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
+            int pagina = Convert.ToInt32(reader.ReadLine());
+            reader.Close();
+            pagina--;
+            StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
+            writer.WriteLine(pagina);
+            writer.Close();
+            //book = Server.MapPath("~/LibrosPortadas/"+book+".pdf");
+            //getNextPage(book, pagina);
+            Response.Redirect("~/Forms/Read.aspx?read=" + book + "&tit=" + tit + "&track=" + pagina);
+        }
+
     }
 }

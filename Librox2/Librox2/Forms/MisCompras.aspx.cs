@@ -73,6 +73,19 @@ namespace Librox2.Forms
                 //books.UpdCampoDescargado(idPago, "");
                 //prepareBook(rutaFisico);
             }
+            if (e.CommandName== "val")
+            {
+                DataTable dtUser = new DataTable();
+                LibrosDAO OBLibros = new LibrosDAO();
+                RepeaterItem item = (RepeaterItem)(((LinkButton)(e.CommandSource)).NamingContainer);
+                string Titulo = ((Label)item.FindControl("lblTitulo")).Text;
+                dtUser = OBLibros.ConsultarLibrosXNombreLibro(Titulo);
+                TituloLirbo.Text = dtUser.Rows[0]["Titulo"].ToString();
+                ImagenLibro.ImageUrl = "https://www.escribox.com/LibrosPortadas/" + dtUser.Rows[0]["ImagenPortada"].ToString();
+                IDPago.Text= ((Label)item.FindControl("lblIDPago")).Text;
+                IdLibro.Text= ((Label)item.FindControl("lblIDLibro")).Text; 
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+            }
         }
         private void prepareBook(string encriptedPath)
         {
@@ -144,16 +157,14 @@ namespace Librox2.Forms
             if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
             {
                 DataRowView dbr = (DataRowView)e.Item.DataItem;
-                //if (Convert.ToString(DataBinder.Eval(dbr, "Descargado")) == "True")
-                //{
-                //    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = false;
-                //    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = true;
-                //}
-                //else
-                //{
-                //    ((LinkButton)e.Item.FindControl("lbtnDescargar")).Visible = true;
-                //    ((LinkButton)e.Item.FindControl("lbtnValorar")).Visible = false;
-                //}
+                if (Convert.ToString(DataBinder.Eval(dbr, "ValoradoPorUsuario")) == "False")
+                {
+                    ((LinkButton)e.Item.FindControl("btnShow")).Visible = true;
+                }
+                else
+                {
+                    ((LinkButton)e.Item.FindControl("btnShow")).Visible = false;
+                }
                 string libro = Convert.ToString(DataBinder.Eval(dbr, "Titulo"));
                 string libroFisico = Convert.ToString(DataBinder.Eval(dbr, "LibroFisico"));
                 prepareBook(libroFisico);
@@ -209,6 +220,41 @@ namespace Librox2.Forms
             ((Panel)e.Item.FindControl("pnlProgress")).Attributes["aria-valuenow"] = porcentajeLeído.ToString();
             ((Panel)e.Item.FindControl("pnlProgress")).Style["width"] = String.Format("{0}%;", porcentajeLeído);
             ((Panel)e.Item.FindControl("pnlProgress")).Controls.Add(new LiteralControl(String.Format("{0}% leído", porcentajeLeído)));
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {
+            RatingLibros(1);
+
+        }
+
+        protected void btn2_Click(object sender, EventArgs e)
+        {
+            RatingLibros(2);
+        }
+
+        protected void btn3_Click(object sender, EventArgs e)
+        {
+            RatingLibros(3);
+        }
+
+        protected void btn4_Click(object sender, EventArgs e)
+        {
+            RatingLibros(4);
+        }
+
+        protected void btn5_Click(object sender, EventArgs e)
+        {
+            RatingLibros(5);
+        }
+        private void RatingLibros(int Numero )
+        {
+            LibrosDAO Rating = new LibrosDAO();
+            cart1 = (String[])Session["ALL"];
+            ID = int.Parse(cart1[5]);
+            Rating.UpdRantingLibros(int.Parse(IDPago.Text), ID, int.Parse(IdLibro.Text), Numero);
+            ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "Rating();", true);
+            Response.Redirect("~/Forms/MisCompras.aspx");
         }
     }
 }

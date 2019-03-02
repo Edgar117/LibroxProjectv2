@@ -56,28 +56,18 @@
                                 </div>
                                 <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                                     <div class="card-profile-actions py-4 mt-lg-0">
-                                        <a href="#" class="btn btn-sm btn-info mr-4">Hola</a>
-                                        <a href="#" class="btn btn-sm btn-default float-right">Mundo</a>
+                                                                                    <asp:LinkButton ID="LinkButton2" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
+                                           <asp:LinkButton ID="LinkButton4" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
                                     <div class="card-profile-stats d-flex justify-content-center">
-                                        <div>
-                                            <span class="heading">22</span>
-                                            <span class="description"></span>
-                                        </div>
-                                        <div>
-                                            <span class="heading">10</span>
-                                            <span class="description"></span>
-                                        </div>
-                                        <div>
-                                            <span class="heading">89</span>
-                                            <span class="description"></span>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="text-center mt-5">
+                                <br />
                                 <h3 id="titulo" runat="server"></h3>
                                 <div class="h6 font-weight-300">
                                     <i class="ni location_pin mr-2"></i>
@@ -107,17 +97,42 @@
                                 </div>
                                 <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                                     <div class="card-profile-actions py-4 mt-lg-0">
-                                        <asp:LinkButton ID="lbtnNext" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info mr-4">Siguiente</asp:LinkButton>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
 
                                     <div class="card-profile-stats d-flex justify-content-center">
-                                        <asp:LinkButton ID="lbtnSalir" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
+                                        
                                     </div>
                                 </div>
                             </div>
-                            <asp:Label ID="lblPaginas" runat="server" Text=""></asp:Label>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 order-lg-2">
+                                    <div class="card-profile-image">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <asp:LinkButton ID="lbtnSalir" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
+                                           <asp:LinkButton ID="lbtnNext" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
+                                        </div>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 order-lg-1">
+                                    <div class="card-profile-stats d-flex justify-content-center">
+                                        <div>
+  
+                                    </div>
+                                         </div>
+                                </div>
+                            </div>
+                            
+                            <asp:Label Visible="false" ID="lblPaginas" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                 </div>
