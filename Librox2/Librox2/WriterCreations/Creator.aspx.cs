@@ -87,6 +87,8 @@ namespace Librox2.WriterCreations
             else
             {
                 writeBook();
+                LinkButton1.Visible = false;
+                lbtnNew.Visible = true;
             }
         }
         private void writeBook()
@@ -161,6 +163,7 @@ namespace Librox2.WriterCreations
                 txtTitulo.Text = titulo;
                 txtContent.Text = ReadPdfFile(filePath);
                 LinkButton1.Visible = true;
+                lbtnNew.Visible = false;
                 lblHelp.Text = filePath;
             }
             if (e.CommandName == "delete")
@@ -209,12 +212,26 @@ namespace Librox2.WriterCreations
             txtContent.Text = "";
             lblHelp.Text = "";
             LinkButton1.Visible = true;
+            lbtnNew.Visible = false;
         }
 
         protected void lbtnLogout_Click(object sender, EventArgs e)
         {
             Session["Usuario"] = null;
             Response.Redirect("../Login.aspx");
+        }
+
+        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
+            {
+                if (((LinkButton)e.Item.FindControl("lbtnTitulo")).Text.Contains(".pdf"))
+                {
+                    string titulo = ((LinkButton)e.Item.FindControl("lbtnTitulo")).Text;
+                    titulo = titulo.Replace(".pdf", " ");
+                    ((LinkButton)e.Item.FindControl("lbtnTitulo")).Text = titulo;
+                }
+            }
         }
     }
 }

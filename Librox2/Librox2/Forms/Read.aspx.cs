@@ -31,29 +31,41 @@ namespace Librox2.Forms
                 page = Convert.ToInt32(Request.QueryString["track"]);
                 if (page == 1)
                 {
+                    lbtnBack1.Enabled = false;
+                    lbtnBack2.Enabled = false;
+                    lbtnNext.Enabled = true;
+                    lbtnNext1.Enabled = true;
                     prepareBook(book);  //Este método desencadena 2 métodos consecuentes (desencriptado y lectura de la primera página)
                     if (isRead(page))
                     {
                         lbtnNext.Enabled = false;
-                        LinkButton1.Enabled = false;
+                        lbtnNext1.Enabled = false;
+                        lbtnBack1.Enabled = false;
+                        lbtnBack2.Enabled = false;
                     }
-                        
-
                 }
                 else
                 {
+                    //No es la página 1
                     book = Server.MapPath("~/LibrosPortadas/" + book + ".pdf");
                     getNextPage(book, page);
-                    if (lblPaginas.Text == "")
+                    //Puede retroceder
+                    lbtnBack1.Enabled = true;
+                    lbtnBack2.Enabled = true;
+                    //Verifica si puede avanzar
+                    determinePaginas(book); //Pinta total de páginas en labelPaginas
+                    if (page < int.Parse(lblPaginas.Text))
                     {
-                        if (page == 1)
-                        {
-                            LinkButton1.Enabled = false;
-                        }
-                        determinePaginas(book);
-                        if (isRead(page))
-                            lbtnNext.Enabled = false;
-                       
+                        lbtnNext.Enabled = true;
+                        lbtnNext1.Enabled = true;
+                    }
+                    if (page == int.Parse(lblPaginas.Text))
+                    {
+                        //No puede avanzar
+                        lbtnNext.Enabled = false;
+                        lbtnNext1.Enabled = false;
+                        lbtnBack1.Enabled = true;
+                        lbtnBack2.Enabled = true;
                     }
                 }
                 getBookDetails();
@@ -208,7 +220,7 @@ namespace Librox2.Forms
             titulo.InnerText = dt.Rows[0][0].ToString();
             lblAutor.Text = dt.Rows[0][2].ToString();
             lblSinop.Text = dt.Rows[0][1].ToString();
-            imgPerfil.Src = "https://www.escribox.com/LibrosPortadas/"+dt.Rows[0][3].ToString();
+            imgPerfil.Src = "https://www.escribox.com/LibrosPortadas/" + dt.Rows[0][3].ToString();
         }
 
         protected void LinkButton3_Click(object sender, EventArgs e)

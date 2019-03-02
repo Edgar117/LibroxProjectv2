@@ -92,7 +92,7 @@
                                 <h1 class="text-center">
                                     <asp:Label ID="lblUser" runat="server" Text="Label"></asp:Label></h1>
                                 <br />
-                                <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+                                <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand" OnItemDataBound="Repeater1_ItemDataBound">
                                     <ItemTemplate>
                                         <div class="col-md-3">
                                             <div class="pmd-card pmd-card-media-inline pmd-card-default pmd-z-depth">
@@ -126,7 +126,7 @@
 
                             <!-- Floating Action Button like Google Material -->
                             <div class="menu pmd-floating-action" role="navigation">
-                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="pmd-floating-action-btn btn btn-sm pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-default" data-title="Guardar y salir" Visible="false" OnClick="LinkButton1_Click">
+                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="pmd-floating-action-btn btn pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-primary" data-title="Guardar y salir" Visible="false" OnClick="LinkButton1_Click">
                                     <span class="pmd-floating-hidden">Guardar</span>
                                     <i class="material-icons">save</i>
                                 </asp:LinkButton>

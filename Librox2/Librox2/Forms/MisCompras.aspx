@@ -101,8 +101,8 @@
                             </div>
                             <div class="modal-body">
                                 <asp:Label ID="TituloLirbo" runat="server" Text=""></asp:Label><br />
-                                <asp:Label ID="IDPago" runat="server" Text=""></asp:Label>
-                                    <asp:Label ID="IdLibro" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="IDPago" runat="server" Text="" Visible="false"></asp:Label>
+                                    <asp:Label ID="IdLibro" runat="server" Text="" Visible="false"></asp:Label>
                                 <div class="container">
                                           <div class="row">
                                     <div class="col-sm-12">

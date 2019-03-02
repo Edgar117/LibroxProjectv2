@@ -57,8 +57,8 @@
                                 <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                                     <div class="card-profile-actions py-4 mt-lg-0">
                                                                                     <asp:LinkButton ID="LinkButton2" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
-                                        <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
-                                           <asp:LinkButton ID="LinkButton4" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
+                                        <asp:LinkButton ID="lbtnBack1" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
+                                           <asp:LinkButton ID="lbtnNext1" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
@@ -116,7 +116,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <asp:LinkButton ID="lbtnSalir" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
-                                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
+                                        <asp:LinkButton ID="lbtnBack2" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
                                            <asp:LinkButton ID="lbtnNext" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
                                         </div>
                                         

@@ -41,7 +41,7 @@ namespace Librox2.Forms
                 catch (Exception ex)
                 {
 
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("../Login.aspx");
                 }
 
             }
@@ -189,6 +189,7 @@ namespace Librox2.Forms
                 if (page == "1")
                 {
                     porcentajeLeído = 0;
+                    ((Label)e.Item.FindControl("lblInfo")).Text = "Empieza a leer:";
                     ((Label)e.Item.FindControl("lblPage")).Text = page;
                     pintarProgress(e, porcentajeLeído);
                 }
@@ -204,8 +205,8 @@ namespace Librox2.Forms
                     }
                     else
                     {
-                        ((Label)e.Item.FindControl("lblInfo")).Visible = false;
-                        ((Label)e.Item.FindControl("lblPage")).Text = "Continúa leyendo en la página: " + page;
+                        ((Label)e.Item.FindControl("lblInfo")).Text = "Estás leyendo en la página:";
+                        ((Label)e.Item.FindControl("lblPage")).Text = page;
                         pintarProgress(e, porcentajeLeído);
                     }
 
