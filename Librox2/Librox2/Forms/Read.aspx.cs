@@ -90,16 +90,28 @@ namespace Librox2.Forms
 
                 ITextExtractionStrategy strategy = new iTextSharp.text.pdf.parser.LocationTextExtractionStrategy();
 
-                // 1. if pdf document has only one page
-                //here second parameter is PDF Page number
                 ExtractedData = PdfTextExtractor.GetTextFromPage(reader, page, strategy);
-                string[] lineas = ExtractedData.Split('\n');
-                StringBuilder db = new StringBuilder();
-                foreach (string line in lineas)
+                try
                 {
-                    texto += line + "\n";
+                    string[] lineas = ExtractedData.Split('\n');
+                    //StringBuilder db = new StringBuilder();
+                    if (lineas.Length > 0)
+                    {
+                        foreach (string line in lineas)
+                        {
+                            texto += line + "\n";
+                        }
+                        lblTexto.Text = texto.Replace("\n", "<br/>");
+                    }
+                    else
+                    {
+                        lblTexto.Text = ExtractedData;
+                    }
                 }
-                lblTexto.Text = texto.Replace("\n", "<br/>");
+                catch (Exception)
+                {
+                    lblTexto.Text = ExtractedData;
+                }
                 StreamWriter writer = new StreamWriter(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"] + "/Reading/" + tit + ".txt"));
                 writer.WriteLine(page);
                 writer.Close();
