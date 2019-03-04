@@ -223,15 +223,15 @@ namespace Librox2.WriterCreations
 
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
-            {
-                if (((LinkButton)e.Item.FindControl("lbtnTitulo")).Text.Contains(".pdf"))
-                {
-                    string titulo = ((LinkButton)e.Item.FindControl("lbtnTitulo")).Text;
-                    titulo = titulo.Replace(".pdf", " ");
-                    ((LinkButton)e.Item.FindControl("lbtnTitulo")).Text = titulo;
-                }
-            }
+            //if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
+            //{
+            //    if (((LinkButton)e.Item.FindControl("lbtnTitulo")).Text.Contains(".pdf"))
+            //    {
+            //        string titulo = ((LinkButton)e.Item.FindControl("lbtnTitulo")).Text;
+            //        titulo = titulo.Replace(".pdf", " ");
+            //        ((LinkButton)e.Item.FindControl("lbtnTitulo")).Text = titulo;
+            //    }
+            //}
         }
     }
 }

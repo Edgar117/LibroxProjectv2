@@ -20,6 +20,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <header class="header-global">
         </header>
 
@@ -56,9 +57,9 @@
                                 </div>
                                 <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                                     <div class="card-profile-actions py-4 mt-lg-0">
-                                                                                    <asp:LinkButton ID="LinkButton2" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
                                         <asp:LinkButton ID="lbtnBack1" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
-                                           <asp:LinkButton ID="lbtnNext1" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
+                                        <asp:LinkButton ID="lbtnNext1" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
@@ -84,7 +85,7 @@
                                     <div class="col-lg-9">
                                         <%--Aquí va el texto--%>
                                         <p>
-                                            <asp:Label ID="lblTexto" runat="server" Text="Label"></asp:Label>
+                                            <asp:Label oncopy="return false;" ID="lblTexto" runat="server" Text="Label"></asp:Label>
                                             <br />
                                         </p>
                                     </div>
@@ -97,13 +98,11 @@
                                 </div>
                                 <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                                     <div class="card-profile-actions py-4 mt-lg-0">
-                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
 
                                     <div class="card-profile-stats d-flex justify-content-center">
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -116,22 +115,21 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <asp:LinkButton ID="lbtnSalir" runat="server" OnClick="lbtnSalir_Click" CssClass="btn btn-sm btn-danger mr-4">Salir</asp:LinkButton>
-                                        <asp:LinkButton ID="lbtnBack2" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
-                                           <asp:LinkButton ID="lbtnNext" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
+                                            <asp:LinkButton ID="lbtnBack2" runat="server" OnClick="LinkButton3_Click" CssClass="btn btn-sm btn-info float-center"><<</asp:LinkButton>
+                                            <asp:LinkButton ID="lbtnNext" runat="server" OnClick="lbtnNext_Click" CssClass="btn btn-sm btn-info float-right">>></asp:LinkButton>
                                         </div>
-                                        
+
 
                                     </div>
                                 </div>
                                 <div class="col-lg-4 order-lg-1">
                                     <div class="card-profile-stats d-flex justify-content-center">
                                         <div>
-  
+                                        </div>
                                     </div>
-                                         </div>
                                 </div>
                             </div>
-                            
+
                             <asp:Label Visible="false" ID="lblPaginas" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
@@ -140,7 +138,7 @@
             </section>
         </main>
 
-
+        
         <!-- Core -->
         <script src="../argon/assets/vendor/jquery/jquery.min.js"></script>
         <script src="../argon/assets/vendor/popper/popper.min.js"></script>
@@ -148,6 +146,8 @@
         <script src="../argon/assets/vendor/headroom/headroom.min.js"></script>
         <!-- Argon JS -->
         <script src="../argon/assets/js/argon.js?v=1.0.1"></script>
+        <!--Script pa no copiar -->
+        
     </form>
 </body>
 </html>
