@@ -165,6 +165,12 @@
                             </a>
                         </div>
                     </li>
+                       <li class="nav-item">
+                        <a class="nav-link" href="../Forms/Contactanos.aspx">
+                            <i class="now-ui-icons travel_info"></i>
+                            <p>Ayuda</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -260,6 +266,15 @@
             swal({
                 title: "Registro de Usuario Escribox",
                 text: "Tu registro fallo. Pueden ser dos motivos. 1 El usuario ya existe. 2. El correo ya existe!",
+                icon: "error",
+            });
+        }
+    </script>
+        <script type="text/javascript">
+        function MensajeFail() {
+            swal({
+                title: "Mensaje no enviado",
+                text: "Mensaje no enviado, favor de llenar todos los campos",
                 icon: "error",
             });
         }

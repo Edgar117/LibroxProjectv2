@@ -26,15 +26,19 @@
             </div>
             <div class="box-body">
                       <div class="col-md-12">
-                          <asp:GridView ID="GridView1" CssClass="table table-bordered table-hover" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="10" AllowPaging="true" runat="server">
+                          <asp:GridView ID="GridView1" OnRowCommand="GridView1_RowCommand" CssClass="table table-bordered table-hover" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="10" AllowPaging="true" runat="server" AutoGenerateColumns="false">
                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                 <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
                                <Columns>
-                                    <asp:ButtonField CommandName="btnseleccionar" ControlStyle-CssClass="btn btn-success"  Text="Seleccionar"/>
-                                    <asp:ButtonField CommandName="btneliminar" ControlStyle-CssClass="btn btn-danger"  Text="Eliminar"/>
-                                    <asp:ButtonField CommandName="btnactualizar" ControlStyle-CssClass="btn btn-info"  Text="Actualizar"/>                   
-                                   <asp:ButtonField CommandName="btnAviso" ControlStyle-CssClass="btn btn-warning"  Text="Aviso"/>                                                 
+                                   <asp:BoundField DataField="Identificador" HeaderText="Identificador" />    
+                                   <asp:BoundField DataField="Nombre Persona" HeaderText="Nombre Persona" /> 
+                                   <asp:BoundField DataField="Correo" HeaderText="Correo" />    
+                                       <asp:BoundField DataField="Asunto" HeaderText="Asunto" />   
+                                     <asp:BoundField DataField="Mensaje" HeaderText="Mensaje" />
+                                    <asp:ImageField DataImageUrlField="Imagen" HeaderText="Evidencia"></asp:ImageField> 
+                                   
+                                    <asp:ButtonField CommandName="btneliminar" ControlStyle-CssClass="btn btn-danger"  Text="Eliminar"/>                                                         
                        </Columns>
                           </asp:GridView>   
                       </div>

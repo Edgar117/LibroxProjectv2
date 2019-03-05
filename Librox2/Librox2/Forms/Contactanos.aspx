@@ -2,7 +2,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+            <script type="text/javascript">  
 
+            function showimagepreview(input) {
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#imagend2').attr('src', e.target.result);
+                        document.getElementsById("imagend2")[0].setAttribute("src", e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+        </script>
   <div class="wrapper">
     <div class="page-header page-header-small">
         <div class="page-header-image" data-parallax="true" style="background-image: url('../Maybe/assets/img/contacto.jpg');">
@@ -11,15 +25,6 @@
         <div class="container">
           <h2 class="title">Tienes alguna duda?.</h2>
           <div class="text-center">
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-facebook-square"></i>
-            </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-google-plus"></i>
-            </a>
           </div>
         </div>
       </div>
@@ -30,6 +35,14 @@
         <p class="description">Tu opinión es importante para nosotros.</p>
         <div class="row">
           <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                <div class="input-group input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="now-ui-icons ui-2_chat-round"></i>
+                </span>
+              </div>
+              <input type="text" id="txtAsunto" runat="server" class="form-control" placeholder="Asunto/Tema">
+            </div>
             <div class="input-group input-lg">
               <div class="input-group-prepend">
                 <span class="input-group-text">
@@ -46,6 +59,17 @@
               </div>
               <input type="text" id="txtCorreo" runat="server" class="form-control" placeholder="Correo...">
             </div>
+                 <div class="input-group input-lg">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="now-ui-icons media-1_album"></i>
+                </span>
+              </div>
+              <img id="imagend2" class="img-thumbnail" alt="" src="http://pngimages.net/sites/default/files/add-a-button-png-image-68709.png" width="150" height="150"/>
+                                    <asp:FileUpload ID="fuImg" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
+            </div>
+
+              
             <div class="textarea-container">
               <textarea class="form-control" id="txtMensaje" runat="server" name="name" rows="4" cols="80" placeholder="Escribe tu mensaje..."></textarea>
             </div>
