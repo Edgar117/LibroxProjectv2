@@ -89,6 +89,7 @@
     <Content Include="Forms\PagosPorRealizar.aspx" />
     <Content Include="Forms\Politicas.aspx" />
     <Content Include="Forms\ProcesarPago.aspx" />
+    <Content Include="Forms\Read.aspx" />
     <Content Include="Forms\TerminosyCondiciones.aspx" />
     <Content Include="Forms\Verificador.aspx" />
     <Content Include="Global.asax" />
@@ -991,6 +992,13 @@
     <Compile Include="Forms\ProcesarPago.aspx.designer.cs">
       <DependentUpon>ProcesarPago.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Read.aspx.cs">
+      <DependentUpon>Read.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Read.aspx.designer.cs">
+      <DependentUpon>Read.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TerminosyCondiciones.aspx.cs">
       <DependentUpon>TerminosyCondiciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1169,6 +1177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LibrosPortadas\" />
+    <Folder Include="Mensajes\" />
     <Folder Include="SERVICES\" />
     <Folder Include="TempFiles\" />
     <Folder Include="webfonts\" />
