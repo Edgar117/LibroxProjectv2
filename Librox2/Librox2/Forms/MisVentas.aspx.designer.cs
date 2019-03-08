@@ -22,6 +22,24 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.GridView dtgVentas;
         
         /// <summary>
+        /// Control MensajeCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MensajeCorreo;
+        
+        /// <summary>
+        /// Control TXTCorreoPaypal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TXTCorreoPaypal;
+        
+        /// <summary>
         /// Control lblTotal.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Control Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
         /// Control btnSolicitar.
         /// </summary>
         /// <remarks>
@@ -47,5 +74,14 @@ namespace Librox2.Forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSolicitar;
+        
+        /// <summary>
+        /// Control btnSolicitarConCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSolicitarConCorreo;
     }
 }

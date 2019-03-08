@@ -260,6 +260,17 @@
     </script>
 
 
+     <script type="text/javascript">
+        function InfoPagos() {
+            swal({
+                title: "Información",
+                text: "No cuentas con los fondos suficientes, recuerda que para solicitar tu dinero es con un minimo de 100 pesos, dudas o aclaraciones comunicarse a escribox ",
+                icon: "info",
+            });
+        }
+    </script>
+
+
     <%--SWEET ALERT Registro SUCCESS--%>
     <script type="text/javascript">
         function RegistroFail() {

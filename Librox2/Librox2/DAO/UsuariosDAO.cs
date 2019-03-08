@@ -116,6 +116,22 @@ namespace Librox2.DAO
             }
             return 1;
         }
+
+        public int UpdateCuentaDepositoPaypal(string Correo,int ID)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "UPDATE USUARIOS SET TargetaPaypal ='" +Correo + "' WHERE ID=" + ID+ " ";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
         public string validarusuario(UsuarioBO ObjUsuario)
         {
 
@@ -129,6 +145,24 @@ namespace Librox2.DAO
             if (leer.Read())
             {
                 contra = leer["Contraseña"].ToString()+"|"+leer["Tipousuario"].ToString()+"|" + leer["ImagenUsuario"].ToString()+"|" + leer["DescriptionUser"].ToString() + "|" + leer["Categoria"].ToString()+ "|" + leer["ID"].ToString()+"|"+ leer["SEGUIDORES"].ToString()+"|"+ leer["TotalLibros"].ToString();
+            }
+            con.CerrarConexion();
+            return contra;
+
+        }
+        public string ObtenerTargetaPaypal(int ID)
+        {
+
+            string contra = "";
+
+            SQL = "SELECT TargetaPaypal FROM Usuarios WHERE ID= " + ID + "";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            //cmd.Parameters.AddWithValue("@Usuario", contra);
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                contra = leer["TargetaPaypal"].ToString();
             }
             con.CerrarConexion();
             return contra;

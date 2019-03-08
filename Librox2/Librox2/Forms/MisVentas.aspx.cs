@@ -14,6 +14,7 @@ namespace Librox2.Forms
         int id = 0;
         String[] cart1 = new String[0];
         LibrosDAO books = new LibrosDAO();
+        UsuariosDAO UserDao = new UsuariosDAO();
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,7 +38,7 @@ namespace Librox2.Forms
         protected void btnSolicitar_Click(object sender, EventArgs e)
         {
             Decimal subTotal = Convert.ToDecimal(lblTotal.Text);
-            if (subTotal >= 10)
+            if (subTotal >= 100 && !string.IsNullOrEmpty(TXTCorreoPaypal.Text))
             {
                 foreach (DataRow row in dt.Rows)
                 {
@@ -49,8 +50,9 @@ namespace Librox2.Forms
                     //Rutina para actualizar el pago en tabla ventas
                     books.ActualizarPagoUsuario(idPago);
                 }
+                UserDao.UpdateCuentaDepositoPaypal(TXTCorreoPaypal.Text, id);//Actualiza el correo al cual se le hara el deposito
                 //Inserta el  pago en tabla pagos
-                books.InsertarPagoUsuario(id, 0, subTotal);
+                books.InsertarPagoUsuario(id, 0, subTotal, TXTCorreoPaypal.Text);
             }
             Response.Redirect("~/Forms/MisVentas.aspx");
         }
@@ -63,6 +65,27 @@ namespace Librox2.Forms
                 total = Convert.ToDecimal(total + monto);
             }
             lblTotal.Text = total.ToString();
+        }
+
+        protected void btnSolicitarConCorreo_Click(object sender, EventArgs e)
+        {
+            Decimal subTotal = Convert.ToDecimal(lblTotal.Text);
+            if (subTotal >= 100)
+            {
+                string Correo = UserDao.ObtenerTargetaPaypal(id);
+                if (!string.IsNullOrEmpty(Correo))
+                {
+                    TXTCorreoPaypal.Text = Correo;
+                }
+                TXTCorreoPaypal.Visible = true;
+                btnSolicitar.Visible = true;
+                MensajeCorreo.Visible = true;
+                btnSolicitarConCorreo.Visible = false;
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "InfoPagos();", true);
+            }
         }
     }
 }

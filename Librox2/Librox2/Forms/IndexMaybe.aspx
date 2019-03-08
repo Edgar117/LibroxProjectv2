@@ -9,7 +9,7 @@
       <div class="container">
         <div class="content-center brand">
           <img class="n-logo" src="./assets/img/now-logo.png" alt="">
-          <h1 class="h1-seo">Escribox.</h1>
+             <h1 class="h1-seo" style="font-family:veteran; font-size:90px;">escribox_</h1>
           <h3>Crea ideas maravillosas.</h3>
         </div>
       </div>

@@ -49,10 +49,10 @@ namespace Librox2.DAO
         }
 
         //Metoto para actualizar cuanto se le pagara al usuario
-        public int InsertarPagoUsuario(int ID_Vendedor,Decimal PrecioReal,Decimal PrecioFinal)
+        public int InsertarPagoUsuario(int ID_Vendedor,Decimal PrecioReal,Decimal PrecioFinal,string Correo)
         {
             cmd.Connection = con.EstablecerConexion();
-            string sql = "EXEC [dbo].[InsertarPagoToPay] "+ID_Vendedor+","+PrecioReal+","+PrecioFinal+"";
+            string sql = "EXEC [dbo].[InsertarPagoToPay] "+ID_Vendedor+","+PrecioReal+","+PrecioFinal+" ,'"+Correo+"'";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

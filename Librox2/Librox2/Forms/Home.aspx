@@ -8,7 +8,7 @@
       </div>
       <div class="container">
         <div class="content-center brand">
-          <h1 class="h1-seo">Escribox.</h1>
+              <h1 class="title" style="font-family:veteran; font-size:90px;">escribox_</h1>
           <h3>Crea ideas maravillosas.</h3>
         </div>
       </div>

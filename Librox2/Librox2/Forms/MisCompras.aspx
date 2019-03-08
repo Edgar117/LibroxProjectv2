@@ -49,7 +49,7 @@
             </div>
             <div class="content-center">
                 <div class="container">
-                    <h1 class="title">Escribox.</h1>
+                     <h1 class="title" style="font-family:veteran; font-size:90px;">escribox_</h1>
                 </div>
             </div>
         </div>
