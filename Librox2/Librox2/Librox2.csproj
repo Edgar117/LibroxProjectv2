@@ -357,8 +357,10 @@
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="PagoPaypal\vendor\fontawesome-free\css\all.css" />
+    <Content Include="password_reset_form.html" />
     <Content Include="PaypalScri\scripts\ajax_loader.gif" />
     <Content Include="PaypalScri\scripts\jquery.min.js" />
+    <Content Include="RevoveryPass.aspx" />
     <Content Include="Service References\ServiceReference2\Librox2.ServiceReference2.ValidUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -1151,6 +1153,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAO\Propety.cs" />
+    <Compile Include="RevoveryPass.aspx.cs">
+      <DependentUpon>RevoveryPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RevoveryPass.aspx.designer.cs">
+      <DependentUpon>RevoveryPass.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceReference2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

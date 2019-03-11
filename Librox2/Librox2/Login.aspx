@@ -62,7 +62,7 @@
                                 <span class="txt1">Contraseña
                                 </span>
 
-                                <a href="#" class="txt2 bo1 m-l-5">¿Olvidaste tu contraseña?
+                                <a href="RevoveryPass.aspx" class="txt2 bo1 m-l-5">¿Olvidaste tu contraseña?
                                 </a>
                             </div>
                             <div class="wrap-input100 validate-input" data-validate="Password is required">

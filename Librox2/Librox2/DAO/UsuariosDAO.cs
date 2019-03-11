@@ -150,6 +150,24 @@ namespace Librox2.DAO
             return contra;
 
         }
+        public string ValidarCorreoToReset(string Correp)
+        {
+
+            string contra = "";
+
+            SQL = "exec RecoveryPass '" + Correp + "'";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            cmd.Parameters.AddWithValue("@Usuario", contra);
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                contra = leer["MENSAJE"].ToString();
+            }
+            con.CerrarConexion();
+            return contra;
+
+        }
         public string ObtenerTargetaPaypal(int ID)
         {
 
