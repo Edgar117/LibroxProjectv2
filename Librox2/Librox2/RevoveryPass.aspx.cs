@@ -42,7 +42,8 @@ namespace Librox2
                         Security SC = new Security();
                         string Nombre = substrings[0].ToString();
                         string Contraseña = SC.desencrypt(substrings[1].ToString());
-                        EnviarCorreo(txtcorreo.Text, "Estimado(a): " + Nombre + Environment.NewLine + "Tu contraseña es :" + Environment.NewLine + Contraseña);
+                        EnviarCorreo(txtcorreo.Text, "Estimado(a): " + Nombre + Environment.NewLine +"Tu usuario es:"+Environment.NewLine+ substrings[2].ToString() +
+                           Environment.NewLine+ "Tu contraseña es :" + Environment.NewLine + Contraseña);
                         ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "MensajeEnviado();", true);
                     }
                    

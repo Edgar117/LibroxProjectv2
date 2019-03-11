@@ -72,6 +72,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bootstrap.min.css" />
     <Content Include="css\AdminLTE.min.css" />
     <Content Include="css\dropzone.css" />
     <Content Include="css\LoginStyle.css" />
@@ -357,7 +358,6 @@
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="PagoPaypal\vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="PagoPaypal\vendor\fontawesome-free\css\all.css" />
-    <Content Include="password_reset_form.html" />
     <Content Include="PaypalScri\scripts\ajax_loader.gif" />
     <Content Include="PaypalScri\scripts\jquery.min.js" />
     <Content Include="RevoveryPass.aspx" />

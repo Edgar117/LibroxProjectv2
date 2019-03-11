@@ -6,10 +6,12 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Recuperar contraseña escribox_</title>
-     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     
 </head>
 <body>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+   
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="text/javascript">
         function MensajeEnviado() {
             swal({
