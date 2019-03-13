@@ -59,7 +59,14 @@ namespace Librox2.Forms
             else
             {
                 Label1.Text = orderStatus;
+                btnRegresar.Visible = true;
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "NoProcess();", true);
             }
+        }
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/libros");
         }
     }
 }

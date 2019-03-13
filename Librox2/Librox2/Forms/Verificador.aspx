@@ -8,9 +8,21 @@
     <title></title>
 </head>
 <body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script type="text/javascript">
+        function NoProcess() {
+            swal({
+                title: "No se realizo el pago correctamente",
+                text: "Intenta mas tarde",
+                icon: "error",
+            });
+        }
+    </script>
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Button Visible="false" ID="btnRegresar" OnClick="btnRegresar_Click" class="btn btn-lg btn-primary btn-block" runat="server" Text="Regresar" />
+
         </div>
     </form>
 </body>
