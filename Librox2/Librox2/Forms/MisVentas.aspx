@@ -16,7 +16,7 @@
         <div class="section section-contact-us text-center">
             <div class="container">
                 <h2 class="title">Mis ventas</h2>
-                <h4>*El porcentaje ganado hace referencia al 65% del precio original. La comisión de Escribox es un 35% del precio total</h4>
+                <h4>*El porcentaje ganado hace referencia al 65% del precio original menos 5 pesos de comisión total. La comisión de Escribox es un 35% del precio total</h4>
                  
                 <div class="row">
                     <div class="col-md-12">

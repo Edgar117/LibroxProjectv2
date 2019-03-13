@@ -11,7 +11,8 @@
     <link href="../PagoPaypal/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../PagoPaypal/css/stylish-portfolio.css" rel="stylesheet" />
-    <script src="https://www.paypal.com/sdk/js?client-id=AXe6wK9rBS57kSinpoNmrDrC9-jNWvQP_tZFAxuKOpKyvQVXtDRVxUVHTBRcTxydUKEvLtxP4ke4s1Dy&currency=MXN"></script>
+    <%--<script src="https://www.paypal.com/sdk/js?client-id=AXe6wK9rBS57kSinpoNmrDrC9-jNWvQP_tZFAxuKOpKyvQVXtDRVxUVHTBRcTxydUKEvLtxP4ke4s1Dy&currency=MXN"></script>--%>
+       <script src="https://www.paypal.com/sdk/js?client-id=AbCPnvXObi8MHbjfcBp9U8XuQsaJXuIW2JyGxW9KYeaka_L8W7jWdfCjD43Jmqn--z9MOxLVbDDkfN_g&currency=MXN"></script>
     <%--    <script src="../PaypalScri/scripts/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
