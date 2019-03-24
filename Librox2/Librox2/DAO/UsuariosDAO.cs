@@ -206,7 +206,7 @@ namespace Librox2.DAO
         }
         public DataTable ConsultarMisLibros(int ID)
         {
-            SQL = "SELECT ImagenPortada FROM LIBROS WHERE ID_Autor='"+ID+"'";
+            SQL = "SELECT ImagenPortada FROM LIBROS WHERE ID_Autor='"+ID+"' AND RegBorrado=0";
             return con.TablaGeneral(SQL);
         }
         public DataTable ConsultarMisLibrosToEdit(int ID)
