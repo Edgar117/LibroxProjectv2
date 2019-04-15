@@ -102,16 +102,18 @@
                                     <br />
                                             <asp:Label ID="lblSinop" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="text"></asp:Label>
                                         </p>
-                                        <p>Precio :$<asp:Label ID="lblPrecio" runat="server" Text='<%# Eval("PRECIO") %>'></asp:Label></p>
+                                        
               
                                         <h5>Estado actual del libro:
                                     <br />
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("NombreEstatus") %>' CssClass="title"></asp:Label></h5>
-                                        <h5>Autor: <asp:LinkButton ID="LinkButton3" runat="server" CommandName="profile">
+                                        <br />
+                                        <asp:Image ID="imgAutor" runat="server" CssClass="rounded-circle" ImageUrl='<%# string.Format("https://www.escribox.com/{0}",Eval("FotoAutor"))%>' alt="Card image cap" Width="55" Height="55" />
+                                        <h5> <asp:LinkButton ID="LinkButton3" runat="server" CommandName="profile">
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Autor") %>' CssClass="title"></asp:Label>
                                             </asp:LinkButton></h5>
                                           <%# Eval("Ranking") %><br />
-                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay">Comprar</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay">$ <%# Eval("PRECIO") %>.00</asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
