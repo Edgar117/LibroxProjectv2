@@ -10,7 +10,7 @@
             <div class="content-center">
                 <div class="container">
                     <h1 class="title">Escribox.</h1>
-                    <div class="text-center">
+                    <%--<div class="text-center">
                         <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                             <i class="fab fa-facebook-square"></i>
                         </a>
@@ -20,7 +20,7 @@
                         <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                             <i class="fab fa-google-plus"></i>
                         </a>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
@@ -28,36 +28,55 @@
     <div class="section section-contact-us text-center">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 card">
-                    <asp:Image ID="imgPortada" runat="server" CssClass="img-responsive" />
-                </div>
-                <div class="col-sm-4 card text-center">
-                    <div class="card-header">
-                        <h3 class="card-header">
-                            <asp:Label ID="lblTitulo" runat="server" Text='' CssClass="card-title"></asp:Label>
-                        </h3>
-                        <asp:Label ID="lblPages" runat="server" Text="" CssClass="text-center"></asp:Label>
-                    </div>
-                    <hr />
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <asp:Label ID="lblSinop" runat="server" Text='' CssClass="title"></asp:Label></h5>
-                        <asp:Label ID="lblCat" runat="server" Text='' CssClass="title"></asp:Label>
-                    </div>
-                    <hr />
-                    <h5>Escrito por:
-                        <asp:Label ID="lblAutor" runat="server" Text='' CssClass="title"></asp:Label>
-                    </h5>
-                    <h4>
-                        <asp:Label ID="lblEstatus" runat="server" Text='' CssClass="title"></asp:Label></h4>
+                <div class="col-md-8 card">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <asp:Label ID="lblCat" runat="server" Text='' CssClass="title"></asp:Label>
+                            <br />
+                            <asp:Image ID="imgPortada" runat="server" CssClass="img-thumbnail" Width="240" Height="340" />
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="text-left"><asp:Label ID="lblTitulo" runat="server" Text=''></asp:Label></h3>
+                            <img src="../images/ImagenDefualt.png" width="30" height="30" align="left" /> <p class="text-left"><b><asp:Label ID="lblAutor" runat="server" Text='' ForeColor="Orange"></asp:Label></b></p>
+                            <asp:Label ID="lblPages" runat="server" Text="" CssClass="text-center"></asp:Label>
+                            <br />
+                            <p class="text-left"><asp:Label ID="lblSinop" runat="server" Text='' CssClass="title"></asp:Label></p>
+                            <br />
+                            <asp:Label ID="lblEstatus" runat="server" Text='' CssClass="title" Visible="false"></asp:Label>
+                            <br />
+                            <hr />
                     <%--<p>$<asp:Label ID="lblPrecio" runat="server" Text=''></asp:Label></p>--%>
-                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay"></asp:LinkButton>
-                    <br />
-                    <asp:LinkButton ID="lbtnPrueba" runat="server" CssClass="btn-link btn-warning" OnClick="lbtnPrueba_Click">Descargar una muestra</asp:LinkButton>
-                    <br />
-                    <asp:Label ID="lblMuestraNo" runat="server" Text="" ForeColor="Red"></asp:Label>
+                            <asp:LinkButton ID="lbtnPrueba" runat="server" CssClass="btn btn-warning btn-round" OnClick="lbtnPrueba_Click">Muestra gratis</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay"></asp:LinkButton>
+                            <br />
+                            <asp:Label ID="lblMuestraNo" runat="server" Text="" ForeColor="Red"></asp:Label>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4 class="text-left">Opiniones</h4>
+                    <asp:Panel ID="pnlComments2" runat="server">
+                        <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" Width="750" Height="150" CssClass="form-control" placeholder="Escribe un comentario..."></asp:TextBox>
+                        <p class="text-right">
+                            <asp:Button ID="btnComment" runat="server" Text="Comentar" CssClass="btn btn-round btn-warning" OnClick="btnComment_Click" />
+                        </p>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlLogin" runat="server">
+                        <a href="/Login.aspx" class="btn btn-round btn-warning">Inicia sesión para comentar</a>
+                    </asp:Panel>
+                    <asp:Repeater ID="Repeater2" runat="server" OnItemDataBound="Repeater2_ItemDataBound">
+                        <ItemTemplate>
+                            <h5 class="text-left"><b>
+                                <asp:Label ID="lblUser" runat="server" Text='<%# Eval ("Usuario") %>'></asp:Label></b> <asp:Label ID="lblTime" runat="server" Text='<%# Eval ("Hora", "{0:dd/MM/yyyy HH:mm:ss}") %>'></asp:Label></h5>
+                            <p class="text-left">
+                                <b>
+                                    <asp:Label ID="lblComment" runat="server" Text='<%# Eval ("Comentario") %>'></asp:Label>
+                                </b>
+                            </p>
+                            <hr />
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <h4>Libros que pueden gustarte...</h4>
                     <asp:Repeater ID="Repeater1" runat="server">
                         <ItemTemplate>
@@ -77,43 +96,6 @@
                     <asp:LinkButton ID="LinkButton2" runat="server" CssClass="card-link" Enabled="true" PostBackUrl="/libros">Ver más libros...</asp:LinkButton>
                 </div>
             </div>
-            <h3 class="title">Comentarios y reseñas</h3>
-            <div class="row card">
-                <div class="col-md-12">
-                </div>
-            </div>
-            <%--Empieza sección para publicar un comentario--%>
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8 card">
-                    <br />
-                    <asp:Panel ID="pnlComments2" runat="server">
-                        <asp:TextBox ID="txtComment" runat="server" TextMode="MultiLine" Width="750" Height="150" CssClass="form-control" placeholder="Escribe un comentario..."></asp:TextBox>
-                        <p class="text-right">
-                            <asp:Button ID="btnComment" runat="server" Text="Comentar" CssClass="btn btn-round btn-warning" OnClick="btnComment_Click" />
-                        </p>
-                    </asp:Panel>
-                    <asp:Panel ID="pnlLogin" runat="server">
-                        <a href="/Login.aspx" class="btn btn-round btn-warning">Inicia sesión para comentar</a>
-                    </asp:Panel>
-                    <asp:Repeater ID="Repeater2" runat="server">
-                        <ItemTemplate>
-                            <h5><b>
-                                <asp:Label ID="lblUser" runat="server" Text='<%# Eval ("Usuario") %>'></asp:Label></b></h5>
-                            <asp:Label ID="lblTime" runat="server" Text='<%# Eval ("Hora") %>'></asp:Label>
-                            <p>
-                                <b>
-                                    <asp:Label ID="lblComment" runat="server" Text='<%# Eval ("Comentario") %>'></asp:Label>
-                                </b>
-                            </p>
-                            <hr />
-                        </ItemTemplate>
-                    </asp:Repeater>
-                    <hr />
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-
         </div>
     </div>
 </asp:Content>

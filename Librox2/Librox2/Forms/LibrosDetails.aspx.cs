@@ -57,12 +57,13 @@ namespace Librox2.Forms
                     //Cargando sección de comentarios
                     bindComments();
 
-                    lblTitulo.Text = titulo;
-                    lblAutor.Text = autor;
+                    lblTitulo.Text = titulo + " (" + estatus + ")";
+                    lblAutor.Text = " " + autor;
                     lblCat.Text = categoria;
                     lblEstatus.Text = estatus;
                     lblSinop.Text = sinopsis;
-                    imgPortada.ImageUrl = imgPath;
+                    imgPath = imgPath.Substring(1, imgPath.Length-1);
+                    imgPortada.ImageUrl = "https://www.escribox.com" + imgPath;
 
                     LinkButton1.Text = "$" + precio + ".00";
 
@@ -112,7 +113,7 @@ namespace Librox2.Forms
             if (txtComment.Text != "")
             {
                 comentarios.Comentarios = txtComment.Text;
-                comentarios.Libro = lblTitulo.Text;
+                comentarios.Libro = titulo;
                 comentarios.Usuario = Session["Usuario"].ToString();
                 DAOLibros.InsertarComentarios(comentarios);
                 Response.Redirect("/details");
@@ -139,7 +140,7 @@ namespace Librox2.Forms
         private void obtenerLibroFisico()
         {
             DataTable dtBooks = new DataTable();
-            dtBooks = DAOLibros.ConsultarLibrosXTexto(lblTitulo.Text);
+            dtBooks = DAOLibros.ConsultarLibrosXTexto(titulo);
             libroFisico = dtBooks.Rows[0]["LibroFisico"].ToString();
         }
 
@@ -229,7 +230,7 @@ namespace Librox2.Forms
                 //De lo contrario, no es posible generar una muestra, aparece el siguiente mensaje.
                 else
                 {
-                    lblMuestraNo.Text = "No es posible descargar una muestra de este libro";
+                    lblMuestraNo.Text = "El libro no tiene suficientes páginas para generar una muestra";
                     return;
                 }
             }
@@ -237,6 +238,15 @@ namespace Librox2.Forms
             {
                 lblMuestraNo.Text = "No es posible descargar una muestra de este libro";
             }
+        }
+
+        protected void Repeater2_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            //if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
+            //{
+            //        string fecha = ((Label)e.Item.FindControl("lblHora")).Text;
+            //        ((Label)e.Item.FindControl("lblHora")).Text = fecha.ToString("dd/MMMM/yyyy");   
+            //}
         }
     }
 }
