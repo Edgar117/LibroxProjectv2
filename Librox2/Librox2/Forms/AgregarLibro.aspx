@@ -10,6 +10,7 @@
         //File Upload response from the server
         Dropzone.options.dropzoneForm = {
             maxFiles: 10,
+            maxFilesize: 500,
             url: "newbook",
             init: function () {
                 this.on("maxfilesexceeded", function (data) {

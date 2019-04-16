@@ -79,6 +79,7 @@
     <Content Include="css\_all-skins.min.css" />
     <Content Include="Defualt.aspx" />
     <Content Include="Forms\AdministrarComentarios.aspx" />
+    <Content Include="Forms\AdministrarLibros.aspx" />
     <Content Include="Forms\AdministrarMisLibros.aspx" />
     <Content Include="Forms\AgregarAdmin.aspx" />
     <Content Include="Forms\AgregarStatusLibros.aspx" />
@@ -916,6 +917,13 @@
     </Compile>
     <Compile Include="Forms\AdministrarComentarios.aspx.designer.cs">
       <DependentUpon>AdministrarComentarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdministrarLibros.aspx.cs">
+      <DependentUpon>AdministrarLibros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministrarLibros.aspx.designer.cs">
+      <DependentUpon>AdministrarLibros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\AdministrarMisLibros.aspx.cs">
       <DependentUpon>AdministrarMisLibros.aspx</DependentUpon>

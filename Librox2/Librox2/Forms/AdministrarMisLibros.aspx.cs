@@ -9,6 +9,9 @@ using System.Data;
 using Librox2.BO;
 using System.Drawing;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+
 namespace Librox2.Forms
 {
 
@@ -192,6 +195,7 @@ namespace Librox2.Forms
             DropDownList categoriaLibro = e.Item.FindControl("ddlCat") as DropDownList;
             DropDownList ddlEsta = e.Item.FindControl("ddlEstatus") as DropDownList;
             FileUpload fileU = e.Item.FindControl("fuImg") as FileUpload;
+            FileUpload LoadNewPdf = e.Item.FindControl("LoadNewPdf") as FileUpload;
             if (fileU.HasFile)
             {
                 var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + Session["Usuario"].ToString() + "/"));
@@ -204,7 +208,25 @@ namespace Librox2.Forms
             {
                 OBLibros.ImagenPòrtada = null;
             }
-
+            if (LoadNewPdf.HasFile)
+            {
+                string Variable = Session["Usuario"].ToString();
+                var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + Variable + "/"));
+               
+                string pathString = originalDirectory.ToString();
+                var FileNameVerify = Path.GetFileName(LoadNewPdf.FileName);//Lo estoy usando para verificar algo
+                var fileName1 = Path.GetFileNameWithoutExtension(LoadNewPdf.FileName);
+                //Solo el pdf necesitamos encriptar
+                string encryptedName = fileName1 + "_encrypted";    //Se asigna el nombre que tendrá el archivo ya encriptado
+                string pathDestino = pathString + encryptedName;    //Se combinan las rutas para indicar en dónde se guardará el archivo encriptado
+                EncryptFile(LoadNewPdf.PostedFile, pathDestino); //Llamada al método para encriptar archivo
+                Session["LibroFisico"] = Variable + "/" + fileName1;
+                OBLibros.LibroFisico= Variable + "/" + fileName1;
+            }
+            else
+            {
+                OBLibros.LibroFisico = null;
+            }
             OBLibros.EstatusLibro = Convert.ToInt32(ddlEsta.SelectedValue);
             OBLibros.ID_LIBRO = id;
             OBLibros.Titulo = nombreLibro.Text;
@@ -224,7 +246,40 @@ namespace Librox2.Forms
             }
 
         }
+        private void EncryptFile(HttpPostedFile file, string outputfile)
+        {
+            //file y outpfile hacen referencia al archivo que se subió a encriptar y en dónde se guardará una vez encriptado respectivamente.
+            try
+            {
+                //string InitVector = "qwertyui"; //16byte 1chr = 2byte(unicode)
+                string password = "mikey2018";  //Se encripta con esta contraseña
 
+                string cryptFile = outputfile;  //Se trata el parámetro ingresado como una variable nueva e independiente
+                FileStream fsCrypt = new FileStream(cryptFile, FileMode.Create);    //Crea un FS en modo criptógrafo (no permite lectura de ningún tipo)
+
+                RijndaelManaged RMcrypto = new RijndaelManaged();   //Se crea un objeto del algoritmo de criptografía
+                Rfc2898DeriveBytes key = new Rfc2898DeriveBytes(password, Encoding.ASCII.GetBytes("Salt text"));    //Codifica el password en bytes ASCII como lo requiere el algoritmo
+
+                //Se asigna la clave 'key' y el índice del vector 'IV' basados en 8 bytes como propiedades del objeto de encriptación, mismos que servirán para decodificar
+                RMcrypto.Key = key.GetBytes(RMcrypto.KeySize / 8);
+                RMcrypto.IV = key.GetBytes(RMcrypto.BlockSize / 8);
+
+                CryptoStream cs = new CryptoStream(fsCrypt, RMcrypto.CreateEncryptor(), CryptoStreamMode.Write);    //Escribe los bytes a bytes encriptados
+
+                int data;
+                while ((data = file.InputStream.ReadByte()) != -1)  //Escribe los bytes
+                    cs.WriteByte((byte)data);   //Va construyendo de nuevo el archivo
+
+                //Se cierran las instancias abiertas
+                file.InputStream.Close();
+                cs.Close();
+                fsCrypt.Close();
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "error();", true);
+            }
+        }
         protected void dtlBooks_CancelCommand(object source, DataListCommandEventArgs e)
         {
             dtlBooks.EditItemIndex = -1;

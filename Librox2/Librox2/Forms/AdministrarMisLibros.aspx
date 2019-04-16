@@ -147,6 +147,9 @@
                                         &nbsp;<asp:LinkButton ID="lbtnCancel" runat="server" CommandName="cancel">Cancelar</asp:LinkButton>
                                         &nbsp;<asp:LinkButton ID="lbtnDelete" runat="server" CommandName="delete" CssClass="btn bnt-sm btn-round btn-danger">Eliminar</asp:LinkButton>
                                         <asp:FileUpload ID="fuImg" runat="server" accept=" image/jpeg, image/png" onchange="showimagepreview(this)" />
+                                       <br />
+                                         <label>Cargar nuevo pdf</label> 
+                                         <asp:FileUpload ID="LoadNewPdf" runat="server" />
                                     </div>
                                 </div>
                             </EditItemTemplate>

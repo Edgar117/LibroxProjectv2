@@ -159,6 +159,13 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
             return con.TablaGeneral(SQL);
         }
 
+        //Consulta libros para el admin
+        public DataTable ConsultarLibrosAdmin()
+        {
+            SQL = "SELECT ls.IDLibro AS Identificador, ls.Titulo,LS.Categoria,US.Usuario  FROM LIBROS LS INNER JOIN USUARIOS US ON LS.ID_Autor = US.ID WHERE LS.RegBorrado = 0";
+            return con.TablaGeneral(SQL);
+        }
+
         public DataTable ConsultarMiPago(int IDUsuario)
         {
             SQL = " EXEC [dbo].[st_SelCalculaMiPago] " + IDUsuario + "";
@@ -224,7 +231,7 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
         {
             LibrosBO nom = (LibrosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "EXEC [spUpdateDelete] '" + nom.ID_LIBRO + "','" + nom.Titulo + "','" + nom.Sinpsis + "','" + nom.ImagenPòrtada + "','" + nom.Categoria + "','" + nom.EstatusLibro + "','" + nom.Action + "'  ";
+            string sql = "EXEC [spUpdateDelete] '" + nom.ID_LIBRO + "','" + nom.Titulo + "','" + nom.Sinpsis + "','" + nom.ImagenPòrtada + "','" + nom.Categoria + "','" + nom.EstatusLibro + "','" + nom.Action + "','" + nom.LibroFisico + "'  ";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();
@@ -257,6 +264,23 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
             ComentariosBO nom = (ComentariosBO)obj;
             cmd.Connection = con.EstablecerConexion();
             string sql = "DELETE FROM Comentarios WHERE IDComentario=" + nom.IDComentario + "";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
+
+        //Elimina un libro fisicamente de manera logica
+        public int EliminarComentariosAdmin(int ID)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "EXEC ST_Del_Libro " + ID + "";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

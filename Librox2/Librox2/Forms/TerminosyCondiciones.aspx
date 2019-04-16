@@ -187,23 +187,29 @@ descargas de sus obras por membresía los autores recibirán un porcentaje del 2
 valor actual en el que se encuentre en la página en el momento de su descarga.
 I. El usuario acepta el precio de compra que la aplicación asigne a su obra.
 POLITICA DE PRECIOS
-A. los precios serán asignados por la  aplicación
+A. los precios serán asignados por la  aplicación.
+Usted acepta que “Escribox” es el medio vinculante en cuanto a la transacción onerosa del
+usuario que descargue una obra del usuario autor y por tal motivo “Escribox” descuenta un
+porcentaje de las ganancias totales del autor del libro u obra. Dicho porcentaje a descontar
+podrá ser variable dependiendo la inflación del país en el que usted se encuentre.
+Dicho descuento sera del 35 % del total del precio del libro y un porcentaje adicional que
+cobra el sistema de pago que es ajeno a “Escribox” y será efectuado por un tercero
+designado por los administradores.
+
 B. los precios son asignados por el la calificación obtenida de los usuarios que lean y
 califiquen personalmente la obra.
+Al subir el usuario por primera vez su libro a “Escribox” este tendrá una calificación de
+“0” estrellas y cuando lo descargue un usuario este tendrá la opción de calificarlo según su
+percepción y es lo que asignara el precio según el promedio de estrellas que alcance según
+la tabla a continuación.
 C. La siguiente tabla anexa explica la forma en  que la aplicación asigna el precio a las
 obras. 
 PAGO
 
-Usted acepta que “Escribox” es el medio vinculante en cuanto a la transacción onerosa del
-usuario que descargue una obra del usuario autor y por tal motivo “Escribox” descuenta un
-porcentaje de las ganancias totales del autor del libro u obra. Dicho porcentaje a descontar
-podrá ser variable dependiendo la inflación del país en el que usted se encuentre
-Dicho descuento será efectuado por un tercero designado por los administradores de
-“Escribox” 
 RANKIN PRECIO
-1-2 $15.00
-3-4 $20.00
-5 $30.00
+0-1-2 $15.00
+3-4 $25.00
+5 $35.00
 
 D. El usuario acepta que los precios sean asignados por la aplicación.
 E. El usuario acepta que NO asignara precio de descarga a su obra.
@@ -218,9 +224,10 @@ en parte de los presentes términos y condiciones en cualquier momento.
 Serán efectivos los cambios cuando estén publicado en la página oficial de escribox, sus filiales o
 terceros que este designe o autorice para tales efectos.
 COMO CONTACTARNOS
+
 Usted puede enviarnos correo con todas sus dudas o inquietudes al correo
 soportescribox@gmail.com y contestaremos en un lapso de 48 a 72 horas con las posibles
-soluciones a su problema..
+soluciones a su problema.
 </h5>
           </div>
         </div>
