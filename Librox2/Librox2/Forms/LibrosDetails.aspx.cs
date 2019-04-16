@@ -25,12 +25,14 @@ namespace Librox2.Forms
         DataTable dt = new DataTable();
         string titulo;
         string libroFisico;
+        string book;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                if (Session["Usuario"] == null)
+                
+                if (Session["Usuario"] == null || Session["Usuario"].ToString() == "")
                 {
                     pnlComments2.Visible = false;
                     pnlLogin.Visible = true;
@@ -51,6 +53,7 @@ namespace Librox2.Forms
                     string sinopsis = Convert.ToString(ht["Sinopsis"]);
                     string estatus = Convert.ToString(ht["Estatus"]);
                     string imgPath = Convert.ToString(ht["ImagenPortada"]);
+                    string imgPathA = Convert.ToString(ht["ImagenAutor"]);
 
                     //string strDesignation = ht.ContainsKey("Precio") ? Convert.ToString(ht["Precio"]) : "";
 
@@ -58,12 +61,14 @@ namespace Librox2.Forms
                     bindComments();
 
                     lblTitulo.Text = titulo + " (" + estatus + ")";
+                    lblAuxTit.Text = titulo;
                     lblAutor.Text = " " + autor;
                     lblCat.Text = categoria;
                     lblEstatus.Text = estatus;
                     lblSinop.Text = sinopsis;
                     imgPath = imgPath.Substring(1, imgPath.Length-1);
                     imgPortada.ImageUrl = "https://www.escribox.com" + imgPath;
+                    fotoA.Src = imgPathA;
 
                     LinkButton1.Text = "$" + precio + ".00";
 
@@ -77,7 +82,7 @@ namespace Librox2.Forms
                     for (int i = dt.Rows.Count - 1; i >= 0; i--)
                     {
                         DataRow dr = dt.Rows[i];
-                        if (dr["Titulo"].ToString() == titulo)
+                        if (dr["Titulo"].ToString() == lblAuxTit.Text)
                             dt.Rows.Remove(dr);
                     }
                     //Removiendo título seleccionado, evita que se indexe en las recomendaciones
@@ -95,15 +100,31 @@ namespace Librox2.Forms
                 }
                 else
                 {
-                    Response.Redirect("libros");
+                    //Response.Redirect("libros");
+                    book = Request.QueryString["book"];
+                    DataTable dtHi = DAOLibros.ConsultarLibrosXTexto(book);
+                    lblTitulo.Text = dtHi.Rows[0]["Titulo"].ToString();
+                    lblSinop.Text = dtHi.Rows[0]["Sinopsis"].ToString();
+                    lblAutor.Text = dtHi.Rows[0]["Autor"].ToString();
+                    lblCat.Text = dtHi.Rows[0]["Categoria"].ToString();
+                    lblAuxTit.Text = dtHi.Rows[0]["Titulo"].ToString();
+                    imgPortada.ImageUrl = "https://www.escribox.com/LibrosPortadas/" + dtHi.Rows[0]["ImagenPortada"].ToString();
+                    LinkButton1.Text = "Ingresa para comprar por $ " + dtHi.Rows[0]["PRECIO"].ToString() + ".00";
+                    LinkButton1.Enabled = false;
+                    lbtnPrueba.Text = "Ingresa para descargar una muestra gratis";
+                    lbtnPrueba.Enabled = false;
                 }
+            }
+            else
+            {
+                book = Request.QueryString["book"];
             }
         }
 
         private void bindComments()
         {
             DataTable dtComments = new DataTable();
-            dtComments = DAOLibros.ConsultaComentariosLibros(titulo);
+            dtComments = DAOLibros.ConsultaComentariosLibros(lblAuxTit.Text);
             Repeater2.DataSource = dtComments;
             Repeater2.DataBind();
         }
@@ -113,7 +134,7 @@ namespace Librox2.Forms
             if (txtComment.Text != "")
             {
                 comentarios.Comentarios = txtComment.Text;
-                comentarios.Libro = titulo;
+                comentarios.Libro = lblAuxTit.Text;
                 comentarios.Usuario = Session["Usuario"].ToString();
                 DAOLibros.InsertarComentarios(comentarios);
                 Response.Redirect("/details");
@@ -140,7 +161,7 @@ namespace Librox2.Forms
         private void obtenerLibroFisico()
         {
             DataTable dtBooks = new DataTable();
-            dtBooks = DAOLibros.ConsultarLibrosXTexto(titulo);
+            dtBooks = DAOLibros.ConsultarLibrosXTexto(lblAuxTit.Text);
             libroFisico = dtBooks.Rows[0]["LibroFisico"].ToString();
         }
 

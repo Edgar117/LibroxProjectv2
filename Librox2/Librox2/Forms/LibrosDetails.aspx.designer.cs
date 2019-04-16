@@ -40,6 +40,24 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
+        /// Control lblAuxTit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAuxTit;
+        
+        /// <summary>
+        /// Control fotoA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage fotoA;
+        
+        /// <summary>
         /// Control lblAutor.
         /// </summary>
         /// <remarks>

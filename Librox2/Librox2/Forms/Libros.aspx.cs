@@ -145,7 +145,9 @@ namespace Librox2.GUI
                 string autor = ((Label)item.FindControl("Label2")).Text;
                 string estatus = ((Label)item.FindControl("Label3")).Text;
                 Image imgPortada = (Image)item.FindControl("imgPortada");
+                Image fotoAutor = (Image)item.FindControl("imgAutor");
                 string imgRuta = imgPortada.ImageUrl;
+                string imgAutor = fotoAutor.ImageUrl;
                 System.Collections.Hashtable ht = new System.Collections.Hashtable();
                 ht.Add("Titulo", titulo);
                 ht.Add("Precio", precio);
@@ -154,8 +156,9 @@ namespace Librox2.GUI
                 ht.Add("Autor", autor);
                 ht.Add("Estatus", estatus);
                 ht.Add("ImagenPortada", imgRuta);
+                ht.Add("ImagenAutor", imgAutor);
                 Session["LibroDetalle"] = ht;
-                Response.Redirect("/details");
+                Response.Redirect("/details?book=" + titulo);
             }
             if (e.CommandName == "profile")
             {

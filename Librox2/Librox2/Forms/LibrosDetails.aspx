@@ -37,7 +37,8 @@
                         </div>
                         <div class="col-md-8">
                             <h3 class="text-left"><asp:Label ID="lblTitulo" runat="server" Text=''></asp:Label></h3>
-                            <img src="../images/ImagenDefualt.png" width="30" height="30" align="left" /> <p class="text-left"><b><asp:Label ID="lblAutor" runat="server" Text='' ForeColor="Orange"></asp:Label></b></p>
+                            <asp:Label ID="lblAuxTit" runat="server" Text='' Visible="false"></asp:Label>
+                            <img id="fotoA" runat="server" src="../images/ImagenDefualt.png" width="45" height="45" align="left" class="rounded-circle" /> <p class="text-left"><b><asp:Label ID="lblAutor" runat="server" Text='' ForeColor="Orange"></asp:Label></b></p>
                             <asp:Label ID="lblPages" runat="server" Text="" CssClass="text-center"></asp:Label>
                             <br />
                             <p class="text-left"><asp:Label ID="lblSinop" runat="server" Text='' CssClass="title"></asp:Label></p>
@@ -85,7 +86,7 @@
                                 <asp:Image ID="imgPortada" runat="server" CssClass="img-thumbnail" ImageUrl='<%# string.Format("~/LibrosPortadas/{0}",Eval("ImagenPortada"))%>' alt="Card image cap" Width="70" Height="84" />
                                 <div class="media-body">
                                     <h5 class="mt-0">
-                                        <asp:Label ID="lblTitulo" runat="server" Text='<%# Eval("Titulo") %>' CssClass="title"></asp:Label>
+                                        <asp:Label ID="lblTituloC" runat="server" Text='<%# Eval("Titulo") %>' CssClass="title"></asp:Label>
                                     </h5>
                                     <asp:Label ID="lblSinop" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="text-center text"></asp:Label>
                                 </div>
