@@ -47,15 +47,7 @@
                 <div class="container">
                     <h2 class="title">Registro de libros</h2>
                     <div class="text-center">
-                        <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                            <i class="fab fa-facebook-square"></i>
-                        </a>
-                        <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                            <i class="fab fa-google-plus"></i>
-                        </a>
+               
                     </div>
                 </div>
             </div>

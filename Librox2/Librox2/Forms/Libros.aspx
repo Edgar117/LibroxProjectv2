@@ -102,7 +102,7 @@
                                     <br />
                                             <asp:Label ID="lblSinop" runat="server" Text='<%# Eval("Sinopsis") %>' CssClass="text"></asp:Label>
                                         </p>
-                                        
+                                         <asp:Label ID="lblPrecio" Visible="false" runat="server" Text='<%# Eval("PRECIO") %>'></asp:Label>
               
                                         <h5>Estado actual del libro:
                                     <br />
