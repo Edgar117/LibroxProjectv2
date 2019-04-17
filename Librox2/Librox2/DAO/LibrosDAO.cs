@@ -134,7 +134,7 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
         //Metodo que devuelve los comentarios deacuerdo al libro que se este buscando.
         public DataTable ConsultaComentariosLibros(string IDLibro)
         {
-            SQL = "SELECT IDComentario AS ID, Comentarios.Usuario,Comentario, FORMAT(Hora , 'dd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro,US.ImagenUsuario FROM Comentarios INNER JOIN Usuarios US ON US.Usuario= Comentarios.Usuario WHERE Libro='" + IDLibro + "' ORDER BY Hora DESC";
+            SQL = "SET LANGUAGE SPANISH SELECT IDComentario AS ID, Comentarios.Usuario,Comentario, FORMAT(Hora , 'dd/MMMM/yyyy HH:mm') AS Hora ,Libro AS Libro,US.ImagenUsuario FROM Comentarios INNER JOIN Usuarios US ON US.Usuario= Comentarios.Usuario WHERE Libro='" + IDLibro + "' ORDER BY Hora DESC";
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
