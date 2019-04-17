@@ -84,7 +84,8 @@
                                 <div class="card" style="width: 19rem;">
                                     <h5 class="card-header"></h5>
                                     <%--<img class="card-img-top" src="../LibrosPortadas/<%# Eval("ImagenPortada") %>" alt="Card image cap" width="237" height="260">--%>
-                                    <asp:Image ID="imgPortada" runat="server" CssClass="card-img-top" ImageUrl='<%# string.Format("~/LibrosPortadas/{0}",Eval("ImagenPortada"))%>' alt="Card image cap" Width="237" Height="260" />
+                                    <%--<asp:Image ID="imgPortada" runat="server" CssClass="card-img-top" ImageUrl='<%# string.Format("~/LibrosPortadas/{0}",Eval("ImagenPortada"))%>' alt="Card image cap" Width="237" Height="260" />--%>
+                                    <asp:ImageButton ID="imgPortada" runat="server" CssClass="card-img-top" ImageUrl='<%# string.Format("~/LibrosPortadas/{0}",Eval("ImagenPortada"))%>' alt="Card image cap" Width="237" Height="260" CommandName="detailsI" />
                                     <div class="card-body">
                                         <%--<h5 class="title"><%# Eval("Categoria") %></h5>--%>
                                         <h5>Categoría:
@@ -109,6 +110,7 @@
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("NombreEstatus") %>' CssClass="title"></asp:Label></h5>
                                         <br />
                                         <asp:Image ID="imgAutor" runat="server" CssClass="rounded-circle" ImageUrl='<%# string.Format("https://www.escribox.com/{0}",Eval("FotoAutor"))%>' alt="Card image cap" Width="55" Height="55" />
+                                        
                                         <h5> <asp:LinkButton ID="LinkButton3" runat="server" CommandName="profile">
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("Autor") %>' CssClass="title"></asp:Label>
                                             </asp:LinkButton></h5>

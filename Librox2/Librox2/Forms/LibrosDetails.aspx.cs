@@ -14,6 +14,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.xml;
 using iTextSharp.text;
 using System.Net;
+using System.Globalization;
 
 namespace Librox2.Forms
 {
@@ -57,8 +58,7 @@ namespace Librox2.Forms
 
                     //string strDesignation = ht.ContainsKey("Precio") ? Convert.ToString(ht["Precio"]) : "";
 
-                    //Cargando sección de comentarios
-                    bindComments();
+                    
 
                     lblTitulo.Text = titulo + " (" + estatus + ")";
                     lblAuxTit.Text = titulo;
@@ -72,6 +72,8 @@ namespace Librox2.Forms
 
                     LinkButton1.Text = "$" + precio + ".00";
 
+                    //Cargando sección de comentarios
+                    bindComments();
                     //Cuando se abre la página de detalles del libro, se desencripta dicho libro y se queda guardado en servidor.
                     obtenerLibroFisico();
                     prepareMuestra();
@@ -119,6 +121,10 @@ namespace Librox2.Forms
             {
                 book = Request.QueryString["book"];
             }
+
+            book = Request.QueryString["book"];
+            DataTable dtHi2 = DAOLibros.ConsultarLibrosXTexto(book);
+
         }
 
         private void bindComments()
@@ -263,11 +269,42 @@ namespace Librox2.Forms
 
         protected void Repeater2_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            //if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
-            //{
-            //        string fecha = ((Label)e.Item.FindControl("lblHora")).Text;
-            //        ((Label)e.Item.FindControl("lblHora")).Text = fecha.ToString("dd/MMMM/yyyy");   
-            //}
+            if ((e.Item.ItemType == ListItemType.Item) || (e.Item.ItemType == ListItemType.AlternatingItem))
+            {
+                DateTime fechaComent;
+                DateTime fechaHoy;
+                TimeSpan fpPub;
+                fechaHoy = DateTime.Now;
+                string f = ((Label)e.Item.FindControl("lblTime")).Text;
+                fechaComent = Convert.ToDateTime(f);
+                fpPub = (fechaHoy - fechaComent);
+                //((Label)e.Item.FindControl("lblTime")).Text = fechaComent.ToString();
+                //((Label)e.Item.FindControl("lblFechaHoy")).Text = fechaHoy.ToString();
+
+                //string fecha = ((Label)e.Item.FindControl("lblTime")).Text;
+                //DateTime f1 = Convert.ToDateTime(fecha);
+                ////                DateTime f1 = DateTime.ParseExact("yyyy-MM-dd HH:mm:ss", fecha, CultureInfo.InvariantCulture);
+                //DateTime fpPub = DateTime.Now;
+
+                //DateTime result = fpPub - f1;
+
+                if (fpPub.Days > 0 && fpPub.Days < 32)
+                {
+                    ((Label)e.Item.FindControl("lblTime")).Text = "Hace " + fpPub.Days + " día(s)";
+                }
+                else if (fpPub.Days > 31)
+                {
+                    ((Label)e.Item.FindControl("lblTime")).Text = fechaComent.ToString("dd/MM/yyyy");
+                }
+                else if (fpPub.Hours < 1)
+                {
+                    ((Label)e.Item.FindControl("lblTime")).Text = "Hace " + fpPub.Minutes + " minutos";
+                }
+                else
+                {
+                    ((Label)e.Item.FindControl("lblTime")).Text = "Hace " + fpPub.Hours + " horas";
+                }
+            }
         }
     }
 }

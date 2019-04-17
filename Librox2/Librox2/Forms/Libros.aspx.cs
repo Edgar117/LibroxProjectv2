@@ -144,7 +144,8 @@ namespace Librox2.GUI
                 string sinopsis = ((Label)item.FindControl("lblSinop")).Text;
                 string autor = ((Label)item.FindControl("Label2")).Text;
                 string estatus = ((Label)item.FindControl("Label3")).Text;
-                Image imgPortada = (Image)item.FindControl("imgPortada");
+                //Image imgPortada = (Image)item.FindControl("imgPortada");
+                Image imgPortada = (ImageButton)item.FindControl("imgPortada");
                 Image fotoAutor = (Image)item.FindControl("imgAutor");
                 string imgRuta = imgPortada.ImageUrl;
                 string imgAutor = fotoAutor.ImageUrl;
@@ -160,7 +161,35 @@ namespace Librox2.GUI
                 Session["LibroDetalle"] = ht;
                 Response.Redirect("/details?book=" + titulo);
             }
-            if (e.CommandName == "profile")
+            if (e.CommandName == "detailsI")
+            {
+                //Busca una referencia al 'linkbutton' dentro del repeater
+                RepeaterItem item = (RepeaterItem)(((ImageButton)(e.CommandSource)).NamingContainer);
+                //Obtiene valores del item seleccionado (título y precio)
+                string titulo = ((Label)item.FindControl("lblTitulo")).Text;
+                string precio = ((Label)item.FindControl("lblPrecio")).Text;
+                string categoria = ((Label)item.FindControl("lblCat")).Text;
+                string sinopsis = ((Label)item.FindControl("lblSinop")).Text;
+                string autor = ((Label)item.FindControl("Label2")).Text;
+                string estatus = ((Label)item.FindControl("Label3")).Text;
+                //Image imgPortada = (Image)item.FindControl("imgPortada");
+                Image imgPortada = (ImageButton)item.FindControl("imgPortada");
+                Image fotoAutor = (Image)item.FindControl("imgAutor");
+                string imgRuta = imgPortada.ImageUrl;
+                string imgAutor = fotoAutor.ImageUrl;
+                System.Collections.Hashtable ht = new System.Collections.Hashtable();
+                ht.Add("Titulo", titulo);
+                ht.Add("Precio", precio);
+                ht.Add("Categoria", categoria);
+                ht.Add("Sinopsis", sinopsis);
+                ht.Add("Autor", autor);
+                ht.Add("Estatus", estatus);
+                ht.Add("ImagenPortada", imgRuta);
+                ht.Add("ImagenAutor", imgAutor);
+                Session["LibroDetalle"] = ht;
+                Response.Redirect("/details?book=" + titulo);
+            }
+                if (e.CommandName == "profile")
             {
                 if (Session["Usuario"]!=null)
                 {
