@@ -144,3 +144,4 @@ C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\Micros
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.dll
 C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.pdb
+C:\Users\Ezio Altair\Documents\GitHub\LibroxProjectv2\Librox2\Librox2\obj\Debug\Librox2.csprojResolveAssemblyReference.cache

@@ -76,7 +76,7 @@ namespace Librox2.GUI
             MailMessage mail = new MailMessage();
 
             //set the addresses 
-            mail.From = new MailAddress("administrador@escribox.com"); //IMPORTANT: This must be same as your smtp authentication address.
+            mail.From = new MailAddress("Soporte@escribox.com"); //IMPORTANT: This must be same as your smtp authentication address.
             mail.To.Add(destinatario);
 
             //set the content 
@@ -86,7 +86,7 @@ namespace Librox2.GUI
             SmtpClient smtp = new SmtpClient("mail.escribox.com");
 
             //IMPORANT:  Your smtp login email MUST be same as your FROM address. 
-            NetworkCredential Credentials = new NetworkCredential("administrador@escribox.com", "Admin_Escribox");
+            NetworkCredential Credentials = new NetworkCredential("Soporte@escribox.com", "SoporteAdmin<");
             smtp.Credentials = Credentials;
             smtp.Send(mail);
             lblSuccess.Text = "Mensaje enviado";
