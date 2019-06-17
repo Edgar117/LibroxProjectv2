@@ -30,6 +30,7 @@ namespace Librox2.WebServices
            // string outputJSON = ser.Serialize(OBJson);
             //return outputJSON;
              return  new ser.Serialize(OBJson);
+             //Context.Response.Write (ser.Serialize(OBJson)); 
             
         }
     }
