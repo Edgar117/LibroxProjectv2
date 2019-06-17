@@ -27,8 +27,9 @@ namespace Librox2.WebServices
             UsuariosDAO US = new UsuariosDAO();
             UserBoWebService OBJson = new UserBoWebService
             { ID = int.Parse(US.validarusuarioApp(US1, PASS)) };
-            string outputJSON = ser.Serialize(OBJson);
-            return outputJSON;
+           // string outputJSON = ser.Serialize(OBJson);
+            //return outputJSON;
+             return  new ser.Serialize(OBJson);
             
         }
     }
