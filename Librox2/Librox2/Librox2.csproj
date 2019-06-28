@@ -368,6 +368,7 @@
     <Content Include="Maybe\materialize\LICENSE" />
     <Content Include="Maybe\materialize\README.md" />
     <Content Include="css\fbutton.less" />
+    <Content Include="WebServices\ApiService.asmx" />
     <Content Include="WriterCreations\Creator.aspx" />
     <Content Include="WriterCreations\Post.aspx" />
     <Content Include="WriterCreations\resources_material\assets\css\bootstrap.css" />
@@ -890,6 +891,7 @@
     <Compile Include="BO\CategoriasBO.cs" />
     <Compile Include="BO\ComentariosBO.cs" />
     <Compile Include="BO\EstadoLibroBO.cs" />
+    <Compile Include="BO\JsonResult.cs" />
     <Compile Include="BO\LibrosBO.cs" />
     <Compile Include="BO\Mensajes.cs" />
     <Compile Include="BO\Paypal.cs" />
@@ -1173,6 +1175,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\ApiService.asmx.cs">
+      <DependentUpon>ApiService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebServices\LoginUsuarios.asmx.cs">
       <DependentUpon>LoginUsuarios.asmx</DependentUpon>
