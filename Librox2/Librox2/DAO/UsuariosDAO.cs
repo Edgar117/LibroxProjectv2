@@ -204,6 +204,11 @@ namespace Librox2.DAO
             return ID;
 
         }
+        public DataTable GetInformationUserApp(string ID)
+        {
+            SQL = "EXEC [dbo].[St_GetInformationApp] " + ID;
+            return con.TablaGeneral(SQL);
+        }
         public DataTable ConsultarMisLibros(int ID)
         {
             SQL = "SELECT ImagenPortada FROM LIBROS WHERE ID_Autor='"+ID+"' AND RegBorrado=0";

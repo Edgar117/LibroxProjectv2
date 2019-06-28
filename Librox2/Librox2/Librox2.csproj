@@ -895,6 +895,7 @@
     <Compile Include="BO\Paypal.cs" />
     <Compile Include="BO\Ranking.cs" />
     <Compile Include="BO\UserBoWebService.cs" />
+    <Compile Include="BO\UserGetApp.cs" />
     <Compile Include="BO\UsuarioBO.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\Conexion.cs" />
