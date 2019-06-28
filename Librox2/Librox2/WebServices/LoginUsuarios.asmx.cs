@@ -45,7 +45,6 @@ namespace Librox2.WebServices
             { categoria= dtuser.Rows[0]["Categoria"].ToString(),Descripcion= dtuser.Rows[0]["DescriptionUser"].ToString(),Seguidores= dtuser.Rows[0]["SEGUIDORES"].ToString(),ImagenUsuario= dtuser.Rows[0]["ImagenUsuario"].ToString(),TotalLibros= dtuser.Rows[0]["TotalLibros"].ToString(),UserName= dtuser.Rows[0]["Usuario"].ToString() };
             string outputJSON = ser.Serialize(OBJson);
             Context.Response.Write(ser.Serialize(OBJson));
-
         }
     }
 }
