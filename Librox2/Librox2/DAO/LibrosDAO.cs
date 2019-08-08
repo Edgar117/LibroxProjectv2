@@ -130,6 +130,18 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
             //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
             return con.TablaGeneral(SQL);
         }
+        public DataTable ConsultarLibrosByNameApp(string NameBook)
+        {
+            SQL = "EXEC [dbo].[SelPaginadorLibrosXTituloApp] '"+NameBook+"'";
+            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            return con.TablaGeneral(SQL);
+        }
+        public DataTable ConsultarComentariosByNameApp(string NameBook)
+        {
+            SQL = "EXEC [dbo].[SelComentByBook] '" + NameBook + "'";
+            //SQL = "SELECT Titulo, Sinopsis, US.Usuario AS 'Autor',RG.PRECIO,ImagenPortada,Ranking ,Libros.Categoria,EL.[NombreEstatus] FROM LIBROS  INNER JOIN RANKING RG ON RG.ID = LIBROS.ID_PRECIO   INNER JOIN Usuarios US ON US.ID = LIBROS.ID_AUTOR   INNER JOIN EstadoLibro EL ON EL.ID = LIBROS.[ID_EstatusLibro]";
+            return con.TablaGeneral(SQL);
+        }
         //Metodò general que consulta datos de un libro.
         public DataTable ConsultarLibrosXNombreLibro(string NombreLibro)
         {
@@ -162,6 +174,21 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
         public DataTable ConsultarLibrosXTexto(string Texto)
         {
             SQL = "EXEC [dbo].[SelPaginadorLibrosXTitulo] '" + Texto + "'";
+            return con.TablaGeneral(SQL);
+        }
+        public DataTable ConsultarLibroDescargaApp(string ID)
+        {
+            SQL = "EXEC [dbo].[SelGetNameBookDescarga] '" + ID + "'";
+            return con.TablaGeneral(SQL);
+        }
+        public DataTable ConsultarBiblotecaUsuario(string ID)
+        {
+            SQL = "EXEC [dbo].[ST_SelMisLibrosCompradosByApp] '" + ID + "'";
+            return con.TablaGeneral(SQL);
+        }
+        public DataTable ConsultarLibrosXIDApp(string ID)
+        {
+            SQL = "EXEC [dbo].[SelPaginadorLibrosXIDApp] '" + ID + "'";
             return con.TablaGeneral(SQL);
         }
 
@@ -254,6 +281,20 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
             ComentariosBO nom = (ComentariosBO)obj;
             cmd.Connection = con.EstablecerConexion();
             string sql = "INSERT INTO Comentarios (Usuario,Comentario,Libro) VALUES ('" + nom.Usuario + "','" + nom.Comentarios + "','" + nom.Libro + "')";
+            cmd.CommandText = sql;
+            con.AbrirConexion();
+            int i = cmd.ExecuteNonQuery();
+            con.CerrarConexion();
+            if (i <= 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+        public int InsertarComentariosApp(string Usuario,string IDLibro,string Comentario)
+        {
+            cmd.Connection = con.EstablecerConexion();
+            string sql = "[dbo].[InsertComentariosApp] '" + Usuario + "','" + IDLibro + "',N'" + Comentario + "'";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

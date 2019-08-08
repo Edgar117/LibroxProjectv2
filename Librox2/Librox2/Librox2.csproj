@@ -892,10 +892,13 @@
     <Compile Include="BO\ComentariosBO.cs" />
     <Compile Include="BO\EstadoLibroBO.cs" />
     <Compile Include="BO\JsonResult.cs" />
+    <Compile Include="BO\LibroDetalleBO.cs" />
     <Compile Include="BO\LibrosBO.cs" />
     <Compile Include="BO\Mensajes.cs" />
     <Compile Include="BO\Paypal.cs" />
     <Compile Include="BO\Ranking.cs" />
+    <Compile Include="BO\ReadBookClass.cs" />
+    <Compile Include="BO\RutaLibroBO.cs" />
     <Compile Include="BO\UserBoWebService.cs" />
     <Compile Include="BO\UserGetApp.cs" />
     <Compile Include="BO\UsuarioBO.cs" />

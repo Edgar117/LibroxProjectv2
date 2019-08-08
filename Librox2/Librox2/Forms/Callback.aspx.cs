@@ -38,6 +38,11 @@ namespace Librox2.GUI
                         WebClient webClient = new WebClient();
                         webClient.DownloadFile(string.Format("https://graph.facebook.com/{0}/picture?type=large", oUser.id), Server.MapPath("~/images/Users/") + oUser.name + "_UsuarioLogin.jpg");
                     }
+                    else
+                    {
+                        WebClient webClient = new WebClient();
+                        webClient.DownloadFile(string.Format("https://graph.facebook.com/{0}/picture?type=large", oUser.id), Server.MapPath("~/images/Users/") + oUser.name + "_UsuarioLogin.jpg");
+                    }
                    
                     Session["Usuario"] = oUser.name;
                     Session["Panel"] = "Logeado";
