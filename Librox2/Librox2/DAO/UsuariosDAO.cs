@@ -150,6 +150,24 @@ namespace Librox2.DAO
             return contra;
 
         }
+        public string GetUserName(string IDUser)
+        {
+
+            string User = "";
+
+            SQL = "SELECT Usuario FROM Usuarios WHERE ID='"+IDUser+"'";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            cmd.Parameters.AddWithValue("@Usuario", User);
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                User =leer["Usuario"].ToString();
+            }
+            con.CerrarConexion();
+            return User;
+
+        }
         public string ValidarCorreoToReset(string Correp)
         {
 

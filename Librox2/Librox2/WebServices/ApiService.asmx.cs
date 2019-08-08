@@ -220,6 +220,8 @@ namespace Librox2.WebServices
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public void GetLecturaLibro(string LibroFisico,string UserName,string NameBook)
         {
+            UsuariosDAO User = new UsuariosDAO();
+            UserName = User.GetUserName(UserName);
             string outputJSON;
             prepareBook(LibroFisico);  //Este método desencadena 2 métodos consecuentes (desencriptado y lectura de la primera página)
             var pathReading = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + UserName + "/Reading/"));
@@ -265,6 +267,8 @@ namespace Librox2.WebServices
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public void GetLecturaLibroAfterBefore(string LibroFisico, string UserName, string NameBook,string Accion)
         {
+            UsuariosDAO User = new UsuariosDAO();
+            UserName = User.GetUserName(UserName);
             if (Accion=="1")
             {
                 string LibroFisicoTest = Server.MapPath("~/LibrosPortadas/" + LibroFisico + ".pdf");
