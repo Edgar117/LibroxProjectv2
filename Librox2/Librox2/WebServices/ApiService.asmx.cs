@@ -321,7 +321,33 @@ namespace Librox2.WebServices
             Context.Response.Write(ser.Serialize(OBJson));
         }
 
-        //Metodos libro generales
+
+        //[WebMethod]
+        //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        //public void RegistrarLibro(string PdfBase64,string ImagenBase64,string NombreLibro,string IDUsuario)
+        //{
+        //    LibrosDAO DAOLibros = new LibrosDAO();
+        //    DataTable dt = new DataTable();
+        //    string outputJSON;
+        //    int value = 0;
+        //    byte[] sPDFDecoded = Convert.FromBase64String(PdfBase64);
+        //    UsuariosDAO User = new UsuariosDAO();
+        //   string UserName = User.GetUserName(IDUsuario);
+        //    var originalDirectory = new DirectoryInfo(Server.MapPath("~/LibrosPortadas/" + UserName + "/"));
+        //    if (!Directory.Exists(originalDirectory.ToString()))
+        //    {
+        //        Directory.CreateDirectory(originalDirectory.ToString());
+        //    }
+        //    string pathString = originalDirectory.ToString();
+        //    File.WriteAllBytes(@"c:\Users\u316383\Documents\pdf8.pdf", sPDFDecoded);
+        //    JsonResult OBJson = new JsonResult
+        //    { Result = value };
+        //    outputJSON = ser.Serialize(OBJson);
+        //    Context.Response.Write(ser.Serialize(OBJson));
+        //}
+
+             
+        //******************Metodos libro generales*************************************
         private string prepareMuestra(string libroFisico)
         {
             //Método que se ocupa para prepara el archivo de muestra con páginas limitadas
