@@ -48,7 +48,7 @@
                             <hr />
                     <%--<p>$<asp:Label ID="lblPrecio" runat="server" Text=''></asp:Label></p>--%>
                             <asp:LinkButton ID="lbtnPrueba" runat="server" CssClass="btn btn-warning btn-round" OnClick="lbtnPrueba_Click">Muestra gratis</asp:LinkButton>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay"></asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" CssClass="btn btn-warning btn-round" Enabled="true" CommandName="pay"></asp:LinkButton>
                             <br />
                             <asp:Label ID="lblMuestraNo" runat="server" Text="" ForeColor="Red"></asp:Label>
                         </div>
@@ -64,15 +64,26 @@
                     <asp:Panel ID="pnlLogin" runat="server">
                         <a href="/Login.aspx" class="btn btn-round btn-warning">Inicia sesión para comentar</a>
                     </asp:Panel>
-                    <asp:Repeater ID="Repeater2" runat="server" OnItemDataBound="Repeater2_ItemDataBound">
+                     <br />
+                    <asp:Repeater ID="rptComments" runat="server" OnItemDataBound="Repeater2_ItemDataBound">
                         <ItemTemplate>
-                            <h5 class="text-left"><b>
-                                <asp:Label ID="lblUser" runat="server" Text='<%# Eval ("Usuario") %>'></asp:Label></b> <asp:Label ID="lblTime" runat="server" Text='<%# Eval ("Hora", "{0:dd/MM/yyyy HH:mm:ss}") %>'></asp:Label></h5>
-                            <p class="text-left">
-                                <b>
-                                    <asp:Label ID="lblComment" runat="server" Text='<%# Eval ("Comentario") %>'></asp:Label>
-                                </b>
-                            </p>
+                            <div class="row">
+                                <div class="col-sm-2 text-right">
+                                    <%--<img src="../images/ImagenDefualt.png" class="align-self-center mr-3" alt="UserCommentPic" width="64" height="64">--%>
+                                    <asp:Image ID="picCommentUser" runat="server" ImageUrl='<%# "~/images/Users/" + Eval ("ImagenUsuario") %>'  CssClass="align-self-center mr-3" alt="UserCommentPic" width="64" height="64"/>
+                                </div>
+                                <div class="col-sm-10 text-left">
+                                    <h5>
+                                        <asp:Label ID="lblUser" runat="server" Text='<%# Eval ("Usuario") %>'></asp:Label> 
+                                    </h5>
+                                    <h6>
+                                         <asp:Label ID="lblComment" runat="server" Text='<%# Eval ("Comentario") %>'></asp:Label>
+                                        </h6>
+                                    <i>
+                                        <asp:Label ID="lblTime" runat="server" Text='<%# Eval ("Hora", "{0:dd/MM/yyyy HH:mm:ss}") %>'></asp:Label>
+                                    </i>
+                                </div>
+                            </div>
                             <hr />
                         </ItemTemplate>
                     </asp:Repeater>

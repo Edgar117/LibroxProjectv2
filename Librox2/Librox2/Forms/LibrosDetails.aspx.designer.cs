@@ -157,13 +157,13 @@ namespace Librox2.Forms {
         protected global::System.Web.UI.WebControls.Panel pnlLogin;
         
         /// <summary>
-        /// Control Repeater2.
+        /// Control rptComments.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+        protected global::System.Web.UI.WebControls.Repeater rptComments;
         
         /// <summary>
         /// Control Repeater1.

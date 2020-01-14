@@ -280,7 +280,7 @@ WHERE  PP.EstatusPayPal='COMPLETED'";
         {
             ComentariosBO nom = (ComentariosBO)obj;
             cmd.Connection = con.EstablecerConexion();
-            string sql = "INSERT INTO Comentarios (Usuario,Comentario,Libro) VALUES ('" + nom.Usuario + "','" + nom.Comentarios + "','" + nom.Libro + "')";
+            string sql = "INSERT INTO Comentarios (Usuario,Comentario,Libro) VALUES ('" + nom.Usuario + "',N'" + nom.Comentarios + "','" + nom.Libro + "')";
             cmd.CommandText = sql;
             con.AbrirConexion();
             int i = cmd.ExecuteNonQuery();

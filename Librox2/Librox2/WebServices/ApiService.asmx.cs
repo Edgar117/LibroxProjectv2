@@ -322,6 +322,59 @@ namespace Librox2.WebServices
         }
 
 
+
+        //********************Paypal Metodos ******************************
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void ProcesarPagoPaypal(string IDUser, string Precio, string NombreLibro)
+        {
+            LibrosDAO DAOLibros = new LibrosDAO();
+            DataTable dt = new DataTable();
+            string outputJSON;
+            int value = 0;
+            try
+            {
+                LibrosBO Olibros = new LibrosBO();
+                Olibros.Titulo = NombreLibro;
+                Olibros.Precio = Precio;
+                //Codigo nuevo para enviar desde el detalle.
+                string IDIns = DAOLibros.ProcesarLibroPaypal(Olibros,int.Parse(IDUser));
+                //string test = serializer.Serialize(rows);
+                value = int.Parse(IDIns);
+            }
+            catch (Exception)
+            {
+                value = 0;
+            }
+            JsonResult OBJson = new JsonResult
+            { Result = value };
+            outputJSON = ser.Serialize(OBJson);
+            Context.Response.Write(ser.Serialize(OBJson));
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public void UpdatePagoPaypal(string IDVenta,string OrderID)
+        {
+            LibrosDAO DAOLibros = new LibrosDAO();
+            DataTable dt = new DataTable();
+            string outputJSON;
+            int value = 0;
+            try
+            {
+                DAOLibros.UpdEstatusVentaPaypal(IDVenta, OrderID);
+                value = 1;
+            }
+            catch (Exception)
+            {
+                value = 0;
+            }
+            JsonResult OBJson = new JsonResult
+            { Result = value };
+            outputJSON = ser.Serialize(OBJson);
+            Context.Response.Write(ser.Serialize(OBJson));
+        }
+        //******************** END Paypal Metodos ******************************
         //[WebMethod]
         //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         //public void RegistrarLibro(string PdfBase64,string ImagenBase64,string NombreLibro,string IDUsuario)
@@ -346,7 +399,7 @@ namespace Librox2.WebServices
         //    Context.Response.Write(ser.Serialize(OBJson));
         //}
 
-             
+
         //******************Metodos libro generales*************************************
         private string prepareMuestra(string libroFisico)
         {

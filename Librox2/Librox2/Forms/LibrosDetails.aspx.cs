@@ -21,8 +21,10 @@ namespace Librox2.Forms
     public partial class LibrosDetails : System.Web.UI.Page
     {
         LibrosDAO DAOLibros = new LibrosDAO();
+        LibrosBO DatosLibro = new LibrosBO();
         CategoriaDAO DAOCategorias = new CategoriaDAO();
         ComentariosBO comentarios = new ComentariosBO();
+        Paypal entity = new Paypal();
         DataTable dt = new DataTable();
         string titulo;
         string libroFisico;
@@ -129,10 +131,11 @@ namespace Librox2.Forms
 
         private void bindComments()
         {
-            DataTable dtComments = new DataTable();
-            dtComments = DAOLibros.ConsultaComentariosLibros(lblAuxTit.Text);
-            Repeater2.DataSource = dtComments;
-            Repeater2.DataBind();
+            using (DataTable dtCommentsU = DAOLibros.ConsultaComentariosLibros(lblAuxTit.Text))
+            {
+                rptComments.DataSource = dtCommentsU;
+                rptComments.DataBind();
+            }
         }
 
         protected void btnComment_Click(object sender, EventArgs e)
@@ -306,5 +309,47 @@ namespace Librox2.Forms
                 }
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            if (Session["Usuario"] != null)
+            {
+                System.Collections.Hashtable ht = new System.Collections.Hashtable();
+                ht = (System.Collections.Hashtable)Session["LibroDetalle"];
+                titulo = Convert.ToString(ht["Titulo"]);
+                string precio = Convert.ToString(ht["Precio"]);
+                //Datos para obtener el id
+                String[] cart1 = new String[0];
+                cart1 = (String[])Session["ALL"];
+                //Obtenemos su Id del usuario.
+                int ID = int.Parse(cart1[5]);
+                //Pasamos los datos del libro
+                DatosLibro.Precio = precio;
+                DatosLibro.Titulo = titulo;
+                //Codigo nuevo para enviar desde el detalle.
+                string IDIns = DAOLibros.ProcesarLibroPaypal(DatosLibro, ID);
+                //Método para activar la sesión para enviar al proceso de pago
+                SetOrderingValue(titulo, "BB01", precio, "1", "1", IDIns);
+                ////Redirige al proceso de pago con los datos del libro elegido ya en la sesión.
+                Response.Redirect("~/Forms/ProcesarPago.aspx");
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "SeguirFail();", true);
+            }
+        }
+        //Método que llena los datos del paypal
+        private void SetOrderingValue(string itemName, string itemNumber, string amount, string noShipping, string quantity, string idVenta)
+        {
+            entity.Business = "huesos_blin182-facilitator@hotmail.com";
+            entity.ItemName = itemName;
+            entity.ItemNumber = itemNumber;
+            entity.Amount = amount;
+            entity.NoShipping = noShipping;
+            entity.Quantity = quantity;
+            entity.idVenta = idVenta;
+            Session["myOrderingEntity"] = entity;
+        }
+
     }
 }
