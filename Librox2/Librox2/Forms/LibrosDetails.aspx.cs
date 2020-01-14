@@ -129,10 +129,11 @@ namespace Librox2.Forms
 
         private void bindComments()
         {
-            DataTable dtComments = new DataTable();
-            dtComments = DAOLibros.ConsultaComentariosLibros(lblAuxTit.Text);
-            Repeater2.DataSource = dtComments;
-            Repeater2.DataBind();
+            using (DataTable dtCommentsU = DAOLibros.ConsultaComentariosLibros(lblAuxTit.Text))
+            {
+                rptComments.DataSource = dtCommentsU;
+                rptComments.DataBind();
+            }
         }
 
         protected void btnComment_Click(object sender, EventArgs e)
