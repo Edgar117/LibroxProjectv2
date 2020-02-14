@@ -168,6 +168,23 @@ namespace Librox2.DAO
             return User;
 
         }
+        public string GetUserIDByName(string UserName)
+        {
+
+            string User = "";
+
+            SQL = "SELECT ID FROM Usuarios WHERE Usuario='" + UserName + "'";
+            SqlCommand cmd = new SqlCommand(SQL, con.EstablecerConexion());
+            con.AbrirConexion();
+            SqlDataReader leer = cmd.ExecuteReader();
+            if (leer.Read())
+            {
+                User = leer["ID"].ToString();
+            }
+            con.CerrarConexion();
+            return User;
+
+        }
         public string ValidarCorreoToReset(string Correp)
         {
 
@@ -225,6 +242,11 @@ namespace Librox2.DAO
         public DataTable GetInformationUserApp(string ID)
         {
             SQL = "EXEC [dbo].[St_GetInformationApp] " + ID;
+            return con.TablaGeneral(SQL);
+        }
+        public DataTable GetMysales(string ID)
+        {
+            SQL = "EXEC  [dbo].[st_SelCalculaMiPagoApp] " + ID;
             return con.TablaGeneral(SQL);
         }
         public DataTable ConsultarMisLibros(int ID)

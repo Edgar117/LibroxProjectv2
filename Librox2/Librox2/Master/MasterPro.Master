@@ -173,7 +173,7 @@
                     </li>
                        <li class="nav-item">
                         <a rel="tooltip" title="En escribox queremos que nuestros usuarios tengam la última palabra y por eso dependiendo del ranking que le den los usuarios que han leido tu libro se asigna el precio, es decir, cuando subes tu libro a la plataforma este iniciara con 0 estrellas de ranking y por eso tendra un precio inicial de $15.00 pesos y cuando este vaya siendo rankeado y suba estrellas subira el precio de la siguiente manera: de 0-2 estrellas el precio del libro sera de $15.00 pesos, 3-4 estrellas tendra un precio de $25.00 pesos y por ultimo cuando alcances 5 estrellas el precio sera de $35.00 pesos.En el apartado mis ventas podras ver el desglose de la venta de tu libro asi como las ganancias del mismo.
-Si tienes alguna duda o comentario contactanos en el apartado de ayuda" class="nav-link" href="#">
+Si tienes alguna duda o comentario contactanos en el apartado de ayuda" class="nav-link" href="../Forms/AsignacionPrecio.aspx">
                             <i class="now-ui-icons travel_info"></i>
                             <p>¿Como asigmanos precio a tu libro?</p>
                         </a>

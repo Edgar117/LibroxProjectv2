@@ -83,6 +83,7 @@
     <Content Include="Forms\AdministrarMisLibros.aspx" />
     <Content Include="Forms\AgregarAdmin.aspx" />
     <Content Include="Forms\AgregarStatusLibros.aspx" />
+    <Content Include="Forms\AsignacionPrecio.aspx" />
     <Content Include="Forms\Compras.aspx" />
     <Content Include="Forms\Home.aspx" />
     <Content Include="Forms\LibrosDetails.aspx" />
@@ -951,6 +952,13 @@
     </Compile>
     <Compile Include="Forms\AgregarStatusLibros.aspx.designer.cs">
       <DependentUpon>AgregarStatusLibros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AsignacionPrecio.aspx.cs">
+      <DependentUpon>AsignacionPrecio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\AsignacionPrecio.aspx.designer.cs">
+      <DependentUpon>AsignacionPrecio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Compras.aspx.cs">
       <DependentUpon>Compras.aspx</DependentUpon>
